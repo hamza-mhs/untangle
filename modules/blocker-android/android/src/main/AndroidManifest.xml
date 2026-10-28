@@ -1,0 +1,64 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <!-- Read which app is in the foreground. Special access: user grants it in Settings. -->
+  <uses-permission
+    android:name="android.permission.PACKAGE_USAGE_STATS"
+    tools:ignore="ProtectedPermissions" />
+  <!-- Watcher service. specialUse because no standard FGS type covers app blocking. -->
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+  <!-- Ongoing notification (watcher + focus countdown). Runtime permission on Android 13+. -->
+  <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+  <!-- Needed to launch the block screen from the background (Android 10+ restriction). -->
+  <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+  <!-- Restart the watcher after reboot if any rule is enabled. -->
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+  <!-- List launchable apps for the app picker without QUERY_ALL_PACKAGES. -->
+  <queries>
+    <intent>
+      <action android:name="android.intent.action.MAIN" />
+      <category android:name="android.intent.category.LAUNCHER" />
+    </intent>
+  </queries>
+
+  <application>
+    <service
+      android:name=".BlockerService"
+      android:exported="false"
+      android:foregroundServiceType="specialUse">
+      <property
+        android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+        android:value="Blocks apps the user chose to limit, during the schedules they set." />
+    </service>
+
+    <activity
+      android:name=".BlockActivity"
+      android:excludeFromRecents="true"
+      android:exported="false"
+      android:launchMode="singleTask"
+      android:taskAffinity=""
+      android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+
+    <receiver
+      android:name=".BootReceiver"
+      android:exported="false">
+      <intent-filter>
+        <action android:name="android.intent.action.BOOT_COMPLETED" />
+      </intent-filter>
+    </receiver>
+
+    <receiver
+      android:name=".TangleWidgetReceiver"
+      android:exported="true"
+      android:label="@string/untangle_widget_label">
+      <intent-filter>
+        <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+      </intent-filter>
+      <meta-data
+        android:name="android.appwidget.provider"
+        android:resource="@xml/untangle_today_widget_info" />
+    </receiver>
+  </application>
+</manifest>

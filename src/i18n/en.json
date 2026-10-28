@@ -1,0 +1,1565 @@
+{
+  "common": {
+    "continue": "Continue",
+    "start": "Start",
+    "back": "Back",
+    "close": "Close",
+    "stub": "STUB",
+    "stepOf": "Step {{step}} of {{total}}",
+    "stepCounter": "{{step}}/{{total}}",
+    "loading": "Loading…",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "save": "Save",
+    "ok": "OK",
+    "tryAgain": "Try again",
+    "errorTitle": "Something went wrong",
+    "errorBody": "This screen hit a problem. Your data is safe."
+  },
+  "onboarding": {
+    "splash": {
+      "title": "Your attention is tangled.",
+      "body": "Let's untangle it. A few minutes a day, and locks that actually hold.",
+      "cta": "Start",
+      "footnote": "No account. Everything stays on this phone."
+    },
+    "screenTime": {
+      "title": "How much phone a day?",
+      "subtitle": "A guess is fine. We'll check it against the real number later.",
+      "options": {
+        "lt2": "Under 2 hours",
+        "2-4": "2–4 hours",
+        "4-6": "4–6 hours",
+        "6-8": "6–8 hours",
+        "8+": "8+ hours",
+        "unsure": "Not sure"
+      }
+    },
+    "apps": {
+      "title": "Which apps pull you in?",
+      "subtitle": "Pick all that apply. These get locked first.",
+      "options": {
+        "instagram": "Instagram",
+        "tiktok": "TikTok",
+        "youtube": "YouTube",
+        "x": "X",
+        "reddit": "Reddit",
+        "snapchat": "Snapchat",
+        "games": "Games",
+        "other": "Other"
+      }
+    },
+    "when": {
+      "title": "When does it hit hardest?",
+      "subtitle": "Pick all that apply. We'll schedule locks around these.",
+      "options": {
+        "morning": "First thing in the morning",
+        "bed": "In bed at night",
+        "work": "While working or studying",
+        "bored": "When I'm bored or waiting",
+        "stressed": "When I'm stressed"
+      }
+    },
+    "goals": {
+      "title": "What do you want back?",
+      "subtitle": "Pick up to two. This shapes your challenges.",
+      "options": {
+        "focus": "Focus for work or study",
+        "sleep": "Better sleep",
+        "people": "Time with people",
+        "hobbies": "Reading and hobbies",
+        "calm": "A calmer head"
+      },
+      "subs": {
+        "focus": "Maths, reading, single-task",
+        "sleep": "Phone down overnight",
+        "people": "Phone-free meals, Raw mode",
+        "hobbies": "Read before you scroll, Hobby era",
+        "calm": "Silence, breathing"
+      }
+    },
+    "yourYear": {
+      "label": "At your pace, this year",
+      "unit": "days",
+      "body": {
+        "days_one": "on your phone. That's {{count}} day, awake.",
+        "days_other": "on your phone. That's {{count}} days, awake.",
+        "month": "on your phone. That's more than a month, awake.",
+        "twoMonths": "on your phone. That's more than two months, awake."
+      },
+      "formula": "From your answer: about {{hours}} hours a day × 365 days ÷ 24. No scare stats, just your number.",
+      "a11y": "{{count}} days a year on your phone"
+    },
+    "goodNews": {
+      "title": "The good news.",
+      "bodyLead": "{{change}} gives you ",
+      "bodyGain": "{{gain}} days a year",
+      "bodyTail": " back.",
+      "changeHour": "One hour less a day",
+      "changeHalfHour": "Thirty minutes less a day",
+      "now": "Now",
+      "withUs": "With us",
+      "daysValue": "{{value}} days",
+      "note": "Simple maths on your own number. Most people start smaller. That's fine.",
+      "cta": "Let's do it"
+    },
+    "strength": {
+      "title": "How strict should a rule be?",
+      "subtitle": "Pick per rule later. You can change it any time a lock isn't running."
+    },
+    "screenTimeAccess": {
+      "title": "Apple will ask for access.",
+      "subtitleLead": "Tap ",
+      "subtitleEmphasis": "Continue",
+      "subtitleTail": " on the next pop-up. Your data never leaves this phone.",
+      "dialogTitle": "“Untangle” Would Like to Access Screen Time",
+      "dialogBody": "Providing “Untangle” access to Screen Time may allow it to see your activity data, restrict content, and limit the usage of apps and websites.",
+      "dialogContinue": "Continue",
+      "dialogDeny": "Don’t Allow",
+      "coach": "Tap this one",
+      "cta": "Show me",
+      "mockA11y": "Example of the Screen Time permission pop-up"
+    },
+    "pickApps": {
+      "title": "Now pick what to lock.",
+      "subtitleParts": {
+        "a": "Apple's picker opens next. Tick ",
+        "b": "Social",
+        "c": " and anything else, then tap ",
+        "d": "Done",
+        "e": "."
+      },
+      "warning": "Pick at least one to continue.",
+      "mockCancel": "Cancel",
+      "mockTitle": "Choose Activities",
+      "mockDone": "Done",
+      "mockRows": {
+        "social": "Social",
+        "entertainment": "Entertainment",
+        "games": "Games",
+        "creativity": "Creativity",
+        "education": "Education",
+        "productivity": "Productivity & Finance"
+      },
+      "coach": "Then Done",
+      "cta": "Open picker",
+      "mockA11y": "Example of Apple's app picker"
+    },
+    "notifications": {
+      "title": "One more: notifications.",
+      "subtitleLead": "We only ping when a lock ends or a challenge is waiting. Tap ",
+      "subtitleEmphasis": "Allow",
+      "subtitleTail": ".",
+      "dialogTitle": "“Untangle” Would Like to Send You Notifications",
+      "dialogBody": "Notifications may include alerts, sounds, and icon badges. These can be configured in Settings.",
+      "dialogDeny": "Don’t Allow",
+      "dialogAllow": "Allow",
+      "coach": "Tap Allow",
+      "cta": "Show me",
+      "mockA11y": "Example of the notification permission pop-up"
+    },
+    "quietMinute": {
+      "caption": "Try it now · one quiet minute",
+      "timeLeft": "Time left",
+      "body": "Phone face-down.\nNothing to do. That's the point.",
+      "statusWaitingTitle": "Waiting · put it face-down",
+      "statusWaitingSub": "The minute starts when it's face-down",
+      "statusRunningTitle": "Face-down · untouched",
+      "statusRunningSub": "Lifting it pauses the timer",
+      "statusPausedTitle": "Paused · put it face-down to continue",
+      "statusPausedSub": "The timer picks up where it stopped",
+      "statusHoldTitle": "Hold the button down",
+      "statusHoldSub": "No motion sensor here, so hold instead",
+      "hold": "Hold to continue",
+      "skip": "Skip",
+      "remainingA11y": "{{minutes}} minutes {{seconds}} seconds left"
+    },
+    "knotLoosened": {
+      "title": "One knot loosened.",
+      "body": "A quiet minute is practice at not reaching for your phone. Every day here works like that, a little at a time.",
+      "clarityLabel": "Your starting Clarity",
+      "clarityA11y": "Starting Clarity {{value}} out of 100",
+      "cta": "See my plan"
+    },
+    "plan": {
+      "title": "Your plan is ready.",
+      "subtitle": "Built from your answers. Change anything later.",
+      "locksLabel": "Locks",
+      "locksFallback": "Your picked apps",
+      "locksBedtime": "Bedtime 23:00–07:00, on by default",
+      "locksMornings": " · mornings 7–9",
+      "challengesLabel": "Daily challenges",
+      "challengesTitle": "3 cards each morning",
+      "challengesSub": "Silence, reading, a focus session",
+      "goalLabel": "Goal",
+      "goalHour": "1 hour less a day",
+      "goalHalfHour": "30 minutes less a day",
+      "goalSub": "{{gain}} days a year back"
+    },
+    "trial": {
+      "title": "Pro is on. Free for 7 days.",
+      "subtitle": "No card, nothing to cancel. The 7 days start when your first lock switches on.",
+      "todayTitle": "Today",
+      "todaySub": "Every feature, including Locked and widgets",
+      "day5Title": "Day 5",
+      "day5Sub": "Pro ends in 2 days. Your free features stay.",
+      "day7Title": "Day 7",
+      "day7Sub": "One screen you can close. Keep Pro, or carry on free.",
+      "freeLabel": "Free, always",
+      "freeBody": "2 rules (Pause, Earn) · all daily challenges · focus, silence and reading sessions · rewards · the receipt",
+      "cta": "Turn on my first lock",
+      "bedtimeRule": "Bedtime",
+      "morningRule": "Mornings"
+    },
+    "stub": {
+      "note": "Onboarding step {{step}} of {{total}} · /{{slug}}"
+    }
+  },
+  "strength": {
+    "pause": {
+      "title": "Pause",
+      "description": "A 10-second breath, then close it or open for 5 min",
+      "short": "A 10-second breath, then close or open for 5 min."
+    },
+    "earn": {
+      "title": "Earn",
+      "description": "Stays blocked until you spend minutes you earned",
+      "short": "Stays blocked until you spend earned minutes."
+    },
+    "locked": {
+      "title": "Locked",
+      "description": "No unlock until it ends. 2 emergency passes a week",
+      "short": "No unlock until the rule ends. 2 emergency passes a week."
+    },
+    "free": "Free",
+    "pro": "Pro"
+  },
+  "edge": {
+    "screenTimeDenied": {
+      "title": "Blocking needs Screen Time access",
+      "body": "You tapped Don't Allow. Without it we can't lock apps, but challenges and focus timers still work.",
+      "pathLabel": "To turn it on later",
+      "path": "Settings › Screen Time › Apps with Screen Time Access › ",
+      "pathApp": "Untangle",
+      "retry": "Try again",
+      "skip": "Continue without blocking"
+    },
+    "notificationsOff": {
+      "title": "Notifications are off",
+      "sub": "You won't hear when a lock ends.",
+      "body": "Everything else works. Turn them on any time in Settings.",
+      "openSettings": "Open Settings",
+      "notNow": "Not now"
+    }
+  },
+  "tabs": {
+    "today": "Today",
+    "challenges": "Challenges",
+    "block": "Block",
+    "rewards": "Rewards"
+  },
+  "dev": {
+    "allRoutes": "Dev · all routes",
+    "mocks": "Dev · native mocks",
+    "mockScreenTime": "Screen Time request",
+    "mockPicker": "App picker",
+    "mockNotifications": "Notification request",
+    "approve": "Approve",
+    "deny": "Deny",
+    "select": "Select",
+    "cancel": "Cancel",
+    "allow": "Allow",
+    "resetOnboarding": "Restart onboarding",
+    "mockSensor": "Motion sensor",
+    "mockHome": "Home state",
+    "mockOfferings": "Paywall offerings",
+    "mockPurchase": "Purchase outcome",
+    "mockRestore": "Restore outcome",
+    "mockBilling": "Billing state"
+  },
+  "stub": {
+    "challenges": {
+      "title": "Challenges",
+      "note": "Morning draw: 3 cards (easy / medium / hard) + 1 redraw."
+    },
+    "rewards": {
+      "title": "Rewards",
+      "note": "Points, earned minutes and the reward vault."
+    },
+    "repMaths": {
+      "title": "Mental maths",
+      "note": "Chained arithmetic, endless, seeded."
+    },
+    "repLetterGuess": {
+      "title": "Letter guess",
+      "note": "Guess the word letter by letter."
+    },
+    "repTarget": {
+      "title": "Make the target",
+      "note": "Combine four numbers to hit 24."
+    },
+    "repPairs": {
+      "title": "Card pairs",
+      "note": "Flip and match pairs."
+    },
+    "repSpan": {
+      "title": "Number span",
+      "note": "Remember a growing sequence."
+    },
+    "repReadAloud": {
+      "title": "Read aloud",
+      "note": "On-device speech recognition checks the passage."
+    },
+    "repTimeUp": {
+      "title": "Time’s up",
+      "note": "Rep result."
+    },
+    "receipt": {
+      "title": "Today’s receipt",
+      "note": "Evening summary of the day."
+    },
+    "lightsOut": {
+      "title": "Lights out",
+      "note": "Wind-down screen; flip the phone face down to silence."
+    }
+  },
+  "notifications": {
+    "trialNotice": {
+      "title": "Two days of Pro left",
+      "body": "Your free week of Untangle Pro ends in 2 days. No card was taken."
+    },
+    "focusEnd": {
+      "title": "Focus done",
+      "body": "Nice work. Your apps are unlocked.",
+      "bodyEarned": "+{{minutes}} min earned. Your apps are unlocked."
+    },
+    "discreet": {
+      "title": "Untangle",
+      "body": "You have an update."
+    }
+  },
+  "format": {
+    "minutes": "{{m}}m",
+    "hours": "{{h}}h",
+    "hoursMinutes": "{{h}}h {{m}}m"
+  },
+  "home": {
+    "title": "Today",
+    "streakA11y_one": "{{count}} day streak",
+    "streakA11y_other": "{{count}} day streak",
+    "clarity": {
+      "label": "Clarity",
+      "a11y": "Clarity {{value}} out of 100"
+    },
+    "action": {
+      "startFocus": "Start focus",
+      "lightsOut": "Lights out"
+    },
+    "focus": {
+      "lockedIn": "Locked in",
+      "endsAt": "ends {{time}}",
+      "cantTurnOff": "Can't be turned off early · ",
+      "passLink_one": "Emergency pass ({{count}} left)",
+      "passLink_other": "Emergency pass ({{count}} left)"
+    },
+    "banner": {
+      "fix": "Fix",
+      "blockingOff": {
+        "title": "Blocking is off",
+        "sub": "Screen Time access was turned off."
+      },
+      "grace": {
+        "title": "Payment didn't go through",
+        "sub": "Pro stays on while the store retries."
+      }
+    },
+    "challenges": {
+      "title": "Today's challenges",
+      "count": "{{done}} of {{total}}",
+      "points": "+{{points}}",
+      "doneA11y": "{{title}}, done",
+      "startA11y": "Start {{title}}"
+    },
+    "blocked": {
+      "title_one": "{{count}} app blocked",
+      "title_other": "{{count}} apps blocked",
+      "lockedTitle_one": "{{count}} app locked",
+      "lockedTitle_other": "{{count}} apps locked",
+      "rulesUntil_one": "{{count}} rule on · until {{time}}",
+      "rulesUntil_other": "{{count}} rules on · until {{time}}",
+      "rulesOn_one": "{{count}} rule on",
+      "rulesOn_other": "{{count}} rules on",
+      "focusUntil": "Lock in · until {{time}}",
+      "bedtimeAt": "Bedtime lock at {{time}}",
+      "startsIn_one": "Starts in {{duration}} · {{count}} app",
+      "startsIn_other": "Starts in {{duration}} · {{count}} apps",
+      "offTitle": "Not blocking",
+      "offSub_one": "{{count}} app · access needed",
+      "offSub_other": "{{count}} apps · access needed"
+    },
+    "stats": {
+      "title": "Your focus",
+      "vsFirstWeek": "vs your first week",
+      "screenTime": "Screen time",
+      "vsYesterday": "vs yesterday",
+      "longestFocus": "Longest focus",
+      "withoutUnlocking": "without unlocking",
+      "pickups": "Pickups",
+      "aDay": "a day",
+      "opensResisted": "Opens resisted",
+      "ofTriesClosed": "of tries closed",
+      "baselineTitle": "Building your baseline · day {{day}} of {{total}}",
+      "baselineBody": "After a week we compare screen time, pickups and focus with how you started."
+    },
+    "fixtures": {
+      "silence": "Sit in silence",
+      "silenceMeta": "5 min · Timed",
+      "read": "Read 10 pages",
+      "lockIn": "Lock in, 50 min"
+    }
+  },
+  "challenges": {
+    "metaTimed": "{{minutes}} min · {{kind}}",
+    "verification": {
+      "verified": "Verified",
+      "timed": "Timed",
+      "word": "Your word"
+    },
+    "difficulty": {
+      "easy": "Easy",
+      "med": "Medium",
+      "hard": "Hard"
+    },
+    "check": {
+      "timed": "Timed · verified",
+      "yourWord": "Your word",
+      "verified": "Verified",
+      "timedShort": "Timed",
+      "yourWordShort": "Your word",
+      "verifiedShort": "Verified"
+    },
+    "card": {
+      "faceDownA11y": "{{difficulty}} card, face down. Tap to flip."
+    },
+    "items": {
+      "silence-5": {
+        "title": "Sit in silence",
+        "meta": "5 min, phone face-down"
+      },
+      "walk-2k": {
+        "title": "Walk 2,000 steps",
+        "meta": "About 20 minutes"
+      },
+      "focus-10": {
+        "title": "Lock in, 10 min",
+        "meta": "One short focus session"
+      },
+      "no-phone-wake": {
+        "title": "No phone for the first 15 min",
+        "meta": "After you wake up"
+      },
+      "text-a-friend": {
+        "title": "Call a friend instead of texting",
+        "meta": "A real voice"
+      },
+      "read-10": {
+        "title": "Read before you scroll",
+        "meta": "Read a few pages aloud"
+      },
+      "walk-6k": {
+        "title": "Walk 6,000 steps",
+        "meta": "About an hour"
+      },
+      "focus-25": {
+        "title": "Lock in, 25 min",
+        "meta": "One proper focus block"
+      },
+      "under-60": {
+        "title": "Under 60 min on blocked apps",
+        "meta": "All day"
+      },
+      "phone-free-meal": {
+        "title": "Phone-free meal",
+        "meta": "Phone in another room"
+      },
+      "focus-50": {
+        "title": "Lock in, 50 min",
+        "meta": "Deep work"
+      },
+      "walk-10k": {
+        "title": "Walk 10,000 steps",
+        "meta": "A long walk"
+      },
+      "under-30": {
+        "title": "Under 30 min on blocked apps",
+        "meta": "All day"
+      },
+      "phone-off-evening": {
+        "title": "Phone off after 21:00",
+        "meta": "Until the morning"
+      },
+      "touch-grass": {
+        "title": "Touch grass",
+        "meta": "3,000 steps outside"
+      },
+      "raw-mode": {
+        "title": "Raw mode",
+        "meta": "No headphones, no podcast, just the walk"
+      },
+      "no-bed-rotting": {
+        "title": "No bed rotting",
+        "meta": "Out of bed when you wake"
+      },
+      "brick-saturday": {
+        "title": "Brick Saturday",
+        "meta": "A whole day, phone as a brick"
+      },
+      "phone-free-meal-lib": {
+        "title": "Phone-free meal",
+        "meta": "Phone in another room"
+      },
+      "first-hour-clean": {
+        "title": "First hour clean",
+        "meta": "No feeds for the first hour"
+      }
+    },
+    "bosses": {
+      "monk-mode": {
+        "title": "Monk mode",
+        "sub": "Half a day of strict focus · +{{points}} · earns a streak freeze"
+      },
+      "offline-morning": {
+        "title": "Offline morning",
+        "sub": "No phone until noon · +{{points}} · earns a streak freeze"
+      },
+      "deep-work-day": {
+        "title": "Deep work day",
+        "sub": "Four focus blocks · +{{points}} · earns a streak freeze"
+      }
+    },
+    "draw": {
+      "title": "Good morning",
+      "sub": "Draw today's three challenges.",
+      "revealTitle": "Today's three",
+      "revealSub": "Drawn at {{time}} · {{points}} pts if you do all three",
+      "tapHint": "Tap a card to flip it.",
+      "legendLead": "How each one is checked",
+      "legendTimed": "Timed: the app runs it, so it checks itself.",
+      "legendVerified": "Verified: Screen Time or your steps confirm it.",
+      "legendWord": "Your word: you tell us. Capped at 15 pts a day.",
+      "flipAll": "Flip all three",
+      "freeRedraw_one": "{{count}} free redraw today",
+      "freeRedraw_other": "{{count}} free redraws today",
+      "redraw": "Redraw one · {{count}} left",
+      "noRedraws": "No redraws left",
+      "pickToRedraw": "Tap the card to swap",
+      "howPoints": "How points work",
+      "bossOverline": "Weekly boss · {{day}}",
+      "bossLabel": "Weekly boss",
+      "startWith": "Start with {{title}}"
+    },
+    "points": {
+      "title": "How points work",
+      "body": "Easy 10, medium 15, hard 25. Do all three for a bonus. Your-word points stop at {{cap}} a day, so honesty never pays less.",
+      "allThree": "All three in a day",
+      "boss": "Weekly boss",
+      "wordCap": "Your-word cap",
+      "capValue": "{{cap}} a day"
+    },
+    "tab": {
+      "title": "Challenges",
+      "points": "{{points}} pts",
+      "pointsVerified": "{{points}} pts · {{percent}}% verified",
+      "today": "Today",
+      "drawRow": "Draw today's three",
+      "allDone": "3 of 3 · +{{bonus}} bonus",
+      "doneA11y": "done",
+      "reps": "Attention reps",
+      "repDone": "Done ✓",
+      "repDuration": "{{duration}}",
+      "minutes": "{{m}} min",
+      "seconds": "{{s}} s",
+      "library": "Library",
+      "doneThisWeek": "done this week",
+      "notYet": "not yet this week"
+    },
+    "detail": {
+      "points": "+{{points}} pts",
+      "why": {
+        "silence": "A few quiet minutes reset the urge to reach for your phone.",
+        "focus": "One locked session teaches your brain that the apps can wait.",
+        "reading": "Reading aloud keeps your attention on one thing at a time.",
+        "steps": "Walking is the easiest way to be somewhere other than your phone.",
+        "screenTime": "Less time in the apps you blocked is the whole point.",
+        "word": "Small offline habits add up. We trust you on this one."
+      },
+      "how": {
+        "silence": "Put your phone face-down for {{target}} minutes.",
+        "focus": "Start a {{target}}-minute focus session. It finishes this for you.",
+        "reading": "Read the pages out loud.",
+        "steps": "Walk {{target}} steps today. Your phone's step count checks it.",
+        "screenTime": "Stay under {{target}} minutes in your blocked apps today.",
+        "word": "Do it, then tap \"I did it\"."
+      },
+      "noData": "We can't read this on your phone, so it counts as your word.",
+      "shortSteps": "{{steps}} of {{target}} steps so far.",
+      "shortScreenTime": "Over {{target}} minutes so far today.",
+      "didIt": "I did it",
+      "checkSteps": "Check my steps",
+      "checkScreenTime": "Check my screen time",
+      "startFocus": "Start {{minutes}}-min focus"
+    },
+    "silence": {
+      "title": "Sit in silence",
+      "statusRunning": "Face-down · untouched",
+      "statusPaused": "Paused · put it face-down to continue",
+      "statusHold": "Hold the button and stay still",
+      "statusWaiting": "Put your phone face-down",
+      "buzz": "One soft buzz at {{at}}",
+      "privacy": "Motion and touch are checked on your phone only.",
+      "body": "Nothing to do. Just sit."
+    },
+    "done": {
+      "title": "Done.",
+      "points": "+{{points}} pts",
+      "clarity": " · Clarity {{value}}",
+      "why": {
+        "silence": "Quiet time lowers the pull to check. It gets easier each time.",
+        "focus": "Every locked session makes the next one easier to start.",
+        "reading": "Reading aloud is attention training you can feel.",
+        "steps": "Time outside is time your phone doesn't get.",
+        "screenTime": "Less time in the feeds, more of your day back.",
+        "word": "Offline habits are the ones that stick."
+      },
+      "ordinal_one": "1st",
+      "ordinal_other": "#{{count}}",
+      "weekStat": {
+        "silence": "quiet stretch this week",
+        "focus": "focus session this week",
+        "reading": "reading this week",
+        "steps": "walk this week",
+        "screenTime": "low-screen day this week",
+        "word": "this week"
+      },
+      "streak": "day streak"
+    }
+  },
+  "block": {
+    "title": "Block",
+    "statusOn": "Blocking on",
+    "statusOff": "Blocking off",
+    "rules": "Rules",
+    "apps": "Apps",
+    "newRule": "New rule",
+    "emptyHint": "Add a rule for the apps that pull you in at work",
+    "appsCount_one": "{{count}} app",
+    "appsCount_other": "{{count}} apps"
+  },
+  "rules": {
+    "newName": "Rule {{n}}",
+    "range": "{{start}} – {{end}}",
+    "until": "until {{time}}",
+    "days": {
+      "everyDay": "Every day",
+      "weekdays": "Mon – Fri",
+      "weekends": "Weekends"
+    },
+    "weekday": {
+      "0": "Sunday",
+      "1": "Monday",
+      "2": "Tuesday",
+      "3": "Wednesday",
+      "4": "Thursday",
+      "5": "Friday",
+      "6": "Saturday"
+    },
+    "card": {
+      "default": "Default",
+      "pausedByPlan": "Paused · not deleted",
+      "a11y": "{{name}}, {{schedule}}, {{strength}}",
+      "editHint": "Opens the rule",
+      "toggleA11y": "{{name}} on",
+      "budgetTitle": "{{name}} · open budget",
+      "budgetSub_one": "{{count}} open a day · resets at {{time}}",
+      "budgetSub_other": "{{count}} opens a day · resets at {{time}}",
+      "budgetCount": "{{used}}/{{total}}",
+      "budgetA11y": "{{name}}, {{used}} of {{total}} opens used"
+    },
+    "edit": {
+      "newTitle": "New rule",
+      "editTitle": "Edit rule",
+      "apps": "Apps",
+      "appsCount_one": "{{count}} app",
+      "appsCount_other": "{{count}} apps",
+      "noApps": "No apps yet",
+      "choose": "Choose",
+      "when": "When",
+      "from": "From",
+      "to": "To",
+      "sameTimes": "Start and end can't be the same time.",
+      "noDays": "Pick at least one day.",
+      "strength": "Strength",
+      "saveRule": "Save rule",
+      "delete": "Delete rule"
+    },
+    "locked": {
+      "title": "This rule is locked",
+      "body": "It's locked until {{time}}. You can edit it after."
+    }
+  },
+  "focus": {
+    "countdown": {
+      "hours": "hours",
+      "minutes": "min",
+      "seconds": "sec",
+      "a11y_one": "{{count}} minute left",
+      "a11y_other": "{{count}} minutes left"
+    },
+    "start": {
+      "title": "Lock in",
+      "sub": "Everything below stays locked. No turning it off early.",
+      "minutes_one": "{{count}} min",
+      "minutes_other": "{{count}} min",
+      "lockedDuring": "Locked during focus",
+      "edit": "Edit",
+      "moreEdit": "+ {{count}} more · Edit",
+      "editA11y_one": "{{count}} app locked during focus. Edit",
+      "editA11y_other": "{{count}} apps locked during focus. Edit",
+      "flip": "Flip to start",
+      "flipSub": "Starts when the phone is face down",
+      "flipUnavailable": "No motion sensor on this device",
+      "youllEarn": "You'll earn",
+      "earn": "{{minutes}} min · +{{points}} pts",
+      "cta": "Start {{minutes}}-min focus",
+      "waitingForFlip": "Turn your phone face down"
+    },
+    "run": {
+      "locked": "Locked",
+      "timerOnly": "Timer only",
+      "lockInMinutes": "Lock in · {{minutes}} min",
+      "timeLeft": "Time left",
+      "endsAt": "Ends at {{time}}. It won't stop early.",
+      "lockedNow": "Locked now",
+      "apps_one": "{{count}} app",
+      "apps_other": "{{count}} apps",
+      "useTheTime": "Use the time",
+      "youllEarn": "You'll earn {{minutes}} min of app time when this ends.",
+      "emergency_one": "Emergency pass · {{count}} left this week",
+      "emergency_other": "Emergency pass · {{count}} left this week"
+    },
+    "suggestions": {
+      "silence": {
+        "title": "Sit in silence",
+        "sub": "5 min · counts for today"
+      },
+      "reading": {
+        "title": "Read 10 pages",
+        "sub": "A chapter, not a feed"
+      },
+      "outside": {
+        "title": "Touch grass",
+        "sub": "20 min outside"
+      }
+    },
+    "emergency": {
+      "title": "Use an emergency pass?",
+      "body_one": "{{count}} left this week. Opens everything for {{minutes}} min, then the lock comes back. The reason is logged.",
+      "body_other": "{{count}} left this week. Opens everything for {{minutes}} min, then the lock comes back. The reason is logged.",
+      "reasons": {
+        "work": "Work or school",
+        "family": "Family",
+        "travel": "Travel / maps",
+        "other": "Something else"
+      },
+      "notePlaceholder": "Add a note (optional)",
+      "keep": "Keep focusing",
+      "use": "Use pass · {{minutes}} min"
+    },
+    "noPasses": {
+      "title": "No passes left this week",
+      "body": "You used both. They reset on Monday.",
+      "bodyWithEnd": "You used both. They reset on Monday. This lock ends at {{time}}.",
+      "used": "Used {{day}} · {{reason}}"
+    },
+    "cantLock": {
+      "title": "Can't lock right now",
+      "body": "Screen Time access is off, so a focus session couldn't lock anything. Fix it in one step, or run a timer without locking.",
+      "fix": "Fix access",
+      "timerOnly": "Timer only, no lock"
+    },
+    "done": {
+      "title": "Focus done.",
+      "sub_one": "{{minutes}} minutes. One of three knots loose.",
+      "sub_other": "{{minutes}} minutes. {{count}} of three knots loose.",
+      "sub_zero": "{{minutes}} minutes. Every knot starts somewhere.",
+      "earned": "Earned",
+      "earnedValue": "+{{minutes}} min",
+      "appTime": "app time",
+      "points": "Points",
+      "verified": "100% verified",
+      "timerOnly": "timer only",
+      "clarity": "Clarity",
+      "clarityDelta": "+{{delta}} today",
+      "clarityToday": "today",
+      "ladder": "Attention ladder",
+      "next": "Next session: {{minutes}} min",
+      "step": "+{{minutes}} min a step",
+      "ladderA11y": "Next session {{minutes}} minutes. Step {{rung}} of {{total}}.",
+      "back": "Back to today"
+    }
+  },
+  "shield": {
+    "thisApp": "This app",
+    "paused": "{{app}} is paused.",
+    "locked": "{{app}} is locked.",
+    "history": "{{ordinal}}th time today.",
+    "historyWithStay": "{{ordinal}}th time today. You usually stay {{minutes}} min.",
+    "unlocksAt": "Unlocks at {{time}}",
+    "why": "Why are you opening this?",
+    "reasons": {
+      "bored": "Bored",
+      "habit": "Habit",
+      "need": "Need something",
+      "avoiding": "Avoiding work"
+    },
+    "swapTitle": "Read 10 pages instead",
+    "swapSub": "Today's challenge · +{{points}}",
+    "swapA11y": "Read 10 pages instead. Start today's challenge",
+    "close": "Close {{app}}",
+    "spend": "Spend {{minutes}} min · {{left}} left",
+    "noMinutes": "No minutes earned yet"
+  },
+  "paywall": {
+    "main": {
+      "title": "Keep Pro.",
+      "titleFree": "Or carry on free.",
+      "keepPro": "Keep Pro",
+      "ctaKeep": {
+        "yearly": "Keep Pro · {{price}} a year",
+        "monthly": "Keep Pro · {{price}} a month",
+        "lifetime": "Keep Pro · {{price}} once"
+      },
+      "ctaGet": {
+        "yearly": "Get Pro · {{price}} a year",
+        "monthly": "Get Pro · {{price}} a month",
+        "lifetime": "Get Pro · {{price}} once"
+      },
+      "loadingPrices": "Loading prices…",
+      "continueFree": "Continue free",
+      "notNow": "Not now",
+      "legal": "Cancel any time in Settings · Same price every year",
+      "legalShort": "Cancel any time",
+      "restore": "Restore",
+      "onItsWay": "Pro is on its way. It can take a minute."
+    },
+    "table": {
+      "feature": "Feature",
+      "free": "Free",
+      "pro": "Pro",
+      "yes": "included",
+      "no": "not included",
+      "rowA11y": "{{feature}}: free {{free}}, Pro {{pro}}"
+    },
+    "features": {
+      "rules": "Rules",
+      "unlimited": "Unlimited",
+      "locked": "Locked strength",
+      "websites": "Websites (iOS)",
+      "program": "30-day program",
+      "insights": "Trigger insights",
+      "widgets": "Widgets, themes",
+      "challenges": "Challenges, rewards"
+    },
+    "plans": {
+      "pro": "Pro",
+      "yearly": {
+        "name": "Yearly",
+        "tag": "Saves 50%",
+        "sub": "{{perMonth}} a month · billed yearly"
+      },
+      "monthly": {
+        "name": "Monthly",
+        "sub": "Billed monthly"
+      },
+      "lifetime": {
+        "name": "Lifetime",
+        "sub": "Pay once"
+      }
+    },
+    "offline": {
+      "title": "You're offline",
+      "body": "Plans load when you're back online. Your free features keep working."
+    },
+    "context": {
+      "benefitLocked": "Locked strength",
+      "benefitLockedSub": "Emergency passes, logged",
+      "benefitRules": "Unlimited rules + websites",
+      "benefitRulesSub": "iOS website blocking",
+      "benefitInsights": "Widgets, themes, insights",
+      "benefitInsightsSub": "\"Most opens: bored, 23:00\"",
+      "bedtime": {
+        "headline": "Make Bedtime unbreakable.",
+        "body": "Locked holds until {{time}}, with 2 emergency passes a week. Plus everything else in Pro."
+      },
+      "locked": {
+        "headline": "Locked means locked.",
+        "body": "No unlock until the rule ends, with 2 emergency passes a week. Plus everything else in Pro."
+      },
+      "rules": {
+        "headline": "As many rules as you need.",
+        "body": "Work hours, weekends, the one app that gets you at night. Plus everything else in Pro."
+      },
+      "insights": {
+        "headline": "See what pulls you in.",
+        "body": "When you reach for your phone, and why. Plus everything else in Pro."
+      },
+      "widgets": {
+        "headline": "Your day on the home screen.",
+        "body": "Widgets and themes, without opening the app. Plus everything else in Pro."
+      },
+      "expiry": {
+        "headline": "Keep Pro.",
+        "body": ""
+      },
+      "settings": {
+        "headline": "Keep Pro.",
+        "body": ""
+      }
+    },
+    "trialCard": {
+      "overline": "Pro · day {{day}} of {{total}}",
+      "title": "Your first lock is on. So is Pro.",
+      "body": "Every feature for 7 days. No card, nothing to cancel.",
+      "whatsInPro": "What's in Pro",
+      "gotIt": "Got it"
+    },
+    "day5": {
+      "overline": "Pro · day {{day}} of {{total}}",
+      "title_one": "Pro ends in {{count}} day.",
+      "title_other": "Pro ends in {{count}} days.",
+      "sub": "Your free features stay.",
+      "bedtime": "Bedtime rule (Locked)",
+      "becomesEarn": "becomes Earn",
+      "websites": "Website blocks",
+      "pause": "pause",
+      "widgets": "Widgets",
+      "widgetsStay": "stay until day {{day}}",
+      "weekLead": "This week with Pro: ",
+      "locksHeld_one": "{{count}} lock held",
+      "locksHeld_other": "{{count}} locks held",
+      "opensResisted_one": "{{count}} open resisted",
+      "opensResisted_other": "{{count}} opens resisted",
+      "passesUnused_one": "{{count}} emergency pass left unused",
+      "passesUnused_other": "{{count}} emergency passes left unused",
+      "seePlans": "See plans",
+      "remind": "Remind me on day {{day}}"
+    },
+    "wentFree": {
+      "title": "You're on free.",
+      "body": "Nothing you made is deleted. Here's what changed:",
+      "lockedToEarn": "Locked → Earn",
+      "kept": "kept (your 2 free rules)",
+      "paused": "paused · not deleted",
+      "websites": "Websites",
+      "websitesPaused": "paused",
+      "points": "Points, streak, rings",
+      "allKept": "all kept",
+      "gotIt": "Got it",
+      "choose": "Choose which 2 rules stay"
+    },
+    "gate": {
+      "title": "Locked is a Pro strength",
+      "sub": "No unlock until the rule ends",
+      "line_one": "You've opened an app in a Pause rule {{count}} time this week. Locked would have held it.",
+      "line_other": "You've opened apps in a Pause rule {{count}} times this week. Locked would have held all {{count}}.",
+      "pauseFree": "Pause · free",
+      "earnFree": "Earn · free",
+      "lockedPro": "Locked · Pro",
+      "seePlans": "See Pro plans",
+      "useEarn": "Use Earn instead"
+    },
+    "limit": {
+      "title": "{{used}} of {{total}} free rules in use",
+      "body": "Combine schedules into one rule, swap one out, or go unlimited with Pro.",
+      "row": "{{name}} · {{strength}}",
+      "editA11y": "Edit {{name}}",
+      "unlimited": "Go unlimited · Pro",
+      "editRule": "Edit a rule"
+    },
+    "failed": {
+      "title": "Payment didn't go through",
+      "sub": "You haven't been charged.",
+      "body": "Usually it's the payment method on your store account. You can check it there, then try again.",
+      "check": "Check payment method"
+    },
+    "pending": {
+      "title": "Waiting for approval",
+      "body": "Your purchase needs approval (Ask to Buy, or your bank). Pro switches on by itself once it's approved. Keep using the app meanwhile."
+    },
+    "restore": {
+      "noneTitle": "No purchases found",
+      "noneBodyIos": "Nothing on this Apple ID. If you bought Pro with a different one, switch it in Settings › your name › Media & Purchases, then restore again.",
+      "noneBodyAndroid": "Nothing on this Google account. If you bought Pro with a different one, switch it in the Play Store, then restore again.",
+      "seePlans": "See plans",
+      "okTitle": "Pro restored",
+      "okSub": "{{plan}} · renews {{date}}",
+      "offline": "Can't reach the store. Check your connection."
+    },
+    "winBack": {
+      "title_one": "Pro's been off for {{count}} month.",
+      "title_other": "Pro's been off for {{count}} months.",
+      "line_one": "Since then: Pause rules were opened {{count}} time.",
+      "line_other": "Since then: Pause rules were opened {{count}} times.",
+      "offerLead": "If you want Locked back, here's a one-time offer for returning members.",
+      "overline": "Returning member",
+      "firstYear": "first year",
+      "then": "Then {{price}} a year. Offered once, no timer.",
+      "cta": "Come back for {{price}}",
+      "noThanks": "No thanks",
+      "legal": "Shown once, only to people whose Pro ended 60+ days ago."
+    }
+  },
+  "pro": {
+    "success": {
+      "title": "You're Pro.",
+      "renews": "{{plan}} · renews {{date}}.",
+      "lifetime": "Lifetime · yours for good.",
+      "thanks": "Thanks for paying for an app that wants you to use it less.",
+      "unlocked": "Now unlocked",
+      "items": {
+        "locked": {
+          "title": "Locked strength",
+          "sub": "2 emergency passes a week",
+          "action": "On"
+        },
+        "program": {
+          "title": "30-day program",
+          "sub": "Starts tomorrow morning",
+          "action": "Set"
+        },
+        "themes": {
+          "title": "Themes & app icons",
+          "sub": "In Settings",
+          "action": "›"
+        }
+      }
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "notifications": "Notifications",
+    "notificationsOn": "On",
+    "notificationsOff": "Off · Turn on",
+    "haptics": "Haptics",
+    "billing": "Plan & billing",
+    "billingPlan": "Pro · {{plan}}",
+    "billingFree": "Free",
+    "billingFreeSub": "Every free feature, always.",
+    "statusActive": "Active",
+    "statusGrace": "In grace",
+    "statusExpires": "Expires {{date}}",
+    "renews": "Renews {{date}}",
+    "ends": "Ends {{date}}",
+    "lifetime": "Lifetime · no renewal",
+    "viaFamily": "Pro · via Family",
+    "changePlan": "Change plan",
+    "seePlans": "See Pro plans",
+    "manage": "Manage in {{store}}",
+    "manageSub": "Cancel or change renewal there",
+    "appStore": "App Store",
+    "playStore": "Play Store",
+    "family": "Family Sharing",
+    "familySub": "Up to 5 people on your plan",
+    "on": "On",
+    "off": "Off",
+    "freeList": "2 rules · all daily challenges and the weekly boss · focus, silence and reading sessions · attention ladder · earn your time · tangle and rings · reward vault · receipt, guides, share cards",
+    "promise": "We never move a free feature behind the paywall later.",
+    "cancel": {
+      "title": "Cancelling Pro?",
+      "body": "Fine by us. You keep Pro until {{date}}, then free. Nothing is deleted.",
+      "reasonsLabel": "What would help? (optional)",
+      "reasons": {
+        "price": "Too expensive",
+        "freeEnough": "Free is enough",
+        "tooStrict": "Locked was too strict",
+        "notNow": "I don't need it now",
+        "broke": "Something broke"
+      },
+      "switchTitle": "Switch to monthly instead",
+      "switchSub": "Pay month by month from {{date}}. Stop any month.",
+      "keep": "Keep Pro",
+      "continue": "Continue to {{store}} to cancel",
+      "legal": "Apple and Google handle cancelling. We can't do it for you, but we won't hide the button."
+    },
+    "sections": {
+      "privacy": "Privacy",
+      "phone": "Phone",
+      "schedule": "Schedule",
+      "backup": "Backup",
+      "guides": "Guides",
+      "plan": "Plan",
+      "about": "About"
+    },
+    "privacy": {
+      "noAccount": "No account",
+      "noAccountSub": "Your data stays on this phone",
+      "appLock": "App lock",
+      "discreet": "Discreet notifications",
+      "discreetSub": "No app names or challenge titles"
+    },
+    "lock": {
+      "unavailableTitle": "App lock isn't available",
+      "noHardware": "This phone has no fingerprint or face unlock.",
+      "notEnrolled": "Set up a fingerprint, face or screen lock in your phone's settings first."
+    },
+    "access": {
+      "title": "Screen Time access",
+      "on": "On",
+      "off": "Off · blocking can't work",
+      "fix": "Fix"
+    },
+    "schedule": {
+      "draw": "Morning draw",
+      "drawSub": "When today's three challenges unlock.",
+      "bedtime": "Bedtime hours"
+    },
+    "backup": {
+      "export": "Export a backup file",
+      "import": "Import",
+      "importTitle": "Import",
+      "invalid": "This file isn't an Untangle backup.",
+      "newer": "This backup is from a newer version of Untangle. Update the app, then try again.",
+      "replaceTitle": "Replace everything?",
+      "replaceBody": "Replace everything on this phone with the backup from {{date}}? A copy of what's here now is saved first.",
+      "replace": "Replace",
+      "doneTitle": "Backup restored",
+      "doneBody": "App picks don't move between phones, so pick your apps again in Block after the restart.",
+      "failedTitle": "That didn't work",
+      "failedBody": "Nothing was changed. Try again."
+    },
+    "guides": {
+      "grayscale": {
+        "title": "Grayscale shortcut",
+        "intro": "A grey screen is a boring screen. Set up a quick way to switch it on.",
+        "step1": "Open Settings › Accessibility › Colour and motion (the name varies by phone).",
+        "step2": "Turn on Colour correction, then choose Greyscale.",
+        "step3": "Add the shortcut to Quick Settings, or set the accessibility shortcut.",
+        "step4": "Switch it on in the evening, or whenever an app pulls you back in."
+      },
+      "audit": {
+        "title": "5-min notification audit",
+        "intro": "Most buzzes aren't for you. Five minutes now saves hours later.",
+        "step1": "Open Settings › Notifications › App notifications.",
+        "step2": "Sort by most frequent.",
+        "step3": "Turn off everything that isn't a person or something time-critical.",
+        "step4": "For what's left, turn off sounds and badges where you can."
+      },
+      "zones": {
+        "title": "Phone-free zones",
+        "intro": "Places where the phone doesn't go make the habit automatic.",
+        "step1": "Pick one place: the bedroom, the dinner table, or the bathroom.",
+        "step2": "Give the phone a home outside it: a charger in the hall works well.",
+        "step3": "Get a cheap alarm clock so the phone isn't your alarm.",
+        "step4": "Add a second zone once the first one feels normal."
+      },
+      "points": "How points work"
+    },
+    "plan": {
+      "pro": "Pro",
+      "trial": "Pro trial",
+      "free": "Free",
+      "sub": "Free features stay after",
+      "daysLeft_one": "{{count}} day left",
+      "daysLeft_other": "{{count}} days left",
+      "restore": "Restore purchases"
+    },
+    "about": {
+      "privacy": "Privacy policy",
+      "terms": "Terms",
+      "contact": "Contact",
+      "version": "Version"
+    }
+  },
+  "reps": {
+    "tag": {
+      "number": "Number",
+      "word": "Word",
+      "memory": "Memory",
+      "read": "Reading"
+    },
+    "intro": {
+      "start": "Start",
+      "retry": "Try again"
+    },
+    "clock": "{{m}}m {{s}}s",
+    "time": {
+      "minutes_one": "{{count}} minute",
+      "minutes_other": "{{count}} minutes",
+      "seconds_one": "{{count}} second",
+      "seconds_other": "{{count}} seconds"
+    },
+    "quit": {
+      "title": "Quit this round?",
+      "body": "No points for this round. You keep your one retry.",
+      "keep": "Keep going",
+      "quit": "Quit",
+      "a11y": "Close"
+    },
+    "pad": {
+      "back": "Delete",
+      "submit": "Check"
+    },
+    "answer": {
+      "empty": "empty",
+      "typingA11y": "Your answer: {{value}}",
+      "rightA11y": "{{value}}, right",
+      "wrongA11y": "{{value}}, wrong"
+    },
+    "paused": {
+      "title": "Paused",
+      "body": "You left the app, so the clock stopped. Nothing lost.",
+      "resume": "Resume",
+      "quit": "Quit · no points"
+    },
+    "won": {
+      "title": "Done in {{time}}",
+      "subBest": "{{detail}} · best is {{best}}",
+      "points": "Points",
+      "pointsSub": "Timed · verified",
+      "earned": "Earned",
+      "minutes_one": "+{{count}} min",
+      "minutes_other": "+{{count}} min",
+      "earnedSub": "app time",
+      "next": "Next time",
+      "harder": "Harder",
+      "same": "Same",
+      "top": "Top level"
+    },
+    "timeUp": {
+      "title": "Time's up.",
+      "titleLives": "Out of lives.",
+      "note": "No points this round. Reps only count when you finish inside the time.",
+      "noteBest": "No points this round. Reps only count when you finish inside the time. Your best: {{best}} s.",
+      "retry": "Try again · {{count}} left today",
+      "noRetry": "No tries left today",
+      "back": "Back to challenges"
+    },
+    "daily": {
+      "title": "Done for today.",
+      "body": "One round of each rep a day, so it stays practice, not a habit. New rounds tomorrow.",
+      "other": "Try {{game}} instead"
+    },
+    "maths": {
+      "name": "Mental maths",
+      "rule1": "A start number, then one step at a time",
+      "rule2": "Keep the running total in your head",
+      "rule3": "Type the result. 5 chains",
+      "meta": "≈ 2 min · timed · one round a day · +{{points}} pts",
+      "ready": "5 chains · {{time}}",
+      "readyRule": "Keep each number in your head. No writing it down.",
+      "level": "{{n}}-step chains",
+      "position": "Chain {{chain}} of {{total}} · step {{step}}",
+      "positionStart": "Chain {{chain}} of {{total}} · start",
+      "startWords": "Start here",
+      "next": "Next step in {{seconds}}s",
+      "ask": "What's the number?",
+      "right": "Right · +{{points}}",
+      "wrong": "It was {{answer}}. Next chain starts in {{seconds}}s.",
+      "won": "{{right}} of {{total}} chains right",
+      "timeUp": "You got {{right}} of {{total}} chains right.",
+      "op": {
+        "add": "Add {{n}}",
+        "subtract": "Take away {{n}}",
+        "multiply": "Times {{n}}",
+        "divide": "Divide by {{n}}",
+        "double": "Double it",
+        "triple": "Triple it",
+        "halve": "Halve it"
+      }
+    },
+    "letter": {
+      "name": "Letter guess",
+      "rule1": "Guess the word one letter at a time",
+      "rule2": "Wrong letters cost a life",
+      "rule3": "Six lives. Fewer misses, more points",
+      "meta": "≈ 2 min · timed · one round a day · +{{points}} pts",
+      "ready": "1 word · 6 lives · {{time}}",
+      "readyRule": "Pick a letter, then tap ✓ to guess it.",
+      "level": "{{n}}-letter words",
+      "lives": "Lives",
+      "livesCount": "{{lives}} of {{total}}",
+      "livesA11y": "{{lives}} of {{total}} lives left",
+      "clue": "Clue: {{clue}}",
+      "slotsA11y": "{{found}} of {{total}} letters found",
+      "missed": "Missed",
+      "guessA11y": "Guess this letter",
+      "clearA11y": "Clear the letter",
+      "won_zero": "No misses",
+      "won_one": "{{count}} miss",
+      "won_other": "{{count}} misses",
+      "timeUp": "You got {{found}} of {{total}} letters. The word was {{word}}.",
+      "outOfLives": "You got {{found}} of {{total}} letters. The word was {{word}}."
+    },
+    "target": {
+      "name": "Make the target",
+      "rule1": "Use all four numbers, once each",
+      "rule2": "Combine them with + − × ÷",
+      "rule3": "Hit the target exactly. 3 puzzles",
+      "meta": "≈ 2 min · timed · one round a day · +{{points}} pts",
+      "ready": "3 puzzles · {{time}}",
+      "readyRule": "Every puzzle has an answer. Brackets help.",
+      "level": "Target {{n}}",
+      "target": "Target",
+      "targetA11y": "Target {{target}}",
+      "numbers": "Your numbers",
+      "equals": "= {{target}} ?",
+      "undoA11y": "Undo the last step",
+      "clearHint": "Long-press to clear",
+      "foot": "Puzzle {{index}} of {{total}} · undo with the back gesture",
+      "won": "{{total}} puzzles, all {{target}}",
+      "timeUp": "You solved {{solved}} of {{total}}. One way to the last one: {{solution}}.",
+      "key": {
+        "plus": "Plus",
+        "minus": "Minus",
+        "times": "Times",
+        "divide": "Divided by",
+        "open": "Open bracket",
+        "close": "Close bracket",
+        "num": "Number"
+      }
+    },
+    "pairs": {
+      "name": "Card pairs",
+      "rule1": "Flip two cards at a time",
+      "rule2": "Match all 8 pairs",
+      "rule3": "Fewer flips, more points",
+      "meta": "≈ 3 min · timed · one round a day · +{{points}} pts",
+      "ready": "8 pairs · {{time}}",
+      "readyRule": "A mismatch flips back. Remember where it was.",
+      "level": "{{n}} s on the clock",
+      "count": "{{found}} of {{total}} pairs",
+      "flips_one": "{{count}} flip",
+      "flips_other": "{{count}} flips",
+      "foot": "Matched pairs go grey and stay put.",
+      "faceDownA11y": "Card {{n}}, face down",
+      "won": "{{total}} pairs in {{flips}} flips",
+      "timeUp": "You found {{found}} of {{total}} pairs.",
+      "shape": {
+        "shapeCircle": "Circle",
+        "shapeTriangle": "Triangle",
+        "shapeStar": "Star",
+        "shapeHeart": "Heart",
+        "shapeDiamond": "Diamond",
+        "shapeHexagon": "Hexagon",
+        "shapeCloud": "Cloud",
+        "plus": "Plus"
+      }
+    },
+    "span": {
+      "name": "Number span",
+      "rule1": "Digits appear one at a time",
+      "rule2": "Type them back in order",
+      "rule3": "Get it right and the next one is longer",
+      "meta": "≈ 1 min · timed · one round a day · +{{points}} pts",
+      "ready": "3 sequences · {{time}}",
+      "readyRule": "Say them in your head as they appear.",
+      "level": "Starts at {{n}} digits",
+      "watch": "Watch",
+      "watchSub_one": "Digits appear one at a time. {{count}} this round.",
+      "watchSub_other": "Digits appear one at a time. {{count}} this round.",
+      "type": "Type them back",
+      "slotsA11y": "{{typed}} of {{total}} digits typed",
+      "right": "Right",
+      "wrong": "It was {{digits}}",
+      "best_one": "Best so far: {{count}} digit",
+      "best_other": "Best so far: {{count}} digits",
+      "won": "{{right}} of {{total}} right · longest {{longest}} digits",
+      "timeUp": "You got {{right}} of {{total}} right."
+    },
+    "read": {
+      "name": "Read aloud"
+    }
+  },
+  "reading": {
+    "genres": {
+      "stoic": "Stoic",
+      "stories": "Short stories",
+      "nature": "Nature",
+      "poetry": "Poetry",
+      "science": "Science"
+    },
+    "detail": {
+      "points": "+{{points}} pts",
+      "title_one": "Read {{count}} page",
+      "title_other": "Read {{count}} pages",
+      "body": "Read it out loud. Each word lights up as you say it, so the challenge checks itself.",
+      "genre": "Pick a genre",
+      "today": "Today's text",
+      "publicDomain": "Public domain",
+      "length_one": "≈ {{minutes}} min aloud · {{count}} short page",
+      "length_other": "≈ {{minutes}} min aloud · {{count}} short pages",
+      "another": "Another",
+      "micNote": "Mic is on only on the next screen",
+      "start": "Start reading",
+      "doneToday": "Done for today"
+    },
+    "mic": {
+      "title": "Reading aloud needs the mic",
+      "bodyDenied": "Audio never leaves your phone.",
+      "bodyUnavailable": "Your phone can't listen offline in this language yet.",
+      "settings": "Open Settings",
+      "silent": "Read silently instead"
+    },
+    "read": {
+      "page": "Page {{page}} of {{total}}",
+      "note": "Skipped words stay grey. Audio stays on your phone.",
+      "silentNote": "Reading silently counts as your word.",
+      "retry": "We caught {{percent}}% of that page. Read it once more from the top.",
+      "next": "Next page",
+      "finish": "Finish"
+    },
+    "listening": {
+      "title": "Listening",
+      "paused": "Paused",
+      "words": "{{said}} of {{total}} words",
+      "pauseA11y": "Pause listening",
+      "resumeA11y": "Resume listening"
+    },
+    "summary": {
+      "title": "Say it in your words",
+      "after": "After page {{page}} · {{seconds}} seconds",
+      "ask": "What was it about?",
+      "missedTitle": "Here's what we were listening for",
+      "ideas": "Key ideas",
+      "ideasCount": "{{hit}} of {{total}}",
+      "left": "{{seconds}}s left",
+      "note": "Say the main idea. Exact words don't matter."
+    }
+  },
+  "rewards": {
+    "title": "Rewards",
+    "plan": {
+      "pro": "Pro",
+      "trial_one": "Pro trial · {{count}} day",
+      "trial_other": "Pro trial · {{count}} days"
+    },
+    "points": {
+      "label": "Points",
+      "verified": "{{percent}}% verified",
+      "toGo": "{{toGo}} to {{name}}",
+      "keepGoing": "Add something to the vault to aim for."
+    },
+    "stats": {
+      "appTime": "App time to spend",
+      "minutes_one": "{{count}} min",
+      "minutes_other": "{{count}} min",
+      "appTimeSub": "from steps and focus",
+      "freezes": "Streak freezes",
+      "freezesSub": "earned from hard challenges"
+    },
+    "vault": {
+      "title": "Your vault",
+      "add": "+ Add",
+      "addA11y": "Add to your vault",
+      "empty": "Add something you'd actually enjoy. A coffee, a film, a day out.",
+      "redeem": "Redeem",
+      "cost": "{{cost}} pts",
+      "readyA11y": "{{name}}, {{cost}} points, ready to redeem",
+      "toGoA11y": "{{name}}, {{cost}} points, {{toGo}} to go",
+      "removeTitle": "Remove {{name}}?",
+      "removeBody": "It leaves the vault. Past redemptions stay in your history.",
+      "remove": "Remove"
+    },
+    "size": {
+      "small": "Small",
+      "medium": "Medium",
+      "big": "Big"
+    },
+    "week": "This week",
+    "days": {
+      "mon": "M",
+      "tue": "T",
+      "wed": "W",
+      "thu": "T",
+      "fri": "F",
+      "sat": "S",
+      "sun": "S",
+      "monLong": "Monday",
+      "tueLong": "Tuesday",
+      "wedLong": "Wednesday",
+      "thuLong": "Thursday",
+      "friLong": "Friday",
+      "satLong": "Saturday",
+      "sunLong": "Sunday",
+      "a11y": "{{day}}, {{points}} points"
+    },
+    "add": {
+      "title": "Add to your vault",
+      "body": "Something you'd actually enjoy, offline or not.",
+      "name": "Name",
+      "namePlaceholder": "Coffee out",
+      "cost": "Cost in points",
+      "pts": "pts",
+      "suggested": "Suggested: small {{small}}, medium {{medium}}, big {{big}}.",
+      "save": "Add"
+    },
+    "redeem": {
+      "stamp": "REDEEMED",
+      "title": "{{name}}.",
+      "body": "{{points}} points, {{percent}}% of them verified. You earned this one offline.",
+      "bodyNoVerified": "{{points}} points. You earned this one offline.",
+      "photo": "Add a photo",
+      "photoSub": "Optional. Stays on this phone.",
+      "undoLine": "−{{points}} pts",
+      "undo": "Undo · {{seconds}}s",
+      "done": "Done"
+    }
+  },
+  "receipt": {
+    "title": "Today's receipt",
+    "titleSoFar": "So far today",
+    "share": "Share",
+    "brand": "UNTANGLE",
+    "screenTime": "SCREEN TIME",
+    "opens": "OPENS",
+    "resisted": "RESISTED",
+    "offline": "OFFLINE",
+    "week": "THIS WEEK",
+    "workdays": "= {{n}} WORKDAYS",
+    "vsLast": "VS LAST WEEK",
+    "challenges": "CHALLENGES {{done}}/{{total}} · +{{points}} PTS",
+    "thanks": "THANK YOU FOR NOT SCROLLING",
+    "a11y": "Today's receipt",
+    "iosNote": "On iOS, screen-time lines are only shown inside Apple's Screen Time report view."
+  },
+  "lightsOut": {
+    "title": "Lights out.",
+    "body": "Tap the lamp. Bedtime lock starts, the screen goes dark, the day settles.",
+    "goodNightTitle": "Good night.",
+    "offBody": "Bedtime lock is on until {{time}}.",
+    "lampA11y": "Lamp. Tap to start the bedtime lock now.",
+    "lampOff": "Lamp, off",
+    "challenges": "Challenges",
+    "challengesValue": "{{done}} of {{total}}",
+    "resisted": "Opens resisted",
+    "mostOpens": "Most opens",
+    "mostOpensValue": "{{reason}} · after {{time}}",
+    "mostOpensHour": "After {{time}}",
+    "none": "—",
+    "reasons": {
+      "bored": "Bored",
+      "habit": "Habit",
+      "need": "Needed it",
+      "avoiding": "Avoiding"
+    },
+    "draw": "Tomorrow's draw",
+    "cta": "Lights out · lock till {{time}}",
+    "goodNight": "Good night",
+    "receipt": "Today's receipt"
+  },
+  "lock": {
+    "prompt": "Unlock Untangle",
+    "title": "Untangle is locked",
+    "unlock": "Unlock"
+  }
+}

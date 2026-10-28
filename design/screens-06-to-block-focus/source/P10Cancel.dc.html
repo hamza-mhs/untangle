@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cancel</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;500;600;700&family=JetBrains+Mono:wght@500;600&amp;display=swap">
+<style>
+body{margin:0;background:#000000}
+a{color:#FFFFFF}a:hover{color:#FFFFFF}
+.bg-btn{transition:transform .16s cubic-bezier(.23,1,.32,1)}
+.bg-btn:active{transform:scale(.97)}
+.bg-btn:focus-visible{outline:3px solid #FFFFFF;outline-offset:3px}
+
+.tick{display:inline-block;height:1em;line-height:1em;overflow:hidden;vertical-align:-0.12em}
+.tick>span{display:block;animation:tick 60s steps(60) infinite}
+.tick>span>span{display:block;height:1em;line-height:1em}
+@keyframes tick{to{transform:translateY(-60em)}}
+.star{animation:twinkle var(--d,5s) ease-in-out var(--o,0s) infinite alternate}
+.stars{animation:drift 48s ease-in-out infinite alternate}
+@keyframes twinkle{from{opacity:.06}to{opacity:var(--a,.5)}}
+@keyframes drift{from{transform:translate(0,0)}to{transform:translate(-14px,6px)}}
+@property --n{syntax:'<integer>';initial-value:58;inherits:false}
+.count{counter-reset:n var(--n);animation:cnt 7s cubic-bezier(.45,0,.2,1) infinite}
+.count::after{content:counter(n)}
+@keyframes cnt{0%,8%{--n:58}42%,86%{--n:72}100%{--n:58}}
+.ring{animation:ring 7s cubic-bezier(.45,0,.2,1) infinite}
+@keyframes ring{0%,8%{stroke-dashoffset:var(--from)}42%,86%{stroke-dashoffset:var(--to)}100%{stroke-dashoffset:var(--from)}}
+.w{color:var(--g,#3A3A3A);animation:word .5s ease-out both;animation-delay:var(--t)}
+@keyframes word{0%{color:var(--g,#3A3A3A)}45%{color:var(--hi,#FF7B2F)}100%{color:#FFFFFF}}
+.wave{display:flex;align-items:center;gap:4px;height:36px}
+.wave>span{display:block;width:4px;height:100%;border-radius:2px;background:currentColor;animation:wave .9s ease-in-out infinite alternate;animation-delay:var(--t)}
+@keyframes wave{from{transform:scaleY(.2)}to{transform:scaleY(1)}}
+@media (prefers-reduced-motion: reduce){.star,.stars,.count,.ring,.wave>span,.tick>span{animation:none}.w{animation-duration:0s}}
+
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; background: #000000; font-family: 'Inter Tight', system-ui, sans-serif; color: #FFFFFF">
+<div style="position: absolute; top: 56px; right: 16px"><button type="button" class="bg-btn" aria-label="Close" style="width: 36px; height: 36px; border: 0; border-radius: 18px; background: #1C1C1E; color: #FFF; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></div><div style="position: absolute; top: 100px; left: 20px; right: 20px; font-size: 26px; font-weight: 700; line-height: 1.15">Cancelling Pro?</div><div style="position: absolute; top: 140px; left: 20px; right: 20px; font-size: 15px; line-height: 1.45; color: #8C8C8C">Fine by us. You keep Pro until 22 Oct 2027, then free. Nothing is deleted.</div><div style="position: absolute; top: 214px; left: 30px; right: 30px; display: flex; justify-content: space-between; font-size: 14px; font-weight: 500; color: #8C8C8C">What would help? (optional)</div><div style="position: absolute; top: 236px; left: 16px; right: 16px; display: flex; flex-wrap: wrap; gap: 8px"><span style="height: 40px; padding: 0 17px; border-radius: 20px; background: #1C1C1E; color: #FFF; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; ">Too expensive</span><span style="height: 40px; padding: 0 17px; border-radius: 20px; background: #1C1C1E; color: #FFF; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; ">Free is enough</span><span style="height: 40px; padding: 0 17px; border-radius: 20px; background: #1C1C1E; color: #FFF; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; ">Locked was too strict</span><span style="height: 40px; padding: 0 17px; border-radius: 20px; background: #1C1C1E; color: #FFF; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; ">I don't need it now</span><span style="height: 40px; padding: 0 17px; border-radius: 20px; background: #1C1C1E; color: #FFF; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; ">Something broke</span></div><div style="position: absolute; top: 388px; left: 16px; right: 16px; border-radius: 16px; background: #1C1C1E; padding: 14px 16px; box-sizing: border-box"><div style="font-size: 14.5px; font-weight: 600">Switch to monthly instead</div><div style="font-size: 12.5px; color: #8C8C8C; margin-top: 2px">$4.99 a month from 22 Oct 2027. Stop any month.</div></div><button type="button" class="bg-btn" style="position: absolute; left: 16px; right: 16px; top: 686px; height: 52px; border: 0; border-radius: 26px; background: #E9F21F; color: #000; font-family: inherit; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer">Keep Pro</button><button type="button" class="bg-btn" style="position: absolute; left: 16px; right: 16px; top: 746px; height: 52px; border: 0; box-shadow: inset 0 0 0 1.5px #3A3A3C; border-radius: 26px; background: transparent; color: #FFF; font-family: inherit; font-size: 16px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer">Continue to App Store to cancel</button><div style="position: absolute; top: 806px; left: 28px; right: 28px; text-align: center; font-size: 11.5px; line-height: 1.45; color: #6E6E6E">Apple and Google handle cancelling. We can't do it for you, but we won't hide the button.</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
