@@ -103,6 +103,26 @@
         "name": "Number span",
         "length": "45 sec",
         "how": "Digits flash one at a time. Hold them in your head. Type them back in order."
+      },
+      "stopOnTheBeep": {
+        "name": "Stop on the beep",
+        "length": "40 sec",
+        "how": "An arrow appears: tap that way fast. If the screen flashes red, freeze. Holding still on a flash scores too."
+      },
+      "oppositeDay": {
+        "name": "Opposite day",
+        "length": "40 sec",
+        "how": "An arrow appears on the token. Think of the opposite way. Tap that arrow on the pad."
+      },
+      "ruleFlip": {
+        "name": "Rule flip",
+        "length": "40 sec",
+        "how": "Read the rule at the top. Send each piece to its side. When the rule flips, follow the new one."
+      },
+      "sortTheStream": {
+        "name": "Sort the stream",
+        "length": "40 sec",
+        "how": "Cards stream in one after another. Swipe left or right by the rule. When the rule switches, switch with it."
       }
     },
     "meta": "{{group}} · {{length}}",
@@ -391,6 +411,75 @@
       "statLongest": "Longest {{count}} digits",
       "done": "Check",
       "delete": "Delete"
+    },
+    "stopOnTheBeep": {
+      "tap": "Tap that way",
+      "freeze": "Freeze",
+      "held": "Held it",
+      "wasStop": "That was a stop",
+      "late": "Too slow",
+      "wrongWay": "Other way",
+      "left": "Left",
+      "right": "Right",
+      "title": "Good brakes",
+      "statFast_one": "{{count}} fast tap",
+      "statFast_other": "{{count}} fast taps",
+      "statHeld": "{{held}} of {{n}} stops held"
+    },
+    "oppositeDay": {
+      "tap": "Tap the opposite way",
+      "opposite": "Opposite",
+      "inARow": "{{n}} in a row",
+      "sameWay": "Same way. Tap the opposite",
+      "notOpposite": "Not the opposite",
+      "title": "Flexible thinking",
+      "statRight": "{{right}} of {{n}} right",
+      "dirs": {
+        "up": "Up",
+        "down": "Down",
+        "left": "Left",
+        "right": "Right"
+      }
+    },
+    "ruleFlip": {
+      "send": "Send it to the right side",
+      "flip": "Rule flip!",
+      "right": "Right side",
+      "inARow": "{{n}} in a row",
+      "newRule": "New rule: {{rule}}!",
+      "ruleRound": "RULE: {{rule}}",
+      "rules": {
+        "colour": "colour",
+        "shape": "shape"
+      },
+      "sortBy": {
+        "colour": "Sort by colour",
+        "shape": "Sort by shape"
+      },
+      "kinds": {
+        "pink": "Pink",
+        "blue": "Blue",
+        "circle": "Circle",
+        "square": "Square"
+      },
+      "piece": "{{colour}} {{shape}}",
+      "title": "Flexible thinking",
+      "statSorted": "{{right}} of {{n}} sorted",
+      "statFlips_one": "{{count}} rule flip",
+      "statFlips_other": "{{count}} rule flips",
+      "wrong": "Wrong side"
+    },
+    "sortTheStream": {
+      "switch": "Rule switch",
+      "sorted": "Sorted",
+      "inARow": "{{n}} in a row",
+      "rule": {
+        "colour": "Colour: pink ← → blue",
+        "shape": "Shape: circle ← → square"
+      },
+      "leftLabel": "← {{kind}}",
+      "rightLabel": "{{kind}} →",
+      "title": "Switched on"
     }
   }
 }

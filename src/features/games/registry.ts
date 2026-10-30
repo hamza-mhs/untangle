@@ -10,11 +10,15 @@ import { definition as flashCount } from './games/flashCount';
 import { definition as laneDash } from './games/laneDash';
 import { definition as middleArrow } from './games/middleArrow';
 import { definition as numberSpan } from './games/numberSpan';
+import { definition as oppositeDay } from './games/oppositeDay';
 import { definition as patternRecall } from './games/patternRecall';
 import { definition as rocketHop } from './games/rocketHop';
+import { definition as ruleFlip } from './games/ruleFlip';
 import { definition as silence } from './games/silence';
+import { definition as sortTheStream } from './games/sortTheStream';
 import { definition as spotTheOddOne } from './games/spotTheOddOne';
 import { definition as stackTower } from './games/stackTower';
+import { definition as stopOnTheBeep } from './games/stopOnTheBeep';
 import { definition as swapIt } from './games/swapIt';
 import { definition as trackTheStars } from './games/trackTheStars';
 import { definition as urgeSurfing } from './games/urgeSurfing';
@@ -42,4 +46,8 @@ export const REGISTRY: Record<GameId, GameDefinition> = {
   trackTheStars,
   patternRecall,
   numberSpan,
+  stopOnTheBeep,
+  oppositeDay,
+  ruleFlip,
+  sortTheStream,
 };

@@ -26,7 +26,12 @@ export type GameId =
   | 'trackTheStars'
   // 3.2b
   | 'patternRecall'
-  | 'numberSpan';
+  | 'numberSpan'
+  // 3.2c
+  | 'stopOnTheBeep'
+  | 'oppositeDay'
+  | 'ruleFlip'
+  | 'sortTheStream';
 
 export type GameAccent =
   'pink' | 'sky' | 'cobalt' | 'violet' | 'orange' | 'mint' | 'sun' | 'coral' | 'indigo';
@@ -209,6 +214,44 @@ export const GAMES: readonly GameMeta[] = [
     calm: false,
     accent: 'cobalt',
     best: { stat: 'longest', higher: true },
+    batch: '3.2',
+  },
+  {
+    id: 'stopOnTheBeep',
+    group: 'selfControl',
+    seconds: 40,
+    calm: false,
+    accent: 'mint',
+    glow: 'sky',
+    best: { stat: 'fastTaps', higher: true },
+    batch: '3.2',
+  },
+  {
+    id: 'oppositeDay',
+    group: 'attention',
+    seconds: 40,
+    calm: false,
+    accent: 'violet',
+    best: { stat: 'right', higher: true },
+    batch: '3.2',
+  },
+  {
+    id: 'ruleFlip',
+    group: 'attention',
+    seconds: 40,
+    calm: false,
+    accent: 'pink',
+    best: { stat: 'sorted', higher: true },
+    batch: '3.2',
+  },
+  {
+    id: 'sortTheStream',
+    group: 'attention',
+    seconds: 40,
+    calm: false,
+    accent: 'mint',
+    glow: 'sky',
+    best: { stat: 'sorted', higher: true },
     batch: '3.2',
   },
 ];

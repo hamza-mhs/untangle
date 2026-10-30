@@ -96,6 +96,34 @@ export function Well({
   );
 }
 
+export type ArrowDir = 'up' | 'right' | 'down' | 'left';
+const ARROW_TURN: Record<ArrowDir, number> = { right: 0, down: 90, left: 180, up: 270 };
+
+/** Bold arrow glyph (prototype `arrowSVG`), pointing `dir`. */
+export function Arrow({
+  dir,
+  size,
+  fill = color.text.primary,
+}: {
+  dir: ArrowDir;
+  size: number;
+  fill?: string;
+}) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24">
+      <Path
+        d="M4 12h15M13 6l6 6-6 6"
+        fill="none"
+        stroke={fill}
+        strokeWidth={2.8}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        transform={`rotate(${ARROW_TURN[dir]} 12 12)`}
+      />
+    </Svg>
+  );
+}
+
 export type ShapeName =
   | 'circle'
   | 'square'

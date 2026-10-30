@@ -442,6 +442,35 @@ Answers: Public Sans downloaded (official release, OFL); icons and art from `des
   (`docs/evidence/3.2b/`). Fixed on the way: "Longest" now counts only spans actually cleared.
 - **Checks:** `npm run check` passes (263 tests).
 
+## Batch 3.2c · Flexibility & self-control
+
+- **Stop on the beep** (`stopOnTheBeep`, grid, mint, glow sky): 16 trials, 4 stops in random
+  slots (never first, never back to back), red flash + `beep` 120–220 ms after the arrow, hold
+  900 ms to score (+20), go trials +10 within a 1.1 s window; 3★ no failed stops.
+- **Opposite day** (`oppositeDay`, dots, violet): 14 arrows (no direction twice in a row) on a
+  pink token, toy D-pad with a recessed centre, `10 + 3·(streak − 1)` points; 3★ right ≥ 13.
+- **Rule flip** (`ruleFlip`, dots, pink): 16 pieces, rule colour → shape → colour before the 7th
+  and 13th, badge flips (FlipInXUp; off with Reduce motion), piece flies to the tapped bin,
+  `10 + 2·(streak − 1)` points; 3★ sorted ≥ 14.
+- **Sort the stream** (`sortTheStream`, dots, mint, glow sky): 20 cards, one switch colour →
+  shape before the 9th, swipe the card (PanResponder) or tap the side buttons, `8 + streak`
+  points; 3★ sorted ≥ 19.
+- Shared in `kit/`: `Arrow` (stroke arrow, as in the designs), `sortRules.ts` (sides, rule
+  timeline, trap pieces), `SortPiece` / `SortBin`. The first piece after every rule change is a
+  "trap" where the two rules disagree, so the flip always matters (tested over 1,000 seeds).
+- **Deviations / questions (please check):**
+  1. The prototype rounds are scripted demos, so real-play rules were added: Stop on the beep's
+     1.1 s go window and random (not every 4th) stops; trap pieces after each rule change.
+  2. **Sort the stream vs Rule flip:** the prototype's designer note says "Overlaps Rule flip,
+     so keep only one in the app". The batch spec lists both, so both are built; tell me if one
+     should be hidden.
+  3. Sort the stream uses React Native's `PanResponder` for the swipe (one discrete swipe; the
+     side buttons cover TalkBack). Gesture Handler 3's new hook API wasn't needed for this.
+- **Checked on the emulator:** all four start → result (`docs/evidence/3.2c/`). Fixed on the way:
+  Rule flip bins lost their labels (flex in an unsized cell), and the "New rule" hint now only
+  shows on the piece right after a flip.
+- **Checks:** `npm run check` passes (277 tests).
+
 ## Still needed from the owner
 
 1. A real phone over USB for the device checks (permissions, blocking, browsers, battery,
