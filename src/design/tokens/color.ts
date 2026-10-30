@@ -32,6 +32,7 @@ const palette = {
   cobalt500: '#4A5BFF',
   orange500: '#FF7A1F',
   mint500: '#17D9A3',
+  indigo500: '#5B4BC4',
   /** Prototype glow tints that have no UI token. */
   red550: '#FF3B3B',
   lilac300: '#C9A8FF',
@@ -105,6 +106,7 @@ export const color = {
     mint: palette.mint500,
     sun: palette.amber400,
     coral: palette.red500,
+    indigo: palette.indigo500,
   },
   /** Glow tints, exactly as the prototypes' `glow:` values (see tokens/glow.ts). */
   glow: {

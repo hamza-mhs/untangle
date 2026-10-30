@@ -1,4 +1,4 @@
-import { router } from 'expo-router';
+import { Redirect, router } from 'expo-router';
 
 import { Button } from '@/design/components';
 import { useT } from '@/i18n';
@@ -16,10 +16,8 @@ function close() {
 /** /game/<id>?source=training|browse — training and the Games tab (pause runs its own). */
 export function GameRoute({ gameId, source }: { gameId: string; source: string | undefined }) {
   const t = useT();
-  if (!isGameId(gameId)) {
-    close();
-    return null;
-  }
+  // Navigating during render warns in React; Redirect does it after the render.
+  if (!isGameId(gameId)) return <Redirect href="/" />;
   const src: GameSource = source === 'training' ? 'training' : 'browse';
   return (
     <GameShell

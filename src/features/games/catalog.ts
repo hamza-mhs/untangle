@@ -18,9 +18,15 @@ export type GameId =
   | 'cardPairs'
   | 'breathCount'
   | 'silence'
-  | 'urgeSurfing';
+  | 'urgeSurfing'
+  // 3.2a
+  | 'swapIt'
+  | 'flashCount'
+  | 'spotTheOddOne'
+  | 'trackTheStars';
 
-export type GameAccent = 'pink' | 'sky' | 'cobalt' | 'violet' | 'orange' | 'mint' | 'sun' | 'coral';
+export type GameAccent =
+  'pink' | 'sky' | 'cobalt' | 'violet' | 'orange' | 'mint' | 'sun' | 'coral' | 'indigo';
 
 export type GameMeta = {
   id: GameId;
@@ -29,6 +35,8 @@ export type GameMeta = {
   seconds: number;
   calm: boolean;
   accent: GameAccent;
+  /** Background glow when it differs from the accent (prototype `glow:`). */
+  glow?: GameAccent;
   /** What "New best" compares; null = no best (calm games). */
   best: { stat: string; higher: boolean } | null;
   /** Batch the game shipped in, for the "New" tag (14 days). */
@@ -143,6 +151,44 @@ export const GAMES: readonly GameMeta[] = [
     accent: 'sky',
     best: null,
     batch: '3.1',
+  },
+  {
+    id: 'swapIt',
+    group: 'attention',
+    seconds: 40,
+    calm: false,
+    accent: 'indigo',
+    glow: 'cobalt',
+    best: { stat: 'found', higher: true },
+    batch: '3.2',
+  },
+  {
+    id: 'flashCount',
+    group: 'attention',
+    seconds: 40,
+    calm: false,
+    accent: 'sun',
+    best: { stat: 'right', higher: true },
+    batch: '3.2',
+  },
+  {
+    id: 'spotTheOddOne',
+    group: 'attention',
+    seconds: 30,
+    calm: false,
+    accent: 'sun',
+    best: { stat: 'found', higher: true },
+    batch: '3.2',
+  },
+  {
+    id: 'trackTheStars',
+    group: 'attention',
+    seconds: 45,
+    calm: false,
+    accent: 'sky',
+    glow: 'cobalt',
+    best: { stat: 'tracked', higher: true },
+    batch: '3.2',
   },
 ];
 

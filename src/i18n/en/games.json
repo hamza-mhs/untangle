@@ -73,6 +73,26 @@
         "name": "Urge surfing",
         "length": "60–90 sec",
         "how": "Notice the urge to open the app. Watch it rise and fall like a wave. Then choose what to do, on purpose."
+      },
+      "swapIt": {
+        "name": "Swap it",
+        "length": "40 sec",
+        "how": "See which card hides the star. Follow it while the cards swap. Tap where it ended up."
+      },
+      "flashCount": {
+        "name": "Flash count",
+        "length": "40 sec",
+        "how": "Dots flash for a moment. Count them without blinking. Tap how many you saw."
+      },
+      "spotTheOddOne": {
+        "name": "Spot the odd one",
+        "length": "30 sec",
+        "how": "Sixteen tiles appear. One is a shade off or flipped. Tap the odd one out."
+      },
+      "trackTheStars": {
+        "name": "Track the stars",
+        "length": "45 sec",
+        "how": "A few beads glow for a moment. Then they all look the same and drift. When they stop, tap the ones you followed."
       }
     },
     "meta": "{{group}} · {{length}}",
@@ -117,7 +137,11 @@
     },
     "common": {
       "slips_one": "{{count}} slip",
-      "slips_other": "{{count}} slips"
+      "slips_other": "{{count}} slips",
+      "misses_one": "{{count}} miss",
+      "misses_other": "{{count}} misses",
+      "round": "ROUND {{n}}",
+      "roundOf": "ROUND {{n}} OF {{total}}"
     },
     "colourWord": {
       "right": "Right",
@@ -283,6 +307,52 @@
       "peak": "This is the peak",
       "falling": "It's passing",
       "gone": "It passed"
+    },
+    "swapIt": {
+      "watch": "Watch the star",
+      "follow": "Follow it",
+      "where": "Where is the star?",
+      "found": "Found it",
+      "wasHere": "It was here",
+      "title": "Locked on",
+      "statFound": "{{found}} of {{n}} found",
+      "card": "Card {{n}}",
+      "cardStar": "Card {{n}}, the star"
+    },
+    "flashCount": {
+      "ready": "Get ready",
+      "watch": "Watch",
+      "howMany": "How many?",
+      "count": "Count the dots",
+      "tap": "Tap how many",
+      "right": "{{n}}. Right",
+      "wasN": "It was {{n}}",
+      "title": "Quick eyes",
+      "statRight": "{{right}} of {{n}} right",
+      "well": "{{count}} dots",
+      "wellHidden": "Dots hidden"
+    },
+    "spotTheOddOne": {
+      "tap": "Tap the odd one out",
+      "notThat": "Not that one",
+      "flipped": "Flipped one. Good eye",
+      "sharp": "Sharp eyes",
+      "found": "Found it",
+      "title": "Good eye",
+      "statFound": "{{found}} found",
+      "tile": "Tile {{n}}"
+    },
+    "trackTheStars": {
+      "follow_one": "Follow this one",
+      "follow_other": "Follow these {{count}}",
+      "keep": "Keep your eyes on them",
+      "tapThem_one": "Tap the one you followed",
+      "tapThem_other": "Tap the {{count}} you followed",
+      "notOne": "Not one of them",
+      "title": "Locked on",
+      "statTracked": "{{count}} tracked",
+      "statLost": "{{count}} lost",
+      "bead": "Bead {{n}}"
     }
   }
 }

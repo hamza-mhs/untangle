@@ -394,6 +394,39 @@ Answers: Public Sans downloaded (official release, OFL); icons and art from `des
   is not in the fix file — flagged for STEP 7.
 - **Checks:** `npm run check` passes (243 tests).
 
+## Batch 3.2a · Attention
+
+- **Order change (owner, 2026-10-30):** games first; visual fixes F2–F5 resume after the game
+  batches. F1 (Skia glow) is done.
+- Four games, one folder each under `src/features/games/games/`, ported from
+  `_g2games.js`, `_g2live.js` and `_g2b4.js`:
+  - **Swap it** (`swapIt`, persp, card back `#5B4BC4` → new token `color.game.indigo`, glow
+    cobalt): 5 rounds, star shown 900 ms, `2 + r` swaps at `max(240, 440 − 45r)` ms with one card
+    lifting and one dipping, `20 + 5r` points; 3★ no misses.
+  - **Flash count** (`flashCount`, dots, sun): 8 trials, `min(9, 3 + ⌊0.8n⌋ + 0/1)` beads ≥ 40 px
+    apart in the 264 × 200 well, flash `max(450, 900 − 50n)` ms with the `beep` sound, beads come
+    back faint after the answer, `10 + 2·count` points; 3★ right ≥ 7.
+  - **Spot the odd one** (`spotTheOddOne`, dots, sun): 8 rounds of 4 × 4, odd tile mixed toward
+    white by `max(8, 30 − 3r)` % or flipped every third round, tiles pop in 18 ms apart (off
+    with Reduce motion), `10 + 5r` points; 3★ found ≥ 7.
+  - **Track the stars** (`trackTheStars`, dots, sky, glow cobalt): 4 rounds, 8 beads, 2/3/4/4
+    targets glow 1.3 s, 3.6 s drift (prototype speed, with repulsion so beads don't overlap),
+    +15 each; 3★ none lost. The drift is precomputed per seed and played on the UI thread; it
+    holds while the game is paused.
+- Each game: haptics + sounds, TalkBack labels on cards/keys/tiles/beads, results + best saved by
+  the engine, 1,000-seed logic tests. The prototype's top star thresholds are kept; a 1-star band
+  was added.
+- Shared: `Well` (recessed field) in `kit/`; optional `glow` accent in the catalog for games
+  whose background glow differs from their accent; GameRoute no longer navigates during render
+  (it logged a React warning for unknown ids).
+- **Checked on the emulator:** all four start → result (`docs/evidence/3.2a/index.html`, side by
+  side with the design); the Games tab lists 16 games.
+- **Deviations (please check):**
+  1. The streak pill reads "Streak N" (a real streak). The prototype pill shows "Found N" /
+     "Rounds N"; that needs a label on `api.combo`, which is a GameApi change, so I'm asking first.
+  2. Pieces are flat token colours (no Enamel / Candy gloss materials), as in 3.1.
+- **Checks:** `npm run check` passes (257 tests).
+
 ## Still needed from the owner
 
 1. A real phone over USB for the device checks (permissions, blocking, browsers, battery,

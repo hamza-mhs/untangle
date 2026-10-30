@@ -6,11 +6,15 @@ import { definition as cardPairs } from './games/cardPairs';
 import { definition as colourWord } from './games/colourWord';
 import { definition as dontTapRed } from './games/dontTapRed';
 import { definition as echo } from './games/echo';
+import { definition as flashCount } from './games/flashCount';
 import { definition as laneDash } from './games/laneDash';
 import { definition as middleArrow } from './games/middleArrow';
 import { definition as rocketHop } from './games/rocketHop';
 import { definition as silence } from './games/silence';
+import { definition as spotTheOddOne } from './games/spotTheOddOne';
 import { definition as stackTower } from './games/stackTower';
+import { definition as swapIt } from './games/swapIt';
+import { definition as trackTheStars } from './games/trackTheStars';
 import { definition as urgeSurfing } from './games/urgeSurfing';
 
 /**
@@ -30,4 +34,8 @@ export const REGISTRY: Record<GameId, GameDefinition> = {
   breathCount,
   silence,
   urgeSurfing,
+  swapIt,
+  flashCount,
+  spotTheOddOne,
+  trackTheStars,
 };

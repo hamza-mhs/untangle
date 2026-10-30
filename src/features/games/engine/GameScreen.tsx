@@ -68,6 +68,7 @@ export function GameScreen({
   const meta = gameMeta(gameId)!;
   const reduced = useReducedMotion();
   const accent = color.game[meta.accent];
+  const glowTint = color.game[meta.glow ?? meta.accent];
   const name = t(`games.list.${meta.id}.name`);
 
   const [phase, setPhase] = useState<Phase>('intro');
@@ -332,7 +333,7 @@ export function GameScreen({
       <Screen
         testID="game.intro"
         variant="game"
-        background={<GameBackground kind={definition.background} glow={accent} quiet={false} />}
+        background={<GameBackground kind={definition.background} glow={glowTint} quiet={false} />}
         header={
           <View style={styles.introTop}>
             <PressableScale
@@ -384,7 +385,7 @@ export function GameScreen({
     <Screen
       testID="game.play"
       variant="game"
-      background={<GameBackground kind={definition.background} glow={accent} quiet={quiet} />}
+      background={<GameBackground kind={definition.background} glow={glowTint} quiet={quiet} />}
       header={<Hud state={hud} calm={meta.calm} onPause={() => pause('user')} />}
       footer={<HintLine hint={hud.hint} />}>
       <Animated.View style={[styles.board, shakeStyle]} onLayout={onBoardLayout}>

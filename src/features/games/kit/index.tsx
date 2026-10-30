@@ -1,5 +1,5 @@
 import { useEffect, useRef, type ReactNode } from 'react';
-import { StyleSheet, View, type StyleProp, type ViewStyle } from 'react-native';
+import { StyleSheet, View, type StyleProp, type ViewProps, type ViewStyle } from 'react-native';
 import Svg, { Circle, Path, Polygon, Rect } from 'react-native-svg';
 
 import { PressableScale } from '@/design/components';
@@ -71,6 +71,28 @@ export function ToyKey({
       <View style={styles.shine} />
       {children}
     </PressableScale>
+  );
+}
+
+/** Recessed field (prototype `data-m="well"`): dark inset panel that boards draw into. */
+export function Well({
+  style,
+  children,
+  onLayout,
+  accessibilityLabel,
+}: {
+  style?: StyleProp<ViewStyle>;
+  children?: ReactNode;
+  onLayout?: ViewProps['onLayout'];
+  accessibilityLabel?: string;
+}) {
+  return (
+    <View
+      style={[styles.well, style]}
+      {...(onLayout ? { onLayout } : {})}
+      {...(accessibilityLabel ? { accessible: true, accessibilityLabel } : {})}>
+      {children}
+    </View>
   );
 }
 
@@ -155,6 +177,13 @@ export function Shape({
 }
 
 const styles = StyleSheet.create({
+  well: {
+    borderRadius: radius['3xl'],
+    backgroundColor: color.surface.card,
+    borderWidth: 1,
+    borderColor: color.surface.line,
+    overflow: 'hidden',
+  },
   key: {
     borderRadius: radius['3xl'],
     alignItems: 'center',
