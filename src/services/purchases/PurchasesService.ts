@@ -23,12 +23,23 @@ import {
  * RevenueCat: the only SDK that talks to a server. No account: RevenueCat assigns an anonymous
  * app user id. Keys come from env (EXPO_PUBLIC_REVENUECAT_*; sandbox keys in dev).
  *
- * Products (configure in App Store Connect / Play Console, attach in RevenueCat; all three grant
- * `pro`): untangle_pro_yearly $29.99 · untangle_pro_monthly $4.99 · untangle_pro_lifetime $59.99.
- * The 7-day reverse trial is LOCAL (features/trial): it is not a store free trial.
+ * Google Play only. Offering `default` with $rc_annual (3-day free trial) and $rc_monthly; both
+ * grant the `pro` entitlement. Prices always come from the store.
  *
  * A class because it owns state and a lifecycle (CODE_STANDARDS › Services).
  */
+/** The RevenueCat offering the paywall shows. */
+export const OFFERING_ID = 'default';
+
+/** Public Android SDK key from .env.local (EXPO_PUBLIC_RC_ANDROID_KEY; the older name still works). */
+export function revenueCatKey(): string | undefined {
+  return (
+    process.env.EXPO_PUBLIC_RC_ANDROID_KEY ||
+    process.env.EXPO_PUBLIC_REVENUECAT_ANDROID_KEY ||
+    undefined
+  );
+}
+
 export class PurchasesService {
   private configured = false;
   private packages = new Map<string, PurchasesPackage>();
@@ -36,10 +47,7 @@ export class PurchasesService {
   /** Safe to call more than once. No-ops without a key (and under mocks). */
   configure(): boolean {
     if (this.configured) return true;
-    const apiKey = Platform.select({
-      ios: process.env.EXPO_PUBLIC_REVENUECAT_IOS_KEY,
-      android: process.env.EXPO_PUBLIC_REVENUECAT_ANDROID_KEY,
-    });
+    const apiKey = revenueCatKey();
     if (!apiKey) {
       if (__DEV__ && !useMocks)
         console.warn('[purchases] No RevenueCat key set — see .env.example');
@@ -58,7 +66,7 @@ export class PurchasesService {
   async getOffering(): Promise<Result<Offering, 'offline' | 'error'>> {
     try {
       const offerings = await Purchases.getOfferings();
-      const current = offerings.current;
+      const current = offerings.all[OFFERING_ID] ?? offerings.current;
       if (!current) return err('error');
       const plans = current.availablePackages.flatMap((p): Plan[] => {
         const id = planIdOf(p.packageType);
@@ -68,6 +76,9 @@ export class PurchasesService {
           {
             id,
             priceString: p.product.priceString,
+            price: p.product.price,
+            currencyCode: p.product.currencyCode,
+            hasTrial: !!p.product.defaultOption?.freePhase || p.product.introPrice?.price === 0,
             pricePerMonthString: p.product.pricePerMonthString ?? null,
             packageId: p.identifier,
           },
@@ -169,6 +180,7 @@ export function toEntitlement(info: CustomerInfo): Entitlement {
     expiresAt: any.expirationDateMillis ?? null,
     isInGrace: !!active && any.billingIssueDetectedAtMillis !== null,
     isFamilyShared: any.ownershipType === 'FAMILY_SHARED',
+    isTrial: !!active && any.periodType === 'TRIAL',
     endedAt: !active ? (any.expirationDateMillis ?? null) : null,
   };
 }

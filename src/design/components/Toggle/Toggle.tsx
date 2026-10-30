@@ -1,8 +1,16 @@
-import { Switch } from 'react-native';
+import { useEffect } from 'react';
+import { Pressable, StyleSheet } from 'react-native';
+import Animated, {
+  useAnimatedStyle,
+  useSharedValue,
+  withSpring,
+  withTiming,
+} from 'react-native-reanimated';
 
 import { haptics } from '@/lib/haptics';
 
-import { color } from '../../tokens';
+import { color, motion, radius, size } from '../../tokens';
+import { useReducedMotion } from '../../useReducedMotion';
 
 export type ToggleProps = {
   value: boolean;
@@ -12,21 +20,55 @@ export type ToggleProps = {
   testID?: string;
 };
 
-/** The native Switch with the accent track (SPEC §3: don't hand-roll it). */
-export function Toggle({ value, onChange, accessibilityLabel, disabled, testID }: ToggleProps) {
+const TRAVEL = size.toggle.width - size.toggle.knob - size.toggle.inset * 2;
+
+/** 44 × 26 switch (prototype `.sw`): green track when on, white knob. */
+export function Toggle({
+  value,
+  onChange,
+  accessibilityLabel,
+  disabled = false,
+  testID,
+}: ToggleProps) {
+  const reduced = useReducedMotion();
+  const x = useSharedValue(value ? TRAVEL : 0);
+  useEffect(() => {
+    const to = value ? TRAVEL : 0;
+    x.set(reduced ? withTiming(to, { duration: 0 }) : withSpring(to, motion.spring.press));
+  }, [value, reduced, x]);
+  const knob = useAnimatedStyle(() => ({ transform: [{ translateX: x.get() }] }));
   return (
-    <Switch
+    <Pressable
       testID={testID}
-      value={value}
-      disabled={disabled}
+      accessibilityRole="switch"
       accessibilityLabel={accessibilityLabel}
-      onValueChange={(v) => {
+      accessibilityState={{ checked: value, disabled }}
+      disabled={disabled}
+      hitSlop={(size.touch - size.toggle.height) / 2}
+      onPress={() => {
         haptics.select();
-        onChange(v);
+        onChange(!value);
       }}
-      trackColor={{ false: color.border.control, true: color.accent.primary }}
-      thumbColor={value ? color.text.onAccent : color.text.primary}
-      ios_backgroundColor={color.border.control}
-    />
+      style={[styles.track, value ? styles.on : null, disabled ? styles.disabled : null]}>
+      <Animated.View style={[styles.knob, knob]} />
+    </Pressable>
   );
 }
+
+const styles = StyleSheet.create({
+  track: {
+    width: size.toggle.width,
+    height: size.toggle.height,
+    borderRadius: radius.pill,
+    backgroundColor: color.surface.controlStrong,
+    padding: size.toggle.inset,
+  },
+  on: { backgroundColor: color.signal.success },
+  disabled: { opacity: 0.4 },
+  knob: {
+    width: size.toggle.knob,
+    height: size.toggle.knob,
+    borderRadius: radius.pill,
+    backgroundColor: color.text.primary,
+  },
+});

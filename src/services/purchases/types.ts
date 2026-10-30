@@ -6,6 +6,12 @@ export type Plan = {
   id: PlanId;
   /** Store-formatted, e.g. "$29.99" — never formatted by us (SPEC P03). */
   priceString: string;
+  /** Numeric price in the store currency, for SAVE % and per-week maths. */
+  price: number;
+  /** ISO 4217, e.g. "USD". */
+  currencyCode: string;
+  /** The store offer starts with a free trial (Play: a free pricing phase). */
+  hasTrial: boolean;
   /** "$2.50" for yearly, when the store gives it. */
   pricePerMonthString: string | null;
   /** RevenueCat package identifier, kept to purchase it. */
@@ -27,6 +33,8 @@ export type Entitlement = {
   isInGrace: boolean;
   /** Shared through Family Sharing: show "Pro · via Family", hide Cancel (EDGE_CASES). */
   isFamilyShared: boolean;
+  /** In Google Play's free trial right now. */
+  isTrial: boolean;
   /** When Pro last ended (for P12 win-back), if it did. */
   endedAt: number | null;
 };
@@ -38,5 +46,6 @@ export const NO_ENTITLEMENT: Entitlement = {
   expiresAt: null,
   isInGrace: false,
   isFamilyShared: false,
+  isTrial: false,
   endedAt: null,
 };

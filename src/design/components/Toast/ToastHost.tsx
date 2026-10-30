@@ -3,7 +3,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { useToastStore } from '@/lib/toast';
 
-import { layout } from '../../tokens';
+import { layout, space } from '../../tokens';
 import { Toast } from './Toast';
 
 /** Root-level host for the single app-wide toast (top of the screen, above everything). */
@@ -13,7 +13,7 @@ export function ToastHost() {
   const insets = useSafeAreaInsets();
   if (!toast) return null;
   return (
-    <View pointerEvents="box-none" style={[styles.host, { top: insets.top + layout.home.topBarTop }]}>
+    <View pointerEvents="box-none" style={[styles.host, { top: insets.top + space.sm }]}>
       <Toast
         key={toast.id}
         testID="toast"
@@ -27,5 +27,5 @@ export function ToastHost() {
 }
 
 const styles = StyleSheet.create({
-  host: { position: 'absolute', left: layout.gutter, right: layout.gutter },
+  host: { position: 'absolute', left: layout.gutterTab, right: layout.gutterTab },
 });

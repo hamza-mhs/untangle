@@ -17,19 +17,15 @@ export const kvStateStorage: StateStorage = {
   },
 };
 
-/** Persisted store keys, also used by backup export/import. */
+/** Persisted store keys (one zustand store per feature, persisted to MMKV). */
 export const STORE_KEYS = {
-  settings: 'store.settings',
-  rules: 'store.rules',
-  focus: 'store.focus',
-  challenges: 'store.challenges',
-  scoring: 'store.scoring',
-  trial: 'store.trial',
-  onboarding: 'store.onboarding',
-  entitlement: 'store.entitlement',
-  paywall: 'store.paywall',
-  clarity: 'store.clarity',
-  reps: 'store.reps',
-  rewards: 'store.rewards',
-  lock: 'store.lock',
+  onboarding: 'onboarding',
+  settings: 'settings',
+  streak: 'streak',
+  training: 'training',
+  paywall: 'paywall',
+  entitlement: 'entitlement',
+  focus: 'focus',
+  locks: 'locks',
+  dev: 'dev',
 } as const;

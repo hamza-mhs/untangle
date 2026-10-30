@@ -1,7 +1,5 @@
-Fonts in this folder, all under the SIL Open Font License 1.1 (full text in OFL.txt):
+# Fonts
 
-- Inter (Inter-*.ttf): Copyright 2020 The Inter Project Authors
-- Inter Tight (InterTight-*.ttf, 300/400/500/600/700): Copyright 2022 The Inter Project Authors
-- JetBrains Mono (JetBrainsMono-*.ttf): Copyright 2020 The JetBrains Mono Project Authors
-
-Files were taken from the @expo-google-fonts packages and renamed to their PostScript names.
+Public Sans 400 / 500 / 600 / 700 (`PublicSans-Regular|Medium|SemiBold|Bold.ttf`), from the
+official release (github.com/uswds/public-sans, v2.001). Licence: SIL Open Font License 1.1,
+see `OFL.txt`. Embedded at build time by the expo-font config plugin (`app.config.ts`).

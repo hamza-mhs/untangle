@@ -1,34 +1,48 @@
-import { StyleSheet, View, type ViewProps } from 'react-native';
+import type { ReactNode } from 'react';
+import { StyleSheet, View, type StyleProp, type ViewStyle } from 'react-native';
 
-import { color, radius, rounded, space } from '../../tokens';
+import { color, layout, radius } from '../../tokens';
+import { PressableScale } from '../PressableScale';
 
-export type CardTone = 'raised' | 'surface' | 'accent' | 'danger';
-
-export type CardProps = ViewProps & {
-  tone?: CardTone;
-  /** Inner padding (default 16). */
-  padding?: number;
-  /** Corner radius (default `radius.m`). */
-  cornerRadius?: number;
+export type CardProps = {
+  children: ReactNode;
+  onPress?: () => void;
+  accessibilityLabel?: string;
+  /** Remove the inner padding (lists inside cards). */
+  flush?: boolean;
+  style?: StyleProp<ViewStyle>;
+  testID?: string;
 };
 
-/** Surface card (SPEC §3). No shadows: elevation is surface colour only. */
-export function Card({ tone = 'raised', padding = space.lg, cornerRadius = radius.m, style, ...rest }: CardProps) {
+/** surface.card, radius 20, 16 padding, hairline border. Pressable when `onPress` is set. */
+export function Card({ children, onPress, accessibilityLabel, flush = false, style, testID }: CardProps) {
+  const s = [styles.card, flush ? null : styles.pad, style];
+  if (!onPress) {
+    return (
+      <View testID={testID} style={s}>
+        {children}
+      </View>
+    );
+  }
   return (
-    <View
-      {...rest}
-      style={[styles.base, toneStyles[tone], rounded(cornerRadius), { padding }, style]}
-    />
+    <PressableScale
+      testID={testID}
+      accessibilityRole="button"
+      {...(accessibilityLabel ? { accessibilityLabel } : {})}
+      onPress={onPress}
+      style={s}>
+      {children}
+    </PressableScale>
   );
 }
 
 const styles = StyleSheet.create({
-  base: { overflow: 'hidden' },
-});
-
-const toneStyles = StyleSheet.create({
-  raised: { backgroundColor: color.bg.raised },
-  surface: { backgroundColor: color.bg.surface },
-  accent: { backgroundColor: color.accent.primary },
-  danger: { backgroundColor: color.status.dangerSoftBg },
+  card: {
+    backgroundColor: color.surface.card,
+    borderRadius: radius.card,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: color.surface.line,
+    overflow: 'hidden',
+  },
+  pad: { padding: layout.cardPadding },
 });

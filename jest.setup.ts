@@ -15,18 +15,6 @@ jest.mock('react-native-nitro-modules', () => ({
   },
 }));
 
-// Local notifications: record calls instead of touching the native scheduler.
-jest.mock('expo-notifications', () => ({
-  SchedulableTriggerInputTypes: { DATE: 'date', TIME_INTERVAL: 'timeInterval' },
-  setNotificationHandler: jest.fn(),
-  getPermissionsAsync: jest.fn(async () => ({ granted: true, canAskAgain: true })),
-  requestPermissionsAsync: jest.fn(async () => ({ granted: true })),
-  scheduleNotificationAsync: jest.fn(async () => 'id'),
-  cancelScheduledNotificationAsync: jest.fn(async () => {}),
-  getLastNotificationResponseAsync: jest.fn(async () => null),
-  addNotificationResponseReceivedListener: jest.fn(() => ({ remove: jest.fn() })),
-}));
-
 // RevenueCat is native; tests that need behaviour override this with their own jest.mock.
 jest.mock('react-native-purchases', () => ({
   __esModule: true,
@@ -38,13 +26,6 @@ jest.mock('react-native-purchases', () => ({
     addCustomerInfoUpdateListener: jest.fn(),
     removeCustomerInfoUpdateListener: jest.fn(),
   },
-}));
-
-// Expo UI's native date picker (rule editor) has no JS fallback under Jest.
-jest.mock('@expo/ui/community/datetime-picker', () => ({
-  __esModule: true,
-  DateTimePicker: () => null,
-  default: () => null,
 }));
 
 // The points ledger (SQLite) is native-only: a chainable stand-in where reads return nothing and

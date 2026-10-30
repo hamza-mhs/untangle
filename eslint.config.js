@@ -7,15 +7,13 @@ const reactNative = require('eslint-plugin-react-native');
 module.exports = defineConfig([
   globalIgnores([
     'dist/*',
-    'ios/*',
     'android/*',
-    'targets/**/*.swift',
     '.expo/*',
     'coverage/*',
     'drizzle/*',
+    'docs/**',
     'design/**',
     'src/features/onboarding/components/splash/sceneData.ts',
-    'src/design/components/Ghost/ghostData.ts',
   ]),
   expoConfig,
   prettierRecommended,
@@ -48,9 +46,11 @@ module.exports = defineConfig([
       'react-native/no-inline-styles': 'error',
     },
   },
-  // Text goes through <Text> from src/design (it applies tokens + Dynamic Type caps).
+  // Screens and features: design system only (00-foundations §9). Text through <Text>, haptics
+  // through lib/haptics, other features only through their index.ts, no raw colours or sizes.
   {
-    files: ['src/app/**/*.tsx', 'src/features/**/*.tsx'],
+    files: ['src/app/**/*.{ts,tsx}', 'src/features/**/*.{ts,tsx}'],
+    ignores: ['**/__tests__/**', '**/*.test.{ts,tsx}'],
     rules: {
       'no-restricted-imports': [
         'error',
@@ -66,8 +66,42 @@ module.exports = defineConfig([
               message: 'Use <Text variant tone> from @/design/components.',
             },
           ],
+          patterns: [
+            {
+              group: ['@/features/*/**'],
+              message: "Import another feature only through its index.ts ('@/features/<name>').",
+            },
+          ],
         },
       ],
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: 'Literal[value=/^#([0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$/]',
+          message: 'No hex colours in screens or features: use color tokens from @/design/tokens.',
+        },
+        {
+          selector: 'TemplateElement[value.raw=/#[0-9a-fA-F]{6}/]',
+          message: 'No hex colours in screens or features: use color tokens from @/design/tokens.',
+        },
+        {
+          selector: "Property[key.name='fontSize'] > Literal",
+          message: 'No raw font sizes: use a type role (<Text variant>).',
+        },
+      ],
+    },
+  },
+  // Game engine and boards are imperative loops by design (a pause-aware clock, refs read while
+  // a round runs, mutable per-round state), so the React Compiler purity rules don't apply.
+  {
+    files: ['src/features/games/engine/**/*.{ts,tsx}', 'src/features/games/list/**/*.{ts,tsx}'],
+    rules: {
+      'react-hooks/purity': 'off',
+      'react-hooks/refs': 'off',
+      'react-hooks/immutability': 'off',
+      'react-hooks/preserve-manual-memoization': 'off',
+      'react-hooks/set-state-in-effect': 'off',
+      'react-hooks/globals': 'off',
     },
   },
 ]);

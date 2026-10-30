@@ -1,0 +1,21 @@
+{
+  "common": {
+    "back": "Back",
+    "close": "Close",
+    "continue": "Continue",
+    "cancel": "Cancel",
+    "loading": "Loading",
+    "tryAgain": "Try again",
+    "errorTitle": "Something went wrong.",
+    "errorBody": "That screen hit a problem. Try again, and if it keeps happening, restart the app.",
+    "progress": "Step {{done}} of {{total}}",
+    "pageOf": "Page {{page}} of {{total}}",
+    "decrease": "Decrease",
+    "increase": "Increase",
+    "minutesLeft_one": "{{count}} minute left",
+    "minutesLeft_other": "{{count}} minutes left",
+    "pro": "Pro",
+    "new": "New",
+    "done": "Done"
+  }
+}

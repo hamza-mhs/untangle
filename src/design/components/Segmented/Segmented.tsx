@@ -1,59 +1,60 @@
-import { StyleSheet, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 
 import { haptics } from '@/lib/haptics';
 
-import { color, pill, size } from '../../tokens';
-import { PressableScale } from '../PressableScale';
+import { color, radius, size } from '../../tokens';
 import { Text } from '../Text';
 
-export type SegmentedOption<T extends string> = { value: T; label: string };
-
 export type SegmentedProps<T extends string> = {
-  options: readonly SegmentedOption<T>[];
+  options: readonly { value: T; label: string }[];
   value: T;
   onChange: (value: T) => void;
   testID?: string;
 };
 
-/** Pill track with one selected segment (SPEC §3). */
-export function Segmented<T extends string>({ options, value, onChange, testID }: SegmentedProps<T>) {
+/** Two or three way switch (prototype `.seg`, e.g. Week / Month on Progress). */
+export function Segmented<T extends string>({
+  options,
+  value,
+  onChange,
+  testID,
+}: SegmentedProps<T>) {
   return (
-    <View style={styles.track} accessibilityRole="tablist" testID={testID}>
+    <View testID={testID} style={styles.track} accessibilityRole="tablist">
       {options.map((o) => {
-        const isSelected = o.value === value;
+        const on = o.value === value;
         return (
-          <PressableScale
+          <Pressable
             key={o.value}
             testID={testID ? `${testID}.${o.value}` : undefined}
             accessibilityRole="tab"
             accessibilityLabel={o.label}
-            accessibilityState={{ selected: isSelected }}
+            accessibilityState={{ selected: on }}
             onPress={() => {
-              if (isSelected) return;
-              haptics.select();
-              onChange(o.value);
+              if (!on) {
+                haptics.select();
+                onChange(o.value);
+              }
             }}
-            style={[styles.segment, isSelected && styles.selected]}>
-            <Text variant="label.strong" tone={isSelected ? 'primary' : 'muted'}>
+            style={[styles.seg, on ? styles.on : null]}>
+            <Text variant="caption" tone={on ? 'primary' : 'secondary'}>
               {o.label}
             </Text>
-          </PressableScale>
+          </Pressable>
         );
       })}
     </View>
   );
 }
 
-const inner = size.segmented - size.segmentedInset * 2;
-
 const styles = StyleSheet.create({
   track: {
-    height: size.segmented,
-    ...pill(size.segmented),
-    backgroundColor: color.bg.raised,
     flexDirection: 'row',
-    padding: size.segmentedInset,
+    backgroundColor: color.surface.option,
+    borderRadius: radius.lg,
+    padding: size.segmented.inset,
+    minHeight: size.touch,
   },
-  segment: { flex: 1, alignItems: 'center', justifyContent: 'center', ...pill(inner) },
-  selected: { backgroundColor: color.border.control },
+  seg: { flex: 1, borderRadius: radius.md, alignItems: 'center', justifyContent: 'center' },
+  on: { backgroundColor: color.surface.controlStrong },
 });

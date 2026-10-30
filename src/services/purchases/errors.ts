@@ -2,7 +2,7 @@
  * RevenueCat error → our outcome, 1:1 with the edge screens (CODE_STANDARDS › Services):
  *   cancelled → nothing at all · failed → E05 · pending → E06 · offline → E04.
  */
-export type PurchaseFailure = 'cancelled' | 'failed' | 'pending' | 'offline';
+export type PurchaseFailure = 'cancelled' | 'failed' | 'pending' | 'offline' | 'unavailable';
 
 /** RevenueCat `PURCHASES_ERROR_CODE` values (strings in the SDK). */
 const CANCELLED = '1';

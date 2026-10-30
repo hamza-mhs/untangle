@@ -1,5 +1,4 @@
-export * from './health';
-export * from './liveActivity';
-export * from './speech';
-export * from './widgets';
-export { useMocks } from './env';
+export { optionalModule, useMocks } from './env';
+export { blocker, hasNativeBlocker } from './untangleBlocker';
+export * from './untangleBlocker.types';
+export { resetMockBlocker, setMockPermission } from './untangleBlocker.mock';

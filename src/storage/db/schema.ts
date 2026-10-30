@@ -1,96 +1,64 @@
-import { index, integer, real, sqliteTable, text } from 'drizzle-orm/sqlite-core';
+import { index, integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
 /**
- * SQLite history tables. Change this file, then run `npm run db:generate` to create a new
- * migration in /drizzle (committed; applied on launch by DatabaseProvider).
+ * SQLite history (00-foundations §6). Change this file, then run `npm run db:generate` to add a
+ * migration in /drizzle (applied on launch by DatabaseProvider). Table names: snake_case plural.
  */
 
-/** One row per local calendar day the app was used. */
-export const days = sqliteTable('days', {
-  day: text('day').primaryKey(), // 'YYYY-MM-DD'
-  drawnCards: text('drawn_cards', { mode: 'json' }).$type<string[]>(),
-  challengesDone: integer('challenges_done').notNull().default(0),
-  verifiedDone: integer('verified_done').notNull().default(0),
-  frozen: integer('frozen', { mode: 'boolean' }).notNull().default(false),
-  clarity: real('clarity'),
-  focusMinutes: integer('focus_minutes').notNull().default(0),
-});
-
-export const focusSessions = sqliteTable(
-  'focus_sessions',
+/** One row per finished or quit game round. */
+export const gameResults = sqliteTable(
+  'game_results',
   {
     id: integer('id').primaryKey({ autoIncrement: true }),
+    gameId: text('game_id').notNull(),
     startedAt: integer('started_at').notNull(),
-    endsAt: integer('ends_at').notNull(),
-    plannedMinutes: integer('planned_minutes').notNull(),
-    lockedCount: integer('locked_count').notNull().default(0),
-    completed: integer('completed', { mode: 'boolean' }).notNull().default(false),
-  },
-  (t) => [index('focus_started_idx').on(t.startedAt)],
-);
-
-/** Append-only points + earned-minutes ledger. Balances are sums over this table. */
-export const ledger = sqliteTable(
-  'ledger',
-  {
-    id: integer('id').primaryKey({ autoIncrement: true }),
-    at: integer('at').notNull(),
-    day: text('day').notNull(),
-    kind: text('kind', {
-      enum: ['challenge', 'rep', 'focus', 'spend', 'bonus', 'boss', 'redeem'],
-    }).notNull(),
-    points: integer('points').notNull().default(0),
-    minutes: integer('minutes').notNull().default(0),
-    verification: text('verification', { enum: ['verified', 'timed', 'word'] }),
-    ref: text('ref'),
-  },
-  (t) => [index('ledger_day_idx').on(t.day)],
-);
-
-export const repResults = sqliteTable(
-  'rep_results',
-  {
-    id: integer('id').primaryKey({ autoIncrement: true }),
-    at: integer('at').notNull(),
-    kind: text('kind', {
-      enum: ['maths', 'letter-guess', 'target', 'pairs', 'span', 'read-aloud'],
-    }).notNull(),
-    seed: integer('seed').notNull(),
-    score: integer('score').notNull(),
     durationMs: integer('duration_ms').notNull(),
+    score: integer('score').notNull(),
+    stars: integer('stars').notNull(),
+    statsJson: text('stats_json').notNull().default('{}'),
+    source: text('source', { enum: ['training', 'browse', 'pause'] }).notNull(),
+    completed: integer('completed', { mode: 'boolean' }).notNull(),
   },
-  (t) => [index('rep_kind_at_idx').on(t.kind, t.at)],
+  (t) => [index('game_results_game_idx').on(t.gameId, t.startedAt)],
 );
 
-/** Logged emergency passes (Locked rules). */
-export const emergencyPasses = sqliteTable('emergency_passes', {
-  id: integer('id').primaryKey({ autoIncrement: true }),
-  at: integer('at').notNull(),
-  ruleId: text('rule_id').notNull(),
-  reason: text('reason').notNull(),
+/** Best result per game. */
+export const gameBests = sqliteTable('game_bests', {
+  gameId: text('game_id').primaryKey(),
+  bestScore: integer('best_score').notNull(),
+  bestStatJson: text('best_stat_json').notNull().default('{}'),
+  updatedAt: integer('updated_at').notNull(),
 });
 
-/** The user's own rewards (FRewards vault). Costs are points. */
-export const vaultItems = sqliteTable('vault_items', {
-  id: text('id').primaryKey(),
-  name: text('name').notNull(),
-  size: text('size', { enum: ['small', 'medium', 'big'] }).notNull(),
-  cost: integer('cost').notNull(),
-  createdAt: integer('created_at').notNull(),
-  archivedAt: integer('archived_at'),
+/** One row per local calendar day (YYYY-MM-DD), written by the usage sync. */
+export const dailySummary = sqliteTable('daily_summary', {
+  date: text('date').primaryKey(),
+  screenTimeMs: integer('screen_time_ms').notNull().default(0),
+  blockedTimeMs: integer('blocked_time_ms').notNull().default(0),
+  pickups: integer('pickups'),
+  detours: integer('detours').notNull().default(0),
+  gamesPlayed: integer('games_played').notNull().default(0),
+  goalMet: integer('goal_met', { mode: 'boolean' }).notNull().default(false),
 });
 
-/** Redemptions (FRedeem): the points leave via a ledger row with kind = 'redeem'. */
-export const redemptions = sqliteTable(
-  'redemptions',
+/** Every pause-screen choice. */
+export const detours = sqliteTable(
+  'detours',
   {
     id: integer('id').primaryKey({ autoIncrement: true }),
-    itemId: text('item_id').notNull(),
     at: integer('at').notNull(),
-    cost: integer('cost').notNull(),
-    verifiedPercent: integer('verified_percent'),
-    /** Local file URI of the optional photo; never uploaded. */
-    photoUri: text('photo_uri'),
+    targetKey: text('target_key').notNull(),
+    choice: text('choice', { enum: ['game', 'breath', 'back'] }).notNull(),
+    lockId: text('lock_id'),
   },
-  (t) => [index('redemptions_at_idx').on(t.at)],
+  (t) => [index('detours_at_idx').on(t.at)],
 );
+
+/** Focus now sessions. */
+export const focusSessions = sqliteTable('focus_sessions', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  startedAt: integer('started_at').notNull(),
+  plannedMs: integer('planned_ms').notNull(),
+  endedAt: integer('ended_at'),
+  endedEarly: integer('ended_early', { mode: 'boolean' }).notNull().default(false),
+});

@@ -1,44 +1,95 @@
 import type { Href } from 'expo-router';
 
 /**
- * The onboarding flow, in order (SPEC §5). Step N lives at src/app/(onboarding)/<slug>.tsx;
- * `index` is the splash at "/".
+ * The onboarding flow, in order (10-phase1-onboarding §1). Each step is a route in
+ * src/app/(onboarding)/; `index` (the welcome slides) lives at "/".
  */
-export const onboardingSteps = [
+export const ONBOARDING_STEPS = [
   'index',
-  'screen-time',
-  'apps',
-  'when',
-  'goals',
+  'age',
+  'scroll-time',
+  'pickups',
+  'focus-signs',
+  'studying',
   'your-year',
-  'good-news',
-  'strength',
-  'screen-time-access',
-  'pick-apps',
-  'notifications',
-  'quiet-minute',
-  'knot-loosened',
-  'plan',
+  'problem-focus',
+  'problem-distracted',
+  'problem-foggy',
+  'hours-back',
+  'moment-of-pause',
+  'step-one',
+  'focus-grow',
   'trial',
+  'permissions',
+  'accessibility',
+  'pick-apps',
+  'all-set',
 ] as const;
 
-export const ONBOARDING_TOTAL = onboardingSteps.length;
+export type OnboardingStep = (typeof ONBOARDING_STEPS)[number];
 
-export type OnboardingSlug = (typeof onboardingSteps)[number];
+/** The progress bar's chapters: one segment each (You · Results · The fix · Plan · Set up). */
+export const CHAPTERS = ['you', 'results', 'fix', 'plan', 'setUp'] as const;
+export type Chapter = (typeof CHAPTERS)[number];
 
-/** From step 13 on there's no swipe-back: the quiet minute is done (SPEC §4). */
-export const FIRST_NO_GESTURE_STEP = 13;
+const CHAPTER_OF: Record<OnboardingStep, Chapter | null> = {
+  index: null,
+  age: 'you',
+  'scroll-time': 'you',
+  pickups: 'you',
+  'focus-signs': 'you',
+  studying: 'results',
+  'your-year': 'results',
+  'problem-focus': 'results',
+  'problem-distracted': 'results',
+  'problem-foggy': 'results',
+  'hours-back': 'fix',
+  'moment-of-pause': 'fix',
+  'step-one': 'fix',
+  'focus-grow': 'fix',
+  trial: 'plan',
+  permissions: 'setUp',
+  accessibility: 'setUp',
+  'pick-apps': 'setUp',
+  'all-set': 'setUp',
+};
 
-/** 1-based step number of a slug. */
-export function stepOf(slug: OnboardingSlug): number {
-  return onboardingSteps.indexOf(slug) + 1;
+export function chapterOf(step: OnboardingStep): Chapter | null {
+  return CHAPTER_OF[step];
 }
 
-export function hrefForStep(step: number): Href {
-  const slug = onboardingSteps[step - 1] ?? 'index';
-  return (slug === 'index' ? '/' : `/${slug}`) as Href;
+/** Segments filled for a step: every earlier chapter plus the current one. */
+export function chaptersDone(step: OnboardingStep): number {
+  const c = chapterOf(step);
+  return c === null ? 0 : CHAPTERS.indexOf(c) + 1;
 }
 
-export function nextStep(slug: OnboardingSlug): OnboardingSlug | null {
-  return onboardingSteps[stepOf(slug)] ?? null;
+/** No back chevron on the welcome slides or while "Studying your answers" runs. */
+export function hasBack(step: OnboardingStep): boolean {
+  return step !== 'index' && step !== 'studying';
+}
+
+export function stepIndex(step: OnboardingStep): number {
+  return ONBOARDING_STEPS.indexOf(step);
+}
+
+export function prevStep(step: OnboardingStep): OnboardingStep | null {
+  const i = stepIndex(step);
+  return i > 0 ? (ONBOARDING_STEPS[i - 1] ?? null) : null;
+}
+
+export function nextStep(step: OnboardingStep): OnboardingStep | null {
+  return ONBOARDING_STEPS[stepIndex(step) + 1] ?? null;
+}
+
+/**
+ * Resume after the app was killed: reopen on the saved screen. The accessibility disclosure is
+ * a step inside Permissions, so it reopens on Permissions (the rows re-check what is granted).
+ */
+export function resumeStep(saved: OnboardingStep): OnboardingStep {
+  return saved === 'accessibility' ? 'permissions' : saved;
+}
+
+export function hrefFor(step: OnboardingStep): Href {
+  return (step === 'index' ? '/' : `/${step}`) as Href;
 }

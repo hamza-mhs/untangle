@@ -1,1 +1,1 @@
-export * from './Countdown';
+export { Countdown, formatRemaining, type CountdownProps } from './Countdown';

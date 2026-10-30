@@ -1,66 +1,65 @@
 import { useEffect } from 'react';
-import { AccessibilityInfo, StyleSheet, View } from 'react-native';
+import { AccessibilityInfo, Pressable, StyleSheet } from 'react-native';
 import Animated, { FadeInUp, FadeOutUp } from 'react-native-reanimated';
 
-import { color, radius, rounded, size, space } from '../../tokens';
+import { color, radius, size, space } from '../../tokens';
 import { useReducedMotion } from '../../useReducedMotion';
 import { Icon } from '../Icon';
 import { Text } from '../Text';
-
-export const TOAST_MS = 3000;
 
 export type ToastProps = {
   title: string;
   sub?: string;
   tone: 'success' | 'neutral';
   onDismiss: () => void;
+  /** Auto-dismiss after this many ms. */
+  durationMs?: number;
   testID?: string;
 };
 
-/** Top toast, 60 pt, announced to screen readers, gone after 3 s (SPEC §3, E08). */
-export function Toast({ title, sub, tone, onDismiss, testID }: ToastProps) {
-  const reduceMotion = useReducedMotion();
+const DEFAULT_MS = 3200;
+
+/** White pill toast at the top (prototype `.toast`). Announced to TalkBack. */
+export function Toast({ title, sub, tone, onDismiss, durationMs = DEFAULT_MS, testID }: ToastProps) {
+  const reduced = useReducedMotion();
   useEffect(() => {
     AccessibilityInfo.announceForAccessibility(sub ? `${title}. ${sub}` : title);
-    const timer = setTimeout(onDismiss, TOAST_MS);
-    return () => clearTimeout(timer);
-  }, [title, sub, onDismiss]);
+    const id = setTimeout(onDismiss, durationMs);
+    return () => clearTimeout(id);
+  }, [title, sub, onDismiss, durationMs]);
   return (
     <Animated.View
       testID={testID}
-      {...(reduceMotion ? {} : { entering: FadeInUp, exiting: FadeOutUp })}
-      style={[styles.toast, tone === 'success' ? styles.success : styles.neutral]}
-      accessibilityLiveRegion="polite">
-      <Icon
-        name="checkCircle"
-        size={size.icon.md}
-        color={tone === 'success' ? color.status.success : color.text.primary}
-      />
-      <View>
-        <Text variant="label.strong">{title}</Text>
-        {sub ? (
-          <Text variant="meta" tone="secondary">
-            {sub}
-          </Text>
+      {...(reduced ? {} : { entering: FadeInUp, exiting: FadeOutUp })}
+      style={styles.wrap}>
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel={sub ? `${title}. ${sub}` : title}
+        onPress={onDismiss}
+        style={styles.toast}>
+        {tone === 'success' ? (
+          <Icon name="check" size={size.icon.sm} color={color.text.onLight} />
         ) : null}
-      </View>
+        <Text variant="bodyStrong" tone="onLight" numberOfLines={2} style={styles.text}>
+          {sub ? `${title} · ${sub}` : title}
+        </Text>
+      </Pressable>
     </Animated.View>
   );
 }
 
 const styles = StyleSheet.create({
+  wrap: { alignItems: 'center' },
   toast: {
-    height: size.toast,
-    ...rounded(radius.m),
-    borderWidth: size.ring,
-    paddingHorizontal: space.md + 2,
     flexDirection: 'row',
     alignItems: 'center',
-    gap: space.sm + 2,
+    gap: space.sm,
+    paddingHorizontal: space.lg,
+    paddingVertical: 10,
+    borderRadius: radius.card,
+    backgroundColor: color.text.primary,
+    minHeight: size.touch,
+    maxWidth: '100%',
   },
-  success: {
-    backgroundColor: color.status.successSoftBg,
-    borderColor: color.status.successSoftRing,
-  },
-  neutral: { backgroundColor: color.bg.raised, borderColor: color.border.hairline },
+  text: { flexShrink: 1 },
 });

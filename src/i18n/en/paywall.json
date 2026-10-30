@@ -1,0 +1,70 @@
+{
+  "paywall": {
+    "title": "Try Untangle free for 3 days.",
+    "body": "Every block, every game and your full plan.",
+    "save": "Save {{percent}}%",
+    "plans": {
+      "justWeekly": "Just {{price}} a week",
+      "weekly": "{{price}} a week",
+      "yearly": {
+        "name": "Yearly",
+        "per": "a year"
+      },
+      "monthly": {
+        "name": "Monthly",
+        "per": "a month"
+      }
+    },
+    "cta": {
+      "trial": "Start 3-day free trial",
+      "subscribe": "Subscribe"
+    },
+    "fine": {
+      "trial": {
+        "yearly": "3 days free, then {{price}} a year. Cancel any time in Google Play.",
+        "monthly": "3 days free, then {{price}} a month. Cancel any time in Google Play."
+      },
+      "plain": {
+        "yearly": "{{price}} a year. Cancel any time in Google Play.",
+        "monthly": "{{price}} a month. Cancel any time in Google Play."
+      }
+    },
+    "failed": "Can't load prices. Check your connection.",
+    "restore": "Restore",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "toast": {
+      "pending": "Your payment is pending. You can start setting up.",
+      "failed": "The purchase didn't go through. Nothing was charged.",
+      "unavailable": "Google Play billing isn't available on this phone right now.",
+      "offline": "No connection. Check it and try again.",
+      "restored": "Welcome back. Pro is active.",
+      "noPurchase": "No purchase found for this Google account."
+    },
+    "inApp": {
+      "title": "Keep your focus growing",
+      "features": {
+        "block": "Block apps and websites, as many as you like",
+        "games": "All {{count}} focus games",
+        "progress": "Progress, streaks and weekly reflection"
+      },
+      "fine": {
+        "yearly": "{{price}} billed yearly. Cancel anytime in Google Play.",
+        "monthly": "{{price}} billed monthly. Cancel anytime in Google Play."
+      }
+    },
+    "sub": {
+      "title": "Subscription",
+      "plan": "Untangle Pro · {{plan}}",
+      "weekly": "{{price}} a week",
+      "renews": "Renews {{date}}",
+      "ends": "Pro ends {{date}}",
+      "family": "Pro · via Family",
+      "switch": "Switch to monthly",
+      "switchYearly": "Switch to yearly",
+      "manage": "Manage in Google Play",
+      "note": "Cancelling keeps Pro until the end of the period you've paid for.",
+      "lifetime": "Lifetime"
+    }
+  }
+}

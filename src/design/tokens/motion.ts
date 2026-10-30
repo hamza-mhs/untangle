@@ -1,14 +1,22 @@
-/** Motion tokens (SPEC §1.4). With Reduce Motion on: no loops, no count-ups. */
+/** Motion tokens (00-foundations §4.4). Reduce motion: fades instead of movement. */
 export const motion = {
-  press: { scale: 0.97, spring: { damping: 18, stiffness: 300 } },
-  /** Selection colour cross-fade. */
-  select: 150,
-  /** Progress bars. */
-  progress: 250,
-  /** Clarity number on change. */
-  countUp: 600,
-  /** Ghost idle loop. */
-  ghostLoop: 8000,
-  /** Mood pose cross-fade on the standing ghost. */
-  poseFade: 400,
+  duration: {
+    instant: 120,
+    fast: 200,
+    base: 320,
+    slow: 480,
+    countdownBeat: 620,
+    countdownGap: 20,
+  },
+  /** cubic-bezier control points, for Reanimated's `Easing.bezier(...)`. */
+  easing: {
+    standard: [0.2, 0.7, 0.3, 1] as const,
+    pop: [0.3, 1.2, 0.5, 1] as const,
+  },
+  spring: {
+    press: { damping: 18, stiffness: 320 },
+  },
+  pressScale: 0.97,
+  /** Onboarding screen enter: slide distance. */
+  enterOffset: 24,
 } as const;

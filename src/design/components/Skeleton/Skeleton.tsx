@@ -1,32 +1,46 @@
-import { StyleSheet, View } from 'react-native';
+import { useEffect } from 'react';
+import { type DimensionValue, StyleSheet } from 'react-native';
+import Animated, {
+  cancelAnimation,
+  useAnimatedStyle,
+  useSharedValue,
+  withRepeat,
+  withTiming,
+} from 'react-native-reanimated';
 
-import { color, pill, radius, rounded, size, space } from '../../tokens';
+import { color, motion, radius } from '../../tokens';
+import { useReducedMotion } from '../../useReducedMotion';
 
-/** E03: a plan-row placeholder (radio, name bar, price bar). `nameWidth` varies per row. */
-export function PlanSkeleton({ nameWidth }: { nameWidth: number }) {
+export type SkeletonProps = {
+  width?: DimensionValue;
+  height: number;
+  /** Corner radius; defaults to the card radius. */
+  rounded?: number;
+  testID?: string;
+};
+
+const PULSE_MS = motion.duration.slow * 2;
+
+/** Loading placeholder that pulses (static when Remove animations is on). */
+export function Skeleton({ width = '100%', height, rounded = radius.lg, testID }: SkeletonProps) {
+  const reduced = useReducedMotion();
+  const o = useSharedValue(1);
+  useEffect(() => {
+    if (reduced) return;
+    o.set(withRepeat(withTiming(0.45, { duration: PULSE_MS }), -1, true));
+    return () => cancelAnimation(o);
+  }, [reduced, o]);
+  const style = useAnimatedStyle(() => ({ opacity: o.get() }));
   return (
-    <View style={styles.row} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
-      <View style={styles.dot} />
-      <View style={[styles.bar, { width: nameWidth }]} />
-      <View style={[styles.bar, styles.price]} />
-    </View>
+    <Animated.View
+      testID={testID}
+      accessibilityElementsHidden
+      importantForAccessibility="no-hide-descendants"
+      style={[styles.box, { width, height, borderRadius: rounded }, style]}
+    />
   );
 }
 
-const BAR = 12;
-const PRICE_WIDTH = 56;
-
 const styles = StyleSheet.create({
-  row: {
-    height: size.planOption,
-    ...rounded(radius.m),
-    backgroundColor: color.bg.raised,
-    paddingHorizontal: space.lg,
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: space.md,
-  },
-  dot: { width: size.radio, height: size.radio, ...pill(size.radio), backgroundColor: color.bg.raisedHigh },
-  bar: { height: BAR, ...pill(BAR), backgroundColor: color.bg.raisedHigh },
-  price: { marginLeft: 'auto', width: PRICE_WIDTH },
+  box: { backgroundColor: color.surface.raised },
 });

@@ -1,15 +1,13 @@
 node_modules
-ios
 android
 .expo
 dist
 coverage
 package-lock.json
-*.swift
 *.kt
 assets
 drizzle
 *.md
 design
 src/features/onboarding/components/splash/sceneData.ts
-src/design/components/Ghost/ghostData.ts
+docs

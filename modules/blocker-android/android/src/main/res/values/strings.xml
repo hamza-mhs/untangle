@@ -1,6 +1,0 @@
-<resources>
-  <string name="untangle_widget_label">Untangle · Today</string>
-  <string name="untangle_widget_description">Streak, Clarity and today\'s challenges.</string>
-  <string name="untangle_channel_blocking">Blocking</string>
-  <string name="untangle_channel_focus">Focus session</string>
-</resources>

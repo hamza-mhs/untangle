@@ -3,81 +3,67 @@ import { z } from 'zod';
 import { createPersistedStore } from '@/storage/createStore';
 import { STORE_KEYS } from '@/storage/kv';
 
-import {
-  APP_LABELS,
-  GOAL_IDS,
-  SCREEN_TIME_BUCKETS,
-  WHEN_TRIGGERS,
-  type OnboardingAnswers,
-} from './types';
+import { ONBOARDING_STEPS, type OnboardingStep } from './steps';
 
-/**
- * Onboarding answers + progress. Persisted to MMKV after every change, so killing the app
- * mid-flow resumes at the last unfinished step.
- */
-type OnboardingState = OnboardingAnswers & {
-  /** Furthest step reached (1-based). */
-  lastStep: number;
-  /** E02: show the "Notifications are off" sheet once, on the first Home open. */
-  isNotificationsSheetPending: boolean;
+/** onboarding.answers (10-phase1-onboarding §3). Ids, never display strings. */
+export type OnboardingAnswers = {
+  /** Midpoint age of the chosen band (16, 21, 29, 39, 49, 60). */
+  ageMid: number | null;
+  /** Hours used for the maths (0.5 … 4.5, "Not sure" = 2.65). */
+  scrollHours: number | null;
+  scrollAnswer: string | null;
+  pickupsAnswer: string | null;
+  /** Focus-sign ids; empty when "None of these" was picked. */
+  signs: string[];
+  signsNone: boolean;
 };
 
-type OnboardingActions = {
+const EMPTY_ANSWERS: OnboardingAnswers = {
+  ageMid: null,
+  scrollHours: null,
+  scrollAnswer: null,
+  pickupsAnswer: null,
+  signs: [],
+  signsNone: false,
+};
+
+type OnboardingState = {
+  answers: OnboardingAnswers;
+  /** onboarding.step: the screen to resume on. */
+  step: OnboardingStep;
+  /** onboarding.completedAt: set when "You're all set" is shown; root redirects to tabs. */
+  completedAt: number | null;
   setAnswer: <K extends keyof OnboardingAnswers>(key: K, value: OnboardingAnswers[K]) => void;
-  reachStep: (step: number) => void;
-  /** OB11 denied: E02 shows on the first Home open. */
-  queueNotificationsSheet: () => void;
-  markNotificationsSheetShown: () => void;
+  setStep: (step: OnboardingStep) => void;
+  complete: (at?: number) => void;
   reset: () => void;
 };
 
-const initialState: OnboardingState = {
-  screenTime: null,
-  apps: [],
-  when: [],
-  goals: [],
-  strength: 'earn',
-  blocking: 'unknown',
-  appSelection: null,
-  notifications: 'unknown',
-  startingClarity: null,
-  lastStep: 1,
-  isNotificationsSheetPending: false,
-};
-
-const appSelectionSchema = z.union([
-  z.object({ platform: z.literal('ios'), token: z.string(), count: z.number() }),
-  z.object({ platform: z.literal('android'), packages: z.array(z.string()) }),
-]);
-
-/** What may come back from MMKV. Unknown or malformed data falls back to the defaults. */
-const persistedSchema = z
+const schema = z
   .object({
-    screenTime: z.enum(SCREEN_TIME_BUCKETS).nullable(),
-    apps: z.array(z.enum(APP_LABELS)),
-    when: z.array(z.enum(WHEN_TRIGGERS)),
-    goals: z.array(z.enum(GOAL_IDS)).max(2),
-    strength: z.enum(['pause', 'earn', 'locked']),
-    blocking: z.enum(['unknown', 'approved', 'denied', 'skipped']),
-    appSelection: appSelectionSchema.nullable(),
-    notifications: z.enum(['unknown', 'granted', 'denied']),
-    startingClarity: z.number().int().min(0).max(100).nullable(),
-    lastStep: z.number().int().min(1),
-    isNotificationsSheetPending: z.boolean(),
+    answers: z.object({
+      ageMid: z.number().nullable(),
+      scrollHours: z.number().nullable(),
+      scrollAnswer: z.string().nullable(),
+      pickupsAnswer: z.string().nullable(),
+      signs: z.array(z.string()),
+      signsNone: z.boolean(),
+    }),
+    step: z.enum(ONBOARDING_STEPS),
+    completedAt: z.number().nullable(),
   })
   .partial();
 
-export const useOnboardingStore = createPersistedStore<OnboardingState & OnboardingActions>(
+export const useOnboardingStore = createPersistedStore<OnboardingState>(
   STORE_KEYS.onboarding,
   (set, get) => ({
-    ...initialState,
-    setAnswer: (key, value) => set({ [key]: value } as Partial<OnboardingState>),
-    reachStep: (step) => {
-      if (step > get().lastStep) set({ lastStep: step });
-    },
-    queueNotificationsSheet: () => set({ isNotificationsSheetPending: true }),
-    markNotificationsSheetShown: () => set({ isNotificationsSheetPending: false }),
-    reset: () => set({ ...initialState }),
+    answers: EMPTY_ANSWERS,
+    step: 'index',
+    completedAt: null,
+    setAnswer: (key, value) => set({ answers: { ...get().answers, [key]: value } }),
+    setStep: (step) => set({ step }),
+    complete: (at = Date.now()) => set({ completedAt: at }),
+    reset: () => set({ answers: EMPTY_ANSWERS, step: 'index', completedAt: null }),
   }),
-  { version: 2, schema: persistedSchema },
+  { schema },
 );

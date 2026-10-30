@@ -11,13 +11,12 @@ import { db } from './client';
 /** Applies pending drizzle migrations before rendering the app. */
 export function DatabaseProvider({ children }: { children: ReactNode }) {
   const { success, error } = useMigrations(db, migrations);
-
   if (error) {
     // Developer-facing: only reachable when a migration is broken.
     return (
       <View style={styles.center}>
-        <Text variant="headline">SQLite migration failed</Text>
-        <Text variant="meta" tone="muted">
+        <Text variant="heading">SQLite migration failed</Text>
+        <Text variant="caption" tone="secondary">
           {error.message}
         </Text>
       </View>
@@ -26,7 +25,7 @@ export function DatabaseProvider({ children }: { children: ReactNode }) {
   if (!success) {
     return (
       <View style={styles.center}>
-        <ActivityIndicator color={color.accent.primary} />
+        <ActivityIndicator color={color.text.primary} />
       </View>
     );
   }
@@ -39,7 +38,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     gap: space.sm,
-    backgroundColor: color.bg.canvas,
+    backgroundColor: color.bg.app,
     padding: space.xl,
   },
 });

@@ -1,176 +1,101 @@
 import type { ReactNode } from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { Modal, Pressable, StyleSheet, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { color, layout, radius, rounded, size, space } from '../../tokens';
-import { Icon, type IconName } from '../Icon';
-import { Text, type TextTone } from '../Text';
+import { useT } from '@/i18n';
 
-export type SheetIconTone = 'neutral' | 'accent' | 'danger';
+import { color, elevation, radius, size, space } from '../../tokens';
+import { Text } from '../Text';
 
 export type SheetProps = {
+  visible: boolean;
+  /** Called on scrim tap and system Back, unless `dismissible` is false. */
+  onClose: () => void;
   title: string;
-  /** Line under the title (or a muted second title line with `size="large"`). */
-  sub?: string;
-  /** Paragraph under the header row. */
   body?: string;
-  icon?: IconName;
-  /** Icon tile: raisedHigh + yellow glyph (E02), yellow + black (P07), coral (E05). */
-  iconTone?: SheetIconTone;
-  /** Small caps line above the title ("PRO · DAY 5 OF 7"). */
-  overline?: string;
-  /** `regular` = 19–20 pt headline (E05, E07, E09); `large` = 24 pt title (P02, P06, FFocusStart). */
-  size?: 'regular' | 'large';
   children?: ReactNode;
-  /** Pinned to the bottom: primary first, then outline. */
-  actions: ReactNode;
+  /** Buttons, primary first. */
+  actions?: ReactNode;
+  /**
+   * False = an explicit choice is required (the accessibility disclosure): tapping outside
+   * and system Back do nothing.
+   */
+  dismissible?: boolean;
   testID?: string;
 };
 
-const S = layout.state;
-
-const ICON_TONES: Record<SheetIconTone, { bg: 'neutral' | 'accent' | 'danger'; glyph: string }> = {
-  neutral: { bg: 'neutral', glyph: color.accent.primary },
-  accent: { bg: 'accent', glyph: color.text.onAccent },
-  danger: { bg: 'danger', glyph: color.status.dangerSoft },
-};
-
-/**
- * Inside of a native `formSheet` route (SPEC §3 Sheet). The grabber and the 22 pt top radius
- * come from the native sheet options; this lays out the content and pins the actions.
- */
+/** Bottom sheet with grabber, title, body and actions (prototype `.sheet`). */
 export function Sheet({
+  visible,
+  onClose,
   title,
-  sub,
   body,
-  icon,
-  iconTone = 'neutral',
-  overline,
-  size: sheetSize = 'regular',
   children,
   actions,
+  dismissible = true,
   testID,
 }: SheetProps) {
-  const isLarge = sheetSize === 'large';
-  const tone = ICON_TONES[iconTone];
+  const t = useT();
+  const insets = useSafeAreaInsets();
   return (
-    <SafeAreaView style={styles.root} edges={['bottom']} testID={testID}>
-      <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
-        {overline ? (
-          <Text variant="micro" tone="accent" style={styles.overline}>
-            {overline}
-          </Text>
-        ) : null}
-        <View style={styles.head}>
-          {icon ? (
-            <View style={[styles.iconTile, iconBg[tone.bg]]}>
-              <Icon name={icon} size={size.icon.lg} color={tone.glyph} />
-            </View>
-          ) : null}
-          <View style={styles.titles}>
-            <Text variant={isLarge ? 'title.s' : 'headline'} accessibilityRole="header">
-              {title}
-              {isLarge && sub ? (
-                <Text variant="title.s" tone={'muted' satisfies TextTone}>
-                  {`\n${sub}`}
-                </Text>
-              ) : null}
-            </Text>
-            {!isLarge && sub ? (
-              <Text variant="meta" tone="muted">
-                {sub}
-              </Text>
-            ) : null}
-          </View>
-        </View>
-        {body ? (
-          <Text variant="body.s" tone={icon ? 'secondary' : 'muted'} style={styles.body}>
-            {body}
-          </Text>
-        ) : null}
-        {children}
-      </ScrollView>
-      <View style={styles.actions}>{actions}</View>
-    </SafeAreaView>
-  );
-}
-
-/** Label/value rows on a raisedHigh card inside a sheet (P02 "what changes", P06, P08). */
-export function SheetList({
-  rows,
-  testID,
-}: {
-  rows: readonly { id: string; label: string; value: ReactNode; valueTone?: TextTone }[];
-  testID?: string;
-}) {
-  return (
-    <View style={styles.list} testID={testID}>
-      {rows.map((r, i) => (
+    <Modal
+      visible={visible}
+      transparent
+      animationType="slide"
+      statusBarTranslucent
+      navigationBarTranslucent
+      onRequestClose={dismissible ? onClose : () => {}}>
+      <View style={styles.root}>
+        <Pressable
+          style={styles.scrim}
+          accessibilityRole={dismissible ? 'button' : undefined}
+          accessibilityLabel={dismissible ? t('common.close') : undefined}
+          importantForAccessibility={dismissible ? 'yes' : 'no-hide-descendants'}
+          onPress={dismissible ? onClose : undefined}
+        />
         <View
-          key={r.id}
-          style={[styles.listRow, i > 0 && styles.listSeparator]}
-          accessible={typeof r.value === 'string'}>
-          <Text variant="label" style={styles.listLabel}>
-            {r.label}
+          testID={testID}
+          accessibilityViewIsModal
+          style={[styles.sheet, { marginBottom: space.sm + insets.bottom }]}>
+          <View style={styles.grab} />
+          <Text variant="heading" accessibilityRole="header">
+            {title}
           </Text>
-          {typeof r.value === 'string' ? (
-            <Text variant="label" tone={r.valueTone ?? 'muted'}>
-              {r.value}
+          {body ? (
+            <Text variant="body" tone="body" style={styles.body}>
+              {body}
             </Text>
-          ) : (
-            r.value
-          )}
+          ) : null}
+          {children}
+          {actions ? <View style={styles.actions}>{actions}</View> : null}
         </View>
-      ))}
-    </View>
+      </View>
+    </Modal>
   );
 }
 
 const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-    backgroundColor: color.bg.raised,
-    paddingTop: S.sheetPadding,
-    paddingHorizontal: S.sheetPadding,
+  root: { flex: 1, justifyContent: 'flex-end' },
+  scrim: { ...StyleSheet.absoluteFill, backgroundColor: color.overlay.scrim },
+  sheet: {
+    marginHorizontal: space.sm,
+    backgroundColor: color.surface.raised,
+    borderRadius: radius['4xl'],
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: color.surface.line,
+    paddingTop: 10,
+    paddingHorizontal: space.xl,
+    paddingBottom: space['2xl'],
+    ...elevation.sheet,
   },
-  scroll: { flexGrow: 0 },
-  overline: { marginBottom: space.xs + 2 },
-  head: { flexDirection: 'row', alignItems: 'center', gap: S.sheetIconGap },
-  iconTile: {
-    width: S.sheetIcon,
-    height: S.sheetIcon,
-    ...rounded(radius.s),
-    alignItems: 'center',
-    justifyContent: 'center',
+  grab: {
+    width: size.sheetGrabber.width,
+    height: size.sheetGrabber.height,
+    borderRadius: radius.pill,
+    backgroundColor: color.surface.ring,
+    alignSelf: 'center',
+    marginBottom: 14,
   },
-  titles: { flex: 1 },
-  body: { marginTop: S.sheetBodyTop - space.xs },
-  actions: {
-    marginTop: 'auto',
-    gap: S.actionsGap,
-    paddingTop: space.lg,
-    paddingBottom: layout.onboarding.footerBottom,
-    marginHorizontal: layout.gutter - S.sheetPadding,
-  },
-  list: {
-    marginTop: space.lg,
-    ...rounded(radius.m),
-    backgroundColor: color.bg.raisedHigh,
-    overflow: 'hidden',
-  },
-  listRow: {
-    minHeight: size.listRow - 2,
-    paddingHorizontal: space.md + 2,
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: space.sm + 2,
-  },
-  listSeparator: { borderTopWidth: size.hairline, borderTopColor: color.border.control },
-  listLabel: { flex: 1 },
-});
-
-const iconBg = StyleSheet.create({
-  neutral: { backgroundColor: color.bg.raisedHigh },
-  accent: { backgroundColor: color.accent.primary },
-  danger: { backgroundColor: color.status.dangerSoftBg },
+  body: { marginTop: space.sm },
+  actions: { marginTop: space.xl, gap: space.sm },
 });

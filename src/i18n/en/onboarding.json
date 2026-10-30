@@ -1,0 +1,311 @@
+{
+  "onboarding": {
+    "chapters": {
+      "you": "You",
+      "results": "Results",
+      "fix": "The fix",
+      "plan": "Plan",
+      "setUp": "Set up"
+    },
+    "placeholder": {
+      "title": "{{screen}}",
+      "body": "This screen is built in a later sub-batch.",
+      "next": "Next",
+      "finish": "Finish onboarding"
+    },
+    "screens": {
+      "index": "Welcome",
+      "age": "Your age",
+      "scroll-time": "Scroll time",
+      "pickups": "Pick-ups",
+      "focus-signs": "Focus signs",
+      "studying": "Studying your answers",
+      "your-year": "Days of your year",
+      "problem-focus": "Your focus is shrinking",
+      "problem-distracted": "You get distracted easily",
+      "problem-foggy": "Your focus feels foggy",
+      "hours-back": "Hours back",
+      "moment-of-pause": "Moment of pause",
+      "step-one": "Blocking is step one",
+      "focus-grow": "Watch your focus grow",
+      "trial": "Try Untangle free",
+      "permissions": "Permissions",
+      "accessibility": "Accessibility disclosure",
+      "pick-apps": "Pick apps",
+      "all-set": "You're all set"
+    },
+    "welcome": {
+      "cta": "Get started",
+      "block": {
+        "title": "Block the apps that pull you in.",
+        "body": "Pick the apps and sites. Untangle steps in when you've had enough."
+      },
+      "play": {
+        "title": "When the urge hits, play instead.",
+        "body": "A quick focus game takes the place of the scroll. One round, then back to your day."
+      },
+      "grow": {
+        "title": "Get your focus back.",
+        "body": "Short daily practice for your memory, focus and attention."
+      },
+      "art": {
+        "paused": "Instagram is paused",
+        "pattern": "Pattern recall",
+        "noRed": "Don't tap red",
+        "pairs": "Card pairs",
+        "letters": "Letter guess",
+        "word": "FOCUS"
+      }
+    },
+    "age": {
+      "title": "How old are you?",
+      "body": "So we can show what your habits add up to over the years.",
+      "options": {
+        "under18": "Under 18",
+        "18to24": "18 to 24",
+        "25to34": "25 to 34",
+        "35to44": "35 to 44",
+        "45to54": "45 to 54",
+        "55plus": "55 or older"
+      }
+    },
+    "scrollTime": {
+      "title": "How much do you scroll a day?",
+      "body": "A guess is fine.",
+      "options": {
+        "under1": "Under 1 hour",
+        "1to2": "1 to 2 hours",
+        "2to3": "2 to 3 hours",
+        "3to4": "3 to 4 hours",
+        "over4": "More than 4 hours",
+        "notSure": "Not sure"
+      }
+    },
+    "pickups": {
+      "title": "How often do you pick up your phone?",
+      "body": "In a day. Most people guess low.",
+      "options": {
+        "under50": "Under 50 times",
+        "50to100": "50 to 100 times",
+        "100to200": "100 to 200 times",
+        "over200": "More than 200 times",
+        "noIdea": "No idea"
+      }
+    },
+    "focusSigns": {
+      "title": "Do any of these sound like you?",
+      "body": "Pick any that fit.",
+      "options": {
+        "work": "Losing focus at work or study",
+        "videos": "Long videos feel too long",
+        "reading": "Reading is harder than it was",
+        "grabbing": "Grabbing my phone without thinking",
+        "foggy": "A foggy or restless mind",
+        "none": "None of these"
+      }
+    },
+    "studying": {
+      "title": "Studying your answers"
+    },
+    "yourYear": {
+      "title": "That's {{days}} days of your year.",
+      "body": "Full 24-hour days of scrolling, worked out from your answers. At this pace, that's {{later}} days by the time you're {{age}}.",
+      "bodyNotSure": "If you're like most people, that's full 24-hour days of scrolling. At this pace, that's {{later}} days by the time you're {{age}}.",
+      "gridLabel": "{{days}} of the 365 days in a year, filled in red.",
+      "cta": "Is there more?"
+    },
+    "problems": {
+      "cta": "Can this change?"
+    },
+    "problemFocus": {
+      "title": "Your focus is shrinking.",
+      "body": "How long people stayed on one screen before switching to something else.",
+      "before": "2½ min",
+      "after": "47 s",
+      "beforeYear": "2004",
+      "afterYear": "2016–20",
+      "drop": "−69%",
+      "source": "Gloria Mark, UC Irvine · workplace studies, 2004 and 2016–2020",
+      "chartLabel": "Attention on one screen fell from 2½ minutes in 2004 to 47 seconds in 2016 to 2020, 69% less."
+    },
+    "problemDistracted": {
+      "title": "You get distracted easily.",
+      "body": "One notification. One quick look. One more video. Twenty minutes later, you look up.",
+      "art": {
+        "doc": "Q3 investor update",
+        "line1": "Q3 went better than planned.",
+        "line2": "Revenue grew 18% on the back of",
+        "line3": "two new partners, and churn fell",
+        "timer": "20 min"
+      }
+    },
+    "problemFoggy": {
+      "title": "Your focus feels foggy.",
+      "body": "You ticked {{k}} of {{total}} signs of a scattered mind. That's common, and it's the part you can train.",
+      "pills": "{{k}} of {{total}} focus signs",
+      "titleNone": "Your focus is worth guarding.",
+      "bodyNone": "You didn't tick any signs. Good. Most people only notice the slide once it has happened."
+    },
+    "hoursBack": {
+      "title": "But you can get {{hours}} hours back.",
+      "body": "That's what {{minutes}} minutes less a day adds up to over a year. Red is your pace now, green is with your goal.",
+      "cta": "Show me how",
+      "sameAsNow": "Same as now",
+      "withGoal": "{{minutes}} min less a day",
+      "chartLabel": "Over a year, {{minutes}} minutes less a day gives you {{hours}} hours back.",
+      "ticks": {
+        "now": "Now",
+        "m3": "3 mo",
+        "m6": "6 mo",
+        "m9": "9 mo",
+        "m12": "12 mo"
+      }
+    },
+    "momentOfPause": {
+      "title": "Meet your moment of pause.",
+      "body": "Open an app you've chosen to block and Untangle steps in, so you get to choose what happens next.",
+      "cta": "See how it works",
+      "artLabel": "The pause screen: play a quick game, take a breath, or go back to your day.",
+      "art": {
+        "title": "A moment of pause",
+        "subtitle": "Instagram · You've had your 30 min today.",
+        "game": "Play a quick game",
+        "breath": "Take a breath",
+        "back": "Back to my day"
+      }
+    },
+    "stepOne": {
+      "title": "Blocking is step one. Focus is the goal.",
+      "block": {
+        "title": "Block the pull",
+        "body": "Locks the apps that hook you once you've had your share."
+      },
+      "practise": {
+        "title": "Practise focus",
+        "body": "Short games when the urge hits, and one round a day."
+      },
+      "goal": {
+        "title": "Get your focus back",
+        "body": "Longer stretches without reaching for your phone. That is the real goal."
+      }
+    },
+    "focusGrow": {
+      "title": "Watch your focus grow, week by week.",
+      "body": "Your longest stretch without opening a blocked app.",
+      "week": "Wk {{n}}",
+      "top": "{{minutes}} min",
+      "caption": "Example. Yours fills in from your first day.",
+      "chartLabel": "Example chart: your longest stretch grows each week, up to 48 minutes in week 6."
+    },
+    "permissions": {
+      "title": "Three quick permissions.",
+      "body": "Untangle can't block anything without them. Your phone will ask for each one. Tap allow, and we'll bring you straight back.",
+      "accessibility": {
+        "title": "Accessibility",
+        "body": "So we can step in when a blocked app opens"
+      },
+      "usage": {
+        "title": "Usage access",
+        "body": "Your real screen time and pick-ups"
+      },
+      "battery": {
+        "title": "Battery: Unrestricted",
+        "body": "So your phone never switches blocking off"
+      },
+      "notOnYet": "Not on yet",
+      "rowHint": "Opens the setting",
+      "footnote": "Nothing leaves your phone. You can turn any of these off later in Settings.",
+      "skip": "Skip for now",
+      "cta": {
+        "allow": "Allow permissions",
+        "allowRest": "Allow the rest",
+        "tryAgain": "Try again",
+        "continue": "Continue"
+      }
+    },
+    "restricted": {
+      "title": "Can't turn it on?",
+      "body": "Some phones grey out Accessibility for apps from outside the Play Store until you allow it.",
+      "steps": {
+        "one": "Open App info for Untangle.",
+        "two": "Tap ⋮ in the top corner, then Allow restricted settings.",
+        "three": "Come back and try again."
+      },
+      "openAppInfo": "Open App info",
+      "tryAgain": "Try again"
+    },
+    "accessibility": {
+      "title": "Let Untangle see which app is open.",
+      "body": "So we can step in when you open a blocked app. We only check the app or site name, never your messages, and nothing leaves your phone.",
+      "agree": "Agree and open settings",
+      "notNow": "Not now",
+      "mock": {
+        "heading": "Accessibility",
+        "section": "Downloaded apps",
+        "row1": "Chrome tools",
+        "row2": "Untangle",
+        "row3": "Translate",
+        "off": "Off"
+      }
+    },
+    "pickApps": {
+      "title": "What should we block?",
+      "body": "We picked the usual suspects from your phone. Change anything.",
+      "minutesWeek": "{{minutes}} min a day",
+      "blockApp": "Block {{app}}",
+      "addApps": "Add other apps",
+      "addSites": "Add websites",
+      "noSuspects": "None of the usual ones are on this phone.",
+      "cap": "Free plan blocks up to 3. Go Pro for more.",
+      "appsSheet": {
+        "title": "All apps"
+      },
+      "sites": {
+        "title": "Which site?",
+        "placeholder": "reddit.com",
+        "note": "Blocks every page and subdomain, like old.reddit.com. Works in Chrome, Samsung Internet, Firefox, Edge, Brave and Opera.",
+        "add": "Add site",
+        "invalid": "That doesn't look like a website address",
+        "duplicate": "{{domain}} is already on the list"
+      },
+      "allowance": {
+        "label": "Daily limit for each: {{value}}",
+        "change": "Change",
+        "title": "How much a day?",
+        "minutes": "{{minutes}} min",
+        "allDay": "Block all day"
+      },
+      "cta": {
+        "none": "Pick at least one",
+        "apps_one": "Block {{count}} app",
+        "apps_other": "Block {{count}} apps",
+        "sites_one": "Block {{count}} site",
+        "sites_other": "Block {{count}} sites",
+        "both": "Block {{apps}} and {{sites}}",
+        "appsPart_one": "{{count}} app",
+        "appsPart_other": "{{count}} apps",
+        "sitesPart_one": "{{count}} site",
+        "sitesPart_other": "{{count}} sites"
+      }
+    },
+    "allSet": {
+      "title": "You're all set.",
+      "body": "Next time you open {{list}}, your moment of pause will be there.",
+      "bodyNone": "Add an app to block any time from the Block tab.",
+      "namesTwo": "{{a}} or {{b}}",
+      "namesThree": "{{a}}, {{b}} or {{c}}",
+      "namesMore_one": "{{a}}, {{b}} and {{count}} more",
+      "namesMore_other": "{{a}}, {{b}} and {{count}} more",
+      "rows": {
+        "accessibility": "Untangle can step in",
+        "usage": "Real screen time on",
+        "battery": "Stays on in the background",
+        "blocked_one": "{{count}} app blocked",
+        "blocked_other": "{{count}} apps blocked"
+      },
+      "off": "Off · Turn on",
+      "cta": "Start my first round",
+      "home": "Go to home"
+    }
+  }
+}

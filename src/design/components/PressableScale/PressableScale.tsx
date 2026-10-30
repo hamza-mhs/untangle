@@ -1,39 +1,50 @@
-import type { ReactNode } from 'react';
 import { Pressable, type PressableProps, type StyleProp, type ViewStyle } from 'react-native';
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
+
+import { haptics } from '@/lib/haptics';
 
 import { motion } from '../../tokens';
 import { useReducedMotion } from '../../useReducedMotion';
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
-export type PressableScaleProps = Omit<PressableProps, 'style' | 'children'> & {
+export type PressableScaleProps = Omit<PressableProps, 'style'> & {
   style?: StyleProp<ViewStyle>;
-  children?: ReactNode;
+  /** Light haptic on press (buttons); off for list rows. */
+  haptic?: boolean;
 };
 
-/** Press feedback for every pressable: scale to `motion.press` on a spring (SPEC §6). */
-export function PressableScale({ style, children, onPressIn, onPressOut, ...rest }: PressableScaleProps) {
-  const reduceMotion = useReducedMotion();
+/** Pressable that scales to 0.97 with the press spring (motion.spring.press). */
+export function PressableScale({
+  style,
+  haptic = false,
+  onPressIn,
+  onPressOut,
+  onPress,
+  disabled,
+  ...rest
+}: PressableScaleProps) {
+  const reduced = useReducedMotion();
   const scale = useSharedValue(1);
-  const animated = useAnimatedStyle(() => ({ transform: [{ scale: scale.value }] }));
-  const springTo = (v: number) => {
-    if (reduceMotion) return;
-    scale.set(withSpring(v, motion.press.spring));
-  };
+  const animated = useAnimatedStyle(() => ({ transform: [{ scale: scale.get() }] }));
   return (
     <AnimatedPressable
       {...rest}
+      disabled={disabled}
+      accessibilityState={{ disabled: !!disabled, ...rest.accessibilityState }}
       onPressIn={(e) => {
-        springTo(motion.press.scale);
+        if (!reduced) scale.set(withSpring(motion.pressScale, motion.spring.press));
         onPressIn?.(e);
       }}
       onPressOut={(e) => {
-        springTo(1);
+        scale.set(withSpring(1, motion.spring.press));
         onPressOut?.(e);
       }}
-      style={[style, animated]}>
-      {children}
-    </AnimatedPressable>
+      onPress={(e) => {
+        if (haptic) haptics.tap();
+        onPress?.(e);
+      }}
+      style={[style, animated]}
+    />
   );
 }

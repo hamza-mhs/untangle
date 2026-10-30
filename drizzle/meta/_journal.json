@@ -5,15 +5,8 @@
     {
       "idx": 0,
       "version": "6",
-      "when": 1792692932551,
+      "when": 1793298645019,
       "tag": "0000_init",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "6",
-      "when": 1792936245589,
-      "tag": "0001_shallow_johnny_storm",
       "breakpoints": true
     }
   ]

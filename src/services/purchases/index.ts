@@ -7,7 +7,7 @@ import { STORE_KEYS } from '@/storage/kv';
 import { useDevMocksStore } from '../devMocks';
 import { useMocks } from '../nativeModules';
 import type { PurchaseFailure } from './errors';
-import { PurchasesService } from './PurchasesService';
+import { PurchasesService, revenueCatKey } from './PurchasesService';
 import { NO_ENTITLEMENT, type Entitlement, type Offering, type Plan } from './types';
 
 export * from './errors';
@@ -35,6 +35,7 @@ const entitlementSchema = z.object({
   expiresAt: z.number().nullable(),
   isInGrace: z.boolean(),
   isFamilyShared: z.boolean(),
+  isTrial: z.boolean().default(false),
   endedAt: z.number().nullable(),
 });
 
@@ -97,11 +98,26 @@ export function mockEntitlement(): Entitlement {
 /** Placeholder prices for the mock only (real ones always come from the store). */
 const MOCK_OFFERING: Offering = {
   plans: [
-    { id: 'yearly', priceString: '$29.99', pricePerMonthString: '$2.50', packageId: '$rc_annual' },
-    { id: 'monthly', priceString: '$4.99', pricePerMonthString: null, packageId: '$rc_monthly' },
-    { id: 'lifetime', priceString: '$59.99', pricePerMonthString: null, packageId: '$rc_lifetime' },
+    {
+      id: 'yearly',
+      priceString: '$29.99',
+      price: 29.99,
+      currencyCode: 'USD',
+      hasTrial: true,
+      pricePerMonthString: '$2.50',
+      packageId: '$rc_annual',
+    },
+    {
+      id: 'monthly',
+      priceString: '$6.99',
+      price: 6.99,
+      currencyCode: 'USD',
+      hasTrial: false,
+      pricePerMonthString: null,
+      packageId: '$rc_monthly',
+    },
   ],
-  winBack: { priceString: '$14.99' },
+  winBack: null,
 };
 
 function createMockPurchases(): Purchases {
@@ -167,9 +183,7 @@ function createRealPurchases(service: PurchasesService): Purchases {
 }
 
 const service = new PurchasesService();
-const hasKey = !!(
-  process.env.EXPO_PUBLIC_REVENUECAT_IOS_KEY || process.env.EXPO_PUBLIC_REVENUECAT_ANDROID_KEY
-);
+const hasKey = !!revenueCatKey();
 
 export const purchases: Purchases =
   useMocks && !hasKey ? createMockPurchases() : createRealPurchases(service);

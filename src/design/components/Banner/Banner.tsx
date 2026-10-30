@@ -1,97 +1,89 @@
 import { StyleSheet, View } from 'react-native';
 
-import { haptics } from '@/lib/haptics';
-
-import { color, pill, radius, rounded, size, space } from '../../tokens';
-import { Icon, type IconName } from '../Icon';
+import { color, radius, size, space } from '../../tokens';
+import { Icon } from '../Icon';
 import { PressableScale } from '../PressableScale';
 import { Text } from '../Text';
 
-export type BannerKind = 'blockingOff' | 'grace' | 'offline' | 'trial';
-
 export type BannerProps = {
-  kind: BannerKind;
   title: string;
-  sub: string;
+  body?: string;
+  /** "Fix it" — the whole banner is tappable when set. */
   actionLabel?: string;
-  onAction?: () => void;
+  onPress?: () => void;
+  /** `warning` = amber ("Blocking might stop"), `danger` = red ("Blocking is off"). */
+  tone?: 'warning' | 'danger';
   testID?: string;
 };
 
-const KINDS: Record<
-  BannerKind,
-  { icon: IconName; iconColor: string; bg: 'danger' | 'warning' | 'neutral' | 'accent' }
-> = {
-  blockingOff: { icon: 'shieldOff', iconColor: color.status.dangerSoft, bg: 'danger' },
-  grace: { icon: 'warning', iconColor: color.mood.orange, bg: 'warning' },
-  offline: { icon: 'offline', iconColor: color.text.muted, bg: 'neutral' },
-  trial: { icon: 'sparkles', iconColor: color.accent.primary, bg: 'neutral' },
-};
+const TONE = {
+  warning: {
+    icon: color.signal.warning,
+    text: color.signal.warningText,
+    bg: color.signal.warningSoft,
+    line: color.signal.warningLine,
+  },
+  danger: {
+    icon: color.signal.danger,
+    text: color.signal.dangerText,
+    bg: color.signal.dangerSoft,
+    line: color.signal.dangerSoft,
+  },
+} as const;
 
-/** 64 pt status strip under Home's top bar (SPEC §3). One at a time, by priority. */
-export function Banner({ kind, title, sub, actionLabel, onAction, testID }: BannerProps) {
-  const k = KINDS[kind];
-  return (
-    <View
-      testID={testID}
-      style={[styles.banner, bgStyles[k.bg]]}
-      accessibilityRole="alert"
-      accessible={!onAction}
-      accessibilityLabel={`${title}. ${sub}`}>
-      <Icon name={k.icon} size={size.icon.md} color={k.iconColor} />
-      <View style={styles.texts}>
-        <Text variant="label.strong" numberOfLines={1}>
+/** Warning banner ("Blocking might stop · Fix it"), prototype `.warnc`. */
+export function Banner({ title, body, actionLabel, onPress, tone = 'warning', testID }: BannerProps) {
+  const c = TONE[tone];
+  const content = (
+    <>
+      <Icon name="warning" size={size.bannerIcon} color={c.icon} />
+      <View style={styles.text}>
+        <Text variant="bodyStrong" style={{ color: c.text }}>
           {title}
         </Text>
-        <Text variant="meta" tone="secondary" numberOfLines={1}>
-          {sub}
-        </Text>
-      </View>
-      {actionLabel && onAction ? (
-        <PressableScale
-          accessibilityRole="button"
-          accessibilityLabel={`${actionLabel}: ${title}`}
-          hitSlop={(size.hitTarget - size.bannerButton) / 2}
-          onPress={() => {
-            haptics.tap();
-            onAction();
-          }}
-          style={styles.action}>
-          <Text variant="meta.strong" tone="onAccent">
-            {actionLabel}
+        {body ? (
+          <Text variant="caption" style={[styles.body, { color: c.text }]}>
+            {body}
           </Text>
-        </PressableScale>
+        ) : null}
+      </View>
+      {actionLabel ? (
+        <Text variant="bodyStrong" style={{ color: c.text }}>
+          {actionLabel}
+        </Text>
       ) : null}
-    </View>
+    </>
+  );
+  const box = [styles.box, { backgroundColor: c.bg, borderColor: c.line }];
+  if (!onPress) {
+    return (
+      <View testID={testID} style={box} accessible accessibilityRole="alert">
+        {content}
+      </View>
+    );
+  }
+  return (
+    <PressableScale
+      testID={testID}
+      accessibilityRole="button"
+      accessibilityLabel={[title, body, actionLabel].filter(Boolean).join('. ')}
+      onPress={onPress}
+      style={box}>
+      {content}
+    </PressableScale>
   );
 }
 
 const styles = StyleSheet.create({
-  banner: {
-    height: size.banner,
-    ...rounded(radius.m),
-    borderWidth: size.ring,
-    paddingHorizontal: space.md + 2,
+  box: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: space.sm + 2,
+    gap: space.md,
+    padding: 14,
+    borderRadius: radius.xl,
+    borderWidth: StyleSheet.hairlineWidth,
+    minHeight: size.touch,
   },
-  texts: { flex: 1 },
-  action: {
-    height: size.bannerButton,
-    ...pill(size.bannerButton),
-    paddingHorizontal: space.md + 2,
-    justifyContent: 'center',
-    backgroundColor: color.accent.primary,
-  },
-});
-
-const bgStyles = StyleSheet.create({
-  danger: { backgroundColor: color.status.dangerSoftBg, borderColor: color.status.dangerSoftRing },
-  warning: {
-    backgroundColor: color.status.warningSoftBg,
-    borderColor: color.status.warningSoftRing,
-  },
-  neutral: { backgroundColor: color.bg.raised, borderColor: color.border.hairline },
-  accent: { backgroundColor: color.accent.primary, borderColor: color.accent.primary },
+  text: { flex: 1, gap: 2 },
+  body: { opacity: 0.85 },
 });

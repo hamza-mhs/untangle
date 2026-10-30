@@ -1,27 +1,26 @@
 import { StyleSheet, View } from 'react-native';
 
-import { color, pill, size } from '../../tokens';
-import { Icon } from '../Icon';
+import { color, radius, size } from '../../tokens';
 
-/** 22 pt radio: grey ring when off, accent fill + check when on. */
-export function RadioDot({ isSelected }: { isSelected: boolean }) {
+/** Radio indicator for plan cards: ring when off, filled violet with a white centre when on. */
+export function RadioDot({ selected }: { selected: boolean }) {
   return (
-    <View style={[styles.dot, isSelected ? styles.on : styles.off]}>
-      {isSelected ? (
-        <Icon name="check" size={size.icon.xs - 4} color={color.text.onAccent} strokeWidth={3} />
-      ) : null}
+    <View style={[styles.ring, selected ? styles.on : null]}>
+      {selected ? <View style={styles.dot} /> : null}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  dot: {
-    width: size.radio,
-    height: size.radio,
-    ...pill(size.radio),
+  ring: {
+    width: size.checkbox,
+    height: size.checkbox,
+    borderRadius: radius.pill,
+    borderWidth: 2,
+    borderColor: color.surface.lineStrong,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  on: { backgroundColor: color.accent.primary },
-  off: { borderWidth: size.selectedRing, borderColor: color.border.strong },
+  on: { borderColor: color.brand.violet, backgroundColor: color.brand.violet },
+  dot: { width: 8, height: 8, borderRadius: radius.pill, backgroundColor: color.text.primary },
 });
