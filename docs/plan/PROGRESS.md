@@ -427,6 +427,21 @@ Answers: Public Sans downloaded (official release, OFL); icons and art from `des
   2. Pieces are flat token colours (no Enamel / Candy gloss materials), as in 3.1.
 - **Checks:** `npm run check` passes (257 tests).
 
+## Batch 3.2b · Memory
+
+- **Pattern recall** (`patternRecall`, grid, violet): 3 × 3 toy pads in the prototype's colours,
+  5 rounds of `round + 2` pads lit 420 ms / 170 ms gap while the background is quiet, 3 lives
+  (a wrong pad costs one and replays the round with a fresh pattern), +10 per pad, +30 per
+  perfect round, 32 s; 3★ all 5 cleared. Each pad also plays a tone (low / mid / high) as it lights.
+- **Number span** (`numberSpan`, grid, cobalt): 4 → 6 digits shown 620 ms / 140 ms gap, keypad
+  1–9 · ⌫ · 0 · ✓ (new `backspace` icon), digits drop into wells that turn mint / red on ✓,
+  3 lives, +10 per digit, +30 per perfect span, 45 s; 3★ cleared 6.
+- **Deviation (please check):** Number span checks the answer on ✓ (so ⌫ is useful, as in the
+  design); the prototype checked each digit as it was tapped.
+- **Checked on the emulator:** both start → result, a life lost on a wrong pad / digit
+  (`docs/evidence/3.2b/`). Fixed on the way: "Longest" now counts only spans actually cleared.
+- **Checks:** `npm run check` passes (263 tests).
+
 ## Still needed from the owner
 
 1. A real phone over USB for the device checks (permissions, blocking, browsers, battery,

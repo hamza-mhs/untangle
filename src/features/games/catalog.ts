@@ -23,7 +23,10 @@ export type GameId =
   | 'swapIt'
   | 'flashCount'
   | 'spotTheOddOne'
-  | 'trackTheStars';
+  | 'trackTheStars'
+  // 3.2b
+  | 'patternRecall'
+  | 'numberSpan';
 
 export type GameAccent =
   'pink' | 'sky' | 'cobalt' | 'violet' | 'orange' | 'mint' | 'sun' | 'coral' | 'indigo';
@@ -188,6 +191,24 @@ export const GAMES: readonly GameMeta[] = [
     accent: 'sky',
     glow: 'cobalt',
     best: { stat: 'tracked', higher: true },
+    batch: '3.2',
+  },
+  {
+    id: 'patternRecall',
+    group: 'memory',
+    seconds: 32,
+    calm: false,
+    accent: 'violet',
+    best: { stat: 'rounds', higher: true },
+    batch: '3.2',
+  },
+  {
+    id: 'numberSpan',
+    group: 'memory',
+    seconds: 45,
+    calm: false,
+    accent: 'cobalt',
+    best: { stat: 'longest', higher: true },
     batch: '3.2',
   },
 ];

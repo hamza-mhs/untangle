@@ -9,6 +9,8 @@ import { definition as echo } from './games/echo';
 import { definition as flashCount } from './games/flashCount';
 import { definition as laneDash } from './games/laneDash';
 import { definition as middleArrow } from './games/middleArrow';
+import { definition as numberSpan } from './games/numberSpan';
+import { definition as patternRecall } from './games/patternRecall';
 import { definition as rocketHop } from './games/rocketHop';
 import { definition as silence } from './games/silence';
 import { definition as spotTheOddOne } from './games/spotTheOddOne';
@@ -38,4 +40,6 @@ export const REGISTRY: Record<GameId, GameDefinition> = {
   flashCount,
   spotTheOddOne,
   trackTheStars,
+  patternRecall,
+  numberSpan,
 };

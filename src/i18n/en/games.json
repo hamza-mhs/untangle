@@ -93,6 +93,16 @@
         "name": "Track the stars",
         "length": "45 sec",
         "how": "A few beads glow for a moment. Then they all look the same and drift. When they stop, tap the ones you followed."
+      },
+      "patternRecall": {
+        "name": "Pattern recall",
+        "length": "32 sec",
+        "how": "Watch the pads light up. Wait for your turn. Tap them in the same order."
+      },
+      "numberSpan": {
+        "name": "Number span",
+        "length": "45 sec",
+        "how": "Digits flash one at a time. Hold them in your head. Type them back in order."
       }
     },
     "meta": "{{group}} · {{length}}",
@@ -141,7 +151,8 @@
       "misses_one": "{{count}} miss",
       "misses_other": "{{count}} misses",
       "round": "ROUND {{n}}",
-      "roundOf": "ROUND {{n}} OF {{total}}"
+      "roundOf": "ROUND {{n}} OF {{total}}",
+      "livesLeft": "{{left}} of {{total}} lives"
     },
     "colourWord": {
       "right": "Right",
@@ -353,6 +364,33 @@
       "statTracked": "{{count}} tracked",
       "statLost": "{{count}} lost",
       "bead": "Bead {{n}}"
+    },
+    "patternRecall": {
+      "round": "Round {{n}}",
+      "watch": "Watch the pattern",
+      "yourTurn": "Your turn",
+      "notThat": "Not that one. Watch again",
+      "perfect": "Perfect round · +{{n}}",
+      "titleComplete": "Level complete",
+      "titleNice": "Nice run",
+      "statRounds_one": "{{count}} round",
+      "statRounds_other": "{{count}} rounds",
+      "pad": "Pad {{n}}"
+    },
+    "numberSpan": {
+      "ready": "Get ready",
+      "watch": "Watch",
+      "yourTurn": "Your turn",
+      "remember": "Remember the digits",
+      "type": "Type them in order",
+      "perfect": "Perfect",
+      "gotIt": "{{count}} digits!",
+      "itWas": "It was {{digits}}",
+      "digits": "{{count}} DIGITS",
+      "title": "Great span",
+      "statLongest": "Longest {{count}} digits",
+      "done": "Check",
+      "delete": "Delete"
     }
   }
 }

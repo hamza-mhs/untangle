@@ -21,6 +21,7 @@ export const glyphs = {
   arrowRight: [p('M5 12h14M13 6l6 6-6 6', 2.2)],
   close: [p('M6 6l12 12M18 6L6 18', 2.2)],
   check: [p('M5 12.5l4.5 4.5L19 7.5', 3)],
+  backspace: [p('M9 5h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-6-7z', 2), p('M12 9.5l5 5M17 9.5l-5 5', 2)],
   plus: [p('M12 5v14M5 12h14', 2.2)],
   minus: [p('M5 12h14', 2.2)],
   lock: [
