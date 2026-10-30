@@ -13,7 +13,7 @@ import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-na
 
 import { Button, Glow, ProgressDots, Screen, Text } from '@/design/components';
 import { BrainPan, GameTiles, PausedPhone } from '@/design/illustrations';
-import { color, layout, space } from '@/design/tokens';
+import { glow, layout, space } from '@/design/tokens';
 import { useReducedMotion } from '@/design/useReducedMotion';
 import { useT } from '@/i18n';
 
@@ -93,7 +93,7 @@ function WelcomeSlides() {
     <Screen
       testID="onboarding.index"
       gutter="none"
-      background={<Glow tint={color.brand.violet} cy={0.28} strength={0.2} />}
+      background={<Glow {...glow.welcome} />}
       footer={
         <View style={styles.footer}>
           <ProgressDots count={SLIDES.length} index={index} testID="onboarding.welcome.dots" />

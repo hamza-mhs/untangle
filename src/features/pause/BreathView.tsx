@@ -7,8 +7,8 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 
-import { Text } from '@/design/components';
-import { color, radius, space } from '@/design/tokens';
+import { Glow, Text } from '@/design/components';
+import { glow, space } from '@/design/tokens';
 import { useReducedMotion } from '@/design/useReducedMotion';
 import { useT } from '@/i18n';
 
@@ -17,6 +17,9 @@ export const BREATHS = 3;
 export const IN_MS = 4000;
 export const OUT_MS = 6000;
 const ORB = 140;
+/** The canvas is larger than the orb so the 60 px halo is not clipped. */
+const WRAP = ORB * 1.8;
+const ORB_R = ORB / 2 / WRAP;
 
 export function BreathView({ onDone }: { onDone: () => void }) {
   const t = useT();
@@ -54,8 +57,10 @@ export function BreathView({ onDone }: { onDone: () => void }) {
         style={styles.orbBox}
         accessibilityElementsHidden
         importantForAccessibility="no-hide-descendants">
-        <Animated.View style={[styles.glow, orb]} />
-        <Animated.View style={[styles.orb, orb]} />
+        <Animated.View style={[styles.orbWrap, orb]}>
+          <Glow {...glow.breathHalo} radius={ORB_R} />
+          <Glow {...glow.breathOrb} radius={ORB_R} />
+        </Animated.View>
       </View>
       <Text variant="heading" align="center" accessibilityLiveRegion="polite">
         {t(phase === 'in' ? 'pause.breath.in' : 'pause.breath.out')}
@@ -69,20 +74,6 @@ export function BreathView({ onDone }: { onDone: () => void }) {
 
 const styles = StyleSheet.create({
   root: { flex: 1, justifyContent: 'center', gap: space.lg },
-  orbBox: { height: ORB * 1.8, alignItems: 'center', justifyContent: 'center' },
-  glow: {
-    position: 'absolute',
-    width: ORB * 1.6,
-    height: ORB * 1.6,
-    borderRadius: radius.pill,
-    backgroundColor: color.game.cobalt,
-    opacity: 0.18,
-  },
-  orb: {
-    width: ORB,
-    height: ORB,
-    borderRadius: radius.pill,
-    backgroundColor: color.game.cobalt,
-    opacity: 0.55,
-  },
+  orbBox: { height: WRAP, alignItems: 'center', justifyContent: 'center' },
+  orbWrap: { width: WRAP, height: WRAP },
 });

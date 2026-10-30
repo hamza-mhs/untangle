@@ -14,7 +14,7 @@ import {
   type HeaderProps,
 } from '@/design/components';
 import { PaywallTiles } from '@/design/illustrations';
-import { color, radius, size, space } from '@/design/tokens';
+import { color, glow, radius, size, space } from '@/design/tokens';
 import { useT } from '@/i18n';
 import { showToast } from '@/lib/toast';
 import {
@@ -255,7 +255,7 @@ export function PaywallScreen({
     <Screen
       testID={testID}
       scroll
-      background={<Glow tint={color.brand.violet} cy={0.22} />}
+      background={<Glow {...glow.paywall} />}
       header={<Header {...header} right={close} />}
       footer={
         <>

@@ -1,4 +1,5 @@
 import { useT } from '@/i18n';
+import { glow } from '@/design/tokens';
 
 import { OnboardingFrame } from '../components/OnboardingFrame';
 import { goNext, QuestionList, useAutoAdvance } from '../components/QuestionList';
@@ -22,6 +23,7 @@ export function AgeScreen() {
   const advance = useAutoAdvance('age');
   return (
     <OnboardingFrame
+      glow={glow.question}
       step="age"
       title={t('onboarding.age.title')}
       body={t('onboarding.age.body')}
@@ -57,6 +59,7 @@ export function ScrollTimeScreen() {
   const advance = useAutoAdvance('scroll-time');
   return (
     <OnboardingFrame
+      glow={glow.question}
       step="scroll-time"
       title={t('onboarding.scrollTime.title')}
       body={t('onboarding.scrollTime.body')}
@@ -93,6 +96,7 @@ export function PickupsScreen() {
   const advance = useAutoAdvance('pickups');
   return (
     <OnboardingFrame
+      glow={glow.question}
       step="pickups"
       title={t('onboarding.pickups.title')}
       body={t('onboarding.pickups.body')}
@@ -127,6 +131,7 @@ export function FocusSignsScreen() {
   const ids: (SignId | 'none')[] = [...SIGN_IDS, 'none'];
   return (
     <OnboardingFrame
+      glow={glow.question}
       step="focus-signs"
       title={t('onboarding.focusSigns.title')}
       body={t('onboarding.focusSigns.body')}

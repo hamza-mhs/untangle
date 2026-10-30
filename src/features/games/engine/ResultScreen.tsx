@@ -9,7 +9,7 @@ import Animated, {
 import Svg, { Path, Polygon } from 'react-native-svg';
 
 import { Glow, Icon, Screen, Text } from '@/design/components';
-import { color, radius, size, space } from '@/design/tokens';
+import { color, radius, resultGlow, size, space } from '@/design/tokens';
 import { useReducedMotion } from '@/design/useReducedMotion';
 import { useT } from '@/i18n';
 
@@ -103,7 +103,7 @@ export function ResultScreen({
     <Screen
       testID="game.result"
       variant="game"
-      background={<Glow tint={accent} cy={0.32} strength={0.22} />}
+      background={<Glow {...resultGlow(accent)} />}
       footer={actions}>
       <View style={styles.body}>
         <Text variant="micro" tone="secondary" align="center">

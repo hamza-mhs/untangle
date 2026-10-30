@@ -359,6 +359,41 @@ Answers: Public Sans downloaded (official release, OFL); icons and art from `des
 - **Checks:** `npm run check` passes (63 suites, 242 tests).
 - **Needs a real phone:** sound latency and volume on a speaker, silent / vibrate switch.
 
+## FIX F1 · Skia glow
+
+- `src/design/components/Glow` rebuilt on Skia 2.14: real-pixel canvas (measured box), a circle
+  unless an ellipse is asked for (canvas squash about the centre), ≥ 3 gradient stops, `dither`
+  on the paint, a fractal-noise grain at 3 % composited `srcATop` (only inside the glow's own
+  alpha), optional `BlurMask` for CSS `box-shadow` halos, optional pulse (Reanimated shared
+  value on the UI thread, off with Reduce motion).
+- Presets in `src/design/tokens/glow.ts`, every value from the prototypes (exact colours added
+  as `color.glow.*`):
+  - Onboarding `.p2 .glow`: 560 px circle on the 320 px phone → r = 0.875·W, centre 42 %,
+    CSS `closest-side` linear falloff (a → a/2 at 0.5 → 0). Welcome violet .14, About you white
+    .035 (new), Your year red .12, Problems red .10, Hours back mint .12, Moment of pause violet
+    .24, Step one violet .16, Focus grows mint .12, Paywall violet .20, Permissions violet .16,
+    Accessibility violet .14, Pick apps violet .12, All set mint .16.
+  - Studying orb `.orb .oh` (#C9A8FF .35 → #8B3DFF .12 at .55 → 0, 2.6 s breathing) and core
+    halos (`box-shadow` 24 px white .55, 60 px #A57BFF .40).
+  - Take a breath `.bcirc` (cobalt .55 → .08 at .7) + 60 px halo .35.
+  - Game result `.succ` ellipse 70 % × 45 % at (50 %, 32 %), accent .30 → 0 at 70 %.
+- Evidence: `docs/evidence/F1/index.html` (app vs design side by side). Measured on the
+  emulator: a 16-level glow has a longest flat run of 14 px (no rings).
+- **Deviations / notes (please check):**
+  1. Problems 1–3 all use the carousel's red .10 (the prototype shows them as one carousel), also
+     the calm "Your focus is holding up" variant, which used to be violet.
+  2. The paywall uses the onboarding paywall glow (centre violet .20), not the in-app `.pw` top
+     glow, because one screen serves both.
+  3. The pause screen itself has no glow (the app prototype's pause sheet has none); only the
+     Take a breath orb changed.
+  4. A Skia canvas paints its first frame a moment after layout, so a glow can appear ~0.2 s
+     after the screen.
+- **Left for later sub-batches:** the game background's stretched oval (visible under the game
+  result) → F2; Studying stars (stretched SVG dots), FogCloud mist ellipses and the Hours back
+  chart (stretched, oval end dots) → F3; Breath count orb → F4; Home sky (stretched SVG clouds)
+  is not in the fix file — flagged for STEP 7.
+- **Checks:** `npm run check` passes (243 tests).
+
 ## Still needed from the owner
 
 1. A real phone over USB for the device checks (permissions, blocking, browsers, battery,

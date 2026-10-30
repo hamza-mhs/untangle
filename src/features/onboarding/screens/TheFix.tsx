@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { Icon, Text } from '@/design/components';
 import type { IconName } from '@/design/icons';
 import { PauseCardPhone } from '@/design/illustrations';
-import { color, radius, size, space } from '@/design/tokens';
+import { color, glow, radius, size, space } from '@/design/tokens';
 import { useT } from '@/i18n';
 
 import { WeekBars, YearLinesChart } from '../components/Charts';
@@ -23,7 +23,7 @@ export function HoursBackScreen() {
     <OnboardingFrame
       step="hours-back"
       layout="story"
-      glow={color.signal.success}
+      glow={glow.hoursBack}
       title={t('onboarding.hoursBack.title', { hours: back })}
       body={t('onboarding.hoursBack.body', { minutes: cut })}
       cta={{
@@ -56,7 +56,7 @@ export function MomentOfPauseScreen() {
     <OnboardingFrame
       step="moment-of-pause"
       layout="story"
-      glow={color.brand.violet}
+      glow={glow.momentOfPause}
       title={t('onboarding.momentOfPause.title')}
       body={t('onboarding.momentOfPause.body')}
       cta={{
@@ -91,7 +91,7 @@ export function StepOneScreen() {
   return (
     <OnboardingFrame
       step="step-one"
-      glow={color.brand.violet}
+      glow={glow.stepOne}
       title={t('onboarding.stepOne.title')}
       cta={{ label: t('common.continue'), onPress: () => goNext('step-one'), variant: 'brand' }}>
       <View style={styles.steps}>
@@ -131,7 +131,7 @@ export function FocusGrowScreen() {
   return (
     <OnboardingFrame
       step="focus-grow"
-      glow={color.signal.success}
+      glow={glow.focusGrow}
       title={t('onboarding.focusGrow.title')}
       body={t('onboarding.focusGrow.body')}
       cta={{ label: t('common.continue'), onPress: () => goNext('focus-grow'), variant: 'brand' }}>

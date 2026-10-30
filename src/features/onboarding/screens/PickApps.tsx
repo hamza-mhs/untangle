@@ -14,7 +14,7 @@ import {
   Text,
   Toggle,
 } from '@/design/components';
-import { color, radius, size, space, type } from '@/design/tokens';
+import { color, glow, radius, size, space, type } from '@/design/tokens';
 import { useT } from '@/i18n';
 import { showToast } from '@/lib/toast';
 import {
@@ -252,7 +252,7 @@ export function PickAppsScreen() {
     <OnboardingFrame
       step="pick-apps"
       scroll
-      glow={color.brand.violet}
+      glow={glow.pickApps}
       title={t('onboarding.pickApps.title')}
       body={t('onboarding.pickApps.body')}
       cta={{ label: ctaText, onPress: block, variant: 'brand', disabled: total === 0 }}>

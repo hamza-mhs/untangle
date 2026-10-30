@@ -9,7 +9,7 @@ import Animated, {
 } from 'react-native-reanimated';
 
 import { Button, Glow, Header, Screen, Text, type ButtonVariant } from '@/design/components';
-import { layout, motion, space } from '@/design/tokens';
+import { type GlowSpec, layout, motion, space } from '@/design/tokens';
 import { useReducedMotion } from '@/design/useReducedMotion';
 
 import { useOnboardingStore } from '../onboardingStore';
@@ -38,8 +38,8 @@ export type OnboardingFrameProps = {
   below?: ReactNode;
   cta?: FrameCta;
   secondary?: FrameCta;
-  /** Glow tint behind the screen (a colour token). */
-  glow?: string;
+  /** Glow behind the screen (a preset from `glow` in the design tokens). */
+  glow?: GlowSpec;
   /** Hide the header entirely (welcome). */
   noHeader?: boolean;
   scroll?: boolean;
@@ -134,7 +134,7 @@ export function OnboardingFrame({
 
   return (
     <Screen
-      background={glow ? <Glow tint={glow} /> : null}
+      background={glow ? <Glow {...glow} /> : null}
       testID={`onboarding.${step}`}
       scroll={scroll}
       header={

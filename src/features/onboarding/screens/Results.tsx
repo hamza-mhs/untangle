@@ -11,11 +11,11 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import { scheduleOnRN } from 'react-native-worklets';
-import Svg, { Circle, Defs, RadialGradient, Rect, Stop } from 'react-native-svg';
+import Svg, { Circle } from 'react-native-svg';
 
-import { ProgressDots, Screen, Text } from '@/design/components';
+import { Glow, ProgressDots, Screen, Text } from '@/design/components';
 import { DistractedDesk, FogCloud } from '@/design/illustrations';
-import { color, layout, radius, size, space } from '@/design/tokens';
+import { color, glow, layout, radius, size, space } from '@/design/tokens';
 import { useReducedMotion } from '@/design/useReducedMotion';
 import { useT } from '@/i18n';
 
@@ -59,14 +59,10 @@ function StarField() {
       style={[StyleSheet.absoluteFill, style]}
       accessibilityElementsHidden
       importantForAccessibility="no-hide-descendants">
+      <Glow {...glow.studyingOrb} cy={ORB_Y} />
+      <Glow {...glow.studyingCoreOuter} cy={ORB_Y} />
+      <Glow {...glow.studyingCoreInner} cy={ORB_Y} />
       <Svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <Defs>
-          <RadialGradient id="orb" cx="50%" cy="34%" rx="32%" ry="16%">
-            <Stop offset="0" stopColor={color.brand.violetLight} stopOpacity={0.45} />
-            <Stop offset="1" stopColor={color.brand.violet} stopOpacity={0} />
-          </RadialGradient>
-        </Defs>
-        <Rect width={100} height={100} fill="url(#orb)" />
         {STARS.map((s, i) => (
           <Circle
             key={i}
@@ -141,7 +137,7 @@ export function YourYearScreen() {
     <OnboardingFrame
       step="your-year"
       layout="story"
-      glow={color.signal.danger}
+      glow={glow.yourYear}
       title={t('onboarding.yourYear.title', { days })}
       body={t(notSure ? 'onboarding.yourYear.bodyNotSure' : 'onboarding.yourYear.body', {
         later: later.days,
@@ -168,7 +164,7 @@ export function ProblemFocusScreen() {
     <OnboardingFrame
       step="problem-focus"
       layout="story"
-      glow={color.signal.danger}
+      glow={glow.problem}
       title={t('onboarding.problemFocus.title')}
       body={t('onboarding.problemFocus.body')}
       below={
@@ -199,7 +195,7 @@ export function ProblemDistractedScreen() {
     <OnboardingFrame
       step="problem-distracted"
       layout="story"
-      glow={color.signal.danger}
+      glow={glow.problem}
       title={t('onboarding.problemDistracted.title')}
       body={t('onboarding.problemDistracted.body')}
       below={<ProblemDots index={1} />}
@@ -226,7 +222,7 @@ export function ProblemFoggyScreen() {
     <OnboardingFrame
       step="problem-foggy"
       layout="story"
-      glow={calm ? color.brand.violet : color.signal.danger}
+      glow={glow.problem}
       title={t(calm ? 'onboarding.problemFoggy.titleNone' : 'onboarding.problemFoggy.title')}
       body={t(calm ? 'onboarding.problemFoggy.bodyNone' : 'onboarding.problemFoggy.body', {
         k,
@@ -248,12 +244,15 @@ export function ProblemFoggyScreen() {
   );
 }
 
-const ORB = 22;
+/** Studying core dot (`.orb .oc`, 20 px). */
+const ORB = 20;
+/** Studying orb centre, as a fraction of the screen height. */
+const ORB_Y = 0.34;
 const styles = StyleSheet.create({
   orbCore: {
     position: 'absolute',
     left: '50%',
-    top: '34%',
+    top: `${ORB_Y * 100}%`,
     width: ORB,
     height: ORB,
     marginLeft: -ORB / 2,

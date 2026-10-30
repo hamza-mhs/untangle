@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>F1 · Skia glow — app vs design</title>
+<style>
+  body { background: #111; color: #ddd; font: 14px system-ui, sans-serif; margin: 24px; }
+  h1 { font-size: 20px; }
+  .pair { display: flex; gap: 16px; align-items: flex-start; margin: 28px 0; }
+  .pair figure { margin: 0; }
+  .pair img { height: 640px; border-radius: 12px; background: #000; }
+  figcaption { margin-top: 6px; color: #999; }
+  h2 { font-size: 16px; margin: 0 0 8px; }
+</style>
+</head>
+<body>
+<h1>F1 · Skia glow — emulator (left) vs design/screens (right)</h1>
+<p>Emulator: Medium Phone API 37, 1080 × 2400. Pixel rows measured with a PNG decoder: dithered values, longest flat run 14 px across a 16-level glow (an undithered glow would show ~34 px rings).</p>
+
+<div class="pair"><div><h2>Welcome · violet .14</h2></div>
+  <figure><img src="welcome.png"><figcaption>app</figcaption></figure>
+  <figure><img src="../../../design/screens/onboarding/02-splash-b-1-block-the-apps.png"><figcaption>design</figcaption></figure></div>
+
+<div class="pair"><div><h2>About you · white .035</h2></div>
+  <figure><img src="age.png"><figcaption>app</figcaption></figure>
+  <figure><img src="../../../design/screens/onboarding/05-your-age.png"><figcaption>design</figcaption></figure></div>
+
+<div class="pair"><div><h2>Studying · orb + core halos</h2></div>
+  <figure><img src="studying.png"><figcaption>app (stars still SVG ovals → F3)</figcaption></figure>
+  <figure><img src="../../../design/screens/onboarding/09-studying-your-answers.png"><figcaption>design</figcaption></figure></div>
+
+<div class="pair"><div><h2>Your year · red .12</h2></div>
+  <figure><img src="your-year.png"><figcaption>app</figcaption></figure>
+  <figure><img src="../../../design/screens/onboarding/10-thats-38-days-of-your-year.png"><figcaption>design</figcaption></figure></div>
+
+<div class="pair"><div><h2>Hours back · mint .12</h2></div>
+  <figure><img src="hours-back.png"><figcaption>app (chart itself → F3)</figcaption></figure>
+  <figure><img src="../../../design/screens/onboarding/14-hours-back.png"><figcaption>design</figcaption></figure></div>
+
+<div class="pair"><div><h2>Moment of pause · violet .24</h2></div>
+  <figure><img src="moment-of-pause.png"><figcaption>app</figcaption></figure>
+  <figure><img src="../../../design/screens/onboarding/15-moment-of-pause.png"><figcaption>design</figcaption></figure></div>
+
+<div class="pair"><div><h2>All set · mint .16</h2></div>
+  <figure><img src="all-set.png"><figcaption>app</figcaption></figure>
+  <figure><img src="../../../design/screens/onboarding/23-youre-all-set.png"><figcaption>design</figcaption></figure></div>
+
+<div class="pair"><div><h2>Take a breath · orb + 60 px halo</h2></div>
+  <figure><img src="take-a-breath.png"><figcaption>app</figcaption></figure>
+  <figure><img src="../../../design/screens/app/43-lock-screens--take-a-breath.png"><figcaption>design</figcaption></figure></div>
+
+<div class="pair"><div><h2>Game result · accent .30 ellipse</h2></div>
+  <figure><img src="game-result.png"><figcaption>app (the faint lower oval is the old game background → F2)</figcaption></figure>
+  <figure><img src="../../../design/screens/games-reference-flow/13-colour-word--result-level-complete.png"><figcaption>design</figcaption></figure></div>
+</body>
+</html>

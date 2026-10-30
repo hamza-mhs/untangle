@@ -10,7 +10,7 @@ import Animated, {
 
 import { Icon, PressableScale, Text } from '@/design/components';
 import { ShieldCheck } from '@/design/illustrations';
-import { color, motion, radius, size, space } from '@/design/tokens';
+import { color, glow, motion, radius, size, space } from '@/design/tokens';
 import { useReducedMotion } from '@/design/useReducedMotion';
 import { useT } from '@/i18n';
 import { useLocksStore } from '@/features/locks';
@@ -138,7 +138,7 @@ export function AllSetScreen() {
     <OnboardingFrame
       step="all-set"
       layout="story"
-      glow={color.signal.success}
+      glow={glow.allSet}
       title={t('onboarding.allSet.title')}
       body={names.length ? t('onboarding.allSet.body', { list }) : t('onboarding.allSet.bodyNone')}
       cta={{ label: t('onboarding.allSet.cta'), onPress: leave, variant: 'brand' }}

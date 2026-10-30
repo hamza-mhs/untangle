@@ -4,7 +4,7 @@ import { StyleSheet, View } from 'react-native';
 
 import { Button, Icon, PressableScale, Sheet, Text } from '@/design/components';
 import { AccessibilitySettingsMock } from '@/design/illustrations';
-import { color, radius, size, space } from '@/design/tokens';
+import { color, glow, radius, size, space } from '@/design/tokens';
 import { useT } from '@/i18n';
 import { blocker } from '@/native';
 
@@ -152,7 +152,7 @@ export function PermissionsScreen() {
     <OnboardingFrame
       step="permissions"
       scroll
-      glow={color.brand.violet}
+      glow={glow.permissions}
       title={t('onboarding.permissions.title')}
       body={t('onboarding.permissions.body')}
       cta={{
@@ -259,7 +259,7 @@ export function AccessibilityScreen() {
     <OnboardingFrame
       step="accessibility"
       layout="story"
-      glow={color.brand.violet}
+      glow={glow.accessibility}
       title={t('onboarding.accessibility.title')}
       body={t('onboarding.accessibility.body')}
       cta={{
