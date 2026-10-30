@@ -1,0 +1,63 @@
+{
+  "pause": {
+    "title": "A moment of pause",
+    "body_one": "You opened {{app}} {{count}} time today. What do you actually want right now?",
+    "body_other": "You opened {{app}} {{count}} times today. What do you actually want right now?",
+    "preview": "Preview",
+    "chip": {
+      "minutes": "{{minutes}} min a day",
+      "opens_one": "{{count}} open a day",
+      "opens_other": "{{count}} opens a day",
+      "allDay": "Blocked all day",
+      "focus": "Focus session"
+    },
+    "allDay": {
+      "title": "{{app}} is blocked all day."
+    },
+    "firm": {
+      "note": "Firm · Play, then wait 30 s for a 3-min unlock"
+    },
+    "locked": {
+      "title": "{{app}} is locked for today.",
+      "body": "Nothing opens it early, but you can still play."
+    },
+    "cap": {
+      "body_one": "You've used today's {{count}} unlock. You can still play.",
+      "body_other": "You've used today's {{count}} unlocks. You can still play."
+    },
+    "focus": {
+      "title": "Focus session · {{minutes}} min left",
+      "body": "{{app}} is blocked until it ends."
+    },
+    "timeUp": {
+      "title": "Time's up",
+      "body": "That was your {{minutes}} minutes. {{app}} is locked again until tomorrow.",
+      "onTime": "You stopped on time",
+      "onTimeSub": "That counts toward your streak"
+    },
+    "game": {
+      "title": "Play a quick game",
+      "sub": "{{game}} · {{seconds}} sec",
+      "kicker": "You opened {{app}}. Play this instead?"
+    },
+    "breath": {
+      "title": "Take a breath",
+      "sub": "Three slow breaths, about 30 sec",
+      "in": "Breathe in",
+      "out": "Breathe out",
+      "left_one": "{{count}} slow breath",
+      "left_other": "{{count}} slow breaths"
+    },
+    "back": {
+      "title": "Back to my day",
+      "sub": "Close {{app}}"
+    },
+    "after": {
+      "open": "Open {{app}} for {{minutes}} min",
+      "wait": "Unlock in {{s}} s",
+      "locked": "{{app}} stays locked for today.",
+      "focus": "{{app}} stays blocked until your session ends.",
+      "unlockFailed": "Couldn't unlock right now. Try again from the app."
+    }
+  }
+}

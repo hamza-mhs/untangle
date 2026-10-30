@@ -1,0 +1,76 @@
+{
+  "settings": {
+    "title": "Settings",
+    "summary": "🔥 {{streak}}-day streak · {{detours}} detours this week",
+    "plan": {
+      "daysLeft_one": "{{count}} day left",
+      "daysLeft_other": "{{count}} days left",
+      "trial": {
+        "title": "Free trial",
+        "body": "Pick a plan to keep blocking and every game after the trial.",
+        "cta": "See plans"
+      },
+      "pro": {
+        "title": "Untangle Pro · {{plan}}",
+        "body": "Every block and every game.",
+        "renews": "Renews {{date}}",
+        "ends": "Pro ends {{date}}",
+        "cta": "Manage"
+      },
+      "free": {
+        "title": "Free plan",
+        "body": "3 locks, daily games.",
+        "cta": "Go Pro"
+      }
+    },
+    "warn": {
+      "offBody": "Untangle can't step in until Accessibility is on again.",
+      "batteryBody": "Battery use isn't set to Unrestricted. Your phone may close Untangle in the background."
+    },
+    "blocking": "Blocking",
+    "strictness": "Default strictness",
+    "unlock": "Unlock length",
+    "unlockSub": "After a game, on Gentle",
+    "minutes_one": "{{count}} min",
+    "minutes_other": "{{count}} min",
+    "permissions": "Permissions",
+    "allSet": "All set",
+    "needs_one": "{{count}} needs attention",
+    "needs_other": "{{count}} need attention",
+    "games": "Games and training",
+    "goal": "Daily goal",
+    "goalSub": "Games or detours a day for your streak",
+    "sound": "Sound",
+    "haptics": "Haptics",
+    "privacy": "Privacy",
+    "sees": "What Untangle sees",
+    "delete": "Delete my data",
+    "deleteTitle": "Delete your data?",
+    "deleteBody": "Your locks, progress, streak and game history are erased from this phone. Your subscription is not cancelled; do that in Google Play.",
+    "deleteConfirm": "Delete my data",
+    "about": "About",
+    "privacyPolicy": "Privacy policy",
+    "version": "Version",
+    "on": "On",
+    "turnOn": "Turn on",
+    "oem": "Phone maker settings",
+    "oemRow": "Allow auto-start",
+    "oemSub": "Some phones stop apps in the background unless you allow it.",
+    "oemSteps": "Open Settings › Apps › Untangle and allow auto-start or background activity.",
+    "privacyPage": {
+      "sees": {
+        "title": "What Untangle sees",
+        "body": "The name of the app in front, and the address of the site in supported browsers. That's how it knows when to show your moment of pause."
+      },
+      "never": {
+        "title": "What it never sees",
+        "body": "Your messages, what you type, what's on the screen inside an app, your photos or your contacts."
+      },
+      "stays": {
+        "title": "Everything stays on your phone",
+        "body": "No account, no server, no analytics. Only Google Play and RevenueCat see your purchase."
+      },
+      "manage": "Manage Accessibility"
+    }
+  }
+}

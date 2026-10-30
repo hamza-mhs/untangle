@@ -1,0 +1,37 @@
+{
+  "focus": {
+    "none": "No session running.",
+    "start": {
+      "title": "Focus now",
+      "body": "Blocks {{list}} until the timer ends.",
+      "bodyNone": "Add a lock first, then block it for a set time.",
+      "namesMore_one": "{{a}}, {{b}} and {{count}} more",
+      "namesMore_other": "{{a}}, {{b}} and {{count}} more",
+      "minutes": "{{minutes}} min",
+      "apps_one": "Apps · {{count}} chosen",
+      "apps_other": "Apps · {{count}} chosen",
+      "cta": "Start {{minutes}} min",
+      "already": "A session is already running"
+    },
+    "running": {
+      "of": "left of {{minutes}} min",
+      "a11y": "{{minutes}} minutes left",
+      "breather": "Feeling the pull? A 90-second breather helps",
+      "endEarly": "End early"
+    },
+    "end": {
+      "title": "End the session early?",
+      "body": "You've done the hard part already. If it's an urge, a 45-second game usually lets it pass.",
+      "play": "Play a quick game first",
+      "keep": "Keep going",
+      "end": "End session"
+    },
+    "complete": {
+      "title": "Session complete",
+      "titleEarly": "Session ended",
+      "noDetours": "{{minutes}} minutes, no detours needed",
+      "detours_one": "{{minutes}} minutes, {{count}} detour",
+      "detours_other": "{{minutes}} minutes, {{count}} detours"
+    }
+  }
+}

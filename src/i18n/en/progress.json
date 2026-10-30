@@ -1,0 +1,31 @@
+{
+  "progress": {
+    "title": "Progress",
+    "week": "This week",
+    "month": "This month",
+    "firstWeek": "Your first week fills in as you go.",
+    "avgScreen": "Average screen time",
+    "less": "{{pct}}% less than {{period}}",
+    "more": "{{pct}}% more than {{period}}",
+    "last": { "week": "last week", "month": "last month" },
+    "legendBlocked": "Blocked apps",
+    "legendOther": "Everything else",
+    "timeBack": "Time back",
+    "timeBackSub": "vs your first week",
+    "detours": "Detours taken",
+    "detoursSub": "Played instead of scrolling",
+    "games": "Games played",
+    "gamesSub_one": "{{count}} different",
+    "gamesSub_other": "{{count}} different",
+    "pickups": "Pick-ups a day",
+    "pickupsFewer": "{{count}} fewer",
+    "pickupsMore": "{{count}} more",
+    "guessed": "You guessed {{answer}}",
+    "bests": "Personal bests",
+    "bestsSub": "Against yourself only",
+    "noBests": "No bests yet",
+    "proTitle": "See the whole month with Pro",
+    "proBody": "Your week stays free. Pro shows every month and your full history.",
+    "seePlans": "See plans"
+  }
+}

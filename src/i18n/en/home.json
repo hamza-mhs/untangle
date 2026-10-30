@@ -1,0 +1,73 @@
+{
+  "home": {
+    "settings": "Settings",
+    "streak": {
+      "pill_one": "{{count}} day",
+      "pill_other": "{{count}} days",
+      "title_one": "{{count}}-day streak",
+      "title_other": "{{count}}-day streak",
+      "body": "Play {{goal}} games a day to keep it going. Detours from a blocked app count too.",
+      "cta": "Play today's game"
+    },
+    "banner": {
+      "off": "Blocking is off",
+      "turnOn": "Turn on",
+      "battery": "Blocking might stop",
+      "fix": "Fix it"
+    },
+    "screen": {
+      "title": "Screen time today",
+      "a11y": "Screen time today, {{time}}. Open details",
+      "less": "{{time}} less than usual",
+      "more": "{{time}} more than usual",
+      "firstDays": "We'll compare once we have a few days.",
+      "blocked": "Blocked apps {{time}}",
+      "other": "Everything else",
+      "allowUsage": "See your full screen time · Allow usage access"
+    },
+    "training": {
+      "title": "Today's training",
+      "meta": "{{played}} of {{total}} · about {{minutes}} min",
+      "done": "{{count}} of {{count}} · done for today ✓",
+      "play": "Play now",
+      "again": "Play again",
+      "doneCard": "Done today"
+    },
+    "trialEnded": {
+      "title": "Your trial has ended",
+      "cta": "See plans"
+    },
+    "blocked": {
+      "title": "Blocked apps",
+      "edit": "Edit",
+      "add": "Add",
+      "left": "{{name}}: {{left}} of {{total}} min left",
+      "overOne": "{{name}} is over today's limit",
+      "over": "{{count}} apps over today's limit",
+      "allOn_one": "{{count}} lock on",
+      "allOn_other": "{{count}} locks on"
+    },
+    "detail": {
+      "title": "Screen time",
+      "today": "Today",
+      "pickupsByHour": "Pick-ups by hour",
+      "pickupsA11y": "Pick-ups by hour. Hours with detours in red.",
+      "pickups": "Pick-ups",
+      "pickupsDelta_less": "{{count}} fewer than usual",
+      "pickupsDelta_more": "{{count}} more than usual",
+      "detours": "Detours taken",
+      "detoursSub": "Times you played instead",
+      "mostUsed": "Most used",
+      "inLock": "Blocked in a lock",
+      "notBlocked": "Not blocked",
+      "footnote": "Numbers come from Android's usage access. Untangle never sees what you do inside an app.",
+      "limitTitle": "Limit {{name}}?",
+      "limitBody": "Give it a daily allowance. After that, your moment of pause.",
+      "limitCta": "Set a limit",
+      "noAccessTitle": "See your real screen time",
+      "noAccessBody": "Turn on usage access so Untangle can show screen time and pick-ups. Nothing leaves your phone.",
+      "noAccessCta": "Allow usage access",
+      "axis": { "h0": "12 AM", "h6": "6 AM", "h12": "12 PM", "h18": "6 PM" }
+    }
+  }
+}
