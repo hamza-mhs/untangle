@@ -31,7 +31,12 @@ export type GameId =
   | 'stopOnTheBeep'
   | 'oppositeDay'
   | 'ruleFlip'
-  | 'sortTheStream';
+  | 'sortTheStream'
+  // 3.2d
+  | 'quickMaths'
+  | 'biggerTotal'
+  | 'timeItRight'
+  | 'orbitSwitch';
 
 export type GameAccent =
   'pink' | 'sky' | 'cobalt' | 'violet' | 'orange' | 'mint' | 'sun' | 'coral' | 'indigo';
@@ -252,6 +257,44 @@ export const GAMES: readonly GameMeta[] = [
     accent: 'mint',
     glow: 'sky',
     best: { stat: 'sorted', higher: true },
+    batch: '3.2',
+  },
+  {
+    id: 'quickMaths',
+    group: 'quickDecisions',
+    seconds: 30,
+    calm: false,
+    accent: 'orange',
+    best: { stat: 'right', higher: true },
+    batch: '3.2',
+  },
+  {
+    id: 'biggerTotal',
+    group: 'quickDecisions',
+    seconds: 40,
+    calm: false,
+    accent: 'orange',
+    glow: 'sun',
+    best: { stat: 'right', higher: true },
+    batch: '3.2',
+  },
+  {
+    id: 'timeItRight',
+    group: 'selfControl',
+    seconds: 45,
+    calm: false,
+    accent: 'orange',
+    best: { stat: 'closestMs', higher: false },
+    batch: '3.2',
+  },
+  {
+    id: 'orbitSwitch',
+    group: 'selfControl',
+    seconds: 30,
+    calm: false,
+    accent: 'sky',
+    glow: 'violet',
+    best: { stat: 'laps', higher: true },
     batch: '3.2',
   },
 ];

@@ -123,6 +123,26 @@
         "name": "Sort the stream",
         "length": "40 sec",
         "how": "Cards stream in one after another. Swipe left or right by the rule. When the rule switches, switch with it."
+      },
+      "quickMaths": {
+        "name": "Quick maths",
+        "length": "30 sec",
+        "how": "A sum appears. Work it out before the ring closes. Tap the right answer."
+      },
+      "biggerTotal": {
+        "name": "Bigger total",
+        "length": "40 sec",
+        "how": "Two stacks of number tiles. Add each stack in your head. Tap the bigger one before the bar runs out."
+      },
+      "timeItRight": {
+        "name": "Time it right",
+        "length": "5 tries",
+        "how": "The hand starts sweeping. At 2 seconds it hides. Tap when you feel 5 seconds."
+      },
+      "orbitSwitch": {
+        "name": "Orbit switch",
+        "length": "30 sec",
+        "how": "The marble races round its ring. Tap to hop between inner and outer ring. Dodge the red, collect the sparks."
       }
     },
     "meta": "{{group}} · {{length}}",
@@ -480,6 +500,63 @@
       "leftLabel": "← {{kind}}",
       "rightLabel": "{{kind}} →",
       "title": "Switched on"
+    },
+    "quickMaths": {
+      "pick": "Pick the answer",
+      "right": "Right",
+      "inARow": "{{n}} in a row",
+      "itWas": "It was {{n}}",
+      "tooSlow": "Too slow. It was {{n}}",
+      "titleQuick": "Quick thinking",
+      "titleNice": "Nice run",
+      "statRight": "{{right}} of {{n}} right",
+      "statStreak_one": "Best streak {{count}}",
+      "statStreak_other": "Best streak {{count}}",
+      "a11y": "{{a}} {{op}} {{b}}",
+      "ops": {
+        "+": "plus",
+        "−": "minus",
+        "×": "times"
+      }
+    },
+    "biggerTotal": {
+      "pick": "Tap the bigger total",
+      "bigger": "Bigger",
+      "beats": "{{big}} beats {{small}}",
+      "tooSlow": "Too slow",
+      "title": "Quick adder",
+      "statRight": "{{right}} of {{n}} right",
+      "a11y": "Stack {{tiles}}"
+    },
+    "timeItRight": {
+      "try": "TRY {{n}} OF {{total}}",
+      "ready": "Get ready",
+      "count": "Count along",
+      "keep": "Keep counting…",
+      "closest": "Closest yet",
+      "spotOn": "Spot on",
+      "late": "A little late",
+      "early": "A little early",
+      "seconds": "{{s}} s",
+      "button": "Tap at 5 seconds",
+      "title": "Inner clock",
+      "statClosest": "Closest ±{{s}} s",
+      "statTries_one": "{{count}} try",
+      "statTries_other": "{{count}} tries"
+    },
+    "orbitSwitch": {
+      "tap": "Tap to switch rings",
+      "tapLabel": "TAP TO SWITCH",
+      "lap": "LAP {{n}}",
+      "lapDone": "Lap {{n}}",
+      "bumped": "Bumped",
+      "out": "Out of lives",
+      "title": "In orbit",
+      "statLaps_one": "{{count}} lap",
+      "statLaps_other": "{{count}} laps",
+      "statSparks_one": "{{sparks}} sparks · {{count}} bump",
+      "statSparks_other": "{{sparks}} sparks · {{count}} bumps",
+      "a11y": "Orbit. Double tap to switch rings"
     }
   }
 }

@@ -471,6 +471,34 @@ Answers: Public Sans downloaded (official release, OFL); icons and art from `des
   shows on the piece right after a flip.
 - **Checks:** `npm run check` passes (277 tests).
 
+## Batch 3.2d · Numbers & timing
+
+- **Quick maths** (`quickMaths`, grid, orange): 10 sums (+, −, ×) with 4 toy-key answers
+  (prototype near-miss distractors), a small per-question ring (new `kit/RingTimer`, 4.5 s,
+  white → amber → red) under the 30 s game timer, `10 + 5·(streak − 1)` points; 3★ right ≥ 9.
+- **Bigger total** (`biggerTotal`, grid, orange, glow sun): 12 pairs of three 1–9 tiles (ties
+  nudged apart), a 3.5 s bar, totals flip up over the bins after the pick, `10 + streak` points;
+  3★ right ≥ 11.
+- **Time it right** (`timeItRight`, persp, orange): 5 tries, hand sweeps 2 s then hides (quiet
+  background), one big toy button, white 5.00 s / orange you markers on a 3–7 s line, tries row,
+  "Closest yet" toast, `max(5, 100 − |err|·300)` points; best = closest error (lower); 3★ < 0.1 s.
+  No tap by 8 s counts as a try.
+- **Orbit switch** (`orbitSwitch`, dots, sky, glow violet): marble on two rings, tap to hop,
+  `min(4, 2 + laps)` red blocks alternating rings with a spark opposite each, +0.12 rad/s per
+  lap, 3 lives, +20 per lap, +10 per spark; 3★ no bumps.
+- **Deviations (please check):**
+  1. Orbit switch starts on the **inner** ring. The prototype (a self-playing demo) starts outer,
+     which meets the first block ~0.5 s after the board appears; inner gives ≥ 1.5 s and a free
+     first spark (tested over 1,000 seeds).
+  2. Pieces are flat token colours (no Enamel / Candy gloss materials), as in 3.1–3.2c.
+- **Checked on the emulator:** all four start → result, plus pause → quit (`docs/evidence/3.2d/`).
+  Fixed on the way: Quick maths and Bigger total boards now sit under the HUD as in the designs
+  (Bigger total: totals above narrower tiles); Orbit switch's marble no longer sits at the
+  top-left corner before the round starts.
+- **Dev note:** `CI=1 npx expo start` turns off Metro's file watching, so edits never reach the
+  app; start Metro without `CI` when testing on the emulator.
+- **Checks:** `npm run check` passes (290 tests).
+
 ## Still needed from the owner
 
 1. A real phone over USB for the device checks (permissions, blocking, browsers, battery,

@@ -1,5 +1,6 @@
 import type { GameId } from './catalog';
 import type { GameDefinition } from './engine/types';
+import { definition as biggerTotal } from './games/biggerTotal';
 import { definition as blockFit } from './games/blockFit';
 import { definition as breathCount } from './games/breathCount';
 import { definition as cardPairs } from './games/cardPairs';
@@ -11,7 +12,9 @@ import { definition as laneDash } from './games/laneDash';
 import { definition as middleArrow } from './games/middleArrow';
 import { definition as numberSpan } from './games/numberSpan';
 import { definition as oppositeDay } from './games/oppositeDay';
+import { definition as orbitSwitch } from './games/orbitSwitch';
 import { definition as patternRecall } from './games/patternRecall';
+import { definition as quickMaths } from './games/quickMaths';
 import { definition as rocketHop } from './games/rocketHop';
 import { definition as ruleFlip } from './games/ruleFlip';
 import { definition as silence } from './games/silence';
@@ -20,6 +23,7 @@ import { definition as spotTheOddOne } from './games/spotTheOddOne';
 import { definition as stackTower } from './games/stackTower';
 import { definition as stopOnTheBeep } from './games/stopOnTheBeep';
 import { definition as swapIt } from './games/swapIt';
+import { definition as timeItRight } from './games/timeItRight';
 import { definition as trackTheStars } from './games/trackTheStars';
 import { definition as urgeSurfing } from './games/urgeSurfing';
 
@@ -50,4 +54,8 @@ export const REGISTRY: Record<GameId, GameDefinition> = {
   oppositeDay,
   ruleFlip,
   sortTheStream,
+  quickMaths,
+  biggerTotal,
+  timeItRight,
+  orbitSwitch,
 };
