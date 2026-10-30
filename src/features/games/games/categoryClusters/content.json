@@ -1,0 +1,1194 @@
+{
+  "version": 1,
+  "reviewed": false,
+  "items": [
+    {
+      "id": "cc-0001",
+      "groups": [
+        { "name": "Planets", "words": ["mars", "venus", "saturn", "earth"] },
+        { "name": "Colours", "words": ["teal", "plum", "amber", "navy"] },
+        { "name": "Fruit", "words": ["mango", "kiwi", "banana", "pear"] }
+      ],
+      "herring": { "word": "plum", "alsoFits": "Fruit" }
+    },
+    {
+      "id": "cc-0002",
+      "groups": [
+        { "name": "Birds", "words": ["kite", "robin", "eagle", "swan"] },
+        { "name": "Toys", "words": ["doll", "puzzle", "teddy", "rattle"] },
+        { "name": "Tools", "words": ["hammer", "saw", "drill", "chisel"] }
+      ],
+      "herring": { "word": "kite", "alsoFits": "Toys" }
+    },
+    {
+      "id": "cc-0003",
+      "groups": [
+        { "name": "Fish", "words": ["salmon", "trout", "cod", "tuna"] },
+        { "name": "Shades of pink", "words": ["rose", "coral", "blush", "fuchsia"] },
+        { "name": "Weather", "words": ["rain", "snow", "hail", "fog"] }
+      ],
+      "herring": { "word": "salmon", "alsoFits": "Shades of pink" }
+    },
+    {
+      "id": "cc-0004",
+      "groups": [
+        { "name": "Body parts", "words": ["palm", "elbow", "knee", "ankle"] },
+        { "name": "Trees", "words": ["oak", "birch", "willow", "maple"] },
+        { "name": "Kitchen tools", "words": ["whisk", "ladle", "grater", "spatula"] }
+      ],
+      "herring": { "word": "palm", "alsoFits": "Trees" }
+    },
+    {
+      "id": "cc-0005",
+      "groups": [
+        { "name": "Instruments", "words": ["horn", "drum", "flute", "harp"] },
+        { "name": "Animal parts", "words": ["tail", "hoof", "claw", "whisker"] },
+        { "name": "Vegetables", "words": ["carrot", "onion", "leek", "potato"] }
+      ],
+      "herring": { "word": "horn", "alsoFits": "Animal parts" }
+    },
+    {
+      "id": "cc-0006",
+      "groups": [
+        { "name": "Insects", "words": ["cricket", "ant", "beetle", "moth"] },
+        { "name": "Ball sports", "words": ["golf", "tennis", "rugby", "baseball"] },
+        { "name": "Breakfast foods", "words": ["toast", "cereal", "porridge", "bacon"] }
+      ],
+      "herring": { "word": "cricket", "alsoFits": "Ball sports" }
+    },
+    {
+      "id": "cc-0007",
+      "groups": [
+        { "name": "Shapes", "words": ["diamond", "circle", "square", "triangle"] },
+        { "name": "Gems", "words": ["ruby", "emerald", "pearl", "sapphire"] },
+        { "name": "Dances", "words": ["waltz", "tango", "salsa", "polka"] }
+      ],
+      "herring": { "word": "diamond", "alsoFits": "Gems" }
+    },
+    {
+      "id": "cc-0008",
+      "groups": [
+        { "name": "Things with wings", "words": ["bat", "plane", "owl", "butterfly"] },
+        { "name": "Sports kit", "words": ["racket", "helmet", "whistle", "glove"] },
+        { "name": "Things with shells", "words": ["egg", "snail", "turtle", "walnut"] }
+      ],
+      "herring": { "word": "bat", "alsoFits": "Sports kit" }
+    },
+    {
+      "id": "cc-0009",
+      "groups": [
+        { "name": "Months", "words": ["march", "april", "june", "october"] },
+        { "name": "Ways to walk", "words": ["stroll", "hike", "stride", "wander"] },
+        { "name": "Dairy foods", "words": ["milk", "cheese", "butter", "cream"] }
+      ],
+      "herring": { "word": "march", "alsoFits": "Ways to walk" }
+    },
+    {
+      "id": "cc-0010",
+      "groups": [
+        { "name": "Herbs", "words": ["mint", "basil", "thyme", "dill"] },
+        { "name": "Shades of green", "words": ["jade", "olive", "emerald", "lime"] },
+        { "name": "Music styles", "words": ["jazz", "rock", "blues", "folk"] }
+      ],
+      "herring": { "word": "mint", "alsoFits": "Shades of green" }
+    },
+    {
+      "id": "cc-0011",
+      "groups": [
+        { "name": "Goes before ball", "words": ["foot", "basket", "base", "meat"] },
+        { "name": "Body parts", "words": ["elbow", "knee", "chin", "wrist"] },
+        { "name": "Furniture", "words": ["sofa", "desk", "stool", "wardrobe"] }
+      ],
+      "herring": { "word": "foot", "alsoFits": "Body parts" }
+    },
+    {
+      "id": "cc-0012",
+      "groups": [
+        { "name": "Baby animals", "words": ["calf", "foal", "cub", "kitten"] },
+        { "name": "Parts of the leg", "words": ["shin", "knee", "thigh", "ankle"] },
+        { "name": "Breads", "words": ["bagel", "baguette", "naan", "brioche"] }
+      ],
+      "herring": { "word": "calf", "alsoFits": "Parts of the leg" }
+    },
+    {
+      "id": "cc-0013",
+      "groups": [
+        { "name": "Household chores", "words": ["iron", "dust", "sweep", "mop"] },
+        { "name": "Metals", "words": ["gold", "copper", "silver", "tin"] },
+        { "name": "Rodents", "words": ["mouse", "rat", "hamster", "squirrel"] }
+      ],
+      "herring": { "word": "iron", "alsoFits": "Metals" }
+    },
+    {
+      "id": "cc-0014",
+      "groups": [
+        { "name": "Things in the sky", "words": ["star", "moon", "cloud", "rainbow"] },
+        { "name": "Shapes", "words": ["oval", "square", "heart", "hexagon"] },
+        { "name": "Sea creatures", "words": ["crab", "whale", "octopus", "seal"] }
+      ],
+      "herring": { "word": "star", "alsoFits": "Shapes" }
+    },
+    {
+      "id": "cc-0015",
+      "groups": [
+        { "name": "Clothing", "words": ["tie", "shirt", "scarf", "jacket"] },
+        { "name": "Match results", "words": ["win", "loss", "draw", "victory"] },
+        { "name": "Garden tools", "words": ["rake", "hoe", "spade", "trowel"] }
+      ],
+      "herring": { "word": "tie", "alsoFits": "Match results" }
+    },
+    {
+      "id": "cc-0016",
+      "groups": [
+        { "name": "Goes before fly", "words": ["butter", "dragon", "fire", "house"] },
+        { "name": "Breakfast foods", "words": ["toast", "cereal", "jam", "honey"] },
+        { "name": "Vehicles", "words": ["bus", "train", "tram", "taxi"] }
+      ],
+      "herring": { "word": "butter", "alsoFits": "Breakfast foods" }
+    },
+    {
+      "id": "cc-0017",
+      "groups": [
+        { "name": "Things with teeth", "words": ["saw", "comb", "shark", "gear"] },
+        { "name": "Tools", "words": ["hammer", "drill", "chisel", "wrench"] },
+        { "name": "Desserts", "words": ["cake", "mousse", "sundae", "tart"] }
+      ],
+      "herring": { "word": "saw", "alsoFits": "Tools" }
+    },
+    {
+      "id": "cc-0018",
+      "groups": [
+        { "name": "Flowers", "words": ["iris", "rose", "daisy", "tulip"] },
+        { "name": "Parts of the eye", "words": ["pupil", "lens", "retina", "cornea"] },
+        { "name": "Units of time", "words": ["second", "minute", "hour", "decade"] }
+      ],
+      "herring": { "word": "iris", "alsoFits": "Parts of the eye" }
+    },
+    {
+      "id": "cc-0019",
+      "groups": [
+        { "name": "Birds", "words": ["turkey", "robin", "owl", "parrot"] },
+        { "name": "Countries", "words": ["france", "japan", "brazil", "egypt"] },
+        { "name": "Kitchen appliances", "words": ["toaster", "kettle", "oven", "blender"] }
+      ],
+      "herring": { "word": "turkey", "alsoFits": "Countries" }
+    },
+    {
+      "id": "cc-0020",
+      "groups": [
+        { "name": "Instruments", "words": ["triangle", "piano", "violin", "trumpet"] },
+        { "name": "Flat shapes", "words": ["square", "circle", "oval", "hexagon"] },
+        { "name": "Cheeses", "words": ["brie", "feta", "cheddar", "gouda"] }
+      ],
+      "herring": { "word": "triangle", "alsoFits": "Flat shapes" }
+    },
+    {
+      "id": "cc-0021",
+      "groups": [
+        { "name": "Dances", "words": ["salsa", "waltz", "tango", "polka"] },
+        { "name": "Sauces", "words": ["gravy", "pesto", "ketchup", "mustard"] },
+        { "name": "Trees", "words": ["oak", "ash", "elm", "pine"] }
+      ],
+      "herring": { "word": "salsa", "alsoFits": "Sauces" }
+    },
+    {
+      "id": "cc-0022",
+      "groups": [
+        { "name": "Hidden animals", "words": ["bowling", "beard", "category", "batch"] },
+        { "name": "Sports", "words": ["tennis", "golf", "rugby", "hockey"] },
+        { "name": "Weather", "words": ["sleet", "drizzle", "frost", "gale"] }
+      ],
+      "herring": { "word": "bowling", "alsoFits": "Sports" }
+    },
+    {
+      "id": "cc-0023",
+      "groups": [
+        { "name": "Card games", "words": ["bridge", "snap", "poker", "rummy"] },
+        { "name": "Crossing a river", "words": ["ferry", "tunnel", "raft", "canoe"] },
+        { "name": "Nuts", "words": ["almond", "cashew", "peanut", "walnut"] }
+      ],
+      "herring": { "word": "bridge", "alsoFits": "Crossing a river" }
+    },
+    {
+      "id": "cc-0024",
+      "groups": [
+        { "name": "Seasons", "words": ["spring", "summer", "winter", "autumn"] },
+        { "name": "Sources of water", "words": ["well", "tap", "fountain", "river"] },
+        { "name": "Fabrics", "words": ["cotton", "silk", "wool", "denim"] }
+      ],
+      "herring": { "word": "spring", "alsoFits": "Sources of water" }
+    },
+    {
+      "id": "cc-0025",
+      "groups": [
+        { "name": "Fish", "words": ["sole", "cod", "trout", "tuna"] },
+        { "name": "Parts of a shoe", "words": ["heel", "lace", "tongue", "buckle"] },
+        { "name": "Pasta", "words": ["penne", "ravioli", "fusilli", "macaroni"] }
+      ],
+      "herring": { "word": "sole", "alsoFits": "Parts of a shoe" }
+    },
+    {
+      "id": "cc-0026",
+      "groups": [
+        { "name": "Parts of a tree", "words": ["bark", "root", "leaf", "branch"] },
+        { "name": "Dog noises", "words": ["woof", "growl", "howl", "whine"] },
+        { "name": "Jewellery", "words": ["ring", "bracelet", "necklace", "brooch"] }
+      ],
+      "herring": { "word": "bark", "alsoFits": "Dog noises" }
+    },
+    {
+      "id": "cc-0027",
+      "groups": [
+        { "name": "Planets", "words": ["mercury", "jupiter", "neptune", "saturn"] },
+        { "name": "Metals", "words": ["iron", "nickel", "zinc", "lead"] },
+        { "name": "Pizza toppings", "words": ["ham", "mushroom", "olive", "pepper"] }
+      ],
+      "herring": { "word": "mercury", "alsoFits": "Metals" }
+    },
+    {
+      "id": "cc-0028",
+      "groups": [
+        { "name": "Shades of red", "words": ["cherry", "ruby", "scarlet", "crimson"] },
+        { "name": "Fruit", "words": ["apple", "melon", "papaya", "fig"] },
+        { "name": "Wild cats", "words": ["tiger", "lion", "cheetah", "leopard"] }
+      ],
+      "herring": { "word": "cherry", "alsoFits": "Fruit" }
+    },
+    {
+      "id": "cc-0029",
+      "groups": [
+        { "name": "Bathroom items", "words": ["shower", "sink", "towel", "mirror"] },
+        { "name": "Weather", "words": ["drizzle", "thunder", "sleet", "fog"] },
+        { "name": "Writing tools", "words": ["pen", "pencil", "crayon", "marker"] }
+      ],
+      "herring": { "word": "shower", "alsoFits": "Weather" }
+    },
+    {
+      "id": "cc-0030",
+      "groups": [
+        { "name": "Computer parts", "words": ["mouse", "keyboard", "screen", "webcam"] },
+        { "name": "Small pets", "words": ["hamster", "gerbil", "rabbit", "goldfish"] },
+        { "name": "Jobs", "words": ["nurse", "pilot", "chef", "farmer"] }
+      ],
+      "herring": { "word": "mouse", "alsoFits": "Small pets" }
+    },
+    {
+      "id": "cc-0031",
+      "groups": [
+        { "name": "Traffic words", "words": ["jam", "lane", "signal", "junction"] },
+        { "name": "Spreads", "words": ["butter", "honey", "marmalade", "margarine"] },
+        { "name": "Hats", "words": ["beret", "bonnet", "fedora", "sombrero"] }
+      ],
+      "herring": { "word": "jam", "alsoFits": "Spreads" }
+    },
+    {
+      "id": "cc-0032",
+      "groups": [
+        { "name": "Card suits", "words": ["club", "spade", "heart", "diamond"] },
+        { "name": "Golf terms", "words": ["tee", "putt", "birdie", "bunker"] },
+        { "name": "Rooms", "words": ["kitchen", "bedroom", "attic", "cellar"] }
+      ],
+      "herring": { "word": "club", "alsoFits": "Golf terms" }
+    },
+    {
+      "id": "cc-0033",
+      "groups": [
+        { "name": "Things with keys", "words": ["piano", "door", "map", "laptop"] },
+        { "name": "Instruments", "words": ["cello", "oboe", "banjo", "tuba"] },
+        { "name": "Birds", "words": ["heron", "pigeon", "sparrow", "gull"] }
+      ],
+      "herring": { "word": "piano", "alsoFits": "Instruments" }
+    },
+    {
+      "id": "cc-0034",
+      "groups": [
+        { "name": "Anagrams of stop", "words": ["pots", "tops", "spot", "post"] },
+        { "name": "Kitchen items", "words": ["pan", "kettle", "ladle", "wok"] },
+        { "name": "Spices", "words": ["cumin", "nutmeg", "paprika", "clove"] }
+      ],
+      "herring": { "word": "pots", "alsoFits": "Kitchen items" }
+    },
+    {
+      "id": "cc-0035",
+      "groups": [
+        { "name": "Vegetables", "words": ["squash", "carrot", "pea", "cabbage"] },
+        { "name": "Sports", "words": ["golf", "rugby", "hockey", "rowing"] },
+        { "name": "Shades of blue", "words": ["navy", "cobalt", "azure", "sky"] }
+      ],
+      "herring": { "word": "squash", "alsoFits": "Sports" }
+    },
+    {
+      "id": "cc-0036",
+      "groups": [
+        { "name": "Dried fruit", "words": ["date", "fig", "raisin", "prune"] },
+        { "name": "Calendar words", "words": ["week", "month", "year", "weekend"] },
+        { "name": "Desserts", "words": ["trifle", "crumble", "mousse", "sundae"] }
+      ],
+      "herring": { "word": "date", "alsoFits": "Calendar words" }
+    },
+    {
+      "id": "cc-0037",
+      "groups": [
+        { "name": "Goes before cake", "words": ["fish", "cup", "pan", "cheese"] },
+        { "name": "Pets", "words": ["dog", "cat", "rabbit", "parrot"] },
+        { "name": "Inside the body", "words": ["heart", "lung", "liver", "kidney"] }
+      ],
+      "herring": { "word": "fish", "alsoFits": "Pets" }
+    },
+    {
+      "id": "cc-0038",
+      "groups": [
+        { "name": "Hairstyles", "words": ["bun", "ponytail", "bob", "braid"] },
+        { "name": "Bakery items", "words": ["roll", "muffin", "scone", "croissant"] },
+        { "name": "Shades of yellow", "words": ["lemon", "mustard", "gold", "canary"] }
+      ],
+      "herring": { "word": "bun", "alsoFits": "Bakery items" }
+    },
+    {
+      "id": "cc-0039",
+      "groups": [
+        { "name": "Aircraft", "words": ["jet", "glider", "helicopter", "blimp"] },
+        { "name": "Shades of black", "words": ["ebony", "onyx", "raven", "charcoal"] },
+        { "name": "Green vegetables", "words": ["cabbage", "spinach", "celery", "broccoli"] }
+      ],
+      "herring": { "word": "jet", "alsoFits": "Shades of black" }
+    },
+    {
+      "id": "cc-0040",
+      "groups": [
+        { "name": "Hidden numbers", "words": ["canine", "often", "weight", "phone"] },
+        { "name": "Types of tooth", "words": ["molar", "incisor", "premolar", "fang"] },
+        { "name": "Kitchen tools", "words": ["sieve", "whisk", "peeler", "tongs"] }
+      ],
+      "herring": { "word": "canine", "alsoFits": "Types of tooth" }
+    },
+    {
+      "id": "cc-0041",
+      "groups": [
+        { "name": "Shades of purple", "words": ["violet", "mauve", "plum", "magenta"] },
+        { "name": "Flowers", "words": ["daisy", "tulip", "poppy", "orchid"] },
+        { "name": "Pasta shapes", "words": ["penne", "ravioli", "macaroni", "spaghetti"] }
+      ],
+      "herring": { "word": "violet", "alsoFits": "Flowers" }
+    },
+    {
+      "id": "cc-0042",
+      "groups": [
+        { "name": "Hidden body parts", "words": ["legend", "machine", "charm", "shine"] },
+        { "name": "Story types", "words": ["myth", "fable", "saga", "epic"] },
+        { "name": "Garden things", "words": ["shed", "pond", "fence", "lawn"] }
+      ],
+      "herring": { "word": "legend", "alsoFits": "Story types" }
+    },
+    {
+      "id": "cc-0043",
+      "groups": [
+        { "name": "On a ship", "words": ["deck", "mast", "hull", "anchor"] },
+        { "name": "Parts of a house", "words": ["roof", "porch", "attic", "chimney"] },
+        { "name": "Fabrics", "words": ["velvet", "linen", "satin", "tweed"] }
+      ],
+      "herring": { "word": "deck", "alsoFits": "Parts of a house" }
+    },
+    {
+      "id": "cc-0044",
+      "groups": [
+        { "name": "Tennis words", "words": ["ace", "love", "serve", "set"] },
+        { "name": "Playing cards", "words": ["king", "queen", "jack", "joker"] },
+        { "name": "Kitchen appliances", "words": ["toaster", "kettle", "microwave", "freezer"] }
+      ],
+      "herring": { "word": "ace", "alsoFits": "Playing cards" }
+    },
+    {
+      "id": "cc-0045",
+      "groups": [
+        { "name": "Fasteners", "words": ["hook", "button", "buckle", "clasp"] },
+        { "name": "Fishing kit", "words": ["rod", "reel", "bait", "net"] },
+        { "name": "Snakes", "words": ["cobra", "python", "viper", "adder"] }
+      ],
+      "herring": { "word": "hook", "alsoFits": "Fishing kit" }
+    },
+    {
+      "id": "cc-0046",
+      "groups": [
+        { "name": "Stationery", "words": ["ruler", "eraser", "stapler", "pencil"] },
+        { "name": "Royalty", "words": ["king", "queen", "prince", "princess"] },
+        { "name": "Vegetables", "words": ["pea", "bean", "corn", "kale"] }
+      ],
+      "herring": { "word": "ruler", "alsoFits": "Royalty" }
+    },
+    {
+      "id": "cc-0047",
+      "groups": [
+        { "name": "Freshwater fish", "words": ["bass", "trout", "carp", "pike"] },
+        { "name": "Singing voices", "words": ["tenor", "alto", "soprano", "baritone"] },
+        { "name": "Jobs", "words": ["baker", "plumber", "dentist", "vet"] }
+      ],
+      "herring": { "word": "bass", "alsoFits": "Singing voices" }
+    },
+    {
+      "id": "cc-0048",
+      "groups": [
+        { "name": "Medicine", "words": ["tablet", "pill", "syrup", "capsule"] },
+        { "name": "Gadgets", "words": ["laptop", "phone", "camera", "speaker"] },
+        { "name": "Insects", "words": ["wasp", "flea", "termite", "beetle"] }
+      ],
+      "herring": { "word": "tablet", "alsoFits": "Gadgets" }
+    },
+    {
+      "id": "cc-0049",
+      "groups": [
+        { "name": "Things in a hive", "words": ["comb", "honey", "bee", "queen"] },
+        { "name": "Hair tools", "words": ["brush", "clip", "curler", "scrunchie"] },
+        { "name": "Rooms", "words": ["hallway", "study", "pantry", "loft"] }
+      ],
+      "herring": { "word": "comb", "alsoFits": "Hair tools" }
+    },
+    {
+      "id": "cc-0050",
+      "groups": [
+        { "name": "Sound like letters", "words": ["bee", "sea", "tea", "pea"] },
+        { "name": "Insects", "words": ["ant", "wasp", "moth", "flea"] },
+        { "name": "Clothing", "words": ["coat", "glove", "hoodie", "blazer"] }
+      ],
+      "herring": { "word": "bee", "alsoFits": "Insects" }
+    },
+    {
+      "id": "cc-0051",
+      "groups": [
+        { "name": "Shades of brown", "words": ["chestnut", "tan", "beige", "rust"] },
+        { "name": "Nuts", "words": ["walnut", "peanut", "cashew", "pecan"] },
+        { "name": "Wild cats", "words": ["lynx", "puma", "jaguar", "cheetah"] }
+      ],
+      "herring": { "word": "chestnut", "alsoFits": "Nuts" }
+    },
+    {
+      "id": "cc-0052",
+      "groups": [
+        { "name": "Dog breeds", "words": ["husky", "poodle", "beagle", "collie"] },
+        { "name": "Rough voices", "words": ["hoarse", "croaky", "raspy", "gruff"] },
+        { "name": "Toys", "words": ["marbles", "kite", "robot", "rattle"] }
+      ],
+      "herring": { "word": "husky", "alsoFits": "Rough voices" }
+    },
+    {
+      "id": "cc-0053",
+      "groups": [
+        { "name": "Goes before room", "words": ["bed", "bath", "class", "store"] },
+        { "name": "Furniture", "words": ["table", "chair", "sofa", "cabinet"] },
+        { "name": "Shapes", "words": ["oval", "cube", "cone", "star"] }
+      ],
+      "herring": { "word": "bed", "alsoFits": "Furniture" }
+    },
+    {
+      "id": "cc-0054",
+      "groups": [
+        { "name": "Headwear", "words": ["crown", "beret", "beanie", "bonnet"] },
+        { "name": "At the dentist", "words": ["filling", "brace", "drill", "floss"] },
+        { "name": "Spices", "words": ["paprika", "nutmeg", "cumin", "saffron"] }
+      ],
+      "herring": { "word": "crown", "alsoFits": "At the dentist" }
+    },
+    {
+      "id": "cc-0055",
+      "groups": [
+        { "name": "Precious stones", "words": ["amber", "opal", "garnet", "jade"] },
+        { "name": "Shades of orange", "words": ["tangerine", "apricot", "peach", "ginger"] },
+        { "name": "Card games", "words": ["poker", "rummy", "snap", "bridge"] }
+      ],
+      "herring": { "word": "amber", "alsoFits": "Shades of orange" }
+    },
+    {
+      "id": "cc-0056",
+      "groups": [
+        { "name": "Sewing kit", "words": ["pin", "needle", "thread", "thimble"] },
+        { "name": "Bowling words", "words": ["lane", "strike", "spare", "gutter"] },
+        { "name": "Night sky", "words": ["moon", "comet", "planet", "meteor"] }
+      ],
+      "herring": { "word": "pin", "alsoFits": "Bowling words" }
+    },
+    {
+      "id": "cc-0057",
+      "groups": [
+        { "name": "Stone fruit", "words": ["peach", "cherry", "mango", "olive"] },
+        { "name": "Pastel colours", "words": ["lilac", "mint", "cream", "lemon"] },
+        { "name": "Toolbox items", "words": ["nail", "screw", "hammer", "pliers"] }
+      ],
+      "herring": { "word": "peach", "alsoFits": "Pastel colours" }
+    },
+    {
+      "id": "cc-0058",
+      "groups": [
+        { "name": "Goes before board", "words": ["black", "skate", "key", "surf"] },
+        { "name": "Colours", "words": ["pink", "brown", "purple", "orange"] },
+        { "name": "Sea creatures", "words": ["squid", "lobster", "dolphin", "eel"] }
+      ],
+      "herring": { "word": "black", "alsoFits": "Colours" }
+    },
+    {
+      "id": "cc-0059",
+      "groups": [
+        { "name": "Shades of white", "words": ["cream", "ivory", "pearl", "snow"] },
+        { "name": "Cake toppings", "words": ["icing", "sprinkles", "frosting", "marzipan"] },
+        { "name": "Farm animals", "words": ["cow", "pig", "goat", "hen"] }
+      ],
+      "herring": { "word": "cream", "alsoFits": "Cake toppings" }
+    },
+    {
+      "id": "cc-0060",
+      "groups": [
+        { "name": "Palindromes", "words": ["kayak", "level", "radar", "civic"] },
+        { "name": "Boats", "words": ["canoe", "yacht", "ferry", "raft"] },
+        { "name": "Shades of blue", "words": ["navy", "cobalt", "azure", "indigo"] }
+      ],
+      "herring": { "word": "kayak", "alsoFits": "Boats" }
+    },
+    {
+      "id": "cc-0061",
+      "groups": [
+        { "name": "Stringed things", "words": ["puppet", "guitar", "racket", "harp"] },
+        { "name": "Toys", "words": ["doll", "teddy", "robot", "marbles"] },
+        { "name": "Hot drinks", "words": ["tea", "cocoa", "coffee", "latte"] }
+      ],
+      "herring": { "word": "puppet", "alsoFits": "Toys" }
+    },
+    {
+      "id": "cc-0062",
+      "groups": [
+        { "name": "At the seaside", "words": ["shell", "pier", "sand", "wave"] },
+        { "name": "Pasta shapes", "words": ["penne", "fusilli", "ravioli", "macaroni"] },
+        { "name": "Office items", "words": ["stapler", "folder", "printer", "diary"] }
+      ],
+      "herring": { "word": "shell", "alsoFits": "Pasta shapes" }
+    },
+    {
+      "id": "cc-0063",
+      "groups": [
+        { "name": "Body parts", "words": ["nail", "hip", "lip", "thumb"] },
+        { "name": "Toolbox items", "words": ["screw", "bolt", "rivet", "hinge"] },
+        { "name": "Hats", "words": ["cap", "beret", "fedora", "bonnet"] }
+      ],
+      "herring": { "word": "nail", "alsoFits": "Toolbox items" }
+    },
+    {
+      "id": "cc-0064",
+      "groups": [
+        { "name": "Sweet treats", "words": ["caramel", "fudge", "nougat", "truffle"] },
+        { "name": "Shades of brown", "words": ["tan", "beige", "rust", "khaki"] },
+        { "name": "Sports", "words": ["archery", "rowing", "cycling", "skiing"] }
+      ],
+      "herring": { "word": "caramel", "alsoFits": "Shades of brown" }
+    },
+    {
+      "id": "cc-0065",
+      "groups": [
+        { "name": "Things in a park", "words": ["swing", "bench", "pond", "path"] },
+        { "name": "Music styles", "words": ["jazz", "reggae", "disco", "opera"] },
+        { "name": "Herbs", "words": ["parsley", "rosemary", "chive", "oregano"] }
+      ],
+      "herring": { "word": "swing", "alsoFits": "Music styles" }
+    },
+    {
+      "id": "cc-0066",
+      "groups": [
+        { "name": "Bakery items", "words": ["roll", "loaf", "bagel", "scone"] },
+        { "name": "Gymnastic moves", "words": ["cartwheel", "flip", "somersault", "handstand"] },
+        { "name": "Pond life", "words": ["frog", "newt", "tadpole", "toad"] }
+      ],
+      "herring": { "word": "roll", "alsoFits": "Gymnastic moves" }
+    },
+    {
+      "id": "cc-0067",
+      "groups": [
+        { "name": "Chess pieces", "words": ["rook", "pawn", "knight", "king"] },
+        { "name": "Crow family", "words": ["crow", "raven", "magpie", "jackdaw"] },
+        { "name": "Sandwich fillings", "words": ["ham", "egg", "tuna", "cheese"] }
+      ],
+      "herring": { "word": "rook", "alsoFits": "Crow family" }
+    },
+    {
+      "id": "cc-0068",
+      "groups": [
+        { "name": "Dog commands", "words": ["heel", "sit", "stay", "fetch"] },
+        { "name": "Parts of the foot", "words": ["toe", "arch", "sole", "instep"] },
+        { "name": "Kitchen appliances", "words": ["fridge", "oven", "mixer", "toaster"] }
+      ],
+      "herring": { "word": "heel", "alsoFits": "Parts of the foot" }
+    },
+    {
+      "id": "cc-0069",
+      "groups": [
+        { "name": "Golf terms", "words": ["eagle", "putt", "bunker", "fairway"] },
+        { "name": "Birds of prey", "words": ["hawk", "falcon", "owl", "vulture"] },
+        { "name": "Sour things", "words": ["lemon", "vinegar", "pickle", "lime"] }
+      ],
+      "herring": { "word": "eagle", "alsoFits": "Birds of prey" }
+    },
+    {
+      "id": "cc-0070",
+      "groups": [
+        { "name": "Camping kit", "words": ["compass", "tent", "lantern", "stove"] },
+        { "name": "Maths kit", "words": ["ruler", "protractor", "calculator", "abacus"] },
+        { "name": "Fish", "words": ["haddock", "mackerel", "sardine", "herring"] }
+      ],
+      "herring": { "word": "compass", "alsoFits": "Maths kit" }
+    },
+    {
+      "id": "cc-0071",
+      "groups": [
+        { "name": "Swimming strokes", "words": ["butterfly", "crawl", "backstroke", "sidestroke"] },
+        { "name": "Flying insects", "words": ["moth", "wasp", "bee", "gnat"] },
+        { "name": "Pizza toppings", "words": ["pepperoni", "pineapple", "mushroom", "onion"] }
+      ],
+      "herring": { "word": "butterfly", "alsoFits": "Flying insects" }
+    },
+    {
+      "id": "cc-0072",
+      "groups": [
+        { "name": "Music words", "words": ["scale", "chord", "tempo", "rhythm"] },
+        { "name": "Kitchen tools", "words": ["whisk", "ladle", "sieve", "colander"] },
+        { "name": "Farm buildings", "words": ["barn", "stable", "silo", "shed"] }
+      ],
+      "herring": { "word": "scale", "alsoFits": "Kitchen tools" }
+    },
+    {
+      "id": "cc-0073",
+      "groups": [
+        { "name": "Units of length", "words": ["foot", "inch", "mile", "yard"] },
+        { "name": "Lower body", "words": ["hip", "knee", "ankle", "shin"] },
+        { "name": "Reptiles", "words": ["lizard", "gecko", "iguana", "tortoise"] }
+      ],
+      "herring": { "word": "foot", "alsoFits": "Lower body" }
+    },
+    {
+      "id": "cc-0074",
+      "groups": [
+        { "name": "Goes after sun", "words": ["glasses", "flower", "rise", "burn"] },
+        { "name": "On the table", "words": ["plates", "bowls", "forks", "napkins"] },
+        { "name": "Hobbies", "words": ["knitting", "gardening", "hiking", "reading"] }
+      ],
+      "herring": { "word": "glasses", "alsoFits": "On the table" }
+    },
+    {
+      "id": "cc-0075",
+      "groups": [
+        { "name": "Milkshake flavours", "words": ["banana", "vanilla", "chocolate", "strawberry"] },
+        { "name": "Yellow things", "words": ["sun", "canary", "daffodil", "yolk"] },
+        { "name": "Jobs", "words": ["tailor", "florist", "butcher", "surgeon"] }
+      ],
+      "herring": { "word": "banana", "alsoFits": "Yellow things" }
+    },
+    {
+      "id": "cc-0076",
+      "groups": [
+        { "name": "Ocean words", "words": ["current", "tide", "wave", "reef"] },
+        { "name": "Electricity", "words": ["volt", "watt", "fuse", "socket"] },
+        { "name": "Bakery items", "words": ["croissant", "muffin", "scone", "eclair"] }
+      ],
+      "herring": { "word": "current", "alsoFits": "Electricity" }
+    },
+    {
+      "id": "cc-0077",
+      "groups": [
+        { "name": "Pool and snooker", "words": ["pocket", "cue", "chalk", "rack"] },
+        { "name": "Parts of a coat", "words": ["collar", "sleeve", "hood", "lining"] },
+        { "name": "Herbs", "words": ["sage", "oregano", "rosemary", "coriander"] }
+      ],
+      "herring": { "word": "pocket", "alsoFits": "Parts of a coat" }
+    },
+    {
+      "id": "cc-0078",
+      "groups": [
+        { "name": "Bones", "words": ["spine", "skull", "rib", "pelvis"] },
+        { "name": "Parts of a book", "words": ["cover", "page", "chapter", "index"] },
+        { "name": "Garden birds", "words": ["robin", "wren", "thrush", "blackbird"] }
+      ],
+      "herring": { "word": "spine", "alsoFits": "Parts of a book" }
+    },
+    {
+      "id": "cc-0079",
+      "groups": [
+        { "name": "Cooking methods", "words": ["steam", "bake", "roast", "fry"] },
+        { "name": "Forms of water", "words": ["ice", "mist", "rain", "snow"] },
+        { "name": "Party things", "words": ["balloon", "banner", "confetti", "streamer"] }
+      ],
+      "herring": { "word": "steam", "alsoFits": "Forms of water" }
+    },
+    {
+      "id": "cc-0080",
+      "groups": [
+        { "name": "Goes after ice", "words": ["cube", "cream", "rink", "age"] },
+        { "name": "3D shapes", "words": ["sphere", "cone", "pyramid", "cylinder"] },
+        { "name": "Flowers", "words": ["daisy", "poppy", "orchid", "peony"] }
+      ],
+      "herring": { "word": "cube", "alsoFits": "3D shapes" }
+    },
+    {
+      "id": "cc-0081",
+      "groups": [
+        { "name": "Goes before man", "words": ["milk", "snow", "post", "cave"] },
+        { "name": "Drinks", "words": ["juice", "water", "cocoa", "smoothie"] },
+        { "name": "Rainforest animals", "words": ["sloth", "toucan", "jaguar", "parrot"] }
+      ],
+      "herring": { "word": "milk", "alsoFits": "Drinks" }
+    },
+    {
+      "id": "cc-0082",
+      "groups": [
+        { "name": "Goes before fish", "words": ["gold", "star", "jelly", "cat"] },
+        { "name": "Colours", "words": ["purple", "brown", "pink", "beige"] },
+        { "name": "Stationery", "words": ["stapler", "envelope", "eraser", "folder"] }
+      ],
+      "herring": { "word": "gold", "alsoFits": "Colours" }
+    },
+    {
+      "id": "cc-0083",
+      "groups": [
+        { "name": "Listen anagrams", "words": ["silent", "enlist", "tinsel", "inlets"] },
+        { "name": "Quiet words", "words": ["hushed", "mute", "still", "soft"] },
+        { "name": "Big cats", "words": ["lion", "tiger", "leopard", "panther"] }
+      ],
+      "herring": { "word": "silent", "alsoFits": "Quiet words" }
+    },
+    {
+      "id": "cc-0084",
+      "groups": [
+        { "name": "Goes before paper", "words": ["sand", "news", "wall", "tissue"] },
+        { "name": "At the beach", "words": ["shell", "wave", "pier", "seagull"] },
+        { "name": "Winter clothes", "words": ["coat", "glove", "scarf", "beanie"] }
+      ],
+      "herring": { "word": "sand", "alsoFits": "At the beach" }
+    },
+    {
+      "id": "cc-0085",
+      "groups": [
+        { "name": "Spices", "words": ["pepper", "cumin", "paprika", "turmeric"] },
+        { "name": "Salad items", "words": ["lettuce", "cucumber", "tomato", "radish"] },
+        { "name": "Jewellery", "words": ["earring", "anklet", "locket", "pendant"] }
+      ],
+      "herring": { "word": "pepper", "alsoFits": "Salad items" }
+    },
+    {
+      "id": "cc-0086",
+      "groups": [
+        { "name": "River features", "words": ["bank", "delta", "source", "mouth"] },
+        { "name": "Places in town", "words": ["library", "bakery", "cinema", "museum"] },
+        { "name": "Bedding", "words": ["pillow", "duvet", "blanket", "sheet"] }
+      ],
+      "herring": { "word": "bank", "alsoFits": "Places in town" }
+    },
+    {
+      "id": "cc-0087",
+      "groups": [
+        { "name": "Garden creatures", "words": ["mole", "worm", "slug", "snail"] },
+        { "name": "Skin marks", "words": ["freckle", "scar", "wrinkle", "pimple"] },
+        { "name": "Cakes", "words": ["sponge", "fruitcake", "cupcake", "brownie"] }
+      ],
+      "herring": { "word": "mole", "alsoFits": "Skin marks" }
+    },
+    {
+      "id": "cc-0088",
+      "groups": [
+        { "name": "Ways to move fast", "words": ["bolt", "dash", "sprint", "race"] },
+        { "name": "Toolbox items", "words": ["screw", "nut", "washer", "nail"] },
+        { "name": "Cereal grains", "words": ["wheat", "oat", "rice", "barley"] }
+      ],
+      "herring": { "word": "bolt", "alsoFits": "Toolbox items" }
+    },
+    {
+      "id": "cc-0089",
+      "groups": [
+        { "name": "Internet words", "words": ["web", "email", "browser", "download"] },
+        { "name": "Made by animals", "words": ["nest", "hive", "dam", "burrow"] },
+        { "name": "Hats", "words": ["beanie", "beret", "bowler", "fedora"] }
+      ],
+      "herring": { "word": "web", "alsoFits": "Made by animals" }
+    },
+    {
+      "id": "cc-0090",
+      "groups": [
+        { "name": "Fire starters", "words": ["match", "flint", "kindling", "spark"] },
+        { "name": "Sports events", "words": ["race", "tournament", "final", "contest"] },
+        { "name": "Picnic items", "words": ["basket", "blanket", "flask", "sandwich"] }
+      ],
+      "herring": { "word": "match", "alsoFits": "Sports events" }
+    },
+    {
+      "id": "cc-0091",
+      "groups": [
+        { "name": "Cooling things", "words": ["fan", "fridge", "freezer", "cooler"] },
+        { "name": "Admirers", "words": ["supporter", "follower", "devotee", "enthusiast"] },
+        { "name": "Rainbow colours", "words": ["red", "yellow", "indigo", "violet"] }
+      ],
+      "herring": { "word": "fan", "alsoFits": "Admirers" }
+    },
+    {
+      "id": "cc-0092",
+      "groups": [
+        { "name": "Storage", "words": ["chest", "box", "crate", "basket"] },
+        { "name": "Upper body", "words": ["shoulder", "neck", "armpit", "collarbone"] },
+        { "name": "Ways to travel", "words": ["walk", "cycle", "drive", "swim"] }
+      ],
+      "herring": { "word": "chest", "alsoFits": "Upper body" }
+    },
+    {
+      "id": "cc-0093",
+      "groups": [
+        { "name": "In a fireplace", "words": ["ash", "coal", "log", "ember"] },
+        { "name": "Trees", "words": ["oak", "elm", "birch", "willow"] },
+        { "name": "Seafood", "words": ["prawn", "lobster", "crab", "mussel"] }
+      ],
+      "herring": { "word": "ash", "alsoFits": "Trees" }
+    },
+    {
+      "id": "cc-0094",
+      "groups": [
+        { "name": "Lighting", "words": ["bulb", "lamp", "lantern", "candle"] },
+        { "name": "Things you plant", "words": ["seed", "sapling", "seedling", "acorn"] },
+        { "name": "Dog breeds", "words": ["poodle", "beagle", "collie", "terrier"] }
+      ],
+      "herring": { "word": "bulb", "alsoFits": "Things you plant" }
+    },
+    {
+      "id": "cc-0095",
+      "groups": [
+        { "name": "Rock types", "words": ["slate", "granite", "marble", "flint"] },
+        { "name": "Roof materials", "words": ["tile", "thatch", "shingle", "tin"] },
+        { "name": "Footwear", "words": ["sandal", "slipper", "clog", "boot"] }
+      ],
+      "herring": { "word": "slate", "alsoFits": "Roof materials" }
+    },
+    {
+      "id": "cc-0096",
+      "groups": [
+        { "name": "Bee words", "words": ["honey", "hive", "buzz", "sting"] },
+        { "name": "Pancake toppings", "words": ["syrup", "lemon", "sugar", "cream"] },
+        { "name": "Garden tools", "words": ["hose", "rake", "shears", "spade"] }
+      ],
+      "herring": { "word": "honey", "alsoFits": "Pancake toppings" }
+    },
+    {
+      "id": "cc-0097",
+      "groups": [
+        { "name": "Ways to avoid", "words": ["duck", "dodge", "swerve", "sidestep"] },
+        { "name": "Farmyard birds", "words": ["hen", "goose", "turkey", "rooster"] },
+        { "name": "Bathroom items", "words": ["soap", "sponge", "loofah", "toothbrush"] }
+      ],
+      "herring": { "word": "duck", "alsoFits": "Farmyard birds" }
+    },
+    {
+      "id": "cc-0098",
+      "groups": [
+        { "name": "Mouth actions", "words": ["swallow", "chew", "bite", "lick"] },
+        { "name": "Garden birds", "words": ["robin", "wren", "thrush", "sparrow"] },
+        { "name": "Music styles", "words": ["opera", "punk", "disco", "reggae"] }
+      ],
+      "herring": { "word": "swallow", "alsoFits": "Garden birds" }
+    },
+    {
+      "id": "cc-0099",
+      "groups": [
+        { "name": "Animal homes", "words": ["pen", "sty", "stable", "kennel"] },
+        { "name": "Writing tools", "words": ["pencil", "crayon", "marker", "quill"] },
+        { "name": "Sea creatures", "words": ["starfish", "dolphin", "octopus", "jellyfish"] }
+      ],
+      "herring": { "word": "pen", "alsoFits": "Writing tools" }
+    },
+    {
+      "id": "cc-0100",
+      "groups": [
+        { "name": "Horse sports", "words": ["polo", "dressage", "rodeo", "racing"] },
+        { "name": "Tops", "words": ["blouse", "sweater", "cardigan", "hoodie"] },
+        { "name": "Mountain words", "words": ["peak", "summit", "ridge", "valley"] }
+      ],
+      "herring": { "word": "polo", "alsoFits": "Tops" }
+    },
+    {
+      "id": "cc-0101",
+      "groups": [
+        { "name": "Ways to go down", "words": ["fall", "drop", "sink", "plunge"] },
+        { "name": "Seasons", "words": ["spring", "summer", "winter", "autumn"] },
+        { "name": "In a classroom", "words": ["desk", "ruler", "chalk", "globe"] }
+      ],
+      "herring": { "word": "fall", "alsoFits": "Seasons" }
+    },
+    {
+      "id": "cc-0102",
+      "groups": [
+        { "name": "Clock parts", "words": ["hand", "dial", "chime", "pendulum"] },
+        { "name": "Parts of the arm", "words": ["elbow", "wrist", "forearm", "shoulder"] },
+        { "name": "Fruit", "words": ["grape", "melon", "apricot", "guava"] }
+      ],
+      "herring": { "word": "hand", "alsoFits": "Parts of the arm" }
+    },
+    {
+      "id": "cc-0103",
+      "groups": [
+        { "name": "Add B to the start", "words": ["oat", "rain", "lack", "read"] },
+        { "name": "Grains", "words": ["wheat", "rice", "barley", "rye"] },
+        { "name": "Furniture", "words": ["shelf", "bench", "dresser", "couch"] }
+      ],
+      "herring": { "word": "oat", "alsoFits": "Grains" }
+    },
+    {
+      "id": "cc-0104",
+      "groups": [
+        { "name": "Hidden colours", "words": ["slime", "credit", "stand", "prose"] },
+        { "name": "Gooey things", "words": ["glue", "gum", "putty", "paste"] },
+        { "name": "Hot drinks", "words": ["tea", "cocoa", "coffee", "latte"] }
+      ],
+      "herring": { "word": "slime", "alsoFits": "Gooey things" }
+    },
+    {
+      "id": "cc-0105",
+      "groups": [
+        { "name": "Cleaning words", "words": ["polish", "wipe", "scrub", "rinse"] },
+        { "name": "Manicure kit", "words": ["file", "clipper", "lotion", "tweezers"] },
+        { "name": "Planets", "words": ["mars", "venus", "jupiter", "neptune"] }
+      ],
+      "herring": { "word": "polish", "alsoFits": "Manicure kit" }
+    },
+    {
+      "id": "cc-0106",
+      "groups": [
+        { "name": "Jewellery", "words": ["ring", "brooch", "bangle", "locket"] },
+        { "name": "Phone noises", "words": ["beep", "buzz", "chime", "ding"] },
+        { "name": "Breads", "words": ["bagel", "naan", "brioche", "ciabatta"] }
+      ],
+      "herring": { "word": "ring", "alsoFits": "Phone noises" }
+    },
+    {
+      "id": "cc-0107",
+      "groups": [
+        { "name": "Tropical fruit", "words": ["kiwi", "mango", "papaya", "pineapple"] },
+        { "name": "Flightless birds", "words": ["emu", "ostrich", "penguin", "dodo"] },
+        { "name": "Bike parts", "words": ["pedal", "chain", "saddle", "spoke"] }
+      ],
+      "herring": { "word": "kiwi", "alsoFits": "Flightless birds" }
+    },
+    {
+      "id": "cc-0108",
+      "groups": [
+        { "name": "In a hospital", "words": ["patient", "nurse", "doctor", "surgeon"] },
+        { "name": "Good qualities", "words": ["kind", "honest", "brave", "loyal"] },
+        { "name": "Spring flowers", "words": ["daffodil", "tulip", "bluebell", "crocus"] }
+      ],
+      "herring": { "word": "patient", "alsoFits": "Good qualities" }
+    },
+    {
+      "id": "cc-0109",
+      "groups": [
+        { "name": "Things with necks", "words": ["giraffe", "bottle", "guitar", "shirt"] },
+        { "name": "Safari animals", "words": ["lion", "zebra", "hippo", "rhino"] },
+        { "name": "Rainy day things", "words": ["umbrella", "puddle", "raincoat", "drizzle"] }
+      ],
+      "herring": { "word": "giraffe", "alsoFits": "Safari animals" }
+    },
+    {
+      "id": "cc-0110",
+      "groups": [
+        { "name": "Hand gestures", "words": ["wave", "point", "clap", "snap"] },
+        { "name": "Sea words", "words": ["tide", "surf", "swell", "reef"] },
+        { "name": "Gems", "words": ["sapphire", "topaz", "opal", "garnet"] }
+      ],
+      "herring": { "word": "wave", "alsoFits": "Sea words" }
+    },
+    {
+      "id": "cc-0111",
+      "groups": [
+        { "name": "Percussion", "words": ["drum", "cymbal", "tambourine", "xylophone"] },
+        { "name": "Containers", "words": ["barrel", "bucket", "crate", "tub"] },
+        { "name": "Snacks", "words": ["popcorn", "pretzel", "cracker", "toffee"] }
+      ],
+      "herring": { "word": "drum", "alsoFits": "Containers" }
+    },
+    {
+      "id": "cc-0112",
+      "groups": [
+        { "name": "Music words", "words": ["note", "chord", "tempo", "melody"] },
+        { "name": "Money words", "words": ["coin", "cash", "penny", "cent"] },
+        { "name": "Birds of prey", "words": ["hawk", "falcon", "owl", "kestrel"] }
+      ],
+      "herring": { "word": "note", "alsoFits": "Money words" }
+    },
+    {
+      "id": "cc-0113",
+      "groups": [
+        { "name": "On a map", "words": ["key", "grid", "compass", "legend"] },
+        { "name": "Door parts", "words": ["handle", "hinge", "lock", "knocker"] },
+        { "name": "Reptiles", "words": ["snake", "crocodile", "turtle", "chameleon"] }
+      ],
+      "herring": { "word": "key", "alsoFits": "Door parts" }
+    },
+    {
+      "id": "cc-0114",
+      "groups": [
+        { "name": "Ship words", "words": ["bow", "port", "deck", "stern"] },
+        { "name": "Gift wrap", "words": ["ribbon", "tape", "paper", "tag"] },
+        { "name": "Desserts", "words": ["trifle", "crumble", "cheesecake", "brownie"] }
+      ],
+      "herring": { "word": "bow", "alsoFits": "Gift wrap" }
+    },
+    {
+      "id": "cc-0115",
+      "groups": [
+        { "name": "Science lab", "words": ["flask", "beaker", "microscope", "goggles"] },
+        { "name": "Picnic items", "words": ["basket", "blanket", "sandwich", "rug"] },
+        { "name": "Shades of blue", "words": ["navy", "cobalt", "azure", "turquoise"] }
+      ],
+      "herring": { "word": "flask", "alsoFits": "Picnic items" }
+    },
+    {
+      "id": "cc-0116",
+      "groups": [
+        { "name": "Timekeepers", "words": ["watch", "clock", "sundial", "timer"] },
+        { "name": "Ways to look", "words": ["stare", "glance", "peek", "gaze"] },
+        { "name": "Gym equipment", "words": ["treadmill", "dumbbell", "kettlebell", "barbell"] }
+      ],
+      "herring": { "word": "watch", "alsoFits": "Ways to look" }
+    },
+    {
+      "id": "cc-0117",
+      "groups": [
+        { "name": "Made of glass", "words": ["window", "mirror", "vase", "bottle"] },
+        { "name": "Parts of a house", "words": ["roof", "chimney", "porch", "gutter"] },
+        { "name": "Berries", "words": ["raspberry", "blueberry", "cranberry", "gooseberry"] }
+      ],
+      "herring": { "word": "window", "alsoFits": "Parts of a house" }
+    },
+    {
+      "id": "cc-0118",
+      "groups": [
+        { "name": "Goes before house", "words": ["green", "light", "tree", "boat"] },
+        { "name": "Golf terms", "words": ["tee", "putt", "birdie", "bunker"] },
+        { "name": "Cooking methods", "words": ["grill", "boil", "poach", "braise"] }
+      ],
+      "herring": { "word": "green", "alsoFits": "Golf terms" }
+    },
+    {
+      "id": "cc-0119",
+      "groups": [
+        { "name": "Shades of green", "words": ["sage", "forest", "jade", "emerald"] },
+        { "name": "Clever people", "words": ["scholar", "genius", "expert", "mentor"] },
+        { "name": "Pond life", "words": ["frog", "newt", "toad", "dragonfly"] }
+      ],
+      "herring": { "word": "sage", "alsoFits": "Clever people" }
+    },
+    {
+      "id": "cc-0120",
+      "groups": [
+        { "name": "Eye colours", "words": ["hazel", "blue", "green", "brown"] },
+        { "name": "Woodland trees", "words": ["oak", "birch", "beech", "elm"] },
+        { "name": "Breakfast foods", "words": ["pancake", "waffle", "cereal", "toast"] }
+      ],
+      "herring": { "word": "hazel", "alsoFits": "Woodland trees" }
+    },
+    {
+      "id": "cc-0121",
+      "groups": [
+        { "name": "Sound words", "words": ["pitch", "tone", "volume", "echo"] },
+        { "name": "Sports areas", "words": ["court", "field", "rink", "course"] },
+        { "name": "Cheeses", "words": ["brie", "feta", "cheddar", "mozzarella"] }
+      ],
+      "herring": { "word": "pitch", "alsoFits": "Sports areas" }
+    },
+    {
+      "id": "cc-0122",
+      "groups": [
+        { "name": "Round things", "words": ["button", "coin", "plate", "wheel"] },
+        { "name": "Parts of a coat", "words": ["collar", "sleeve", "hood", "pocket"] },
+        { "name": "Sleep words", "words": ["nap", "doze", "snooze", "rest"] }
+      ],
+      "herring": { "word": "button", "alsoFits": "Parts of a coat" }
+    },
+    {
+      "id": "cc-0123",
+      "groups": [
+        { "name": "Magic show", "words": ["rabbit", "wand", "cape", "trick"] },
+        { "name": "Pets", "words": ["dog", "cat", "hamster", "goldfish"] },
+        { "name": "Woodwind", "words": ["flute", "clarinet", "oboe", "recorder"] }
+      ],
+      "herring": { "word": "rabbit", "alsoFits": "Pets" }
+    },
+    {
+      "id": "cc-0124",
+      "groups": [
+        { "name": "Things that pop", "words": ["bubble", "balloon", "cork", "popcorn"] },
+        { "name": "Bath time", "words": ["soap", "sponge", "towel", "plug"] },
+        { "name": "In the desert", "words": ["cactus", "camel", "dune", "oasis"] }
+      ],
+      "herring": { "word": "bubble", "alsoFits": "Bath time" }
+    },
+    {
+      "id": "cc-0125",
+      "groups": [
+        { "name": "Ways to close", "words": ["seal", "shut", "lock", "latch"] },
+        { "name": "Ocean mammals", "words": ["whale", "dolphin", "walrus", "otter"] },
+        { "name": "Kinds of road", "words": ["street", "avenue", "lane", "highway"] }
+      ],
+      "herring": { "word": "seal", "alsoFits": "Ocean mammals" }
+    },
+    {
+      "id": "cc-0126",
+      "groups": [
+        { "name": "Building site", "words": ["crane", "digger", "bulldozer", "forklift"] },
+        { "name": "Water birds", "words": ["heron", "stork", "flamingo", "pelican"] },
+        { "name": "Sewing kit", "words": ["needle", "thread", "thimble", "scissors"] }
+      ],
+      "herring": { "word": "crane", "alsoFits": "Water birds" }
+    },
+    {
+      "id": "cc-0127",
+      "groups": [
+        { "name": "Rhymes with cat", "words": ["rat", "hat", "mat", "flat"] },
+        { "name": "Rodents", "words": ["mouse", "hamster", "gerbil", "squirrel"] },
+        { "name": "Pottery words", "words": ["clay", "kiln", "glaze", "wheel"] }
+      ],
+      "herring": { "word": "rat", "alsoFits": "Rodents" }
+    },
+    {
+      "id": "cc-0128",
+      "groups": [
+        { "name": "Rhymes with bee", "words": ["tea", "key", "tree", "ski"] },
+        { "name": "Hot drinks", "words": ["cocoa", "latte", "mocha", "espresso"] },
+        { "name": "Hand tools", "words": ["pliers", "hammer", "chisel", "mallet"] }
+      ],
+      "herring": { "word": "tea", "alsoFits": "Hot drinks" }
+    },
+    {
+      "id": "cc-0129",
+      "groups": [
+        { "name": "Eight legs or arms", "words": ["octopus", "spider", "scorpion", "tick"] },
+        { "name": "In the ocean", "words": ["whale", "shark", "dolphin", "turtle"] },
+        { "name": "Wild flowers", "words": ["poppy", "bluebell", "buttercup", "clover"] }
+      ],
+      "herring": { "word": "octopus", "alsoFits": "In the ocean" }
+    },
+    {
+      "id": "cc-0130",
+      "groups": [
+        { "name": "Dirt and soil", "words": ["earth", "mud", "compost", "clay"] },
+        { "name": "Solar system", "words": ["mars", "venus", "mercury", "jupiter"] },
+        { "name": "Knitted items", "words": ["scarf", "sweater", "beanie", "mitten"] }
+      ],
+      "herring": { "word": "earth", "alsoFits": "Solar system" }
+    },
+    {
+      "id": "cc-0131",
+      "groups": [
+        { "name": "Hidden fruit", "words": ["pearl", "plumber", "figure", "sublime"] },
+        { "name": "Gems", "words": ["ruby", "opal", "topaz", "diamond"] },
+        { "name": "Car parts", "words": ["engine", "wheel", "brake", "mirror"] }
+      ],
+      "herring": { "word": "pearl", "alsoFits": "Gems" }
+    },
+    {
+      "id": "cc-0132",
+      "groups": [
+        { "name": "Goes after star", "words": ["dust", "fish", "light", "board"] },
+        { "name": "Cleaning tasks", "words": ["sweep", "mop", "scrub", "vacuum"] },
+        { "name": "Birthday party", "words": ["cake", "candle", "balloon", "present"] }
+      ],
+      "herring": { "word": "dust", "alsoFits": "Cleaning tasks" }
+    }
+  ]
+}

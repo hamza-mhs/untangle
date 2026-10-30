@@ -53,6 +53,7 @@
     "jest": "~30.5.2",
     "jest-expo": "~58.0.13",
     "prettier": "^3.9.10",
+    "tsx": "^4.23.15",
     "typescript": "~6.0.3"
   },
   "scripts": {
@@ -67,7 +68,8 @@
     "test:watch": "jest --watch",
     "check": "npm run typecheck && npm run lint && npm run format:check && npm test -- --ci",
     "doctor": "npx expo-doctor",
-    "db:generate": "drizzle-kit generate"
+    "db:generate": "drizzle-kit generate",
+    "content": "tsx tools/content/build.ts"
   },
   "private": true,
   "jest": {

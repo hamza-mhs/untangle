@@ -30,7 +30,11 @@ export function saveResult(args: {
       durationMs,
       score: result?.score ?? 0,
       stars: result?.stars ?? 0,
-      statsJson: JSON.stringify({ stats: result?.stats ?? [], best: result?.best ?? null }),
+      statsJson: JSON.stringify({
+        stats: result?.stats ?? [],
+        best: result?.best ?? null,
+        ...(result?.items?.length ? { items: result.items } : {}),
+      }),
       source,
       completed,
     })
@@ -50,6 +54,29 @@ export function saveResult(args: {
   };
   db.insert(gameBests).values(row).onConflictDoUpdate({ target: gameBests.gameId, set: row }).run();
   return { isNewBest: !!prev };
+}
+
+const DAY_MS = 24 * 60 * 60 * 1000;
+
+/** Content item ids a game served in the last `days` days (newest first), from stats_json. */
+export function recentItemIds(gameId: GameId, days = 30, now = Date.now()): string[] {
+  const rows = db
+    .select({ statsJson: gameResults.statsJson })
+    .from(gameResults)
+    .where(and(eq(gameResults.gameId, gameId), gte(gameResults.startedAt, now - days * DAY_MS)))
+    .orderBy(desc(gameResults.startedAt))
+    .all();
+  const out: string[] = [];
+  for (const r of rows) {
+    try {
+      const items = (JSON.parse(r.statsJson) as { items?: unknown }).items;
+      if (Array.isArray(items))
+        out.push(...items.filter((x): x is string => typeof x === 'string'));
+    } catch {
+      // Old or broken row: nothing to skip.
+    }
+  }
+  return out;
 }
 
 /** Completed games per day (for training, the streak and Progress). */

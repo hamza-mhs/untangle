@@ -516,6 +516,39 @@ Answers: Public Sans downloaded (official release, OFL); icons and art from `des
 - **Checked on the emulator:** Games tab All / New filter (`docs/evidence/3.2e/`).
 - **Checks:** `npm run check` passes (295 tests).
 
+## Batch 3.3.0 · Content pipeline
+
+- **`npm run content`** (`tools/content/build.ts`, run with `tsx`, now a devDependency) writes
+  `games/<gameId>/content.json` for 11 games, deterministic (fixed seeds, stable ids). Each
+  game's generator is in `generate.ts` (build-time only) and its solver in `logic.ts`, shared
+  by the build, the tests and (later) the rounds. Details in `tools/content/README.md`.
+- **Word list:** ENABLE (public domain, `tools/content/data/enable1.txt`, downloaded once with
+  the owner's OK). Accepted = ENABLE 3–8 letters minus `blocklist.txt` (79,898 words); answers
+  come from the hand-curated `common.txt` (3,095 words) so puzzles never hinge on obscure words.
+- **No repeats within 30 days:** `RoundResult.items` (new optional field) is saved in
+  `game_results.stats_json`; `recentItemIds()` reads it back and `kit/content.ts`
+  `pickUnplayed(items, recentIds, seed, n)` serves fresh items first, then the oldest
+  (tested over 1,000 seeds). `servableItems()` hides `reviewed: false` content outside dev
+  builds; `kit/roundContent.ts` `pickRoundItems()` puts it together for a round.
+- **Packs (every item re-checked by a test):** Flow lines 300 (5×5 + 6×6, unique solution),
+  Slide escape 220 (BFS minimum moves 4–14 recorded), Path painter 220 (one-stroke path
+  exists, ≤ 8 working starts), One-line art 200 (12 hand icons, 0 or 2 odd points), Mini
+  nonogram 160 (26 hand pictures, line-solvable), Word bridge 220 (BFS shortest 3–5 steps,
+  doable with common words, plus the 4-letter dictionary), Word trails 220, Letter forge 220
+  (each rack has a 6+ letter word and lists every word it makes, so no dictionary ships),
+  Mini crossword 103.
+- **Hand-written (drafted by Claude Code, `reviewed: false`, dev builds only until the owner
+  reviews):** Category clusters 132 puzzles, Letter guess 419 clue + word pairs, and the
+  3-letter crossword clues (`tools/content/clues/clues3.json`, 381 words).
+- **Deviation (please check):** Mini crossword is **3×3** (rows 1/4/5 across, columns 1/2/3
+  down, six different words), as in the design and prototype; the plan text said 5×5.
+- **For the owner to review before release:** `blocklist.txt`; the three hand-written packs.
+  Notes from the drafts: a few clues use British words (bin, hob, cot, mum, biscuit); some
+  clues could fit two answers (e.g. "Forest animal with antlers" deer/elk); Category clusters
+  puzzles flagged as weaker: cc-0043, 0049, 0055, 0057, 0062, 0064, 0072, 0080, 0091, 0095,
+  0102, 0104, 0111, 0129, 0131.
+- **Checks:** `npm run check` passes (331 tests).
+
 ## Still needed from the owner
 
 1. A real phone over USB for the device checks (permissions, blocking, browsers, battery,

@@ -1,0 +1,2101 @@
+{
+  "version": 1,
+  "reviewed": false,
+  "items": [
+    {
+      "id": "lg-0001",
+      "word": "rest",
+      "clue": "Take a break and relax"
+    },
+    {
+      "id": "lg-0002",
+      "word": "calm",
+      "clue": "Peaceful and untroubled"
+    },
+    {
+      "id": "lg-0003",
+      "word": "lake",
+      "clue": "Large body of fresh water"
+    },
+    {
+      "id": "lg-0004",
+      "word": "tree",
+      "clue": "Tall plant with a woody trunk"
+    },
+    {
+      "id": "lg-0005",
+      "word": "leaf",
+      "clue": "Green part on a branch"
+    },
+    {
+      "id": "lg-0006",
+      "word": "moon",
+      "clue": "Lights up the night, full or new"
+    },
+    {
+      "id": "lg-0007",
+      "word": "star",
+      "clue": "Twinkles in the night sky"
+    },
+    {
+      "id": "lg-0008",
+      "word": "rain",
+      "clue": "Water falling from clouds"
+    },
+    {
+      "id": "lg-0009",
+      "word": "snow",
+      "clue": "White flakes in winter"
+    },
+    {
+      "id": "lg-0010",
+      "word": "wind",
+      "clue": "Moving air"
+    },
+    {
+      "id": "lg-0011",
+      "word": "nest",
+      "clue": "Bird's home of twigs"
+    },
+    {
+      "id": "lg-0012",
+      "word": "seed",
+      "clue": "It grows into a plant"
+    },
+    {
+      "id": "lg-0013",
+      "word": "soil",
+      "clue": "Earth that plants grow in"
+    },
+    {
+      "id": "lg-0014",
+      "word": "rock",
+      "clue": "Hard lump of stone"
+    },
+    {
+      "id": "lg-0015",
+      "word": "hill",
+      "clue": "Small rise in the land"
+    },
+    {
+      "id": "lg-0016",
+      "word": "wave",
+      "clue": "Moving ridge of sea water"
+    },
+    {
+      "id": "lg-0017",
+      "word": "sand",
+      "clue": "Grains on a beach"
+    },
+    {
+      "id": "lg-0018",
+      "word": "book",
+      "clue": "Pages bound together to read"
+    },
+    {
+      "id": "lg-0019",
+      "word": "lamp",
+      "clue": "Gives light on a desk"
+    },
+    {
+      "id": "lg-0020",
+      "word": "door",
+      "clue": "You open it to enter a room"
+    },
+    {
+      "id": "lg-0021",
+      "word": "desk",
+      "clue": "Table for working at"
+    },
+    {
+      "id": "lg-0022",
+      "word": "sofa",
+      "clue": "Comfy seat for two or more"
+    },
+    {
+      "id": "lg-0023",
+      "word": "bowl",
+      "clue": "Deep dish for cereal"
+    },
+    {
+      "id": "lg-0024",
+      "word": "fork",
+      "clue": "Pronged tool for eating"
+    },
+    {
+      "id": "lg-0025",
+      "word": "bath",
+      "clue": "Tub you soak in"
+    },
+    {
+      "id": "lg-0026",
+      "word": "soap",
+      "clue": "Lather it to wash your hands"
+    },
+    {
+      "id": "lg-0027",
+      "word": "sock",
+      "clue": "Worn on the foot inside a shoe"
+    },
+    {
+      "id": "lg-0028",
+      "word": "coat",
+      "clue": "Warm outer layer for winter"
+    },
+    {
+      "id": "lg-0029",
+      "word": "shoe",
+      "clue": "Trainer or loafer, for example"
+    },
+    {
+      "id": "lg-0030",
+      "word": "boot",
+      "clue": "Tall shoe for mud or snow"
+    },
+    {
+      "id": "lg-0031",
+      "word": "hand",
+      "clue": "It has four fingers and a thumb"
+    },
+    {
+      "id": "lg-0032",
+      "word": "foot",
+      "clue": "Part of the leg you stand on"
+    },
+    {
+      "id": "lg-0033",
+      "word": "nose",
+      "clue": "You smell with it"
+    },
+    {
+      "id": "lg-0034",
+      "word": "knee",
+      "clue": "Joint in the middle of the leg"
+    },
+    {
+      "id": "lg-0035",
+      "word": "lung",
+      "clue": "Organ you breathe with"
+    },
+    {
+      "id": "lg-0036",
+      "word": "mind",
+      "clue": "Where your thoughts live"
+    },
+    {
+      "id": "lg-0037",
+      "word": "idea",
+      "clue": "A thought that pops into your head"
+    },
+    {
+      "id": "lg-0038",
+      "word": "plan",
+      "clue": "A scheme for the future"
+    },
+    {
+      "id": "lg-0039",
+      "word": "goal",
+      "clue": "Something you aim for"
+    },
+    {
+      "id": "lg-0040",
+      "word": "task",
+      "clue": "A piece of work to do"
+    },
+    {
+      "id": "lg-0041",
+      "word": "list",
+      "clue": "Items written one under another"
+    },
+    {
+      "id": "lg-0042",
+      "word": "note",
+      "clue": "Short written message"
+    },
+    {
+      "id": "lg-0043",
+      "word": "time",
+      "clue": "Measured by a clock"
+    },
+    {
+      "id": "lg-0044",
+      "word": "hour",
+      "clue": "Sixty minutes"
+    },
+    {
+      "id": "lg-0045",
+      "word": "week",
+      "clue": "Seven days"
+    },
+    {
+      "id": "lg-0046",
+      "word": "year",
+      "clue": "Twelve months"
+    },
+    {
+      "id": "lg-0047",
+      "word": "date",
+      "clue": "Day of the month"
+    },
+    {
+      "id": "lg-0048",
+      "word": "noon",
+      "clue": "Midday"
+    },
+    {
+      "id": "lg-0049",
+      "word": "dawn",
+      "clue": "First light of the day"
+    },
+    {
+      "id": "lg-0050",
+      "word": "dusk",
+      "clue": "Fading light of evening"
+    },
+    {
+      "id": "lg-0051",
+      "word": "yawn",
+      "clue": "Wide sign of being tired"
+    },
+    {
+      "id": "lg-0052",
+      "word": "song",
+      "clue": "Music with words"
+    },
+    {
+      "id": "lg-0053",
+      "word": "tune",
+      "clue": "A catchy melody"
+    },
+    {
+      "id": "lg-0054",
+      "word": "drum",
+      "clue": "Beat it to keep rhythm"
+    },
+    {
+      "id": "lg-0055",
+      "word": "bell",
+      "clue": "It rings to call you"
+    },
+    {
+      "id": "lg-0056",
+      "word": "gift",
+      "clue": "A present"
+    },
+    {
+      "id": "lg-0057",
+      "word": "card",
+      "clue": "Sent on a birthday"
+    },
+    {
+      "id": "lg-0058",
+      "word": "cake",
+      "clue": "Baked treat with candles"
+    },
+    {
+      "id": "lg-0059",
+      "word": "milk",
+      "clue": "White drink from cows"
+    },
+    {
+      "id": "lg-0060",
+      "word": "rice",
+      "clue": "Small grains often served with curry"
+    },
+    {
+      "id": "lg-0061",
+      "word": "soup",
+      "clue": "Hot meal you eat with a spoon"
+    },
+    {
+      "id": "lg-0062",
+      "word": "pear",
+      "clue": "Green fruit, narrow at the top"
+    },
+    {
+      "id": "lg-0063",
+      "word": "plum",
+      "clue": "Purple fruit with a stone"
+    },
+    {
+      "id": "lg-0064",
+      "word": "lime",
+      "clue": "Small sour green citrus fruit"
+    },
+    {
+      "id": "lg-0065",
+      "word": "kiwi",
+      "clue": "Fuzzy brown fruit, green inside"
+    },
+    {
+      "id": "lg-0066",
+      "word": "corn",
+      "clue": "Yellow kernels on a cob"
+    },
+    {
+      "id": "lg-0067",
+      "word": "bean",
+      "clue": "Runner or kidney vegetable"
+    },
+    {
+      "id": "lg-0068",
+      "word": "salt",
+      "clue": "White seasoning in a shaker"
+    },
+    {
+      "id": "lg-0069",
+      "word": "park",
+      "clue": "Green public space in a town"
+    },
+    {
+      "id": "lg-0070",
+      "word": "road",
+      "clue": "Cars drive along it"
+    },
+    {
+      "id": "lg-0071",
+      "word": "path",
+      "clue": "Narrow track for walking"
+    },
+    {
+      "id": "lg-0072",
+      "word": "town",
+      "clue": "Smaller than a city"
+    },
+    {
+      "id": "lg-0073",
+      "word": "farm",
+      "clue": "Land for crops and animals"
+    },
+    {
+      "id": "lg-0074",
+      "word": "home",
+      "clue": "Where you live"
+    },
+    {
+      "id": "lg-0075",
+      "word": "room",
+      "clue": "Space inside a house"
+    },
+    {
+      "id": "lg-0076",
+      "word": "wall",
+      "clue": "Side of a room"
+    },
+    {
+      "id": "lg-0077",
+      "word": "roof",
+      "clue": "Top cover of a house"
+    },
+    {
+      "id": "lg-0078",
+      "word": "gate",
+      "clue": "Opening in a fence"
+    },
+    {
+      "id": "lg-0079",
+      "word": "bike",
+      "clue": "Two wheels and pedals"
+    },
+    {
+      "id": "lg-0080",
+      "word": "boat",
+      "clue": "Small vessel on a lake"
+    },
+    {
+      "id": "lg-0081",
+      "word": "ship",
+      "clue": "Large vessel at sea"
+    },
+    {
+      "id": "lg-0082",
+      "word": "kite",
+      "clue": "Flown on a string on windy days"
+    },
+    {
+      "id": "lg-0083",
+      "word": "ball",
+      "clue": "Kick it or throw it"
+    },
+    {
+      "id": "lg-0084",
+      "word": "game",
+      "clue": "Something you play for fun"
+    },
+    {
+      "id": "lg-0085",
+      "word": "team",
+      "clue": "Players on the same side"
+    },
+    {
+      "id": "lg-0086",
+      "word": "race",
+      "clue": "Contest of speed"
+    },
+    {
+      "id": "lg-0087",
+      "word": "swim",
+      "clue": "Move through water with strokes"
+    },
+    {
+      "id": "lg-0088",
+      "word": "walk",
+      "clue": "Go on foot"
+    },
+    {
+      "id": "lg-0089",
+      "word": "jump",
+      "clue": "Leap into the air"
+    },
+    {
+      "id": "lg-0090",
+      "word": "hike",
+      "clue": "Long walk in the country"
+    },
+    {
+      "id": "lg-0091",
+      "word": "camp",
+      "clue": "Stay overnight in tents"
+    },
+    {
+      "id": "lg-0092",
+      "word": "tent",
+      "clue": "Canvas shelter for a night outdoors"
+    },
+    {
+      "id": "lg-0093",
+      "word": "fire",
+      "clue": "Flames in a hearth"
+    },
+    {
+      "id": "lg-0094",
+      "word": "warm",
+      "clue": "Pleasantly hot"
+    },
+    {
+      "id": "lg-0095",
+      "word": "cool",
+      "clue": "A little cold"
+    },
+    {
+      "id": "lg-0096",
+      "word": "cold",
+      "clue": "Low in temperature"
+    },
+    {
+      "id": "lg-0097",
+      "word": "soft",
+      "clue": "Not hard"
+    },
+    {
+      "id": "lg-0098",
+      "word": "easy",
+      "clue": "Not difficult"
+    },
+    {
+      "id": "lg-0099",
+      "word": "kind",
+      "clue": "Caring and generous"
+    },
+    {
+      "id": "lg-0100",
+      "word": "glad",
+      "clue": "Happy and pleased"
+    },
+    {
+      "id": "lg-0101",
+      "word": "hope",
+      "clue": "Wish for something good"
+    },
+    {
+      "id": "lg-0102",
+      "word": "love",
+      "clue": "Deep affection"
+    },
+    {
+      "id": "lg-0103",
+      "word": "care",
+      "clue": "Look after"
+    },
+    {
+      "id": "lg-0104",
+      "word": "help",
+      "clue": "Lend a hand"
+    },
+    {
+      "id": "lg-0105",
+      "word": "talk",
+      "clue": "Have a chat"
+    },
+    {
+      "id": "lg-0106",
+      "word": "read",
+      "clue": "Look at words on a page"
+    },
+    {
+      "id": "lg-0107",
+      "word": "sing",
+      "clue": "Make music with your voice"
+    },
+    {
+      "id": "lg-0108",
+      "word": "draw",
+      "clue": "Make a picture with a pencil"
+    },
+    {
+      "id": "lg-0109",
+      "word": "cook",
+      "clue": "Prepare food"
+    },
+    {
+      "id": "lg-0110",
+      "word": "bake",
+      "clue": "Cook in the oven"
+    },
+    {
+      "id": "lg-0111",
+      "word": "grow",
+      "clue": "Get bigger"
+    },
+    {
+      "id": "lg-0112",
+      "word": "open",
+      "clue": "Not shut"
+    },
+    {
+      "id": "lg-0113",
+      "word": "slow",
+      "clue": "Not fast"
+    },
+    {
+      "id": "lg-0114",
+      "word": "fast",
+      "clue": "Moving at high speed"
+    },
+    {
+      "id": "lg-0115",
+      "word": "deep",
+      "clue": "Going far down"
+    },
+    {
+      "id": "lg-0116",
+      "word": "blue",
+      "clue": "Shade of a clear sky"
+    },
+    {
+      "id": "lg-0117",
+      "word": "gold",
+      "clue": "Shiny yellow precious metal"
+    },
+    {
+      "id": "lg-0118",
+      "word": "pink",
+      "clue": "Pale red shade"
+    },
+    {
+      "id": "lg-0119",
+      "word": "frog",
+      "clue": "Green hopper in a pond"
+    },
+    {
+      "id": "lg-0120",
+      "word": "duck",
+      "clue": "Pond bird that quacks"
+    },
+    {
+      "id": "lg-0121",
+      "word": "lion",
+      "clue": "King of the jungle"
+    },
+    {
+      "id": "lg-0122",
+      "word": "bear",
+      "clue": "Big furry animal that hibernates"
+    },
+    {
+      "id": "lg-0123",
+      "word": "deer",
+      "clue": "Forest animal with antlers"
+    },
+    {
+      "id": "lg-0124",
+      "word": "wolf",
+      "clue": "Wild animal that howls"
+    },
+    {
+      "id": "lg-0125",
+      "word": "goat",
+      "clue": "Farm animal with a beard"
+    },
+    {
+      "id": "lg-0126",
+      "word": "lamb",
+      "clue": "Young sheep"
+    },
+    {
+      "id": "lg-0127",
+      "word": "swan",
+      "clue": "Graceful white bird with a long neck"
+    },
+    {
+      "id": "lg-0128",
+      "word": "crab",
+      "clue": "Shellfish that walks sideways"
+    },
+    {
+      "id": "lg-0129",
+      "word": "moth",
+      "clue": "Night insect drawn to light"
+    },
+    {
+      "id": "lg-0130",
+      "word": "fern",
+      "clue": "Leafy plant of shady woods"
+    },
+    {
+      "id": "lg-0131",
+      "word": "moss",
+      "clue": "Soft green growth on stones"
+    },
+    {
+      "id": "lg-0132",
+      "word": "rose",
+      "clue": "Red flower with thorns"
+    },
+    {
+      "id": "lg-0133",
+      "word": "lily",
+      "clue": "Pond flower"
+    },
+    {
+      "id": "lg-0134",
+      "word": "pond",
+      "clue": "Small pool of still water"
+    },
+    {
+      "id": "lg-0135",
+      "word": "mist",
+      "clue": "Thin fog"
+    },
+    {
+      "id": "lg-0136",
+      "word": "tidy",
+      "clue": "Neat and in order"
+    },
+    {
+      "id": "lg-0137",
+      "word": "pause",
+      "clue": "A short break"
+    },
+    {
+      "id": "lg-0138",
+      "word": "quiet",
+      "clue": "Making little or no noise"
+    },
+    {
+      "id": "lg-0139",
+      "word": "focus",
+      "clue": "Give full attention to something"
+    },
+    {
+      "id": "lg-0140",
+      "word": "peace",
+      "clue": "Calm and quiet"
+    },
+    {
+      "id": "lg-0141",
+      "word": "relax",
+      "clue": "Unwind and take it easy"
+    },
+    {
+      "id": "lg-0142",
+      "word": "sleep",
+      "clue": "Rest at night with eyes closed"
+    },
+    {
+      "id": "lg-0143",
+      "word": "dream",
+      "clue": "Story your mind tells at night"
+    },
+    {
+      "id": "lg-0144",
+      "word": "smile",
+      "clue": "Happy curve of the lips"
+    },
+    {
+      "id": "lg-0145",
+      "word": "laugh",
+      "clue": "Sound made when amused"
+    },
+    {
+      "id": "lg-0146",
+      "word": "cloud",
+      "clue": "White puff in the sky"
+    },
+    {
+      "id": "lg-0147",
+      "word": "storm",
+      "clue": "Wild weather with thunder"
+    },
+    {
+      "id": "lg-0148",
+      "word": "river",
+      "clue": "Water flowing to the sea"
+    },
+    {
+      "id": "lg-0149",
+      "word": "ocean",
+      "clue": "Vast body of salt water"
+    },
+    {
+      "id": "lg-0150",
+      "word": "beach",
+      "clue": "Sandy shore"
+    },
+    {
+      "id": "lg-0151",
+      "word": "shell",
+      "clue": "Hard cover found on the beach"
+    },
+    {
+      "id": "lg-0152",
+      "word": "stone",
+      "clue": "Small piece of rock"
+    },
+    {
+      "id": "lg-0153",
+      "word": "grass",
+      "clue": "Green blades on a lawn"
+    },
+    {
+      "id": "lg-0154",
+      "word": "plant",
+      "clue": "Living thing that grows in soil"
+    },
+    {
+      "id": "lg-0155",
+      "word": "bloom",
+      "clue": "Burst into flower"
+    },
+    {
+      "id": "lg-0156",
+      "word": "petal",
+      "clue": "Coloured part of a flower"
+    },
+    {
+      "id": "lg-0157",
+      "word": "maple",
+      "clue": "Tree tapped for sweet syrup"
+    },
+    {
+      "id": "lg-0158",
+      "word": "birch",
+      "clue": "Tree with pale peeling bark"
+    },
+    {
+      "id": "lg-0159",
+      "word": "earth",
+      "clue": "The planet we live on"
+    },
+    {
+      "id": "lg-0160",
+      "word": "world",
+      "clue": "All the countries together"
+    },
+    {
+      "id": "lg-0161",
+      "word": "light",
+      "clue": "Opposite of dark"
+    },
+    {
+      "id": "lg-0162",
+      "word": "night",
+      "clue": "Time of darkness"
+    },
+    {
+      "id": "lg-0163",
+      "word": "early",
+      "clue": "Before the expected time"
+    },
+    {
+      "id": "lg-0164",
+      "word": "sunny",
+      "clue": "Bright with no clouds"
+    },
+    {
+      "id": "lg-0165",
+      "word": "bread",
+      "clue": "Baked loaf"
+    },
+    {
+      "id": "lg-0166",
+      "word": "toast",
+      "clue": "Grilled slice for breakfast"
+    },
+    {
+      "id": "lg-0167",
+      "word": "apple",
+      "clue": "Fruit that keeps the doctor away"
+    },
+    {
+      "id": "lg-0168",
+      "word": "lemon",
+      "clue": "Sour yellow fruit"
+    },
+    {
+      "id": "lg-0169",
+      "word": "mango",
+      "clue": "Sweet tropical fruit with a big stone"
+    },
+    {
+      "id": "lg-0170",
+      "word": "grape",
+      "clue": "Small fruit growing in bunches"
+    },
+    {
+      "id": "lg-0171",
+      "word": "peach",
+      "clue": "Soft fuzzy fruit with a stone"
+    },
+    {
+      "id": "lg-0172",
+      "word": "melon",
+      "clue": "Large juicy fruit with many seeds"
+    },
+    {
+      "id": "lg-0173",
+      "word": "honey",
+      "clue": "Sweet stuff made by bees"
+    },
+    {
+      "id": "lg-0174",
+      "word": "sugar",
+      "clue": "Sweet white grains"
+    },
+    {
+      "id": "lg-0175",
+      "word": "pasta",
+      "clue": "Italian staple like penne"
+    },
+    {
+      "id": "lg-0176",
+      "word": "salad",
+      "clue": "Bowl of fresh leaves"
+    },
+    {
+      "id": "lg-0177",
+      "word": "pizza",
+      "clue": "Round baked dish with toppings"
+    },
+    {
+      "id": "lg-0178",
+      "word": "lunch",
+      "clue": "Midday meal"
+    },
+    {
+      "id": "lg-0179",
+      "word": "juice",
+      "clue": "Squeezed fruit drink"
+    },
+    {
+      "id": "lg-0180",
+      "word": "water",
+      "clue": "Clear drink from the tap"
+    },
+    {
+      "id": "lg-0181",
+      "word": "chair",
+      "clue": "Seat with a back"
+    },
+    {
+      "id": "lg-0182",
+      "word": "table",
+      "clue": "Furniture you eat at"
+    },
+    {
+      "id": "lg-0183",
+      "word": "couch",
+      "clue": "Long padded seat in a lounge"
+    },
+    {
+      "id": "lg-0184",
+      "word": "shelf",
+      "clue": "Board on a wall for books"
+    },
+    {
+      "id": "lg-0185",
+      "word": "clock",
+      "clue": "It tells the time"
+    },
+    {
+      "id": "lg-0186",
+      "word": "phone",
+      "clue": "Device for calls"
+    },
+    {
+      "id": "lg-0187",
+      "word": "house",
+      "clue": "Building to live in"
+    },
+    {
+      "id": "lg-0188",
+      "word": "porch",
+      "clue": "Covered entrance to a house"
+    },
+    {
+      "id": "lg-0189",
+      "word": "fence",
+      "clue": "Barrier around a garden"
+    },
+    {
+      "id": "lg-0190",
+      "word": "brush",
+      "clue": "Used for painting or hair"
+    },
+    {
+      "id": "lg-0191",
+      "word": "towel",
+      "clue": "Dry yourself with it"
+    },
+    {
+      "id": "lg-0192",
+      "word": "sheet",
+      "clue": "Bed covering, or a page"
+    },
+    {
+      "id": "lg-0193",
+      "word": "paper",
+      "clue": "You write on it"
+    },
+    {
+      "id": "lg-0194",
+      "word": "chalk",
+      "clue": "White stick for a blackboard"
+    },
+    {
+      "id": "lg-0195",
+      "word": "story",
+      "clue": "Tale told or read"
+    },
+    {
+      "id": "lg-0196",
+      "word": "music",
+      "clue": "Sound arranged into tunes"
+    },
+    {
+      "id": "lg-0197",
+      "word": "piano",
+      "clue": "Instrument with black and white keys"
+    },
+    {
+      "id": "lg-0198",
+      "word": "dance",
+      "clue": "Move to music"
+    },
+    {
+      "id": "lg-0199",
+      "word": "paint",
+      "clue": "Brush it onto walls"
+    },
+    {
+      "id": "lg-0200",
+      "word": "craft",
+      "clue": "Handmade skill or hobby"
+    },
+    {
+      "id": "lg-0201",
+      "word": "chess",
+      "clue": "Board game with kings and queens"
+    },
+    {
+      "id": "lg-0202",
+      "word": "heart",
+      "clue": "It beats in your chest"
+    },
+    {
+      "id": "lg-0203",
+      "word": "brain",
+      "clue": "Organ you think with"
+    },
+    {
+      "id": "lg-0204",
+      "word": "mouth",
+      "clue": "You eat and speak with it"
+    },
+    {
+      "id": "lg-0205",
+      "word": "thumb",
+      "clue": "Short thick finger"
+    },
+    {
+      "id": "lg-0206",
+      "word": "elbow",
+      "clue": "Joint in the middle of the arm"
+    },
+    {
+      "id": "lg-0207",
+      "word": "ankle",
+      "clue": "Joint above the foot"
+    },
+    {
+      "id": "lg-0208",
+      "word": "tooth",
+      "clue": "Brush it twice a day"
+    },
+    {
+      "id": "lg-0209",
+      "word": "smell",
+      "clue": "Sense from the nose"
+    },
+    {
+      "id": "lg-0210",
+      "word": "taste",
+      "clue": "Sense from the tongue"
+    },
+    {
+      "id": "lg-0211",
+      "word": "voice",
+      "clue": "Sound you speak with"
+    },
+    {
+      "id": "lg-0212",
+      "word": "habit",
+      "clue": "Something you do regularly"
+    },
+    {
+      "id": "lg-0213",
+      "word": "skill",
+      "clue": "Ability gained by practice"
+    },
+    {
+      "id": "lg-0214",
+      "word": "brave",
+      "clue": "Full of courage"
+    },
+    {
+      "id": "lg-0215",
+      "word": "happy",
+      "clue": "Feeling full of joy"
+    },
+    {
+      "id": "lg-0216",
+      "word": "eager",
+      "clue": "Keen to start"
+    },
+    {
+      "id": "lg-0217",
+      "word": "proud",
+      "clue": "Pleased with what you did"
+    },
+    {
+      "id": "lg-0218",
+      "word": "sweet",
+      "clue": "Tasting of sugar"
+    },
+    {
+      "id": "lg-0219",
+      "word": "fresh",
+      "clue": "Newly made or picked"
+    },
+    {
+      "id": "lg-0220",
+      "word": "clean",
+      "clue": "Free from dirt"
+    },
+    {
+      "id": "lg-0221",
+      "word": "quick",
+      "clue": "Done in no time"
+    },
+    {
+      "id": "lg-0222",
+      "word": "still",
+      "clue": "Not moving"
+    },
+    {
+      "id": "lg-0223",
+      "word": "ready",
+      "clue": "Prepared"
+    },
+    {
+      "id": "lg-0224",
+      "word": "clear",
+      "clue": "Easy to see through"
+    },
+    {
+      "id": "lg-0225",
+      "word": "round",
+      "clue": "Shaped like a circle"
+    },
+    {
+      "id": "lg-0226",
+      "word": "green",
+      "clue": "Shade of grass"
+    },
+    {
+      "id": "lg-0227",
+      "word": "white",
+      "clue": "Shade of snow"
+    },
+    {
+      "id": "lg-0228",
+      "word": "black",
+      "clue": "Shade of coal"
+    },
+    {
+      "id": "lg-0229",
+      "word": "tiger",
+      "clue": "Striped big cat"
+    },
+    {
+      "id": "lg-0230",
+      "word": "horse",
+      "clue": "Animal you ride"
+    },
+    {
+      "id": "lg-0231",
+      "word": "sheep",
+      "clue": "Woolly farm animal"
+    },
+    {
+      "id": "lg-0232",
+      "word": "mouse",
+      "clue": "Small squeaky rodent"
+    },
+    {
+      "id": "lg-0233",
+      "word": "zebra",
+      "clue": "Striped horse of Africa"
+    },
+    {
+      "id": "lg-0234",
+      "word": "otter",
+      "clue": "Playful river mammal"
+    },
+    {
+      "id": "lg-0235",
+      "word": "eagle",
+      "clue": "Large bird of prey"
+    },
+    {
+      "id": "lg-0236",
+      "word": "robin",
+      "clue": "Bird with a red breast"
+    },
+    {
+      "id": "lg-0237",
+      "word": "camel",
+      "clue": "Desert animal with a hump"
+    },
+    {
+      "id": "lg-0238",
+      "word": "whale",
+      "clue": "Largest animal in the sea"
+    },
+    {
+      "id": "lg-0239",
+      "word": "snail",
+      "clue": "Slow creature with a shell"
+    },
+    {
+      "id": "lg-0240",
+      "word": "train",
+      "clue": "Runs on rails"
+    },
+    {
+      "id": "lg-0241",
+      "word": "plane",
+      "clue": "It flies passengers"
+    },
+    {
+      "id": "lg-0242",
+      "word": "truck",
+      "clue": "Large goods vehicle"
+    },
+    {
+      "id": "lg-0243",
+      "word": "coast",
+      "clue": "Where land meets the sea"
+    },
+    {
+      "id": "lg-0244",
+      "word": "field",
+      "clue": "Open grassy land"
+    },
+    {
+      "id": "lg-0245",
+      "word": "trail",
+      "clue": "Path through the countryside"
+    },
+    {
+      "id": "lg-0246",
+      "word": "cabin",
+      "clue": "Small wooden house"
+    },
+    {
+      "id": "lg-0247",
+      "word": "bench",
+      "clue": "Long seat in a park"
+    },
+    {
+      "id": "lg-0248",
+      "word": "watch",
+      "clue": "Clock on your wrist"
+    },
+    {
+      "id": "lg-0249",
+      "word": "radio",
+      "clue": "Listen to it for news and songs"
+    },
+    {
+      "id": "lg-0250",
+      "word": "movie",
+      "clue": "Film"
+    },
+    {
+      "id": "lg-0251",
+      "word": "photo",
+      "clue": "Picture taken with a camera"
+    },
+    {
+      "id": "lg-0252",
+      "word": "hobby",
+      "clue": "Pastime you enjoy"
+    },
+    {
+      "id": "lg-0253",
+      "word": "break",
+      "clue": "Rest from work"
+    },
+    {
+      "id": "lg-0254",
+      "word": "think",
+      "clue": "Use your mind"
+    },
+    {
+      "id": "lg-0255",
+      "word": "learn",
+      "clue": "Gain knowledge"
+    },
+    {
+      "id": "lg-0256",
+      "word": "trust",
+      "clue": "Firm belief in someone"
+    },
+    {
+      "id": "lg-0257",
+      "word": "cheer",
+      "clue": "Shout of encouragement"
+    },
+    {
+      "id": "lg-0258",
+      "word": "share",
+      "clue": "Give part to others"
+    },
+    {
+      "id": "lg-0259",
+      "word": "order",
+      "clue": "Neat arrangement"
+    },
+    {
+      "id": "lg-0260",
+      "word": "spark",
+      "clue": "Tiny flash of fire"
+    },
+    {
+      "id": "lg-0261",
+      "word": "flame",
+      "clue": "Tongue of fire"
+    },
+    {
+      "id": "lg-0262",
+      "word": "frost",
+      "clue": "Icy coating on cold mornings"
+    },
+    {
+      "id": "lg-0263",
+      "word": "comet",
+      "clue": "Icy visitor with a glowing tail"
+    },
+    {
+      "id": "lg-0264",
+      "word": "acorn",
+      "clue": "Seed of an oak"
+    },
+    {
+      "id": "lg-0265",
+      "word": "diary",
+      "clue": "Book for daily notes"
+    },
+    {
+      "id": "lg-0266",
+      "word": "puppy",
+      "clue": "Young dog"
+    },
+    {
+      "id": "lg-0267",
+      "word": "scarf",
+      "clue": "Wrap for the neck in winter"
+    },
+    {
+      "id": "lg-0268",
+      "word": "baker",
+      "clue": "Person who makes bread"
+    },
+    {
+      "id": "lg-0269",
+      "word": "pilot",
+      "clue": "Person who flies a plane"
+    },
+    {
+      "id": "lg-0270",
+      "word": "nurse",
+      "clue": "Carer in a hospital"
+    },
+    {
+      "id": "lg-0271",
+      "word": "spoon",
+      "clue": "Stir your tea with it"
+    },
+    {
+      "id": "lg-0272",
+      "word": "candy",
+      "clue": "Sweets"
+    },
+    {
+      "id": "lg-0273",
+      "word": "olive",
+      "clue": "Small fruit pressed for oil"
+    },
+    {
+      "id": "lg-0274",
+      "word": "onion",
+      "clue": "Bulb that makes you cry when chopped"
+    },
+    {
+      "id": "lg-0275",
+      "word": "cocoa",
+      "clue": "Hot chocolate powder"
+    },
+    {
+      "id": "lg-0276",
+      "word": "globe",
+      "clue": "Round map of the world"
+    },
+    {
+      "id": "lg-0277",
+      "word": "north",
+      "clue": "Opposite of south"
+    },
+    {
+      "id": "lg-0278",
+      "word": "hello",
+      "clue": "Friendly greeting"
+    },
+    {
+      "id": "lg-0279",
+      "word": "sorry",
+      "clue": "Word of apology"
+    },
+    {
+      "id": "lg-0280",
+      "word": "tired",
+      "clue": "Ready for a nap"
+    },
+    {
+      "id": "lg-0281",
+      "word": "awake",
+      "clue": "Not asleep"
+    },
+    {
+      "id": "lg-0282",
+      "word": "alarm",
+      "clue": "Clock that wakes you"
+    },
+    {
+      "id": "lg-0283",
+      "word": "space",
+      "clue": "Empty area, or beyond the sky"
+    },
+    {
+      "id": "lg-0284",
+      "word": "orbit",
+      "clue": "Path around a planet"
+    },
+    {
+      "id": "lg-0285",
+      "word": "lucky",
+      "clue": "Having good fortune"
+    },
+    {
+      "id": "lg-0286",
+      "word": "windy",
+      "clue": "Breezy"
+    },
+    {
+      "id": "lg-0287",
+      "word": "flower",
+      "clue": "Rose or daisy, for example"
+    },
+    {
+      "id": "lg-0288",
+      "word": "garden",
+      "clue": "Outdoor space with lawn and beds"
+    },
+    {
+      "id": "lg-0289",
+      "word": "pillow",
+      "clue": "Soft rest for your head"
+    },
+    {
+      "id": "lg-0290",
+      "word": "pencil",
+      "clue": "Write with it, then rub it out"
+    },
+    {
+      "id": "lg-0291",
+      "word": "letter",
+      "clue": "Message sent by post"
+    },
+    {
+      "id": "lg-0292",
+      "word": "puzzle",
+      "clue": "Problem to solve for fun"
+    },
+    {
+      "id": "lg-0293",
+      "word": "riddle",
+      "clue": "Tricky question with a clever answer"
+    },
+    {
+      "id": "lg-0294",
+      "word": "gentle",
+      "clue": "Soft and kind"
+    },
+    {
+      "id": "lg-0295",
+      "word": "steady",
+      "clue": "Firm and not shaky"
+    },
+    {
+      "id": "lg-0296",
+      "word": "spring",
+      "clue": "Season of new growth"
+    },
+    {
+      "id": "lg-0297",
+      "word": "autumn",
+      "clue": "Season of falling leaves"
+    },
+    {
+      "id": "lg-0298",
+      "word": "winter",
+      "clue": "Coldest season"
+    },
+    {
+      "id": "lg-0299",
+      "word": "summer",
+      "clue": "Warmest season"
+    },
+    {
+      "id": "lg-0300",
+      "word": "breathe",
+      "clue": "Draw air in and out"
+    },
+    {
+      "id": "lg-0301",
+      "word": "balance",
+      "clue": "Steady, even state"
+    },
+    {
+      "id": "lg-0302",
+      "word": "morning",
+      "clue": "Early part of the day"
+    },
+    {
+      "id": "lg-0303",
+      "word": "evening",
+      "clue": "Late part of the day, before night"
+    },
+    {
+      "id": "lg-0304",
+      "word": "weekend",
+      "clue": "Saturday and Sunday"
+    },
+    {
+      "id": "lg-0305",
+      "word": "holiday",
+      "clue": "Time off for a trip"
+    },
+    {
+      "id": "lg-0306",
+      "word": "journey",
+      "clue": "Trip from one place to another"
+    },
+    {
+      "id": "lg-0307",
+      "word": "picnic",
+      "clue": "Meal eaten outdoors on a rug"
+    },
+    {
+      "id": "lg-0308",
+      "word": "sunset",
+      "clue": "Evening glow on the horizon"
+    },
+    {
+      "id": "lg-0309",
+      "word": "rainbow",
+      "clue": "Arc of colours after a shower"
+    },
+    {
+      "id": "lg-0310",
+      "word": "thunder",
+      "clue": "Rumble in a storm"
+    },
+    {
+      "id": "lg-0311",
+      "word": "breeze",
+      "clue": "Light gentle wind"
+    },
+    {
+      "id": "lg-0312",
+      "word": "meadow",
+      "clue": "Grassy field of wildflowers"
+    },
+    {
+      "id": "lg-0313",
+      "word": "forest",
+      "clue": "Large area full of trees"
+    },
+    {
+      "id": "lg-0314",
+      "word": "island",
+      "clue": "Land surrounded by water"
+    },
+    {
+      "id": "lg-0315",
+      "word": "valley",
+      "clue": "Low land between hills"
+    },
+    {
+      "id": "lg-0316",
+      "word": "pebble",
+      "clue": "Small smooth stone"
+    },
+    {
+      "id": "lg-0317",
+      "word": "blossom",
+      "clue": "Flowers on a fruit tree"
+    },
+    {
+      "id": "lg-0318",
+      "word": "orchard",
+      "clue": "Field of fruit trees"
+    },
+    {
+      "id": "lg-0319",
+      "word": "rabbit",
+      "clue": "Long-eared hopper"
+    },
+    {
+      "id": "lg-0320",
+      "word": "turtle",
+      "clue": "Reptile with a shell"
+    },
+    {
+      "id": "lg-0321",
+      "word": "parrot",
+      "clue": "Talking bird"
+    },
+    {
+      "id": "lg-0322",
+      "word": "dolphin",
+      "clue": "Clever sea mammal"
+    },
+    {
+      "id": "lg-0323",
+      "word": "penguin",
+      "clue": "Bird that swims but can't fly"
+    },
+    {
+      "id": "lg-0324",
+      "word": "giraffe",
+      "clue": "Tallest animal"
+    },
+    {
+      "id": "lg-0325",
+      "word": "monkey",
+      "clue": "Playful animal that swings in trees"
+    },
+    {
+      "id": "lg-0326",
+      "word": "kitten",
+      "clue": "Young cat"
+    },
+    {
+      "id": "lg-0327",
+      "word": "donkey",
+      "clue": "Animal that brays"
+    },
+    {
+      "id": "lg-0328",
+      "word": "butter",
+      "clue": "Spread on toast"
+    },
+    {
+      "id": "lg-0329",
+      "word": "cheese",
+      "clue": "Made from milk, loved by mice"
+    },
+    {
+      "id": "lg-0330",
+      "word": "cookie",
+      "clue": "Sweet biscuit"
+    },
+    {
+      "id": "lg-0331",
+      "word": "muffin",
+      "clue": "Small domed cake"
+    },
+    {
+      "id": "lg-0332",
+      "word": "pepper",
+      "clue": "Spice in a grinder"
+    },
+    {
+      "id": "lg-0333",
+      "word": "carrot",
+      "clue": "Orange root vegetable"
+    },
+    {
+      "id": "lg-0334",
+      "word": "potato",
+      "clue": "Mashed or baked tuber"
+    },
+    {
+      "id": "lg-0335",
+      "word": "tomato",
+      "clue": "Red fruit used in salads"
+    },
+    {
+      "id": "lg-0336",
+      "word": "banana",
+      "clue": "Long yellow fruit"
+    },
+    {
+      "id": "lg-0337",
+      "word": "cherry",
+      "clue": "Small red fruit on a stalk"
+    },
+    {
+      "id": "lg-0338",
+      "word": "orange",
+      "clue": "Citrus fruit and its shade"
+    },
+    {
+      "id": "lg-0339",
+      "word": "walnut",
+      "clue": "Nut with a wrinkly shell"
+    },
+    {
+      "id": "lg-0340",
+      "word": "noodle",
+      "clue": "Long thin strip of pasta"
+    },
+    {
+      "id": "lg-0341",
+      "word": "dinner",
+      "clue": "Evening meal"
+    },
+    {
+      "id": "lg-0342",
+      "word": "kitchen",
+      "clue": "Room where meals are cooked"
+    },
+    {
+      "id": "lg-0343",
+      "word": "blanket",
+      "clue": "Warm cover for a bed"
+    },
+    {
+      "id": "lg-0344",
+      "word": "window",
+      "clue": "Glass opening in a wall"
+    },
+    {
+      "id": "lg-0345",
+      "word": "mirror",
+      "clue": "Shows your reflection"
+    },
+    {
+      "id": "lg-0346",
+      "word": "candle",
+      "clue": "Wax stick with a wick"
+    },
+    {
+      "id": "lg-0347",
+      "word": "basket",
+      "clue": "Woven carrier for a picnic"
+    },
+    {
+      "id": "lg-0348",
+      "word": "bottle",
+      "clue": "Container for drinks"
+    },
+    {
+      "id": "lg-0349",
+      "word": "jacket",
+      "clue": "Short coat"
+    },
+    {
+      "id": "lg-0350",
+      "word": "sweater",
+      "clue": "Knitted top"
+    },
+    {
+      "id": "lg-0351",
+      "word": "mitten",
+      "clue": "Glove without separate fingers"
+    },
+    {
+      "id": "lg-0352",
+      "word": "pocket",
+      "clue": "Small pouch sewn into clothes"
+    },
+    {
+      "id": "lg-0353",
+      "word": "button",
+      "clue": "Small disc that fastens a shirt"
+    },
+    {
+      "id": "lg-0354",
+      "word": "ladder",
+      "clue": "Climb its rungs"
+    },
+    {
+      "id": "lg-0355",
+      "word": "bucket",
+      "clue": "Pail for water"
+    },
+    {
+      "id": "lg-0356",
+      "word": "hammer",
+      "clue": "Tool for driving nails"
+    },
+    {
+      "id": "lg-0357",
+      "word": "camera",
+      "clue": "Takes photos"
+    },
+    {
+      "id": "lg-0358",
+      "word": "guitar",
+      "clue": "Strummed instrument with six strings"
+    },
+    {
+      "id": "lg-0359",
+      "word": "violin",
+      "clue": "Played with a bow under the chin"
+    },
+    {
+      "id": "lg-0360",
+      "word": "library",
+      "clue": "Place to borrow books"
+    },
+    {
+      "id": "lg-0361",
+      "word": "school",
+      "clue": "Place of learning"
+    },
+    {
+      "id": "lg-0362",
+      "word": "market",
+      "clue": "Place with stalls selling goods"
+    },
+    {
+      "id": "lg-0363",
+      "word": "bridge",
+      "clue": "Crosses a river"
+    },
+    {
+      "id": "lg-0364",
+      "word": "castle",
+      "clue": "Old fortress with towers"
+    },
+    {
+      "id": "lg-0365",
+      "word": "tunnel",
+      "clue": "Underground passage"
+    },
+    {
+      "id": "lg-0366",
+      "word": "airport",
+      "clue": "Where planes take off"
+    },
+    {
+      "id": "lg-0367",
+      "word": "station",
+      "clue": "Where trains stop"
+    },
+    {
+      "id": "lg-0368",
+      "word": "rocket",
+      "clue": "Craft launched into space"
+    },
+    {
+      "id": "lg-0369",
+      "word": "planet",
+      "clue": "Mars or Venus, for example"
+    },
+    {
+      "id": "lg-0370",
+      "word": "silence",
+      "clue": "Complete absence of sound"
+    },
+    {
+      "id": "lg-0371",
+      "word": "courage",
+      "clue": "Bravery in the face of fear"
+    },
+    {
+      "id": "lg-0372",
+      "word": "memory",
+      "clue": "Ability to recall"
+    },
+    {
+      "id": "lg-0373",
+      "word": "thought",
+      "clue": "An idea in your mind"
+    },
+    {
+      "id": "lg-0374",
+      "word": "moment",
+      "clue": "A very short time"
+    },
+    {
+      "id": "lg-0375",
+      "word": "minute",
+      "clue": "Sixty seconds"
+    },
+    {
+      "id": "lg-0376",
+      "word": "second",
+      "clue": "Sixty make a minute"
+    },
+    {
+      "id": "lg-0377",
+      "word": "answer",
+      "clue": "Reply to a question"
+    },
+    {
+      "id": "lg-0378",
+      "word": "friend",
+      "clue": "Someone you like and trust"
+    },
+    {
+      "id": "lg-0379",
+      "word": "family",
+      "clue": "Parents and children together"
+    },
+    {
+      "id": "lg-0380",
+      "word": "cousin",
+      "clue": "Child of your aunt or uncle"
+    },
+    {
+      "id": "lg-0381",
+      "word": "simple",
+      "clue": "Easy and plain"
+    },
+    {
+      "id": "lg-0382",
+      "word": "honest",
+      "clue": "Truthful"
+    },
+    {
+      "id": "lg-0383",
+      "word": "clever",
+      "clue": "Smart and quick to learn"
+    },
+    {
+      "id": "lg-0384",
+      "word": "patient",
+      "clue": "Calm while waiting"
+    },
+    {
+      "id": "lg-0385",
+      "word": "curious",
+      "clue": "Eager to know more"
+    },
+    {
+      "id": "lg-0386",
+      "word": "playful",
+      "clue": "Full of fun"
+    },
+    {
+      "id": "lg-0387",
+      "word": "careful",
+      "clue": "Cautious and attentive"
+    },
+    {
+      "id": "lg-0388",
+      "word": "stretch",
+      "clue": "Reach out your arms and legs"
+    },
+    {
+      "id": "lg-0389",
+      "word": "journal",
+      "clue": "Diary for your thoughts"
+    },
+    {
+      "id": "lg-0390",
+      "word": "recipe",
+      "clue": "Steps to cook a dish"
+    },
+    {
+      "id": "lg-0391",
+      "word": "travel",
+      "clue": "Go on a journey"
+    },
+    {
+      "id": "lg-0392",
+      "word": "explore",
+      "clue": "Travel to discover new places"
+    },
+    {
+      "id": "lg-0393",
+      "word": "wander",
+      "clue": "Stroll without a plan"
+    },
+    {
+      "id": "lg-0394",
+      "word": "listen",
+      "clue": "Pay attention with your ears"
+    },
+    {
+      "id": "lg-0395",
+      "word": "notice",
+      "clue": "Become aware of"
+    },
+    {
+      "id": "lg-0396",
+      "word": "create",
+      "clue": "Make something new"
+    },
+    {
+      "id": "lg-0397",
+      "word": "imagine",
+      "clue": "Picture in your mind"
+    },
+    {
+      "id": "lg-0398",
+      "word": "gather",
+      "clue": "Bring together"
+    },
+    {
+      "id": "lg-0399",
+      "word": "nature",
+      "clue": "Plants, animals and landscapes"
+    },
+    {
+      "id": "lg-0400",
+      "word": "weather",
+      "clue": "Rain, sun or snow"
+    },
+    {
+      "id": "lg-0401",
+      "word": "shadow",
+      "clue": "Dark shape cast by light"
+    },
+    {
+      "id": "lg-0402",
+      "word": "marble",
+      "clue": "Small glass ball for a game"
+    },
+    {
+      "id": "lg-0403",
+      "word": "bubble",
+      "clue": "Floating ball of soap"
+    },
+    {
+      "id": "lg-0404",
+      "word": "feather",
+      "clue": "Bird's soft plume"
+    },
+    {
+      "id": "lg-0405",
+      "word": "pumpkin",
+      "clue": "Big orange squash"
+    },
+    {
+      "id": "lg-0406",
+      "word": "cotton",
+      "clue": "Soft fluffy plant used for cloth"
+    },
+    {
+      "id": "lg-0407",
+      "word": "silver",
+      "clue": "Metal for second place"
+    },
+    {
+      "id": "lg-0408",
+      "word": "purple",
+      "clue": "Shade of violets"
+    },
+    {
+      "id": "lg-0409",
+      "word": "yellow",
+      "clue": "Shade of a lemon"
+    },
+    {
+      "id": "lg-0410",
+      "word": "cottage",
+      "clue": "Small country house"
+    },
+    {
+      "id": "lg-0411",
+      "word": "hammock",
+      "clue": "Hanging bed for lazy days"
+    },
+    {
+      "id": "lg-0412",
+      "word": "lantern",
+      "clue": "Light carried by hand"
+    },
+    {
+      "id": "lg-0413",
+      "word": "compass",
+      "clue": "Shows which way is north"
+    },
+    {
+      "id": "lg-0414",
+      "word": "captain",
+      "clue": "Leader of a team"
+    },
+    {
+      "id": "lg-0415",
+      "word": "teacher",
+      "clue": "Person who runs a class"
+    },
+    {
+      "id": "lg-0416",
+      "word": "doctor",
+      "clue": "Person who treats patients"
+    },
+    {
+      "id": "lg-0417",
+      "word": "farmer",
+      "clue": "Person who works the land"
+    },
+    {
+      "id": "lg-0418",
+      "word": "painter",
+      "clue": "Person with brush and easel"
+    },
+    {
+      "id": "lg-0419",
+      "word": "writer",
+      "clue": "Author of books"
+    }
+  ]
+}

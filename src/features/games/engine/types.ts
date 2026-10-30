@@ -13,6 +13,8 @@ export type RoundResult = {
   line?: string;
   /** What "New best" compares (higher or lower is better per game). */
   best?: { value: number; label: string };
+  /** Content item ids the round used (puzzle packs), so they aren't served again for 30 days. */
+  items?: string[];
 };
 
 export type Timer = {
