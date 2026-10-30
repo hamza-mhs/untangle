@@ -1,4 +1,5 @@
 import type { FocusGroup } from '@/design/tokens';
+import { daysBetween, type DayKey } from '@/lib/time';
 
 /**
  * The game catalogue. Batch 3.1 ships the hero set; until a game's real board lands, it plays
@@ -307,6 +308,39 @@ export function gameMeta(id: string): GameMeta | undefined {
 
 export function isGameId(id: string): id is GameId {
   return BY_ID.has(id as GameId);
+}
+
+/** How long a newly shipped batch keeps the "New" tag (20-phase2 §4). */
+export const NEW_DAYS = 14;
+
+/** Batch ids compare as dotted numbers ('3.2' < '3.10'). */
+function compareBatch(a: string, b: string): number {
+  const pa = a.split('.').map(Number);
+  const pb = b.split('.').map(Number);
+  for (let i = 0; i < Math.max(pa.length, pb.length); i++) {
+    const d = (pa[i] ?? 0) - (pb[i] ?? 0);
+    if (d) return d;
+  }
+  return 0;
+}
+
+/** The newest batch in the catalogue. */
+export function latestBatch(games: readonly GameMeta[] = GAMES): string {
+  return games.reduce((best, g) => (compareBatch(g.batch, best) > 0 ? g.batch : best), '0');
+}
+
+/**
+ * "New" = shipped in the latest batch, for 14 days from the day this install first saw that
+ * batch (the update day; the install day on a fresh install).
+ */
+export function isNewGame(
+  g: GameMeta,
+  firstSeen: DayKey | undefined,
+  today: DayKey,
+  latest = latestBatch(),
+): boolean {
+  if (g.batch !== latest) return false;
+  return !firstSeen || daysBetween(firstSeen, today) < NEW_DAYS;
 }
 
 /** Quick games for the urge moment: ≤ 45 s and not Calm or Active (20-phase2 §2, §8). */

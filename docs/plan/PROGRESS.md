@@ -499,6 +499,23 @@ Answers: Public Sans downloaded (official release, OFL); icons and art from `des
   app; start Metro without `CI` when testing on the emulator.
 - **Checks:** `npm run check` passes (290 tests).
 
+## Batch 3.2e · Wiring
+
+- **New tag:** a game is New when it's in the latest batch (`latestBatch()`, dotted-number
+  compare) and fewer than 14 days have passed since this install first saw that batch (new
+  `newGames` MMKV store, marked when the Games tab opens). So the 14 daily-core games are New
+  for two weeks after the update (or the install), and the 3.1 hero set no longer is. The New
+  filter shows only those games, with its own empty line ("Nothing new right now…").
+- **Training rotation and pause pool:** both already build from the whole catalogue
+  (`pickTraining`, `pickPauseGame` with `isQuickGame`), and every 3.2 game is ≤ 45 s and not
+  Calm/Active, so all 14 are in. New `__tests__/wiring.test.ts` checks it: every game has a
+  board and strings, exactly the 14 are New on day 0–13 and none on day 14, each of them turns
+  up in training within 60 days and in the pause pool.
+- **Note:** a card shows one tag, and Pro wins over New (existing `GameCard` rule), so a free
+  user sees New only on today's training games; Pro users see it on all 14.
+- **Checked on the emulator:** Games tab All / New filter (`docs/evidence/3.2e/`).
+- **Checks:** `npm run check` passes (295 tests).
+
 ## Still needed from the owner
 
 1. A real phone over USB for the device checks (permissions, blocking, browsers, battery,

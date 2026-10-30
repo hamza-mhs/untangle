@@ -23,6 +23,7 @@ export const STORE_KEYS = {
   settings: 'settings',
   streak: 'streak',
   training: 'training',
+  newGames: 'newGames',
   paywall: 'paywall',
   entitlement: 'entitlement',
   focus: 'focus',

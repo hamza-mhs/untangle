@@ -162,7 +162,8 @@
       "new": "New",
       "upNextLabel": "Up next in today's training",
       "upNext": "Up next: {{name}}",
-      "comingSoon": "More {{group}} games coming soon."
+      "comingSoon": "More {{group}} games coming soon.",
+      "noNew": "Nothing new right now. New games arrive with updates."
     },
     "go": "Go",
     "settle": "Get comfortable",

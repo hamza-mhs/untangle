@@ -7,7 +7,10 @@ import { color, FOCUS_GROUPS, layout, radius, size, space, type FocusGroup } fro
 import { usePro } from '@/features/paywall';
 import { useT } from '@/i18n';
 
-import { GAMES, type GameId, type GameMeta } from '../catalog';
+import { dayKey } from '@/lib/time';
+
+import { GAMES, isNewGame, type GameId, type GameMeta } from '../catalog';
+import { useNewGamesStore } from '../newGamesStore';
 import { playedToday } from '../results';
 import { useTrainingStore } from '../trainingStore';
 
@@ -20,10 +23,14 @@ export function GamesTab() {
   const [filter, setFilter] = useState<Filter>('all');
   const training = useTrainingStore((s) => s.ids);
   const [played, setPlayed] = useState<Set<string>>(new Set());
+  const [today, setToday] = useState(() => dayKey());
+  const firstSeen = useNewGamesStore((s) => s.seen);
 
   useFocusEffect(
     useCallback(() => {
       useTrainingStore.getState().today();
+      useNewGamesStore.getState().markLatest();
+      setToday(dayKey());
       try {
         setPlayed(playedToday());
       } catch {
@@ -32,8 +39,10 @@ export function GamesTab() {
     }, []),
   );
 
-  // Every game in the catalogue shipped in the current batch, so all count as New for now.
-  const games = GAMES.filter((g) => filter === 'all' || filter === 'new' || g.group === filter);
+  const isNew = (g: GameMeta) => isNewGame(g, firstSeen[g.batch], today);
+  const games = GAMES.filter(
+    (g) => filter === 'all' || (filter === 'new' ? isNew(g) : g.group === filter),
+  );
   const upNext = training.find((id) => !played.has(id));
   const open = (g: GameMeta) => {
     if (!isPro && !training.includes(g.id)) router.push('/paywall');
@@ -104,9 +113,11 @@ export function GamesTab() {
         ) : null}
         {games.length === 0 ? (
           <Text variant="body" tone="secondary">
-            {t('games.tab.comingSoon', {
-              group: filter === 'all' || filter === 'new' ? '' : t(`games.groups.${filter}`),
-            })}
+            {filter === 'new'
+              ? t('games.tab.noNew')
+              : t('games.tab.comingSoon', {
+                  group: filter === 'all' ? '' : t(`games.groups.${filter}`),
+                })}
           </Text>
         ) : (
           <View style={styles.grid}>
@@ -120,7 +131,7 @@ export function GamesTab() {
                     length: t(`games.list.${g.id}.length`),
                   })}
                   gameColor={color.game[g.accent]}
-                  isNew
+                  isNew={isNew(g)}
                   isLocked={!isPro && !training.includes(g.id)}
                   onPress={() => open(g)}
                 />
