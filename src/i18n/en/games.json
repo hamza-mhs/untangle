@@ -1,0 +1,288 @@
+{
+  "games": {
+    "start": "Start",
+    "begin": "Begin",
+    "quit": "Quit game",
+    "groups": {
+      "memory": "Memory",
+      "attention": "Attention",
+      "selfControl": "Self-control",
+      "quickDecisions": "Quick decisions",
+      "logic": "Logic & spatial",
+      "words": "Words",
+      "calm": "Calm",
+      "active": "Active"
+    },
+    "list": {
+      "stackTower": {
+        "name": "Stack tower",
+        "length": "40 sec",
+        "how": "A slab slides back and forth. Tap to drop it on the tower. Whatever hangs over gets cut off."
+      },
+      "rocketHop": {
+        "name": "Rocket hop",
+        "length": "40 sec",
+        "how": "The next planet swings side to side. Wait until it lines up above you. Tap to launch and land on it."
+      },
+      "laneDash": {
+        "name": "Lane dash",
+        "length": "30 sec",
+        "how": "Red blocks and white gems come at you. Swipe left or right to switch lanes. It speeds up the longer you last."
+      },
+      "blockFit": {
+        "name": "Block fit",
+        "length": "45 sec",
+        "how": "Pick a block from the tray. Drop it where it fits on the board. Fill a whole row or column to clear it."
+      },
+      "colourWord": {
+        "name": "Colour word",
+        "length": "40 sec",
+        "how": "Look at the ink, not the word. Find that colour below. Tap it before the next word."
+      },
+      "middleArrow": {
+        "name": "Middle arrow",
+        "length": "40 sec",
+        "how": "Five arrows appear in a row. Only the middle one counts. Tap its direction, ignore the crowd."
+      },
+      "dontTapRed": {
+        "name": "Don't tap red",
+        "length": "30 sec",
+        "how": "Shapes pop up all over. Tap every one that isn't red. Let the red ones pass."
+      },
+      "echo": {
+        "name": "Echo",
+        "length": "45 sec",
+        "how": "Shapes slide past one at a time. Press Match if it's the same as two back. Otherwise just let it pass."
+      },
+      "cardPairs": {
+        "name": "Card pairs",
+        "length": "40 sec",
+        "how": "Memorise the cards. They flip face down. Find the pairs."
+      },
+      "breathCount": {
+        "name": "Breath count",
+        "length": "90 sec",
+        "how": "Breathe in as the pearl grows. Breathe out as it shrinks. Tap once on each out-breath, up to nine."
+      },
+      "silence": {
+        "name": "Silence",
+        "length": "2–5 min",
+        "how": "Choose how long. Let it be quiet. Nothing to do. A soft chime when time is up."
+      },
+      "urgeSurfing": {
+        "name": "Urge surfing",
+        "length": "60–90 sec",
+        "how": "Notice the urge to open the app. Watch it rise and fall like a wave. Then choose what to do, on purpose."
+      }
+    },
+    "meta": "{{group}} · {{length}}",
+    "result": {
+      "stars_one": "{{count}} of 3 stars",
+      "stars_other": "{{count}} of 3 stars",
+      "newBest": "New best",
+      "done": "Done for now",
+      "again": "Another round",
+      "againCalm": "Again"
+    },
+    "tab": {
+      "title": "Games",
+      "count_one": "{{count}} game",
+      "count_other": "{{count}} games",
+      "all": "All",
+      "new": "New",
+      "upNextLabel": "Up next in today's training",
+      "upNext": "Up next: {{name}}",
+      "comingSoon": "More {{group}} games coming soon."
+    },
+    "go": "Go",
+    "settle": "Get comfortable",
+    "hud": {
+      "streak": "Streak {{n}}",
+      "pause": "Pause",
+      "secondsLeft_one": "{{count}} second left",
+      "secondsLeft_other": "{{count}} seconds left",
+      "pts": "pts",
+      "lives": "{{left}} of {{total}} lives",
+      "timeUp": "Time!",
+      "of": "{{n}} OF {{total}}"
+    },
+    "pause": {
+      "title": "Paused",
+      "body": "Leave now and this round won't count. Your streak is safe.",
+      "left": "You left the app, so we paused. The timer stopped with you.",
+      "calm": "Take your time. Nothing is lost.",
+      "resume": "Resume",
+      "restart": "Restart",
+      "quit": "Quit"
+    },
+    "common": {
+      "slips_one": "{{count}} slip",
+      "slips_other": "{{count}} slips"
+    },
+    "colourWord": {
+      "right": "Right",
+      "slip": "Look at the ink",
+      "titleSharp": "Sharp focus",
+      "titleNice": "Nice run",
+      "statRight": "{{right}} of {{n}} right",
+      "a11y": "The word {{word}}, written in {{ink}}",
+      "inks": {
+        "red": "Red",
+        "blue": "Blue",
+        "green": "Green",
+        "yellow": "Yellow"
+      }
+    },
+    "middleArrow": {
+      "right": "Right",
+      "wrong": "Only the middle one counts",
+      "title": "Steady focus",
+      "statRight": "{{right}} of {{n}}",
+      "statAvg": "Avg {{ms}} ms",
+      "a11y": "Middle arrow points {{dir}}",
+      "left": "Left"
+    },
+    "dontTapRed": {
+      "title": "Sharp hands",
+      "hit": "Nice",
+      "slip": "That one was red",
+      "shape": "Shape, tap it",
+      "redShape": "Red shape, let it pass",
+      "statHits_one": "{{count}} hit",
+      "statHits_other": "{{count}} hits"
+    },
+    "echo": {
+      "match": "Match",
+      "pass": "Let it pass",
+      "missed": "That was a match",
+      "notMatch": "Not the same as two back",
+      "title": "Sharp memory",
+      "statRight": "{{right}} of {{n}}",
+      "twoBack": "2-back",
+      "matchButton": "Match",
+      "shapes": {
+        "circle": "Circle",
+        "square": "Square",
+        "triangle": "Triangle",
+        "diamond": "Diamond",
+        "star": "Star",
+        "hex": "Hexagon"
+      }
+    },
+    "cardPairs": {
+      "memorise": "Memorise the cards",
+      "find": "Find the pairs",
+      "round": "MEMORISE",
+      "pair": "Pair",
+      "noPair": "Not a pair",
+      "titleAll": "All pairs found",
+      "titleGood": "Good memory",
+      "statMoves_one": "{{count}} move",
+      "statMoves_other": "{{count}} moves",
+      "statSecs": "{{s}} s",
+      "faceDown": "Face-down card",
+      "faces": {
+        "sun": "Sun",
+        "moon": "Moon",
+        "star": "Star",
+        "heart": "Heart",
+        "leaf": "Leaf",
+        "drop": "Drop",
+        "bolt": "Bolt",
+        "flower": "Flower"
+      }
+    },
+    "stackTower": {
+      "hint": "Tap to drop",
+      "floor": "FLOOR {{n}}",
+      "miss": "Missed the tower",
+      "perfect": "Perfect drop",
+      "perfectX": "Perfect ×{{n}}",
+      "trimmed": "Trimmed. Watch the edge",
+      "close": "Close",
+      "title": "Tall tower",
+      "drop": "Drop the slab",
+      "statFloors_one": "{{count}} floor",
+      "statFloors_other": "{{count}} floors",
+      "statWidth": "{{px}} px wide at the top"
+    },
+    "rocketHop": {
+      "hint": "Wait for it to line up",
+      "hop": "HOP {{n}}",
+      "bullseye": "Bullseye",
+      "landed": "Landed",
+      "missed": "Missed it. Wait for the line-up",
+      "titleSmooth": "Smooth landings",
+      "titleLift": "Lift-off",
+      "launch": "Launch",
+      "statHops_one": "{{count}} hop",
+      "statHops_other": "{{count}} hops",
+      "statLives": "{{left}} of {{total}} lives"
+    },
+    "laneDash": {
+      "hint": "Tap left or right to switch lanes",
+      "hit": "Ouch",
+      "title": "Fast lanes",
+      "left": "Move left",
+      "right": "Move right",
+      "statGems_one": "{{count}} gem",
+      "statGems_other": "{{count}} gems",
+      "statHits_one": "{{count}} hit",
+      "statHits_other": "{{count}} hits"
+    },
+    "blockFit": {
+      "hint": "Pick a block, then tap where it goes",
+      "noRoom": "No room left",
+      "titleClean": "Clean board",
+      "titleTry": "Keep at it",
+      "statLines_one": "{{count}} line",
+      "statLines_other": "{{count}} lines",
+      "statMisfits_one": "{{count}} misfit",
+      "statMisfits_other": "{{count}} misfits",
+      "misfit": "That doesn't fit there",
+      "cleared_one": "{{count}} line cleared",
+      "cleared_other": "{{count}} lines cleared",
+      "cell": "Row {{r}}, column {{c}}",
+      "piece": "Block of {{n}}",
+      "used": "Used",
+      "placeHint": "Tap the board to place it",
+      "pickHint": "Pick a block from the tray"
+    },
+    "breathCount": {
+      "title": "Nine breaths",
+      "line": "Nothing to win. Just a slower minute and a half.",
+      "statBreaths_one": "{{count}} breath",
+      "statBreaths_other": "{{count}} breaths",
+      "statLength": "90 sec",
+      "tapA11y": "Tap on each out-breath",
+      "in": "Breathe in",
+      "out": "Breathe out · tap",
+      "count": "{{n}} of {{total}}"
+    },
+    "silence": {
+      "choose": "Choose how long",
+      "quiet": "Nothing to do",
+      "title_one": "{{count}} quiet minute",
+      "title_other": "{{count}} quiet minutes",
+      "line": "No feed, no sound. That counts.",
+      "statMinutes_one": "{{count}} min",
+      "statMinutes_other": "{{count}} min",
+      "statCalm": "Calm",
+      "howLong": "How long?",
+      "minutes_one": "{{count}} min",
+      "minutes_other": "{{count}} min",
+      "left": "{{s}} seconds left"
+    },
+    "urgeSurfing": {
+      "title": "You rode it out",
+      "line": "The urge rose and passed, and you chose what came next.",
+      "statBack": "Back to your day",
+      "statResisted": "1 urge resisted",
+      "notice": "Notice the urge",
+      "rising": "It's rising. Let it",
+      "peak": "This is the peak",
+      "falling": "It's passing",
+      "gone": "It passed"
+    }
+  }
+}
