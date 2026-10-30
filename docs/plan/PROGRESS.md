@@ -321,6 +321,44 @@ Answers: Public Sans downloaded (official release, OFL); icons and art from `des
 - **Needs a real phone:** 60 fps on a mid-range device, TalkBack pass, pause → Stack tower →
   "Open Instagram for 5 min" end to end with real blocking.
 
+## Batch 3.2.0 · Housekeeping
+
+- **Git:** repo-local identity "Untangle Dev <dev@untangle.local>" (placeholder, as asked).
+  The legacy scaffold was recovered from `../setup-legacy-backup` into branch `legacy`
+  (`dc873f9`); `v1` starts from it with batch-1 (`93bd458`), batch-2 (`0810dc4`) and batch-3.1
+  (`35c9c68`). `main` is untouched.
+- **One folder per game:** `src/features/games/games/<gameId>/` (index.ts with a lazy
+  `Round`, Round.tsx, logic.ts, `__tests__/logic.test.ts`) for all 12 games; shared board parts
+  moved to `src/features/games/kit/`; `list/` is gone. `registry.ts` imports each game's
+  definition; the board loads on first play (`React.lazy` + `Suspense` in GameScreen).
+- **Sound:** `tools/sounds/generate.mjs` synthesizes 10 WAVs (16-bit mono, 22.05 kHz) into
+  `assets/sounds/`: tap, tick, good, bad, go, beep, chime, tone-low/mid/high.
+  `src/lib/sound.ts` (the only file allowed to import expo-audio, enforced by ESLint)
+  preloads one player per sound when a game opens, respects Settings › Sound and mutes in
+  silent and vibrate mode. `GameApi.sound(id)` added.
+  - Engine: countdown tick ×3 + go, `good` on every `fx.hit`, `bad` on every `fx.oops`,
+    chime when a calm game ends.
+  - Games: tap on input (Block fit, Card pairs, Colour word, Echo, Lane dash, Middle arrow,
+    Rocket hop, Stack tower), tick per Echo shape, low/high tone per breath in/out, chime when
+    Silence starts.
+- **Bug fixed:** the result screen showed each game's own formula (e.g. Block fit
+  `lines × 25` = 0) instead of the points on the HUD. Once a round has called `addScore`, the
+  engine now uses the HUD total as the result score and best (`RoundResult.score` is still
+  optional, so the GameApi contract is unchanged).
+- **Deviations (please check):**
+  1. Silent mode uses expo-audio's own `playsInSilentMode: false` (Android suppresses
+     playback in silent and vibrate mode), so no native `getRingerMode()` and no native rebuild
+     were needed. Found and fixed on the emulator: a finished player restarted by `seekTo(0)`
+     bypassed that check, so `playSound` now pauses before seeking.
+  2. Echo plays a neutral tick per shape, not a pitch per shape, so sound doesn't give away
+     matches.
+- **Checked on the emulator:** Colour word (countdown → hit → result), Stack tower (also
+  quit from the pause sheet), Block fit (result score = HUD score). Audio log: 15 plays in
+  normal mode, 0 in silent, 0 in vibrate, sound back when normal again. Screenshots in
+  `docs/evidence/3.2.0/`.
+- **Checks:** `npm run check` passes (63 suites, 242 tests).
+- **Needs a real phone:** sound latency and volume on a speaker, silent / vibrate switch.
+
 ## Still needed from the owner
 
 1. A real phone over USB for the device checks (permissions, blocking, browsers, battery,
@@ -329,4 +367,4 @@ Answers: Public Sans downloaded (official release, OFL); icons and art from `des
 3. Play Console app + subscriptions, RevenueCat project and `EXPO_PUBLIC_RC_ANDROID_KEY` in
    `.env.local` for the sandbox purchase and restore.
 4. Terms and Privacy URLs.
-5. Optional: Figma exports for illustrations, game pieces, the Home sky, and sound files.
+5. Optional: Figma exports for illustrations, game pieces, the Home sky; recorded sounds if the synthesized set should be replaced.

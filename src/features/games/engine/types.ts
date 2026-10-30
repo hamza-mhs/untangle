@@ -1,3 +1,4 @@
+import type { SoundId } from '@/lib/sound';
 import type { ComponentType } from 'react';
 
 import type { GameClock } from './clock';
@@ -6,6 +7,7 @@ import type { GameClock } from './clock';
 export type RoundResult = {
   title: string;
   stars?: 0 | 1 | 2 | 3;
+  /** Ignored once the round has called `addScore`: the HUD total is the result. */
   score?: number;
   stats: string[];
   line?: string;
@@ -50,6 +52,8 @@ export type GameApi = {
   /** Dims the background during memorise phases. */
   quiet: (on: boolean) => void;
   haptic: (kind: 'tap' | 'good' | 'bad' | 'go') => void;
+  /** Plays a sound (muted by Settings › Sound and silent mode). `fx.hit` and `fx.oops` already play good / bad. */
+  sound: (id: SoundId) => void;
   finish: (result: RoundResult) => void;
   /** Board size, for rounds that lay out by width. */
   board: { width: number; height: number };

@@ -46,3 +46,9 @@ jest.mock('@/storage/db/client', () => {
   );
   return { db: chain, sqlite: {}, DB_NAME: 'untangle.db' };
 });
+
+// expo-audio is native; sound.test.ts overrides this to check calls.
+jest.mock('expo-audio', () => ({
+  createAudioPlayer: () => ({ play: () => {}, pause: () => {}, seekTo: () => Promise.resolve() }),
+  setAudioModeAsync: () => Promise.resolve(),
+}));

@@ -1,27 +1,33 @@
 import type { GameId } from './catalog';
 import type { GameDefinition } from './engine/types';
-import { BlockFitRound, LaneDashRound, RocketHopRound, StackTowerRound } from './list/ArcadeRounds';
-import { BreathCountRound, SilenceRound, UrgeSurfingRound } from './list/CalmRounds';
-import {
-  CardPairsRound,
-  ColourWordRound,
-  DontTapRedRound,
-  EchoRound,
-  MiddleArrowRound,
-} from './list/FocusRounds';
+import { definition as blockFit } from './games/blockFit';
+import { definition as breathCount } from './games/breathCount';
+import { definition as cardPairs } from './games/cardPairs';
+import { definition as colourWord } from './games/colourWord';
+import { definition as dontTapRed } from './games/dontTapRed';
+import { definition as echo } from './games/echo';
+import { definition as laneDash } from './games/laneDash';
+import { definition as middleArrow } from './games/middleArrow';
+import { definition as rocketHop } from './games/rocketHop';
+import { definition as silence } from './games/silence';
+import { definition as stackTower } from './games/stackTower';
+import { definition as urgeSurfing } from './games/urgeSurfing';
 
-/** Every playable board (BATCH-3.1 §B). */
+/**
+ * Every playable game (BATCH-3.1 §B, one folder each under games/). Each definition's Round
+ * is a lazy import, so a board's code only loads when that game is played.
+ */
 export const REGISTRY: Record<GameId, GameDefinition> = {
-  stackTower: { Round: StackTowerRound, background: 'persp' },
-  rocketHop: { Round: RocketHopRound, background: 'dots' },
-  laneDash: { Round: LaneDashRound, background: 'persp' },
-  blockFit: { Round: BlockFitRound, background: 'grid' },
-  colourWord: { Round: ColourWordRound, background: 'grid' },
-  middleArrow: { Round: MiddleArrowRound, background: 'grid' },
-  dontTapRed: { Round: DontTapRedRound, background: 'persp' },
-  echo: { Round: EchoRound, background: 'grid' },
-  cardPairs: { Round: CardPairsRound, background: 'dots' },
-  breathCount: { Round: BreathCountRound, background: 'dots' },
-  silence: { Round: SilenceRound, background: 'dots' },
-  urgeSurfing: { Round: UrgeSurfingRound, background: 'dots' },
+  stackTower,
+  rocketHop,
+  laneDash,
+  blockFit,
+  colourWord,
+  middleArrow,
+  dontTapRed,
+  echo,
+  cardPairs,
+  breathCount,
+  silence,
+  urgeSurfing,
 };

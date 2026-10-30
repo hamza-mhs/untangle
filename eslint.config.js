@@ -27,13 +27,17 @@ module.exports = defineConfig([
               name: 'expo-haptics',
               message: 'Use src/lib/haptics.ts so the user setting is respected.',
             },
+            {
+              name: 'expo-audio',
+              message: 'Use src/lib/sound.ts so the user setting and silent mode are respected.',
+            },
           ],
         },
       ],
     },
   },
   {
-    files: ['src/lib/haptics.ts', '**/__tests__/**'],
+    files: ['src/lib/haptics.ts', 'src/lib/sound.ts', '**/__tests__/**'],
     rules: { 'no-restricted-imports': 'off' },
   },
   // CODE_STANDARDS › Styling: no raw colours and no inline style literals — tokens only.
@@ -59,6 +63,10 @@ module.exports = defineConfig([
             {
               name: 'expo-haptics',
               message: 'Use src/lib/haptics.ts so the user setting is respected.',
+            },
+            {
+              name: 'expo-audio',
+              message: 'Use src/lib/sound.ts so the user setting and silent mode are respected.',
             },
             {
               name: 'react-native',
@@ -94,7 +102,11 @@ module.exports = defineConfig([
   // Game engine and boards are imperative loops by design (a pause-aware clock, refs read while
   // a round runs, mutable per-round state), so the React Compiler purity rules don't apply.
   {
-    files: ['src/features/games/engine/**/*.{ts,tsx}', 'src/features/games/list/**/*.{ts,tsx}'],
+    files: [
+      'src/features/games/engine/**/*.{ts,tsx}',
+      'src/features/games/games/**/*.{ts,tsx}',
+      'src/features/games/kit/**/*.{ts,tsx}',
+    ],
     rules: {
       'react-hooks/purity': 'off',
       'react-hooks/refs': 'off',

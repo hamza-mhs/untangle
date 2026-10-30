@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { Suspense, useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { AppState, BackHandler, StyleSheet, View, type LayoutChangeEvent } from 'react-native';
 import Animated, {
   useAnimatedStyle,
@@ -21,6 +21,7 @@ import { color, radius, size, space } from '@/design/tokens';
 import { useReducedMotion } from '@/design/useReducedMotion';
 import { useT } from '@/i18n';
 import { haptics } from '@/lib/haptics';
+import { playSound, preloadSounds } from '@/lib/sound';
 
 import { gameMeta, type GameId } from '../catalog';
 import { saveResult, type GameSource } from '../results';
@@ -90,6 +91,8 @@ export function GameScreen({
   const timerRef = useRef<{ start: number; total: number } | null>(null);
   const startedAt = useRef(0);
   const finished = useRef(false);
+  /** HUD points this round; null until the round scores. */
+  const scored = useRef<number | null>(null);
   const seed = useMemo(() => Math.floor(Math.random() * 2 ** 31), [roundKey]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const shake = useSharedValue(0);
@@ -118,6 +121,8 @@ export function GameScreen({
   }, [clock, phase]);
 
   useEffect(() => () => clock.dispose(), [clock]);
+  // Players are ready before the countdown's first tick.
+  useEffect(() => preloadSounds(), []);
 
   const pause = useCallback(
     (why: 'user' | 'left') => {
@@ -169,6 +174,7 @@ export function GameScreen({
 
   const begin = () => {
     finished.current = false;
+    scored.current = null;
     timerRef.current = null;
     setResult(null);
     setQuiet(false);
@@ -196,11 +202,14 @@ export function GameScreen({
   };
 
   const finish = useCallback(
-    (r: RoundResult) => {
+    (round: RoundResult) => {
       if (finished.current) return;
+      // The result shows the points the player watched add up on the HUD.
+      const r = scored.current === null ? round : { ...round, score: scored.current };
       finished.current = true;
       clock.pause();
       haptics.success();
+      if (meta.calm) playSound('chime');
       let best = false;
       try {
         best = saveResult({
@@ -218,7 +227,7 @@ export function GameScreen({
       setPhase('result');
       onCompleted?.(r);
     },
-    [clock, gameId, onCompleted, source],
+    [clock, gameId, meta.calm, onCompleted, source],
   );
 
   const api: GameApi = useMemo(
@@ -237,7 +246,10 @@ export function GameScreen({
       wait: (ms) => clock.wait(ms),
       setRound: (round) => setHud((h) => ({ ...h, round })),
       hint: (text, tone = 'neutral') => setHud((h) => ({ ...h, hint: { text, tone } })),
-      addScore: (n) => setHud((h) => ({ ...h, score: h.score + n })),
+      addScore: (n) => {
+        scored.current = (scored.current ?? 0) + n;
+        setHud((h) => ({ ...h, score: h.score + n }));
+      },
       combo: (n) => setHud((h) => ({ ...h, combo: n })),
       lives: (n) => {
         let left = n;
@@ -259,9 +271,11 @@ export function GameScreen({
           fx.current?.burst(x, y, c);
           if (pts) fx.current?.float(x, y, `+${pts}`);
           haptics.tap();
+          playSound('good');
         },
         oops: () => {
           haptics.error();
+          playSound('bad');
           if (reduced)
             flash.set(
               withSequence(withTiming(0.35, { duration: 80 }), withTiming(0, { duration: 220 })),
@@ -287,6 +301,7 @@ export function GameScreen({
             : k === 'good'
               ? haptics.tap()
               : haptics.select(),
+      sound: playSound,
       finish,
       board,
       reducedMotion: reduced,
@@ -374,7 +389,9 @@ export function GameScreen({
       footer={<HintLine hint={hud.hint} />}>
       <Animated.View style={[styles.board, shakeStyle]} onLayout={onBoardLayout}>
         {phase === 'play' && board.width > 0 ? (
-          <Round key={roundKey} api={api} seed={seed} />
+          <Suspense fallback={null}>
+            <Round key={roundKey} api={api} seed={seed} />
+          </Suspense>
         ) : null}
         <FxLayer ref={fx} reduced={reduced} />
         <Animated.View pointerEvents="none" style={[styles.flash, flashStyle]} />

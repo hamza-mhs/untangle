@@ -12,6 +12,7 @@ import { Text } from '@/design/components';
 import { color, motion, radius } from '@/design/tokens';
 import { useT } from '@/i18n';
 import { haptics } from '@/lib/haptics';
+import { playSound } from '@/lib/sound';
 
 /** One beat (§A.2.3): 620 ms per digit with a 20 ms gap. */
 export const BEAT_MS = motion.duration.countdownBeat;
@@ -83,8 +84,13 @@ export function Countdown({
       onDone();
       return undefined;
     }
-    if (i === 3) haptics.success();
-    else haptics.tap();
+    if (i === 3) {
+      haptics.success();
+      playSound('go');
+    } else {
+      haptics.tap();
+      playSound('tick');
+    }
     const id = setTimeout(() => setI((n) => n + 1), BEAT_MS + GAP_MS);
     return () => clearTimeout(id);
   }, [beats.length, i, onDone]);
