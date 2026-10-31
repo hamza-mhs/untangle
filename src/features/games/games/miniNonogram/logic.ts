@@ -122,3 +122,49 @@ export function isLineSolvable(b: Pick<NonoBoard, 'rows'>): boolean {
 export function nonoStars(mistakes: number, solved: boolean): 1 | 2 | 3 {
   return !solved ? 1 : mistakes ? 2 : 3;
 }
+
+/** Points per right square, and the bonus for the finished picture (prototype). */
+export const NONO_FILL_POINTS = 5;
+export const NONO_SOLVE_POINTS = 80;
+
+/** A square on the board: untouched, filled, wrong tap (red ✕, it's empty) or marked empty. */
+export type NonoCell = 'empty' | 'filled' | 'miss' | 'marked';
+
+/** What a tap on square `i` (row-major) does. Only untouched squares respond. */
+export function nonoTap(
+  target: readonly (readonly number[])[],
+  cells: readonly NonoCell[],
+  i: number,
+) {
+  if (cells[i] !== 'empty') return 'none' as const;
+  const n = target.length;
+  return target[Math.floor(i / n)]![i % n] ? ('fill' as const) : ('miss' as const);
+}
+
+/** Long-press: mark an untouched square as empty (no risk), or clear the mark. */
+export function nonoMark(cell: NonoCell): NonoCell {
+  return cell === 'empty' ? 'marked' : cell === 'marked' ? 'empty' : cell;
+}
+
+/** A row is done when every square of its picture is filled (an empty row is done at once). */
+export function rowDone(
+  target: readonly (readonly number[])[],
+  cells: readonly NonoCell[],
+  r: number,
+) {
+  const n = target.length;
+  return target[r]!.every((v, c) => !v || cells[r * n + c] === 'filled');
+}
+
+export function colDone(
+  target: readonly (readonly number[])[],
+  cells: readonly NonoCell[],
+  c: number,
+) {
+  const n = target.length;
+  return target.every((row, r) => !row[c] || cells[r * n + c] === 'filled');
+}
+
+export function nonoSolved(target: readonly (readonly number[])[], cells: readonly NonoCell[]) {
+  return target.every((_, r) => rowDone(target, cells, r));
+}

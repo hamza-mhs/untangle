@@ -37,7 +37,17 @@ export type GameId =
   | 'quickMaths'
   | 'biggerTotal'
   | 'timeItRight'
-  | 'orbitSwitch';
+  | 'orbitSwitch'
+  // 3.3a
+  | 'flowLines'
+  | 'slideEscape'
+  | 'pathPainter'
+  | 'oneLineArt'
+  // 3.3b
+  | 'laserLab'
+  | 'mergeGarden'
+  | 'miniNonogram'
+  | 'bridgeBuilder';
 
 export type GameAccent =
   'pink' | 'sky' | 'cobalt' | 'violet' | 'orange' | 'mint' | 'sun' | 'coral' | 'indigo';
@@ -297,6 +307,85 @@ export const GAMES: readonly GameMeta[] = [
     glow: 'violet',
     best: { stat: 'laps', higher: true },
     batch: '3.2',
+  },
+  {
+    id: 'flowLines',
+    group: 'logic',
+    seconds: 60,
+    calm: false,
+    accent: 'mint',
+    glow: 'sky',
+    best: { stat: 'boards', higher: true },
+    batch: '3.3',
+  },
+  {
+    id: 'slideEscape',
+    group: 'logic',
+    seconds: 60,
+    calm: false,
+    accent: 'mint',
+    glow: 'sky',
+    best: { stat: 'moves', higher: false },
+    batch: '3.3',
+  },
+  {
+    id: 'pathPainter',
+    group: 'logic',
+    seconds: 60,
+    calm: false,
+    accent: 'sky',
+    glow: 'mint',
+    best: { stat: 'boards', higher: true },
+    batch: '3.3',
+  },
+  {
+    id: 'oneLineArt',
+    group: 'logic',
+    seconds: 60,
+    calm: false,
+    accent: 'sun',
+    glow: 'orange',
+    best: { stat: 'drawings', higher: true },
+    batch: '3.3',
+  },
+  {
+    id: 'laserLab',
+    group: 'logic',
+    seconds: 60,
+    calm: false,
+    accent: 'pink',
+    glow: 'violet',
+    best: { stat: 'extraTurns', higher: false },
+    batch: '3.3',
+  },
+  {
+    id: 'mergeGarden',
+    group: 'logic',
+    seconds: 45,
+    calm: false,
+    accent: 'mint',
+    best: { stat: 'moves', higher: false },
+    batch: '3.3',
+  },
+  {
+    id: 'miniNonogram',
+    group: 'logic',
+    seconds: 90,
+    calm: false,
+    accent: 'pink',
+    glow: 'violet',
+    best: { stat: 'mistakes', higher: false },
+    batch: '3.3',
+  },
+  {
+    id: 'bridgeBuilder',
+    group: 'logic',
+    seconds: 60,
+    calm: false,
+    accent: 'orange',
+    glow: 'sun',
+    best: { stat: 'misfits', higher: false },
+    batch: '3.3',
   },
 ];
 

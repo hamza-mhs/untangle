@@ -36,15 +36,20 @@ describe('3.2 wiring', () => {
     }
   });
 
-  it('tags exactly the 14 daily-core games New, for 14 days', () => {
-    expect(latestBatch()).toBe('3.2');
+  it('tags exactly the latest batch New, for 14 days', () => {
+    const latest = GAMES.filter((g) => g.batch === latestBatch())
+      .map((g) => g.id)
+      .sort();
+    expect(latest.length).toBeGreaterThan(0);
     const tagged = (on: string) =>
       GAMES.filter((g) => isNewGame(g, day, on))
         .map((g) => g.id)
         .sort();
-    expect(tagged(day)).toEqual([...DAILY_CORE].sort());
-    expect(tagged(addDays(day, NEW_DAYS - 1))).toHaveLength(14);
+    expect(tagged(day)).toEqual(latest);
+    expect(tagged(addDays(day, NEW_DAYS - 1))).toEqual(latest);
     expect(tagged(addDays(day, NEW_DAYS))).toEqual([]);
+    // Earlier batches (3.2 daily core) are no longer New once a newer batch ships.
+    if (latestBatch() !== '3.2') for (const id of DAILY_CORE) expect(latest).not.toContain(id);
   });
 
   it('compares batches as numbers', () => {

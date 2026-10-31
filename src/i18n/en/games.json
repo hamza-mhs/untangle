@@ -143,6 +143,46 @@
         "name": "Orbit switch",
         "length": "30 sec",
         "how": "The marble races round its ring. Tap to hop between inner and outer ring. Dodge the red, collect the sparks."
+      },
+      "flowLines": {
+        "name": "Flow lines",
+        "length": "60 sec",
+        "how": "Each colour has two jewels. Draw a tube to join each pair. No crossings, and fill every square."
+      },
+      "slideEscape": {
+        "name": "Slide escape",
+        "length": "60 sec",
+        "how": "The gem has to slide out of the right side. Blocks only move along their own direction. Clear a path, then slide the gem out."
+      },
+      "pathPainter": {
+        "name": "Path painter",
+        "length": "60 sec",
+        "how": "Start anywhere and draw one path. Every square has to be painted once. Plan ahead so you don't get trapped."
+      },
+      "oneLineArt": {
+        "name": "One-line art",
+        "length": "60 sec",
+        "how": "Trace the whole drawing in one go. Never lift your finger, never repeat a line. Tip: start where an odd number of lines meet."
+      },
+      "laserLab": {
+        "name": "Laser lab",
+        "length": "60 sec",
+        "how": "A beam fires from the emitter. Tap a mirror to turn it. Route the beam into the reactor."
+      },
+      "mergeGarden": {
+        "name": "Merge garden",
+        "length": "45 sec",
+        "how": "Drag a seed onto a matching seed. Two seeds make a sprout, two sprouts a flower. Grow three flowers in as few moves as you can."
+      },
+      "miniNonogram": {
+        "name": "Mini nonogram",
+        "length": "90 sec",
+        "how": "Numbers say how many squares in a row are filled. Tap squares to fill them, start with the sure ones. Solve it and the picture appears."
+      },
+      "bridgeBuilder": {
+        "name": "Bridge builder",
+        "length": "60 sec",
+        "how": "Look at each gap between the posts. Drag a beam that fits it exactly. Fill every gap, then watch Pip cross."
       }
     },
     "meta": "{{group}} · {{length}}",
@@ -558,6 +598,185 @@
       "statSparks_one": "{{sparks}} sparks · {{count}} bump",
       "statSparks_other": "{{sparks}} sparks · {{count}} bumps",
       "a11y": "Orbit. Double tap to switch rings"
+    },
+    "flowLines": {
+      "boardOf": "BOARD {{n}} OF {{total}}",
+      "hint": "Join each pair",
+      "connected": "Connected",
+      "blocked": "That jewel is another colour",
+      "fillAll": "All joined. Now fill every square",
+      "lit": "Board lit",
+      "title": "All connected",
+      "titlePartial": "Nearly wired",
+      "statBoards": "{{n}} of {{total}} boards",
+      "statRedraws_one": "{{count}} redraw",
+      "statRedraws_other": "{{count}} redraws",
+      "a11yCell": "Row {{r}}, column {{c}}: {{what}}",
+      "a11yJewel": "{{colour}} jewel",
+      "a11yTube": "{{colour}} tube",
+      "a11yEmpty": "empty",
+      "colours": {
+        "pink": "Pink",
+        "sky": "Blue",
+        "sun": "Yellow",
+        "mint": "Green",
+        "violet": "Purple",
+        "orange": "Orange"
+      }
+    },
+    "slideEscape": {
+      "hint": "Clear a path for the gem",
+      "board": "BOARD {{n}} OF {{total}}",
+      "pickSpot": "Now tap a square in its line",
+      "inLine": "Pick a square in the same line",
+      "blocked": "Blocked that way",
+      "escaped": "Escaped",
+      "fewest_one": "Can be done in {{count}} move",
+      "fewest_other": "Can be done in {{count}} moves",
+      "title": "Way out",
+      "titleStuck": "Still boxed in",
+      "statBoards": "{{n}} of {{total}} boards",
+      "statMoves_one": "{{count}} move",
+      "statMoves_other": "{{count}} moves",
+      "a11yGem": "Gem in row {{row}}. Slides left and right. Tap to send it out when the way is clear",
+      "a11yAcross": "Block across row {{row}}, columns {{from}} to {{to}}. Slides left and right",
+      "a11yDown": "Block down column {{col}}, rows {{from}} to {{to}}. Slides up and down",
+      "a11yCell": "Empty square, row {{row}}, column {{col}}",
+      "a11yExit": "Exit, at the right end of row {{row}}"
+    },
+    "pathPainter": {
+      "board": "BOARD {{n}} OF {{total}}",
+      "hint": "One path, every square",
+      "trapped": "Trapped. Try a different start",
+      "trappedCorner": "Trapped. Start in a corner",
+      "allPainted": "All painted",
+      "title": "Clean coat",
+      "statBoards": "{{n}} of {{total}} boards",
+      "statWipes_one": "{{count}} wipe",
+      "statWipes_other": "{{count}} wipes",
+      "boardLabel": "Board, {{painted}} of {{total}} squares painted",
+      "cellFree": "Row {{row}}, column {{col}}, unpainted",
+      "cellPainted": "Row {{row}}, column {{col}}, painted",
+      "cellHead": "Row {{row}}, column {{col}}, end of path",
+      "cellRock": "Row {{row}}, column {{col}}, rock",
+      "titleNone": "Not painted yet"
+    },
+    "oneLineArt": {
+      "hint": "One stroke, every line",
+      "title": "Steady hand",
+      "drawingOf": "DRAWING {{n}} OF {{total}}",
+      "oneLine": "One line",
+      "stuckOdd": "Stuck. Start where an odd number of lines meet",
+      "stuckAny": "Stuck. Start anywhere",
+      "liftOdd": "Don't lift. Start where an odd number of lines meet",
+      "liftAny": "Don't lift. Start anywhere",
+      "statDrawings": "{{n}} of {{total}} drawings",
+      "statResets_one": "{{count}} reset",
+      "statResets_other": "{{count}} resets",
+      "point_one": "Point {{n}} of {{total}}, {{count}} line",
+      "point_other": "Point {{n}} of {{total}}, {{count}} lines",
+      "titleNone": "Keep tracing"
+    },
+    "laserLab": {
+      "lab": "LAB {{n}} OF {{total}}",
+      "hint": "Route the beam",
+      "ignited": "Ignited",
+      "clean": "Clean route",
+      "extra_one": "{{count}} extra turn",
+      "extra_other": "{{count}} extra turns",
+      "title": "Reactors lit",
+      "statLabs": "{{n}} of {{total}} labs",
+      "statTurns_one": "{{count}} turn, {{extra}} extra",
+      "statTurns_other": "{{count}} turns, {{extra}} extra",
+      "statExtra_one": "{{count}} extra turn",
+      "statExtra_other": "{{count}} extra turns",
+      "mirror": "Mirror {{n}}, {{tilt}}. Tap to turn",
+      "tiltUp": "tilted up to the right",
+      "tiltDown": "tilted down to the right",
+      "emitter": "Emitter, firing {{dir}}",
+      "dirR": "right",
+      "dirL": "left",
+      "dirU": "up",
+      "dirD": "down",
+      "wall": "Wall",
+      "reactor": "Reactor, not lit",
+      "reactorLit": "Reactor, lit",
+      "a11yBoard": "Laser lab board",
+      "a11yLit": "Laser lab board, reactor lit",
+      "titleNone": "Lab still dark"
+    },
+    "mergeGarden": {
+      "hint": "Drag to a match",
+      "round": "3 FLOWERS",
+      "goal": "GOAL",
+      "goalRow": "Goal: {{n}} of {{total}} flowers grown",
+      "moves": "Moves {{n}}",
+      "pickMatch": "Now tap a matching plant",
+      "noMatch": "Only matching plants merge",
+      "sprouted": "Sprouted",
+      "flower": "A flower",
+      "well": "Row {{row}}, column {{col}}: {{plant}}",
+      "plants": {
+        "empty": "empty well",
+        "seed": "seed",
+        "sprout": "sprout",
+        "flower": "flower"
+      },
+      "titleGrown": "Garden grown",
+      "titleNearly": "Nearly there",
+      "statFlowers": "{{n}} of {{total}} flowers",
+      "statMoves_one": "{{count}} move",
+      "statMoves_other": "{{count}} moves"
+    },
+    "miniNonogram": {
+      "round": "MYSTERY PICTURE",
+      "hint": "Start with the biggest numbers",
+      "markHint": "Hold a square to mark it empty",
+      "miss": "Not part of it. Check the column",
+      "solvedHint": "There it is",
+      "solved": "Picture solved",
+      "solvedNamed": "{{name}}!",
+      "outOfLives": "Out of lives",
+      "title": "Picture solved",
+      "titleUnsolved": "Nearly there",
+      "statPictures_one": "{{count}} picture",
+      "statPictures_other": "{{count}} pictures",
+      "statMistakes_one": "{{count}} mistake",
+      "statMistakes_other": "{{count}} mistakes",
+      "statSquares": "{{n}} of {{total}} squares",
+      "colClue": "Column {{n}}: {{clue}}",
+      "rowClue": "Row {{n}}: {{clue}}",
+      "cell": "Row {{row}}, column {{col}}, {{state}}",
+      "cellHint": "Double-tap to fill. Double-tap and hold to mark it empty.",
+      "state": {
+        "empty": "blank",
+        "filled": "filled",
+        "miss": "empty, wrong guess",
+        "marked": "marked empty"
+      }
+    },
+    "bridgeBuilder": {
+      "bridgeOf": "BRIDGE {{n}} OF {{total}}",
+      "hint": "Fill each gap",
+      "pickBeam": "Pick a beam first",
+      "fits": "Fits",
+      "tooShort": "Too short for that gap",
+      "tooLong": "Too long for that gap",
+      "here": "Here comes Pip",
+      "madeIt": "Pip made it",
+      "title": "Safe crossing",
+      "statBridges": "{{n}} of {{total}} bridges",
+      "statMisfits_one": "{{count}} misfit",
+      "statMisfits_other": "{{count}} misfits",
+      "beam_one": "Beam, {{count}} unit long",
+      "beam_other": "Beam, {{count}} units long",
+      "gap_one": "Gap {{n}}, {{count}} unit, empty",
+      "gap_other": "Gap {{n}}, {{count}} units, empty",
+      "gapFilled_one": "Gap {{n}}, {{count}} unit, filled",
+      "gapFilled_other": "Gap {{n}}, {{count}} units, filled",
+      "tray": "Beam tray",
+      "pip": "Pip",
+      "titleNone": "Still building"
     }
   }
 }

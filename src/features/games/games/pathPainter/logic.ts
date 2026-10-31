@@ -93,3 +93,94 @@ export function canFinish(size: number, rocks: readonly Cell[], painted: readonl
 export function paintStars(wipes: number, boards: number): 1 | 2 | 3 {
   return boards >= PAINT_BOARDS ? (wipes ? 2 : 3) : boards > 0 ? 2 : 1;
 }
+
+/** Points per newly painted square (once per square per board) and per finished board. */
+export const PAINT_CELL_POINTS = 2;
+export const PAINT_BOARD_POINTS = 50;
+
+/** Prototype: the enamel hue moves on every 5 squares of the path. */
+export const PAINT_HUES = ['sky', 'mint', 'sun', 'orange', 'pink'] as const;
+export type PaintHue = (typeof PAINT_HUES)[number];
+export function paintHue(step: number): PaintHue {
+  return PAINT_HUES[Math.floor(step / 5) % PAINT_HUES.length]!;
+}
+
+/** The path is stored as cell indices (row * size + col), as the grid drag reports them. */
+function isRock(size: number, rocks: readonly Cell[], i: number) {
+  return rocks.some(([r, c]) => r * size + c === i);
+}
+
+function neighbours(size: number, i: number): number[] {
+  const r = Math.floor(i / size);
+  const c = i % size;
+  const out: number[] = [];
+  for (const [dr, dc] of dirs) {
+    const y = r + dr;
+    const x = c + dc;
+    if (y >= 0 && x >= 0 && y < size && x < size) out.push(y * size + x);
+  }
+  return out;
+}
+
+export function freeCount(size: number, rocks: readonly Cell[]): number {
+  return size * size - rocks.length;
+}
+
+/**
+ * What dragging into cell `i` does: paint it (`extend`: next to the head, free, unpainted),
+ * un-paint the last step (`undo`: back onto the previous cell), or nothing.
+ */
+export function paintMove(
+  size: number,
+  rocks: readonly Cell[],
+  path: readonly number[],
+  i: number,
+): 'extend' | 'undo' | 'none' {
+  if (!path.length) return 'none';
+  if (path.length >= 2 && path[path.length - 2] === i) return 'undo';
+  const head = path[path.length - 1]!;
+  if (!neighbours(size, head).includes(i)) return 'none';
+  if (isRock(size, rocks, i) || path.includes(i)) return 'none';
+  return 'extend';
+}
+
+/**
+ * What a new touch on cell `i` does. Touching the head continues the path; a step next to it
+ * (or back onto the previous cell) works like a drag, which is the tap / TalkBack path;
+ * anywhere else starts over from that cell. Rocks do nothing.
+ */
+export function paintTouch(
+  size: number,
+  rocks: readonly Cell[],
+  path: readonly number[],
+  i: number,
+): 'continue' | 'extend' | 'undo' | 'restart' | 'none' {
+  if (isRock(size, rocks, i)) return 'none';
+  if (path[path.length - 1] === i) return 'continue';
+  const m = paintMove(size, rocks, path, i);
+  return m === 'none' ? 'restart' : m;
+}
+
+/** Starting over costs a wipe only once a stroke was drawn (re-picking the start is free). */
+export function restartIsWipe(path: readonly number[]): boolean {
+  return path.length > 1;
+}
+
+/** Squares remain but the head has no free, unpainted neighbour. */
+export function isTrapped(size: number, rocks: readonly Cell[], path: readonly number[]): boolean {
+  if (!path.length || path.length >= freeCount(size, rocks)) return false;
+  const head = path[path.length - 1]!;
+  return !neighbours(size, head).some((k) => !isRock(size, rocks, k) && !path.includes(k));
+}
+
+export function isPainted(size: number, rocks: readonly Cell[], path: readonly number[]): boolean {
+  return path.length === freeCount(size, rocks);
+}
+
+/** The prototype's tip after a wipe: say "corner" when the stored solution ends in one. */
+export function cornerTip(b: Pick<PaintBoard, 'size' | 'path'>): boolean {
+  const ends = [b.path[0], b.path[b.path.length - 1]];
+  return ends.some(
+    (p) => !!p && (p[0] === 0 || p[0] === b.size - 1) && (p[1] === 0 || p[1] === b.size - 1),
+  );
+}

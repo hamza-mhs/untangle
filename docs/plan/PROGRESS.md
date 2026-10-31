@@ -549,6 +549,47 @@ Answers: Public Sans downloaded (official release, OFL); icons and art from `des
   0102, 0104, 0111, 0129, 0131.
 - **Checks:** `npm run check` passes (331 tests).
 
+## Batch 3.3a + 3.3b · Grid and mechanical puzzles (one commit)
+
+Committed together because they share the catalog, registry and strings changes.
+
+- **Shared:** `kit/useDrag.ts`: `useGridDrag` (snaps to cells, fills in skipped cells one
+  orthogonal step at a time) and `usePointDrag` (nodes/beads), both Gesture Handler 3 Pan with
+  hit-testing on the UI thread; JS only hears about changes. Every drag game also works by
+  tapping (start, then neighbouring cells), which is the TalkBack path.
+- **Flow lines** (`flowLines`, dots, mint/sky): one 5×5 and one 6×6 board from the pack;
+  entering another colour's tube cuts it; redraw = a joined pair that gets broken; board lights up.
+- **Slide escape** (`slideEscape`, grid, mint/sky): an easy (≤ 5 moves) then a harder board;
+  drag along the axis, snaps on release; quiet "Can be done in N moves" line.
+- **Path painter** (`pathPainter`, dots, sky/mint): one stroke over every free square; drag back
+  to undo; trapped → wipe and retry the same board.
+- **One-line art** (`oneLineArt`, grid, sun/orange): one named icon per round when possible;
+  repeat a line, reach a dead end or lift mid-stroke → reset with the odd-points tip.
+- **Laser lab** (`laserLab`, grid, pink/violet): 3 generated labs (route-first generator,
+  1,000-seed tests: solvable, not solved at start, minimum turns exact); beam above the mirror
+  bases, below the bars.
+- **Merge garden** (`mergeGarden`, dots, mint): 4×4 plot, prototype spawn rule plus a rescue
+  rule so a plot is never stuck (1,000-seed tests); "Moves N" pill on the board.
+- **Mini nonogram** (`miniNonogram`, grid, pink/violet): tap to fill, hold to mark empty; a
+  wrong square shows ✕ and costs a life; round label "MYSTERY PICTURE" (the prototype showed the
+  answer).
+- **Bridge builder** (`bridgeBuilder`, persp, orange/sun): 3 generated bridges, decoys always
+  one unit off so the fit is unique; Pip (placeholder sprite, `PipPlaceholder.tsx`) walks across.
+- **Fixed on the emulator:** Pan translation starts at activation, not at touch-down, so drags
+  came up a cell short (Slide escape, Bridge builder): now measured from the touch-down point.
+  Rounds that complete nothing get a gentler title (Slide escape, Path painter, One-line art,
+  Laser lab, Bridge builder).
+- **Deviations (please check):**
+  1. The combo pill always reads "Streak N" (engine), where the prototypes say "Boards N" /
+     "Labs N"; games pass a sensible count. A label option on `api.combo` would need an engine change.
+  2. Enamel / Candy materials toggles aren't built (flat token colours), as in 3.1–3.2.
+  3. Laser lab: 3★ needs all 3 labs lit with no extra turns (the prototype rule alone gave 3★
+     to a 1-lab round). Bridge builder follows the prototype rule as written (a clean 1-bridge
+     round is 3★); say if completion should count.
+- **Checked on the emulator:** all eight start → result (`docs/evidence/3.3a/`, `3.3b/`).
+  Still for a real phone: drag feel, TalkBack on cells inside the gesture detector.
+- **Checks:** `npm run check` passes.
+
 ## Still needed from the owner
 
 1. A real phone over USB for the device checks (permissions, blocking, browsers, battery,

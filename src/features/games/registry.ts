@@ -26,6 +26,14 @@ import { definition as swapIt } from './games/swapIt';
 import { definition as timeItRight } from './games/timeItRight';
 import { definition as trackTheStars } from './games/trackTheStars';
 import { definition as urgeSurfing } from './games/urgeSurfing';
+import { definition as flowLines } from './games/flowLines';
+import { definition as slideEscape } from './games/slideEscape';
+import { definition as pathPainter } from './games/pathPainter';
+import { definition as oneLineArt } from './games/oneLineArt';
+import { definition as laserLab } from './games/laserLab';
+import { definition as mergeGarden } from './games/mergeGarden';
+import { definition as miniNonogram } from './games/miniNonogram';
+import { definition as bridgeBuilder } from './games/bridgeBuilder';
 
 /**
  * Every playable game (BATCH-3.1 §B, one folder each under games/). Each definition's Round
@@ -58,4 +66,12 @@ export const REGISTRY: Record<GameId, GameDefinition> = {
   biggerTotal,
   timeItRight,
   orbitSwitch,
+  flowLines,
+  slideEscape,
+  pathPainter,
+  oneLineArt,
+  laserLab,
+  mergeGarden,
+  miniNonogram,
+  bridgeBuilder,
 };

@@ -94,3 +94,75 @@ export function minSlideMoves(
 export function slideStars(escaped: number): 1 | 2 | 3 {
   return escaped >= SLIDE_BOARDS ? 3 : escaped > 0 ? 2 : 1;
 }
+
+/** Points for each board escaped (prototype). */
+export const ESCAPE_POINTS = 60;
+/** Boards at or under this minimum count as the round's easier opener. */
+export const EASY_MAX_MOVES = 5;
+
+/**
+ * The round's two boards from candidates in serving order (fresh first): the first easy one
+ * (minMoves ≤ 5), then the first harder one. Falls back to the first two, easier first.
+ */
+export function pickBoardPair<T extends { minMoves: number }>(list: readonly T[]): T[] {
+  const easy = list.find((b) => b.minMoves <= EASY_MAX_MOVES);
+  const hard = list.find((b) => b.minMoves > EASY_MAX_MOVES);
+  if (easy && hard) return [easy, hard];
+  return list.slice(0, SLIDE_BOARDS).sort((a, b) => a.minMoves - b.minMoves);
+}
+
+/** Cell (row * n + col) → piece index, or -1 when empty. */
+export function occupied(ps: readonly Block[], n = SLIDE_SIZE): number[] {
+  return Array.from(occupancy(ps, n));
+}
+
+/** Slide range of every piece, in piece order. */
+export function allRanges(ps: readonly Block[], n = SLIDE_SIZE): [number, number][] {
+  return ps.map((_, i) => slideRange(ps, i, n));
+}
+
+/** How far the gem slides to escape when its path to the right edge is clear, else null. */
+export function gemExit(ps: readonly Block[], n = SLIDE_SIZE): number | null {
+  const hi = slideRange(ps, 0, n)[1];
+  return hi > 0 && ps[0]!.c + GEM_LEN + hi === n ? hi : null;
+}
+
+export type TapSlide =
+  /** The cell isn't in the piece's line (or is under the piece itself). */
+  | { kind: 'off' }
+  /** Something is in the way: `dir` is the way the player tried to push it. */
+  | { kind: 'blocked'; dir: 1 | -1 }
+  | { kind: 'slide'; by: number };
+
+/** Tap-to-move: slide piece `i` so it covers (row, col), if that cell is in its line and reachable. */
+export function tapSlide(
+  ps: readonly Block[],
+  i: number,
+  row: number,
+  col: number,
+  n = SLIDE_SIZE,
+): TapSlide {
+  const p = ps[i]!;
+  const along = p.d === 'h' ? col : row;
+  const start = p.d === 'h' ? p.c : p.r;
+  if ((p.d === 'h' ? row !== p.r : col !== p.c) || (along >= start && along < start + p.len)) {
+    return { kind: 'off' };
+  }
+  const by = along < start ? along - start : along - (start + p.len - 1);
+  const [lo, hi] = slideRange(ps, i, n);
+  if (by < lo || by > hi) return { kind: 'blocked', dir: by < 0 ? -1 : 1 };
+  return { kind: 'slide', by };
+}
+
+/**
+ * Where a drag lands: the finger's offset in cells, rounded to the nearest whole cell and kept
+ * inside the piece's range. `bump` is set when the player pushed at least half a cell into a
+ * side that is already blocked and the piece didn't move. Runs on the UI thread (drag release).
+ */
+export function dragSnap(cells: number, lo: number, hi: number): { by: number; bump: 0 | 1 | -1 } {
+  'worklet';
+  const by = Math.max(lo, Math.min(hi, Math.round(cells)));
+  const bump =
+    by === 0 && cells >= 0.5 && hi === 0 ? 1 : by === 0 && cells <= -0.5 && lo === 0 ? -1 : 0;
+  return { by: by === 0 ? 0 : by, bump };
+}
