@@ -1,4 +1,4 @@
-import { DEFAULT_PAUSE_GAME, gameMeta, GAMES, isQuickGame, type GameId } from '@/features/games';
+import { DEFAULT_PAUSE_GAME, gameMeta, isQuickGame, PLAYABLE, type GameId } from '@/features/games';
 import type { Strictness } from '@/features/locks';
 
 /**
@@ -117,7 +117,7 @@ export function pickPauseGame(args: {
   if (next && nextMeta && nextMeta.seconds <= 45 && nextMeta.group !== 'calm' && !nextMeta.calm)
     return next;
   const recent = new Set(args.recentOffered.slice(-RECENT_PAUSES));
-  const pool = GAMES.filter((g) => isQuickGame(g) && !recent.has(g.id));
+  const pool = PLAYABLE.filter((g) => isQuickGame(g) && !recent.has(g.id));
   if (!pool.length) return DEFAULT_PAUSE_GAME;
   return pool[Math.floor(args.rand() * pool.length)]!.id;
 }

@@ -25,3 +25,17 @@ export function forgePoints(word: string): number {
 export function forgeStars(longest: number, words: number): 1 | 2 | 3 {
   return longest >= 6 ? 3 : words > 0 ? 2 : 1;
 }
+
+export type ForgeVerdict = 'ok' | 'short' | 'unknown' | 'repeat';
+
+/**
+ * Judges a word built in the tray: at least `FORGE_MIN` letters, in the rack's word list (the
+ * round's whole dictionary) and not forged already this round.
+ */
+export function judgeWord(word: string, rack: Rack, found: readonly string[]): ForgeVerdict {
+  const w = word.toLowerCase();
+  if (w.length < FORGE_MIN) return 'short';
+  if (!fromRack(w, rack.letters) || !rack.words.includes(w)) return 'unknown';
+  if (found.includes(w)) return 'repeat';
+  return 'ok';
+}

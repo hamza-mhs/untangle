@@ -590,6 +590,42 @@ Committed together because they share the catalog, registry and strings changes.
   Still for a real phone: drag feel, TalkBack on cells inside the gesture detector.
 - **Checks:** `npm run check` passes.
 
+## Batch 3.3c + 3.3d · Word games (one commit)
+
+Committed together because they share the catalog, registry, strings and wiring changes.
+
+- **Shared:** `kit/WordTiles.tsx` (letter wells and the in-game letter keys, used by all but
+  Category clusters; the system keyboard is never opened).
+  Every word game reads its pack through `pickRoundItems()`.
+- **Word trails** (`wordTrails`, dots, violet/pink): six beads on a ring, slide through them
+  (`usePointDrag`) and lift to try; sliding back onto the last bead takes a letter off; tap
+  path for TalkBack (tap beads, tap the last one again to try). Five tray words per board.
+- **Letter forge** (`letterForge`, dots, orange/sun): tap rack tiles into the tray, Forge;
+  each rack lists every word it makes, so no dictionary ships; "Long one" cheer for 6+.
+- **Word bridge** (`wordBridge`, dots, mint/sky): tap a letter of the rung, then a key; the
+  last step into the target word fills itself in. 7 keys: the letters the route needs plus decoys.
+- **Letter guess** (`letterGuess`, dots, mint): two words per round, 10-key rack (word letters +
+  common distractors), five misses per word (reset each word, as in the prototype).
+- **Category clusters** (`categoryClusters`, dots, pink/violet): 4 lives, "One away" on three of
+  four, herring hint when the trap word is the odd one out; with two groups found the last one
+  solves itself.
+- **Mini crossword** (`miniCrossword`, grid, sky/violet): 3×3 (see 3.3.0), rows 1/4/5 across
+  typed on 9 board keys; down clues listed under the grid.
+- **Review flag:** `GameMeta.devOnly` on Letter guess, Category clusters and Mini crossword
+  (their packs are `reviewed: false`). `PLAYABLE` / `playableGames()` hide them from the Games
+  tab, training and the pause pool in release builds; dev builds show all 40 games. Training
+  coverage test widened from 60 to 150 days for the larger rotation.
+- **Checked on the emulator:** all six start → result, best saved, quit from the pause sheet
+  (`docs/evidence/3.3c/`, `3.3d/`); all six listed under New in the Games tab.
+  Notes from the run: adb injects a whole slide in one burst, so Word trails' UI-thread hit test
+  only saw some beads and judged those words as misses; drawn slowly the same words are
+  accepted. Worth a look on a real phone with fast swipes. When a round ends while the player is
+  still tapping keys, a tap can land on "Done for now" (the result button sits where the keys
+  were); happened twice on the slow emulator.
+- **Deviations (please check):** the combo pill still reads "Streak N" (as in 3.3a/b); Enamel /
+  Candy toggles not built.
+- **Checks:** `npm run check` passes (457 tests).
+
 ## Still needed from the owner
 
 1. A real phone over USB for the device checks (permissions, blocking, browsers, battery,

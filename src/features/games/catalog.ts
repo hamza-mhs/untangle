@@ -47,7 +47,14 @@ export type GameId =
   | 'laserLab'
   | 'mergeGarden'
   | 'miniNonogram'
-  | 'bridgeBuilder';
+  | 'bridgeBuilder'
+  // 3.3c-d
+  | 'wordTrails'
+  | 'letterForge'
+  | 'wordBridge'
+  | 'letterGuess'
+  | 'categoryClusters'
+  | 'miniCrossword';
 
 export type GameAccent =
   'pink' | 'sky' | 'cobalt' | 'violet' | 'orange' | 'mint' | 'sun' | 'coral' | 'indigo';
@@ -65,6 +72,8 @@ export type GameMeta = {
   best: { stat: string; higher: boolean } | null;
   /** Batch the game shipped in, for the "New" tag (14 days). */
   batch: string;
+  /** Its content pack isn't reviewed yet: shown in dev builds only (BATCH-3.3 §3.3d). */
+  devOnly?: boolean;
 };
 
 export const GAMES: readonly GameMeta[] = [
@@ -387,7 +396,76 @@ export const GAMES: readonly GameMeta[] = [
     best: { stat: 'misfits', higher: false },
     batch: '3.3',
   },
+  {
+    id: 'wordTrails',
+    group: 'words',
+    seconds: 60,
+    calm: false,
+    accent: 'violet',
+    glow: 'pink',
+    best: { stat: 'words', higher: true },
+    batch: '3.3',
+  },
+  {
+    id: 'letterForge',
+    group: 'words',
+    seconds: 60,
+    calm: false,
+    accent: 'orange',
+    glow: 'sun',
+    best: { stat: 'longest', higher: true },
+    batch: '3.3',
+  },
+  {
+    id: 'wordBridge',
+    group: 'words',
+    seconds: 60,
+    calm: false,
+    accent: 'mint',
+    glow: 'sky',
+    best: { stat: 'steps', higher: false },
+    batch: '3.3',
+  },
+  {
+    id: 'letterGuess',
+    group: 'words',
+    seconds: 60,
+    calm: false,
+    accent: 'mint',
+    best: { stat: 'misses', higher: false },
+    batch: '3.3',
+    devOnly: true,
+  },
+  {
+    id: 'categoryClusters',
+    group: 'words',
+    seconds: 60,
+    calm: false,
+    accent: 'pink',
+    glow: 'violet',
+    best: { stat: 'slips', higher: false },
+    batch: '3.3',
+    devOnly: true,
+  },
+  {
+    id: 'miniCrossword',
+    group: 'words',
+    seconds: 90,
+    calm: false,
+    accent: 'sky',
+    glow: 'violet',
+    best: { stat: 'wrongLetters', higher: false },
+    batch: '3.3',
+    devOnly: true,
+  },
 ];
+
+/** Games this build offers (Games tab, training, pause pool): hides `devOnly` in release. */
+export function playableGames(dev: boolean = __DEV__, games: readonly GameMeta[] = GAMES) {
+  return games.filter((g) => dev || !g.devOnly);
+}
+
+export const PLAYABLE: readonly GameMeta[] = playableGames();
 
 const BY_ID = new Map(GAMES.map((g) => [g.id, g]));
 

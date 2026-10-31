@@ -1,6 +1,8 @@
 export {
   DEFAULT_PAUSE_GAME,
   GAMES,
+  PLAYABLE,
+  playableGames,
   gameMeta,
   isGameId,
   isQuickGame,

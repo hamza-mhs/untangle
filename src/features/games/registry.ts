@@ -34,6 +34,12 @@ import { definition as laserLab } from './games/laserLab';
 import { definition as mergeGarden } from './games/mergeGarden';
 import { definition as miniNonogram } from './games/miniNonogram';
 import { definition as bridgeBuilder } from './games/bridgeBuilder';
+import { definition as wordTrails } from './games/wordTrails';
+import { definition as letterForge } from './games/letterForge';
+import { definition as wordBridge } from './games/wordBridge';
+import { definition as letterGuess } from './games/letterGuess';
+import { definition as categoryClusters } from './games/categoryClusters';
+import { definition as miniCrossword } from './games/miniCrossword';
 
 /**
  * Every playable game (BATCH-3.1 §B, one folder each under games/). Each definition's Round
@@ -74,4 +80,10 @@ export const REGISTRY: Record<GameId, GameDefinition> = {
   mergeGarden,
   miniNonogram,
   bridgeBuilder,
+  wordTrails,
+  letterForge,
+  wordBridge,
+  letterGuess,
+  categoryClusters,
+  miniCrossword,
 };

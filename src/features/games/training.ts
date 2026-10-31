@@ -1,7 +1,7 @@
 import { rng, shuffle } from '@/lib/rng';
 import { addDays, type DayKey } from '@/lib/time';
 
-import { GAMES, isQuickGame, type GameId, type GameMeta } from './catalog';
+import { isQuickGame, PLAYABLE, type GameId, type GameMeta } from './catalog';
 
 export { rng };
 
@@ -28,7 +28,7 @@ export type TrainingInput = {
  */
 export function pickTraining({
   day,
-  games = GAMES,
+  games = PLAYABLE,
   lastPlayed,
   yesterday,
 }: TrainingInput): GameId[] {

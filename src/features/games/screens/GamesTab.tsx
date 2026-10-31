@@ -9,7 +9,7 @@ import { useT } from '@/i18n';
 
 import { dayKey } from '@/lib/time';
 
-import { GAMES, isNewGame, type GameId, type GameMeta } from '../catalog';
+import { GAMES, isNewGame, PLAYABLE, type GameId, type GameMeta } from '../catalog';
 import { useNewGamesStore } from '../newGamesStore';
 import { playedToday } from '../results';
 import { useTrainingStore } from '../trainingStore';
@@ -40,7 +40,7 @@ export function GamesTab() {
   );
 
   const isNew = (g: GameMeta) => isNewGame(g, firstSeen[g.batch], today);
-  const games = GAMES.filter(
+  const games = PLAYABLE.filter(
     (g) => filter === 'all' || (filter === 'new' ? isNew(g) : g.group === filter),
   );
   const upNext = training.find((id) => !played.has(id));
@@ -62,7 +62,7 @@ export function GamesTab() {
         </Text>
         <View style={styles.countPill}>
           <Text variant="caption" tone="secondary">
-            {t('games.tab.count', { count: GAMES.length })}
+            {t('games.tab.count', { count: PLAYABLE.length })}
           </Text>
         </View>
       </View>

@@ -3,7 +3,15 @@ import games from '@/i18n/en/games.json';
 import { rng } from '@/lib/rng';
 import { addDays } from '@/lib/time';
 
-import { GAMES, isNewGame, isQuickGame, latestBatch, NEW_DAYS, type GameId } from '../catalog';
+import {
+  GAMES,
+  isNewGame,
+  isQuickGame,
+  latestBatch,
+  NEW_DAYS,
+  playableGames,
+  type GameId,
+} from '../catalog';
 import { REGISTRY } from '../registry';
 import { pickTraining } from '../training';
 
@@ -52,16 +60,34 @@ describe('3.2 wiring', () => {
     if (latestBatch() !== '3.2') for (const id of DAILY_CORE) expect(latest).not.toContain(id);
   });
 
+  it('hides dev-only games (unreviewed packs) from release builds only', () => {
+    const devOnly = GAMES.filter((g) => g.devOnly).map((g) => g.id);
+    expect(devOnly.sort()).toEqual(['categoryClusters', 'letterGuess', 'miniCrossword']);
+    expect(playableGames(true)).toHaveLength(GAMES.length);
+    const release = playableGames(false).map((g) => g.id);
+    for (const id of devOnly) expect(release).not.toContain(id);
+    expect(release).toHaveLength(GAMES.length - devOnly.length);
+    // Release training never picks them either.
+    for (let i = 0; i < 200; i++)
+      for (const id of pickTraining({
+        day: addDays(day, i),
+        games: playableGames(false),
+        lastPlayed: {},
+        yesterday: null,
+      }))
+        expect(devOnly).not.toContain(id);
+  });
+
   it('compares batches as numbers', () => {
     const g = GAMES[0]!;
     expect(isNewGame({ ...g, batch: '3.10' }, day, day, '3.10')).toBe(true);
     expect(latestBatch([g, { ...g, batch: '3.10' }, { ...g, batch: '3.9' }])).toBe('3.10');
   });
 
-  it('puts every daily-core game in the training rotation within 60 days', () => {
+  it('puts every daily-core game in the training rotation within 150 days', () => {
     const seen = new Set<GameId>();
     let yesterday: GameId[] | null = null;
-    for (let i = 0; i < 60; i++) {
+    for (let i = 0; i < 150; i++) {
       const ids = pickTraining({ day: addDays(day, i), lastPlayed: {}, yesterday });
       ids.forEach((id) => seen.add(id));
       yesterday = ids;
